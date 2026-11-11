@@ -29,6 +29,7 @@
 - **右片 V3.7**：主机侧。作 USB Host 接真实鼠标，抓报告经 UART1 送给左片。
 - **CH343 中线**：接左片 UART0，就是**控制口**（PC 或手机接其一，串口独占）。
 - 本仓库只含源码、文档与构建必需二进制；清理明细见 [CLEANUP.md](CLEANUP.md)。
+- 预编译产物见 Release：[v0.1.0](https://github.com/2378415/MagicBox/releases/tag/v0.1.0)（左/右片固件 + 引导与分区表 + MagicBullet debug APK + SHA256SUMS）。
 
 ---
 
