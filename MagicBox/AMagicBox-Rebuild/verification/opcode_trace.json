@@ -1,0 +1,257 @@
+{
+  "port": "COM3",
+  "steps": [
+    {
+      "label": "version",
+      "cmd": ".km.version()",
+      "echo": "km.MAKCU",
+      "frames": []
+    },
+    {
+      "label": "version-noargs",
+      "cmd": ".km.version",
+      "echo": "km.MAKCU",
+      "frames": []
+    },
+    {
+      "label": "buttons/query",
+      "cmd": ".km.buttons()",
+      "echo": "km.buttons() 0",
+      "frames": []
+    },
+    {
+      "label": "button press left",
+      "cmd": ".km.left(1)",
+      "echo": "km.left(1)",
+      "frames": []
+    },
+    {
+      "label": "button press left up",
+      "cmd": ".km.left(0)",
+      "echo": "km.left(0)",
+      "frames": []
+    },
+    {
+      "label": "button click left",
+      "cmd": ".km.left()",
+      "echo": "km.left() 0",
+      "frames": []
+    },
+    {
+      "label": "button click right",
+      "cmd": ".km.right()",
+      "echo": "km.right() 0",
+      "frames": []
+    },
+    {
+      "label": "button click middle",
+      "cmd": ".km.middle()",
+      "echo": "km.middle() 0",
+      "frames": []
+    },
+    {
+      "label": "button front(ms1)",
+      "cmd": ".km.front()",
+      "echo": "km.front() 0",
+      "frames": []
+    },
+    {
+      "label": "button ms2",
+      "cmd": ".km.ms2()",
+      "echo": "km.ms2() 0",
+      "frames": []
+    },
+    {
+      "label": "buttons set 7",
+      "cmd": ".km.buttons(7)",
+      "echo": "km.buttons(7)",
+      "frames": []
+    },
+    {
+      "label": "buttons query",
+      "cmd": ".km.buttons()",
+      "echo": "km.buttons() 0",
+      "frames": []
+    },
+    {
+      "label": "buttons set 0",
+      "cmd": ".km.buttons(0)",
+      "echo": "km.buttons(0)",
+      "frames": []
+    },
+    {
+      "label": "move +10,+5",
+      "cmd": ".km.move(10,5)",
+      "echo": "km.move(10,5)",
+      "frames": []
+    },
+    {
+      "label": "move -10,-5",
+      "cmd": ".km.move(-10,-5)",
+      "echo": "km.move(-10,-5)",
+      "frames": []
+    },
+    {
+      "label": "move 0,0",
+      "cmd": ".km.move(0,0)",
+      "echo": "km.move(0,0)",
+      "frames": []
+    },
+    {
+      "label": "wheel +1",
+      "cmd": ".km.wheel(1)",
+      "echo": "km.wheel(1)",
+      "frames": []
+    },
+    {
+      "label": "wheel -1",
+      "cmd": ".km.wheel(-1)",
+      "echo": "km.wheel(-1)",
+      "frames": []
+    },
+    {
+      "label": "lock_mx query",
+      "cmd": ".km.lock_mx()",
+      "echo": "km.lock_mx() 0",
+      "frames": []
+    },
+    {
+      "label": "lock_mx set 1",
+      "cmd": ".km.lock_mx(1)",
+      "echo": "km.lock_mx(1)",
+      "frames": []
+    },
+    {
+      "label": "lock_mx query2",
+      "cmd": ".km.lock_mx()",
+      "echo": "km.lock_mx() 1",
+      "frames": []
+    },
+    {
+      "label": "lock_mx set 0",
+      "cmd": ".km.lock_mx(0)",
+      "echo": "km.lock_mx(0)",
+      "frames": []
+    },
+    {
+      "label": "lock_my query",
+      "cmd": ".km.lock_my()",
+      "echo": "km.lock_my() 0",
+      "frames": []
+    },
+    {
+      "label": "lock_ml query",
+      "cmd": ".km.lock_ml()",
+      "echo": "km.lock_ml() 0",
+      "frames": []
+    },
+    {
+      "label": "lock_ml set 1",
+      "cmd": ".km.lock_ml(1)",
+      "echo": "km.lock_ml(1)",
+      "frames": []
+    },
+    {
+      "label": "lock_ml set 0",
+      "cmd": ".km.lock_ml(0)",
+      "echo": "km.lock_ml(0)",
+      "frames": []
+    },
+    {
+      "label": "lock_mr set 0",
+      "cmd": ".km.lock_mr(0)",
+      "echo": "km.lock_mr(0)",
+      "frames": []
+    },
+    {
+      "label": "lock_mm set 0",
+      "cmd": ".km.lock_mm(0)",
+      "echo": "km.lock_mm(0)",
+      "frames": []
+    },
+    {
+      "label": "lock_ms1 set 0",
+      "cmd": ".km.lock_ms1(0)",
+      "echo": "km.lock_ms1(0)",
+      "frames": []
+    },
+    {
+      "label": "lock_ms2 set 0",
+      "cmd": ".km.lock_ms2(0)",
+      "echo": "km.lock_ms2(0)",
+      "frames": []
+    },
+    {
+      "label": "catch_ml query",
+      "cmd": ".km.catch_ml()",
+      "echo": "km.catch_ml() 0",
+      "frames": []
+    },
+    {
+      "label": "catch_ml set 1",
+      "cmd": ".km.catch_ml(1)",
+      "echo": "km.catch_ml(1)",
+      "frames": []
+    },
+    {
+      "label": "catch_ml query2",
+      "cmd": ".km.catch_ml()",
+      "echo": "km.catch_ml() 0",
+      "frames": []
+    },
+    {
+      "label": "catch_ml set 0",
+      "cmd": ".km.catch_ml(0)",
+      "echo": "km.catch_ml(0)",
+      "frames": []
+    },
+    {
+      "label": "catch_mr query",
+      "cmd": ".km.catch_mr()",
+      "echo": "km.catch_mr() 0",
+      "frames": []
+    },
+    {
+      "label": "silent 1",
+      "cmd": ".km.silent(1)",
+      "echo": "",
+      "frames": []
+    },
+    {
+      "label": "silent 0",
+      "cmd": ".km.silent(0)",
+      "echo": "",
+      "frames": []
+    },
+    {
+      "label": "serial query",
+      "cmd": ".km.serial()",
+      "echo": "km.Mouse does not have a serial number \u0000",
+      "frames": []
+    },
+    {
+      "label": "readback buttons",
+      "cmd": "mx.bo",
+      "echo": "km.0x07,0",
+      "frames": []
+    },
+    {
+      "label": "readback last report",
+      "cmd": "mx.ei",
+      "echo": "km.00010000000000",
+      "frames": []
+    },
+    {
+      "label": "readback sends",
+      "cmd": "mx.ds",
+      "echo": "km.71802,0",
+      "frames": []
+    },
+    {
+      "label": "readback identity",
+      "cmd": "mx.fv",
+      "echo": "km.force=0000:0000 ovr=0000:0000 dev=0f326e70",
+      "frames": []
+    }
+  ]
+}

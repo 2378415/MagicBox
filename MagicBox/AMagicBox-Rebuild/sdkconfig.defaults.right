@@ -1,0 +1,31 @@
+# sdkconfig defaults for the MAKCU rebuild.
+# Values marked [measured] come from the image / hardware, [derived] from code
+# inspection, [guess] must be confirmed by the P0 recompilation baseline.
+CONFIG_IDF_TARGET="esp32s3"
+CONFIG_IDF_FIRMWARE_CHIP_ID=0x0009
+
+# [measured] app descriptor says idf v5.4.1, project-name, no OTA partitions
+CONFIG_APP_PROJECT_VER_FROM_CONFIG=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions_left.csv"
+
+# [derived] single-app, 1 MB factory partition, coredump + second NVS
+CONFIG_ESP_COREDUMP_ENABLE_TO_FLASH=y
+CONFIG_ESP_COREDUMP_DATA_FORMAT_ELF=y
+
+# [guess] FreeRTOS tick: 100 Hz matches the observed vTaskDelay(1) granularity
+# and the 1 ms commit delay in pulse_move; confirm in P0.
+CONFIG_FREERTOS_HZ=100
+
+# [derived] the firmware ships no secure boot / flash encryption (eFuse read)
+CONFIG_SECURE_BOOT=n
+CONFIG_SECURE_FLASH_ENC_ENABLED=n
+
+# [derived] UART console is disabled at boot (eFuse UART_PRINT_CONTROL=0b11);
+# keep the driver but no boot banner, otherwise timing changes.
+CONFIG_LOG_DEFAULT_LEVEL_WARN=y
+CONFIG_BOOTLOADER_LOG_LEVEL_WARN=y
+
+# RIGHT = host side: USB host + HID parsing, UART1 inter-chip link.
+CONFIG_USB_HOST_ENABLED=y
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y

@@ -1,0 +1,67 @@
+// 4037f368  FUN_4037f368  FUN_4037f368  size=314
+
+void FUN_4037f368(int param_1)
+
+{
+  byte bVar1;
+  uint uVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar3 = *(int *)(param_1 + 4);
+  memw();
+  *(undefined4 *)(iVar3 + 0x10) = 0;
+  memw();
+  *(undefined4 *)(iVar3 + 8) = 0;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0xe8) = *(uint *)(iVar3 + 0xe8) | 1;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0xe8) = *(uint *)(iVar3 + 0xe8) | 2;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0xe8) = *(uint *)(iVar3 + 0xe8) | 4;
+  memw();
+  *(undefined4 *)(iVar3 + 0x30) = 0;
+  uVar2 = DAT_403750d0;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x30) = *(uint *)(iVar3 + 0x30) | DAT_403750d0;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x30) = *(uint *)(iVar3 + 0x30) | DAT_40374970;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x30) = *(uint *)(iVar3 + 0x30) & DAT_403750d4;
+  iVar4 = *(int *)(param_1 + 8);
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x20) = *(uint *)(iVar3 + 0x20) & 0xfffffffe | (uint)(iVar4 != 0);
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x20) = *(uint *)(iVar3 + 0x20) & 0xfffffffd | (uint)(iVar4 != 1) * 2;
+  memw();
+  memw();
+  *(undefined4 *)(iVar3 + 0xc) = *(undefined4 *)(param_1 + 0x10);
+  bVar1 = *(byte *)(param_1 + 0xe);
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x14) = *(uint *)(iVar3 + 0x14) & DAT_403750d8 | (bVar1 - 1 & 0x1f) << 0x16;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xffffffbf | (uint)(bVar1 != 0) << 6;
+  bVar1 = *(byte *)(param_1 + 0xd);
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x10) = *(uint *)(iVar3 + 0x10) & 0xffffff7f | (uint)(bVar1 != 0) << 7;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 0x14) = *(uint *)(iVar3 + 0x14) & DAT_403750dc | (bVar1 - 1 & 0x1f) << 0x11;
+  memw();
+  memw();
+  *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) | uVar2;
+  return;
+}
+
+

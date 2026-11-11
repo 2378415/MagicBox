@@ -1,0 +1,10 @@
+4200f6b0	uart1_write
+4200f6c4	frame_forward
+4200fac0	frame_ep0_dir
+4200fae0	frame_a3_flag
+4200fe68	hid_uart_task
+4200fec8	queue_drain
+4200ff10	usb_event_handler
+420100fc	bridge_init
+42010244	bridge_release
+420102a8	frame_build_ep0

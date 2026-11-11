@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.magicbullet.capture'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.magicbullet.capture'
+        minSdk 28
+        targetSdk 35
+        versionCode 1
+        versionName '0.1'
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                // Static STL: libmbpre.so must not depend on libc++_shared being in the APK.
+                arguments "-DANDROID_STL=c++_static"
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.31.6"
+        }
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+}
+
+dependencies {
+    // libuvc declares appcompat as `implementation`, so it is not on this module's
+    // compile classpath: the UI dependencies have to be declared here as well.
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.fragment:fragment:1.8.5'
+    implementation 'com.google.android.material:material:1.12.0'
+    // ONNX Runtime 1.29.0 built from source with QNN_HTP_DEVICE_ARCH_V79 added, so the
+    // QNN EP accepts htp_arch=79 on Snapdragon 8 Elite (SM8750, v79) parts. Everything
+    // else in the AAR is the stock 1.29.0 build; the QNN runtime itself still comes from
+    // qnn-runtime, which a file dependency would not pull in transitively.
+    implementation files("$rootDir/models/ort-qnn-v79.aar")
+    implementation 'com.qualcomm.qti:qnn-runtime:2.42.0'
+    implementation project(':libuvc')
+
+    testImplementation 'junit:junit:4.13.2'
+}

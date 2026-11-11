@@ -1,0 +1,8 @@
+void FUN_42024b3c(int *param_1,uint param_2)
+
+{
+  memw();
+  memw();
+  *(uint *)(*param_1 + 0x24) = *(uint *)(*param_1 + 0x24) & 0xfffffc00 | param_2 & 0x3ff;
+  return;
+}

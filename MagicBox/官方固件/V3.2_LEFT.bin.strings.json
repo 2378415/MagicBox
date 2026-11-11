@@ -1,0 +1,9182 @@
+[
+{
+"off": 40,
+"vaddr": "0x3fce2818",
+"s": "v5.4.1"
+},
+{
+"off": 72,
+"vaddr": "0x3fce2838",
+"s": "May  4 2025 15:00:59"
+},
+{
+"off": 172,
+"vaddr": "0x3fce289c",
+"s": "Assert failed in %s, %s:%d (%s)"
+},
+{
+"off": 208,
+"vaddr": "0x3fce28c0",
+"s": "abort() was called at PC 0x%08x"
+},
+{
+"off": 244,
+"vaddr": "0x3fce28e4",
+"s": "load_end > load_addr"
+},
+{
+"off": 268,
+"vaddr": "0x3fce28fc",
+"s": "//IDF/components/bootloader_support/src/esp_image_format.c"
+},
+{
+"off": 328,
+"vaddr": "0x3fce2938",
+"s": "end1 > start1"
+},
+{
+"off": 344,
+"vaddr": "0x3fce2948",
+"s": "//IDF/components/bootloader_support/include/bootloader_util.h"
+},
+{
+"off": 408,
+"vaddr": "0x3fce2988",
+"s": "Calculated hash"
+},
+{
+"off": 424,
+"vaddr": "0x3fce2998",
+"s": "Expected hash"
+},
+{
+"off": 440,
+"vaddr": "0x3fce29a8",
+"s": "handle != NULL"
+},
+{
+"off": 456,
+"vaddr": "0x3fce29b8",
+"s": "//IDF/components/bootloader_support/src/esp32s3/bootloader_sha.c"
+},
+{
+"off": 524,
+"vaddr": "0x3fce29fc",
+"s": "data_len % 4 == 0"
+},
+{
+"off": 544,
+"vaddr": "0x3fce2a10",
+"s": "&_bss_start <= &_bss_end"
+},
+{
+"off": 572,
+"vaddr": "0x3fce2a2c",
+"s": "//IDF/components/bootloader_support/src/esp32s3/bootloader_esp32s3.c"
+},
+{
+"off": 644,
+"vaddr": "0x3fce2a74",
+"s": "&_data_start <= &_data_end"
+},
+{
+"off": 672,
+"vaddr": "0x3fce2a90",
+"s": "buffer != NULL"
+},
+{
+"off": 688,
+"vaddr": "0x3fce2aa0",
+"s": "//IDF/components/bootloader_support/src/bootloader_random.c"
+},
+{
+"off": 748,
+"vaddr": "0x3fce2adc",
+"s": "mosi_len <= 32"
+},
+{
+"off": 764,
+"vaddr": "0x3fce2aec",
+"s": "//IDF/components/bootloader_support/bootloader_flash/src/bootloader_flash.c"
+},
+{
+"off": 840,
+"vaddr": "0x3fce2b38",
+"s": "miso_len <= 32"
+},
+{
+"off": 856,
+"vaddr": "0x3fce2b48",
+"s": "miso_byte_num <= 4"
+},
+{
+"off": 876,
+"vaddr": "0x3fce2b5c",
+"s": "0 && \"LDO dbias need to modified\""
+},
+{
+"off": 912,
+"vaddr": "0x3fce2b80",
+"s": "//IDF/components/esp_hw_support/port/esp32s3/rtc_clk.c"
+},
+{
+"off": 968,
+"vaddr": "0x3fce2bb8",
+"s": "bootloader_util_regions_overlap"
+},
+{
+"off": 1000,
+"vaddr": "0x3fce2bd8",
+"s": "verify_load_addresses"
+},
+{
+"off": 1024,
+"vaddr": "0x3fce2bf0",
+"s": "bootloader_sha256_finish"
+},
+{
+"off": 1052,
+"vaddr": "0x3fce2c0c",
+"s": "bootloader_sha256_data"
+},
+{
+"off": 1076,
+"vaddr": "0x3fce2c24",
+"s": "bootloader_init"
+},
+{
+"off": 1092,
+"vaddr": "0x3fce2c34",
+"s": "bootloader_fill_random"
+},
+{
+"off": 1116,
+"vaddr": "0x3fce2c4c",
+"s": "bootloader_flash_execute_command_common"
+},
+{
+"off": 1156,
+"vaddr": "0x3fce2c74",
+"s": "rtc_clk_cpu_freq_to_8m"
+},
+{
+"off": 4751,
+"vaddr": "0x403cb9bb",
+"s": "`gfffl("
+},
+{
+"off": 4929,
+"vaddr": "0x403cba6d",
+"s": "\"  `  tF"
+},
+{
+"off": 4954,
+"vaddr": "0x403cba86",
+"s": "\"  `  t"
+},
+{
+"off": 4978,
+"vaddr": "0x403cba9e",
+"s": "\"  `  t"
+},
+{
+"off": 7066,
+"vaddr": "0x403cc2c6",
+"s": "\"  *b  `f"
+},
+{
+"off": 7257,
+"vaddr": "0x403cc385",
+"s": "\"  `  t"
+},
+{
+"off": 7361,
+"vaddr": "0x403cc3ed",
+"s": "b79B P"
+},
+{
+"off": 7847,
+"vaddr": "0x403cc5d3",
+"s": "@ %AK\""
+},
+{
+"off": 10352,
+"vaddr": "0x403ccf9c",
+"s": "\"  `  tF"
+},
+{
+"off": 10381,
+"vaddr": "0x403ccfb9",
+"s": "\"  `  t"
+},
+{
+"off": 10975,
+"vaddr": "0x403cd20b",
+"s": "NKfKU76"
+},
+{
+"off": 32812,
+"vaddr": null,
+"s": "phy_init"
+},
+{
+"off": 32844,
+"vaddr": null,
+"s": "factory"
+},
+{
+"off": 32876,
+"vaddr": null,
+"s": "coredump"
+},
+{
+"off": 32908,
+"vaddr": null,
+"s": "storage"
+},
+{
+"off": 65616,
+"vaddr": "0x3c030050",
+"s": "project-name"
+},
+{
+"off": 65648,
+"vaddr": "0x3c030070",
+"s": "15:00:57"
+},
+{
+"off": 65664,
+"vaddr": "0x3c030080",
+"s": "May  4 2025"
+},
+{
+"off": 65680,
+"vaddr": "0x3c030090",
+"s": "v5.4.1"
+},
+{
+"off": 65824,
+"vaddr": "0x3c030120",
+"s": "app_init"
+},
+{
+"off": 65837,
+"vaddr": "0x3c03012d",
+"s": "[0;32mI (%lu) %s: Application information:"
+},
+{
+"off": 65889,
+"vaddr": "0x3c030161",
+"s": "[0;32mI (%lu) %s: Project name:     %s"
+},
+{
+"off": 65937,
+"vaddr": "0x3c030191",
+"s": "[0;32mI (%lu) %s: App version:      %s"
+},
+{
+"off": 65985,
+"vaddr": "0x3c0301c1",
+"s": "[0;32mI (%lu) %s: Compile time:     %s %s"
+},
+{
+"off": 66033,
+"vaddr": "0x3c0301f1",
+"s": "[0;32mI (%lu) %s: ELF file SHA256:  %s..."
+},
+{
+"off": 66081,
+"vaddr": "0x3c030221",
+"s": "[0;32mI (%lu) %s: ESP-IDF:          %s"
+},
+{
+"off": 66128,
+"vaddr": "0x3c030250",
+"s": "(constraint ignored)"
+},
+{
+"off": 66152,
+"vaddr": "0x3c030268",
+"s": "efuse_init"
+},
+{
+"off": 66165,
+"vaddr": "0x3c030275",
+"s": "[0;32mI (%lu) %s: Min chip rev:     v%d.%d"
+},
+{
+"off": 66217,
+"vaddr": "0x3c0302a9",
+"s": "[0;32mI (%lu) %s: Max chip rev:     v%d.%d %s"
+},
+{
+"off": 66269,
+"vaddr": "0x3c0302dd",
+"s": "[0;32mI (%lu) %s: Chip rev:         v%d.%d"
+},
+{
+"off": 66320,
+"vaddr": "0x3c030310",
+"s": "err == ESP_OK"
+},
+{
+"off": 66336,
+"vaddr": "0x3c030320",
+"s": "//IDF/components/efuse/src/esp_efuse_api.c"
+},
+{
+"off": 66380,
+"vaddr": "0x3c03034c",
+"s": "blk >= 0 && blk < EFUSE_BLK_MAX"
+},
+{
+"off": 66412,
+"vaddr": "0x3c03036c",
+"s": "//IDF/components/efuse/src/esp_efuse_utility.c"
+},
+{
+"off": 66460,
+"vaddr": "0x3c03039c",
+"s": "num_reg <= (range_read_addr_blocks[blk].end - range_read_addr_blocks[blk].start) / sizeof(uint32_t)"
+},
+{
+"off": 66569,
+"vaddr": "0x3c030409",
+"s": "[0;31mE (%lu) %s: Range of data does not match the coding scheme"
+},
+{
+"off": 66640,
+"vaddr": "0x3c030450",
+"s": "D (%lu) %s: BLK%d REG%d [%d-%d], len=%d bits"
+},
+{
+"off": 66692,
+"vaddr": "0x3c030484",
+"s": "bits_counter <= req_size"
+},
+{
+"off": 66721,
+"vaddr": "0x3c0304a1",
+"s": "[0;31mE (%lu) %s: Repeated programming of programmed bits is strictly forbidden 0x%08lx"
+},
+{
+"off": 66817,
+"vaddr": "0x3c030501",
+"s": "[0;32mI (%lu) %s: BURN BLOCK%d - OK (write block == read block)"
+},
+{
+"off": 66889,
+"vaddr": "0x3c030549",
+"s": "[0;32mI (%lu) %s: BURN BLOCK%d - OK (all write block bits are set)"
+},
+{
+"off": 66965,
+"vaddr": "0x3c030595",
+"s": "[0;31mE (%lu) %s: BURN BLOCK%d - ERROR (written bits != read bits)"
+},
+{
+"off": 67041,
+"vaddr": "0x3c0305e1",
+"s": "[0;31mE (%lu) %s: BLOCK%d can not be burned because a previous block got an error, skipped."
+},
+{
+"off": 67141,
+"vaddr": "0x3c030645",
+"s": "[0;33mW (%lu) %s: BLOCK%d already has a coding error"
+},
+{
+"off": 67201,
+"vaddr": "0x3c030681",
+"s": "[0;32mI (%lu) %s: BURN BLOCK%d"
+},
+{
+"off": 67241,
+"vaddr": "0x3c0306a9",
+"s": "[0;33mW (%lu) %s: BLOCK%d got a coding error"
+},
+{
+"off": 67293,
+"vaddr": "0x3c0306dd",
+"s": "[0;33mW (%lu) %s: BLOCK%d: next retry to fix an error [%d/3]..."
+},
+{
+"off": 67365,
+"vaddr": "0x3c030725",
+"s": "[0;33mW (%lu) %s: Coding error was not fixed"
+},
+{
+"off": 67417,
+"vaddr": "0x3c030759",
+"s": "[0;31mE (%lu) %s: BLOCK0 got a coding error, which might be critical for security"
+},
+{
+"off": 67505,
+"vaddr": "0x3c0307b1",
+"s": "[0;31mE (%lu) %s: Written data are incorrect"
+},
+{
+"off": 67557,
+"vaddr": "0x3c0307e5",
+"s": "[0;31mE (%lu) %s: Bits are not empty. Write operation is forbidden."
+},
+{
+"off": 67632,
+"vaddr": "0x3c030830",
+"s": "cpu_start"
+},
+{
+"off": 67645,
+"vaddr": "0x3c03083d",
+"s": "[0;32mI (%lu) %s: Pro cpu start user code"
+},
+{
+"off": 67693,
+"vaddr": "0x3c03086d",
+"s": "[0;32mI (%lu) %s: cpu freq: %d Hz"
+},
+{
+"off": 67732,
+"vaddr": "0x3c030894",
+"s": "flash_ret == ESP_OK"
+},
+{
+"off": 67752,
+"vaddr": "0x3c0308a8",
+"s": "//IDF/components/esp_system/startup_funcs.c"
+},
+{
+"off": 67796,
+"vaddr": "0x3c0308d4",
+"s": "D (%lu) %s: App cpu up"
+},
+{
+"off": 67825,
+"vaddr": "0x3c0308f1",
+"s": "[0;32mI (%lu) %s: Multicore app"
+},
+{
+"off": 67864,
+"vaddr": "0x3c030918",
+"s": "D (%lu) %s: Pro cpu up"
+},
+{
+"off": 67893,
+"vaddr": "0x3c030935",
+"s": "[0;31mE (%lu) %s: Running on single core variant of a chip, but app is built with multi-core support."
+},
+{
+"off": 68001,
+"vaddr": "0x3c0309a1",
+"s": "[0;31mE (%lu) %s: Check that CONFIG_FREERTOS_UNICORE is enabled in menuconfig"
+},
+{
+"off": 68084,
+"vaddr": "0x3c0309f4",
+"s": "D (%lu) %s: Starting app cpu, entry point is %p"
+},
+{
+"off": 68141,
+"vaddr": "0x3c030a2d",
+"s": "[0;31mE (%lu) %s: Memprot feature locked after the system reset! Potential safety corruption, rebooting."
+},
+{
+"off": 68253,
+"vaddr": "0x3c030a9d",
+"s": "[0;31mE (%lu) %s: Failed to set Memprot feature (0x%08X: %s), rebooting."
+},
+{
+"off": 68333,
+"vaddr": "0x3c030aed",
+"s": "[0;31mE (%lu) %s: Invalid app image header"
+},
+{
+"off": 68388,
+"vaddr": "0x3c030b24",
+"s": "D (%lu) %s: waiting for 32k oscillator to start up"
+},
+{
+"off": 68445,
+"vaddr": "0x3c030b5d",
+"s": "[0;33mW (%lu) %s: 32 kHz XTAL not found, switching to internal 150 kHz oscillator"
+},
+{
+"off": 68532,
+"vaddr": "0x3c030bb4",
+"s": "D (%lu) %s: RTC_SLOW_CLK calibration value: %lu"
+},
+{
+"off": 68588,
+"vaddr": "0x3c030bec",
+"s": "rtc_clk_xtal_freq_get() == SOC_XTAL_FREQ_40M"
+},
+{
+"off": 68636,
+"vaddr": "0x3c030c1c",
+"s": "//IDF/components/esp_system/port/soc/esp32s3/clk.c"
+},
+{
+"off": 68692,
+"vaddr": "0x3c030c54",
+"s": "(hint & (~RST_REASON_MASK)) == 0"
+},
+{
+"off": 68728,
+"vaddr": "0x3c030c78",
+"s": "//IDF/components/esp_system/port/soc/esp32s3/reset_reason.c"
+},
+{
+"off": 68788,
+"vaddr": "0x3c030cb4",
+"s": "Guru Meditation Error: Core "
+},
+{
+"off": 68820,
+"vaddr": "0x3c030cd4",
+"s": " panic'ed ("
+},
+{
+"off": 68836,
+"vaddr": "0x3c030ce4",
+"s": "Setting breakpoint at 0x"
+},
+{
+"off": 68864,
+"vaddr": "0x3c030d00",
+"s": " and returning..."
+},
+{
+"off": 68886,
+"vaddr": "0x3c030d16",
+"s": "ELF file SHA256: "
+},
+{
+"off": 68904,
+"vaddr": "0x3c030d28",
+"s": "Re-entered core dump! Exception happened during core dump!"
+},
+{
+"off": 68968,
+"vaddr": "0x3c030d68",
+"s": "Rebooting..."
+},
+{
+"off": 68984,
+"vaddr": "0x3c030d78",
+"s": "D (%lu) %s: calling init function: %p on core: %d"
+},
+{
+"off": 69041,
+"vaddr": "0x3c030db1",
+"s": "[0;31mE (%lu) %s: init function %p has failed (0x%x), aborting"
+},
+{
+"off": 69112,
+"vaddr": "0x3c030df8",
+"s": "D (%lu) %s: calling init function: %p"
+},
+{
+"off": 69156,
+"vaddr": "0x3c030e24",
+"s": "Unknown"
+},
+{
+"off": 69164,
+"vaddr": "0x3c030e2c",
+"s": "Debug exception reason: "
+},
+{
+"off": 69192,
+"vaddr": "0x3c030e48",
+"s": "SingleStep "
+},
+{
+"off": 69204,
+"vaddr": "0x3c030e54",
+"s": "HwBreakpoint "
+},
+{
+"off": 69220,
+"vaddr": "0x3c030e64",
+"s": "Watchpoint 1 triggered "
+},
+{
+"off": 69244,
+"vaddr": "0x3c030e7c",
+"s": "Watchpoint 0 triggered "
+},
+{
+"off": 69268,
+"vaddr": "0x3c030e94",
+"s": "BREAK instr "
+},
+{
+"off": 69284,
+"vaddr": "0x3c030ea4",
+"s": "BREAKN instr "
+},
+{
+"off": 69300,
+"vaddr": "0x3c030eb4",
+"s": "DebugIntr "
+},
+{
+"off": 69312,
+"vaddr": "0x3c030ec0",
+"s": "Memory dump at 0x"
+},
+{
+"off": 69336,
+"vaddr": "0x3c030ed8",
+"s": "Icache sync parameter configuration error, the error address and size is 0x"
+},
+{
+"off": 69420,
+"vaddr": "0x3c030f2c",
+"s": "Icache preload parameter configuration error, the error address and size is 0x"
+},
+{
+"off": 69500,
+"vaddr": "0x3c030f7c",
+"s": "Dcache sync parameter configuration error, the error address and size is 0x"
+},
+{
+"off": 69576,
+"vaddr": "0x3c030fc8",
+"s": "Dcache preload parameter configuration error, the error address and size is 0x"
+},
+{
+"off": 69656,
+"vaddr": "0x3c031018",
+"s": "Write back error occurred while dcache tries to write back to flash"
+},
+{
+"off": 69728,
+"vaddr": "0x3c031060",
+"s": "The following backtrace may not indicate the code that caused Cache invalid access"
+},
+{
+"off": 69816,
+"vaddr": "0x3c0310b8",
+"s": "MMU entry fault error occurred while accessing the address 0x"
+},
+{
+"off": 69880,
+"vaddr": "0x3c0310f8",
+"s": " (invalid mmu entry)"
+},
+{
+"off": 69912,
+"vaddr": "0x3c031118",
+"s": " register dump:"
+},
+{
+"off": 69932,
+"vaddr": "0x3c03112c",
+"s": " was running in ISR context:"
+},
+{
+"off": 69964,
+"vaddr": "0x3c03114c",
+"s": "EPC1    : 0x"
+},
+{
+"off": 69980,
+"vaddr": "0x3c03115c",
+"s": "  EPC2    : 0x"
+},
+{
+"off": 69996,
+"vaddr": "0x3c03116c",
+"s": "  EPC3    : 0x"
+},
+{
+"off": 70012,
+"vaddr": "0x3c03117c",
+"s": "  EPC4    : 0x"
+},
+{
+"off": 70028,
+"vaddr": "0x3c03118c",
+"s": "PC      "
+},
+{
+"off": 70040,
+"vaddr": "0x3c031198",
+"s": "PS      "
+},
+{
+"off": 70052,
+"vaddr": "0x3c0311a4",
+"s": "A0      "
+},
+{
+"off": 70064,
+"vaddr": "0x3c0311b0",
+"s": "A1      "
+},
+{
+"off": 70076,
+"vaddr": "0x3c0311bc",
+"s": "A2      "
+},
+{
+"off": 70088,
+"vaddr": "0x3c0311c8",
+"s": "A3      "
+},
+{
+"off": 70100,
+"vaddr": "0x3c0311d4",
+"s": "A4      "
+},
+{
+"off": 70112,
+"vaddr": "0x3c0311e0",
+"s": "A5      "
+},
+{
+"off": 70124,
+"vaddr": "0x3c0311ec",
+"s": "A6      "
+},
+{
+"off": 70136,
+"vaddr": "0x3c0311f8",
+"s": "A7      "
+},
+{
+"off": 70148,
+"vaddr": "0x3c031204",
+"s": "A8      "
+},
+{
+"off": 70160,
+"vaddr": "0x3c031210",
+"s": "A9      "
+},
+{
+"off": 70172,
+"vaddr": "0x3c03121c",
+"s": "A10     "
+},
+{
+"off": 70184,
+"vaddr": "0x3c031228",
+"s": "A11     "
+},
+{
+"off": 70196,
+"vaddr": "0x3c031234",
+"s": "A12     "
+},
+{
+"off": 70208,
+"vaddr": "0x3c031240",
+"s": "A13     "
+},
+{
+"off": 70220,
+"vaddr": "0x3c03124c",
+"s": "A14     "
+},
+{
+"off": 70232,
+"vaddr": "0x3c031258",
+"s": "A15     "
+},
+{
+"off": 70244,
+"vaddr": "0x3c031264",
+"s": "SAR     "
+},
+{
+"off": 70256,
+"vaddr": "0x3c031270",
+"s": "EXCCAUSE"
+},
+{
+"off": 70268,
+"vaddr": "0x3c03127c",
+"s": "EXCVADDR"
+},
+{
+"off": 70280,
+"vaddr": "0x3c031288",
+"s": "LBEG    "
+},
+{
+"off": 70292,
+"vaddr": "0x3c031294",
+"s": "LEND    "
+},
+{
+"off": 70304,
+"vaddr": "0x3c0312a0",
+"s": "LCOUNT  "
+},
+{
+"off": 70316,
+"vaddr": "0x3c0312ac",
+"s": "Exception was unhandled."
+},
+{
+"off": 70344,
+"vaddr": "0x3c0312c8",
+"s": "Unknown reason"
+},
+{
+"off": 70360,
+"vaddr": "0x3c0312d8",
+"s": "Unhandled debug exception"
+},
+{
+"off": 70388,
+"vaddr": "0x3c0312f4",
+"s": "Double exception"
+},
+{
+"off": 70408,
+"vaddr": "0x3c031308",
+"s": "Unhandled kernel exception"
+},
+{
+"off": 70436,
+"vaddr": "0x3c031324",
+"s": "Coprocessor exception"
+},
+{
+"off": 70460,
+"vaddr": "0x3c03133c",
+"s": "Interrupt wdt timeout on CPU0"
+},
+{
+"off": 70492,
+"vaddr": "0x3c03135c",
+"s": "Interrupt wdt timeout on CPU1"
+},
+{
+"off": 70524,
+"vaddr": "0x3c03137c",
+"s": "Cache disabled but cached memory region accessed"
+},
+{
+"off": 70576,
+"vaddr": "0x3c0313b0",
+"s": "IllegalInstruction"
+},
+{
+"off": 70596,
+"vaddr": "0x3c0313c4",
+"s": "Syscall"
+},
+{
+"off": 70604,
+"vaddr": "0x3c0313cc",
+"s": "InstructionFetchError"
+},
+{
+"off": 70628,
+"vaddr": "0x3c0313e4",
+"s": "LoadStoreError"
+},
+{
+"off": 70644,
+"vaddr": "0x3c0313f4",
+"s": "Level1Interrupt"
+},
+{
+"off": 70660,
+"vaddr": "0x3c031404",
+"s": "Alloca"
+},
+{
+"off": 70668,
+"vaddr": "0x3c03140c",
+"s": "IntegerDivideByZero"
+},
+{
+"off": 70688,
+"vaddr": "0x3c031420",
+"s": "PCValue"
+},
+{
+"off": 70696,
+"vaddr": "0x3c031428",
+"s": "Privileged"
+},
+{
+"off": 70708,
+"vaddr": "0x3c031434",
+"s": "LoadStoreAlignment"
+},
+{
+"off": 70728,
+"vaddr": "0x3c031448",
+"s": "InstrPDAddrError"
+},
+{
+"off": 70748,
+"vaddr": "0x3c03145c",
+"s": "LoadStorePIFDataError"
+},
+{
+"off": 70772,
+"vaddr": "0x3c031474",
+"s": "InstrPIFAddrError"
+},
+{
+"off": 70792,
+"vaddr": "0x3c031488",
+"s": "LoadStorePIFAddrError"
+},
+{
+"off": 70816,
+"vaddr": "0x3c0314a0",
+"s": "InstTLBMiss"
+},
+{
+"off": 70828,
+"vaddr": "0x3c0314ac",
+"s": "InstTLBMultiHit"
+},
+{
+"off": 70844,
+"vaddr": "0x3c0314bc",
+"s": "InstFetchPrivilege"
+},
+{
+"off": 70864,
+"vaddr": "0x3c0314d0",
+"s": "InstrFetchProhibited"
+},
+{
+"off": 70888,
+"vaddr": "0x3c0314e8",
+"s": "LoadStoreTLBMiss"
+},
+{
+"off": 70908,
+"vaddr": "0x3c0314fc",
+"s": "LoadStoreTLBMultihit"
+},
+{
+"off": 70932,
+"vaddr": "0x3c031514",
+"s": "LoadStorePrivilege"
+},
+{
+"off": 70952,
+"vaddr": "0x3c031528",
+"s": "LoadProhibited"
+},
+{
+"off": 70968,
+"vaddr": "0x3c031538",
+"s": "StoreProhibited"
+},
+{
+"off": 70984,
+"vaddr": "0x3c031548",
+"s": "Cp0Dis"
+},
+{
+"off": 70992,
+"vaddr": "0x3c031550",
+"s": "Cp1Dis"
+},
+{
+"off": 71000,
+"vaddr": "0x3c031558",
+"s": "Cp2Dis"
+},
+{
+"off": 71008,
+"vaddr": "0x3c031560",
+"s": "Cp3Dis"
+},
+{
+"off": 71016,
+"vaddr": "0x3c031568",
+"s": "Cp4Dis"
+},
+{
+"off": 71024,
+"vaddr": "0x3c031570",
+"s": "Cp5Dis"
+},
+{
+"off": 71032,
+"vaddr": "0x3c031578",
+"s": "Cp6Dis"
+},
+{
+"off": 71040,
+"vaddr": "0x3c031580",
+"s": "Cp7Dis"
+},
+{
+"off": 71052,
+"vaddr": "0x3c03158c",
+"s": "Backtrace:"
+},
+{
+"off": 71068,
+"vaddr": "0x3c03159c",
+"s": " 0x%08lX:0x%08lX"
+},
+{
+"off": 71088,
+"vaddr": "0x3c0315b0",
+"s": " |<-CORRUPTED"
+},
+{
+"off": 71104,
+"vaddr": "0x3c0315c0",
+"s": " |<-CONTINUES"
+},
+{
+"off": 71128,
+"vaddr": "0x3c0315d8",
+"s": "No Name"
+},
+{
+"off": 71137,
+"vaddr": "0x3c0315e1",
+"s": "[0;31mE (%lu) %s: %s(%d): Task snapshot alloc failed"
+},
+{
+"off": 71197,
+"vaddr": "0x3c03161d",
+"s": "[0;31mE (%lu) %s: %s(%d): IPC call failed"
+},
+{
+"off": 71244,
+"vaddr": "0x3c03164c",
+"s": "DBG HLPR"
+},
+{
+"off": 71256,
+"vaddr": "0x3c031658",
+"s": "cpuid == xPortGetCoreID()"
+},
+{
+"off": 71284,
+"vaddr": "0x3c031674",
+"s": "//IDF/components/esp_system/esp_ipc.c"
+},
+{
+"off": 71324,
+"vaddr": "0x3c03169c",
+"s": "res == pdTRUE"
+},
+{
+"off": 71348,
+"vaddr": "0x3c0316b4",
+"s": "ESP_FAIL"
+},
+{
+"off": 71360,
+"vaddr": "0x3c0316c0",
+"s": "ESP_OK"
+},
+{
+"off": 71368,
+"vaddr": "0x3c0316c8",
+"s": "ESP_ERR_NO_MEM"
+},
+{
+"off": 71384,
+"vaddr": "0x3c0316d8",
+"s": "ESP_ERR_INVALID_ARG"
+},
+{
+"off": 71404,
+"vaddr": "0x3c0316ec",
+"s": "ESP_ERR_INVALID_STATE"
+},
+{
+"off": 71428,
+"vaddr": "0x3c031704",
+"s": "ESP_ERR_INVALID_SIZE"
+},
+{
+"off": 71452,
+"vaddr": "0x3c03171c",
+"s": "ESP_ERR_NOT_FOUND"
+},
+{
+"off": 71472,
+"vaddr": "0x3c031730",
+"s": "ESP_ERR_NOT_SUPPORTED"
+},
+{
+"off": 71496,
+"vaddr": "0x3c031748",
+"s": "ESP_ERR_TIMEOUT"
+},
+{
+"off": 71512,
+"vaddr": "0x3c031758",
+"s": "ESP_ERR_INVALID_RESPONSE"
+},
+{
+"off": 71540,
+"vaddr": "0x3c031774",
+"s": "ESP_ERR_INVALID_CRC"
+},
+{
+"off": 71560,
+"vaddr": "0x3c031788",
+"s": "ESP_ERR_INVALID_VERSION"
+},
+{
+"off": 71584,
+"vaddr": "0x3c0317a0",
+"s": "ESP_ERR_INVALID_MAC"
+},
+{
+"off": 71604,
+"vaddr": "0x3c0317b4",
+"s": "ESP_ERR_NOT_FINISHED"
+},
+{
+"off": 71628,
+"vaddr": "0x3c0317cc",
+"s": "ESP_ERR_NOT_ALLOWED"
+},
+{
+"off": 71648,
+"vaddr": "0x3c0317e0",
+"s": "ESP_ERR_NVS_BASE"
+},
+{
+"off": 71668,
+"vaddr": "0x3c0317f4",
+"s": "ESP_ERR_NVS_NOT_INITIALIZED"
+},
+{
+"off": 71696,
+"vaddr": "0x3c031810",
+"s": "ESP_ERR_NVS_NOT_FOUND"
+},
+{
+"off": 71720,
+"vaddr": "0x3c031828",
+"s": "ESP_ERR_NVS_TYPE_MISMATCH"
+},
+{
+"off": 71748,
+"vaddr": "0x3c031844",
+"s": "ESP_ERR_NVS_READ_ONLY"
+},
+{
+"off": 71772,
+"vaddr": "0x3c03185c",
+"s": "ESP_ERR_NVS_NOT_ENOUGH_SPACE"
+},
+{
+"off": 71804,
+"vaddr": "0x3c03187c",
+"s": "ESP_ERR_NVS_INVALID_NAME"
+},
+{
+"off": 71832,
+"vaddr": "0x3c031898",
+"s": "ESP_ERR_NVS_INVALID_HANDLE"
+},
+{
+"off": 71860,
+"vaddr": "0x3c0318b4",
+"s": "ESP_ERR_NVS_REMOVE_FAILED"
+},
+{
+"off": 71888,
+"vaddr": "0x3c0318d0",
+"s": "ESP_ERR_NVS_KEY_TOO_LONG"
+},
+{
+"off": 71916,
+"vaddr": "0x3c0318ec",
+"s": "ESP_ERR_NVS_PAGE_FULL"
+},
+{
+"off": 71940,
+"vaddr": "0x3c031904",
+"s": "ESP_ERR_NVS_INVALID_STATE"
+},
+{
+"off": 71968,
+"vaddr": "0x3c031920",
+"s": "ESP_ERR_NVS_INVALID_LENGTH"
+},
+{
+"off": 71996,
+"vaddr": "0x3c03193c",
+"s": "ESP_ERR_NVS_NO_FREE_PAGES"
+},
+{
+"off": 72024,
+"vaddr": "0x3c031958",
+"s": "ESP_ERR_NVS_VALUE_TOO_LONG"
+},
+{
+"off": 72052,
+"vaddr": "0x3c031974",
+"s": "ESP_ERR_NVS_PART_NOT_FOUND"
+},
+{
+"off": 72080,
+"vaddr": "0x3c031990",
+"s": "ESP_ERR_NVS_NEW_VERSION_FOUND"
+},
+{
+"off": 72112,
+"vaddr": "0x3c0319b0",
+"s": "ESP_ERR_NVS_XTS_ENCR_FAILED"
+},
+{
+"off": 72140,
+"vaddr": "0x3c0319cc",
+"s": "ESP_ERR_NVS_XTS_DECR_FAILED"
+},
+{
+"off": 72168,
+"vaddr": "0x3c0319e8",
+"s": "ESP_ERR_NVS_XTS_CFG_FAILED"
+},
+{
+"off": 72196,
+"vaddr": "0x3c031a04",
+"s": "ESP_ERR_NVS_XTS_CFG_NOT_FOUND"
+},
+{
+"off": 72228,
+"vaddr": "0x3c031a24",
+"s": "ESP_ERR_NVS_ENCR_NOT_SUPPORTED"
+},
+{
+"off": 72260,
+"vaddr": "0x3c031a44",
+"s": "ESP_ERR_NVS_KEYS_NOT_INITIALIZED"
+},
+{
+"off": 72296,
+"vaddr": "0x3c031a68",
+"s": "ESP_ERR_NVS_CORRUPT_KEY_PART"
+},
+{
+"off": 72328,
+"vaddr": "0x3c031a88",
+"s": "ESP_ERR_NVS_CONTENT_DIFFERS"
+},
+{
+"off": 72356,
+"vaddr": "0x3c031aa4",
+"s": "ESP_ERR_NVS_WRONG_ENCRYPTION"
+},
+{
+"off": 72388,
+"vaddr": "0x3c031ac4",
+"s": "ESP_ERR_OTA_BASE"
+},
+{
+"off": 72408,
+"vaddr": "0x3c031ad8",
+"s": "ESP_ERR_OTA_PARTITION_CONFLICT"
+},
+{
+"off": 72440,
+"vaddr": "0x3c031af8",
+"s": "ESP_ERR_OTA_SELECT_INFO_INVALID"
+},
+{
+"off": 72472,
+"vaddr": "0x3c031b18",
+"s": "ESP_ERR_OTA_VALIDATE_FAILED"
+},
+{
+"off": 72500,
+"vaddr": "0x3c031b34",
+"s": "ESP_ERR_OTA_SMALL_SEC_VER"
+},
+{
+"off": 72528,
+"vaddr": "0x3c031b50",
+"s": "ESP_ERR_OTA_ROLLBACK_FAILED"
+},
+{
+"off": 72556,
+"vaddr": "0x3c031b6c",
+"s": "ESP_ERR_OTA_ROLLBACK_INVALID_STATE"
+},
+{
+"off": 72592,
+"vaddr": "0x3c031b90",
+"s": "ESP_ERR_EFUSE"
+},
+{
+"off": 72608,
+"vaddr": "0x3c031ba0",
+"s": "ESP_OK_EFUSE_CNT"
+},
+{
+"off": 72628,
+"vaddr": "0x3c031bb4",
+"s": "ESP_ERR_EFUSE_CNT_IS_FULL"
+},
+{
+"off": 72656,
+"vaddr": "0x3c031bd0",
+"s": "ESP_ERR_EFUSE_REPEATED_PROG"
+},
+{
+"off": 72684,
+"vaddr": "0x3c031bec",
+"s": "ESP_ERR_CODING"
+},
+{
+"off": 72700,
+"vaddr": "0x3c031bfc",
+"s": "ESP_ERR_NOT_ENOUGH_UNUSED_KEY_BLOCKS"
+},
+{
+"off": 72740,
+"vaddr": "0x3c031c24",
+"s": "ESP_ERR_DAMAGED_READING"
+},
+{
+"off": 72764,
+"vaddr": "0x3c031c3c",
+"s": "ESP_ERR_IMAGE_BASE"
+},
+{
+"off": 72784,
+"vaddr": "0x3c031c50",
+"s": "ESP_ERR_IMAGE_FLASH_FAIL"
+},
+{
+"off": 72812,
+"vaddr": "0x3c031c6c",
+"s": "ESP_ERR_IMAGE_INVALID"
+},
+{
+"off": 72836,
+"vaddr": "0x3c031c84",
+"s": "ESP_ERR_WIFI_BASE"
+},
+{
+"off": 72856,
+"vaddr": "0x3c031c98",
+"s": "ESP_ERR_WIFI_NOT_INIT"
+},
+{
+"off": 72880,
+"vaddr": "0x3c031cb0",
+"s": "ESP_ERR_WIFI_NOT_STARTED"
+},
+{
+"off": 72908,
+"vaddr": "0x3c031ccc",
+"s": "ESP_ERR_WIFI_NOT_STOPPED"
+},
+{
+"off": 72936,
+"vaddr": "0x3c031ce8",
+"s": "ESP_ERR_WIFI_IF"
+},
+{
+"off": 72952,
+"vaddr": "0x3c031cf8",
+"s": "ESP_ERR_WIFI_MODE"
+},
+{
+"off": 72972,
+"vaddr": "0x3c031d0c",
+"s": "ESP_ERR_WIFI_STATE"
+},
+{
+"off": 72992,
+"vaddr": "0x3c031d20",
+"s": "ESP_ERR_WIFI_CONN"
+},
+{
+"off": 73012,
+"vaddr": "0x3c031d34",
+"s": "ESP_ERR_WIFI_NVS"
+},
+{
+"off": 73032,
+"vaddr": "0x3c031d48",
+"s": "ESP_ERR_WIFI_MAC"
+},
+{
+"off": 73052,
+"vaddr": "0x3c031d5c",
+"s": "ESP_ERR_WIFI_SSID"
+},
+{
+"off": 73072,
+"vaddr": "0x3c031d70",
+"s": "ESP_ERR_WIFI_PASSWORD"
+},
+{
+"off": 73096,
+"vaddr": "0x3c031d88",
+"s": "ESP_ERR_WIFI_TIMEOUT"
+},
+{
+"off": 73120,
+"vaddr": "0x3c031da0",
+"s": "ESP_ERR_WIFI_WAKE_FAIL"
+},
+{
+"off": 73144,
+"vaddr": "0x3c031db8",
+"s": "ESP_ERR_WIFI_WOULD_BLOCK"
+},
+{
+"off": 73172,
+"vaddr": "0x3c031dd4",
+"s": "ESP_ERR_WIFI_NOT_CONNECT"
+},
+{
+"off": 73200,
+"vaddr": "0x3c031df0",
+"s": "ESP_ERR_WIFI_POST"
+},
+{
+"off": 73220,
+"vaddr": "0x3c031e04",
+"s": "ESP_ERR_WIFI_INIT_STATE"
+},
+{
+"off": 73244,
+"vaddr": "0x3c031e1c",
+"s": "ESP_ERR_WIFI_STOP_STATE"
+},
+{
+"off": 73268,
+"vaddr": "0x3c031e34",
+"s": "ESP_ERR_WIFI_NOT_ASSOC"
+},
+{
+"off": 73292,
+"vaddr": "0x3c031e4c",
+"s": "ESP_ERR_WIFI_TX_DISALLOW"
+},
+{
+"off": 73320,
+"vaddr": "0x3c031e68",
+"s": "ESP_ERR_WIFI_TWT_FULL"
+},
+{
+"off": 73344,
+"vaddr": "0x3c031e80",
+"s": "ESP_ERR_WIFI_TWT_SETUP_TIMEOUT"
+},
+{
+"off": 73376,
+"vaddr": "0x3c031ea0",
+"s": "ESP_ERR_WIFI_TWT_SETUP_TXFAIL"
+},
+{
+"off": 73408,
+"vaddr": "0x3c031ec0",
+"s": "ESP_ERR_WIFI_TWT_SETUP_REJECT"
+},
+{
+"off": 73440,
+"vaddr": "0x3c031ee0",
+"s": "ESP_ERR_WIFI_DISCARD"
+},
+{
+"off": 73464,
+"vaddr": "0x3c031ef8",
+"s": "ESP_ERR_WIFI_ROC_IN_PROGRESS"
+},
+{
+"off": 73496,
+"vaddr": "0x3c031f18",
+"s": "ESP_ERR_WIFI_REGISTRAR"
+},
+{
+"off": 73520,
+"vaddr": "0x3c031f30",
+"s": "ESP_ERR_WIFI_WPS_TYPE"
+},
+{
+"off": 73544,
+"vaddr": "0x3c031f48",
+"s": "ESP_ERR_WIFI_WPS_SM"
+},
+{
+"off": 73564,
+"vaddr": "0x3c031f5c",
+"s": "ESP_ERR_ESPNOW_BASE"
+},
+{
+"off": 73584,
+"vaddr": "0x3c031f70",
+"s": "ESP_ERR_ESPNOW_NOT_INIT"
+},
+{
+"off": 73608,
+"vaddr": "0x3c031f88",
+"s": "ESP_ERR_ESPNOW_ARG"
+},
+{
+"off": 73628,
+"vaddr": "0x3c031f9c",
+"s": "ESP_ERR_ESPNOW_NO_MEM"
+},
+{
+"off": 73652,
+"vaddr": "0x3c031fb4",
+"s": "ESP_ERR_ESPNOW_FULL"
+},
+{
+"off": 73672,
+"vaddr": "0x3c031fc8",
+"s": "ESP_ERR_ESPNOW_NOT_FOUND"
+},
+{
+"off": 73700,
+"vaddr": "0x3c031fe4",
+"s": "ESP_ERR_ESPNOW_INTERNAL"
+},
+{
+"off": 73724,
+"vaddr": "0x3c031ffc",
+"s": "ESP_ERR_ESPNOW_EXIST"
+},
+{
+"off": 73748,
+"vaddr": "0x3c032014",
+"s": "ESP_ERR_ESPNOW_IF"
+},
+{
+"off": 73768,
+"vaddr": "0x3c032028",
+"s": "ESP_ERR_ESPNOW_CHAN"
+},
+{
+"off": 73788,
+"vaddr": "0x3c03203c",
+"s": "ESP_ERR_DPP_FAILURE"
+},
+{
+"off": 73808,
+"vaddr": "0x3c032050",
+"s": "ESP_ERR_DPP_TX_FAILURE"
+},
+{
+"off": 73832,
+"vaddr": "0x3c032068",
+"s": "ESP_ERR_DPP_INVALID_ATTR"
+},
+{
+"off": 73860,
+"vaddr": "0x3c032084",
+"s": "ESP_ERR_DPP_AUTH_TIMEOUT"
+},
+{
+"off": 73888,
+"vaddr": "0x3c0320a0",
+"s": "ESP_ERR_DPP_INVALID_LIST"
+},
+{
+"off": 73916,
+"vaddr": "0x3c0320bc",
+"s": "ESP_ERR_MESH_BASE"
+},
+{
+"off": 73936,
+"vaddr": "0x3c0320d0",
+"s": "ESP_ERR_MESH_WIFI_NOT_START"
+},
+{
+"off": 73964,
+"vaddr": "0x3c0320ec",
+"s": "ESP_ERR_MESH_NOT_INIT"
+},
+{
+"off": 73988,
+"vaddr": "0x3c032104",
+"s": "ESP_ERR_MESH_NOT_CONFIG"
+},
+{
+"off": 74012,
+"vaddr": "0x3c03211c",
+"s": "ESP_ERR_MESH_NOT_START"
+},
+{
+"off": 74036,
+"vaddr": "0x3c032134",
+"s": "ESP_ERR_MESH_NOT_SUPPORT"
+},
+{
+"off": 74064,
+"vaddr": "0x3c032150",
+"s": "ESP_ERR_MESH_NOT_ALLOWED"
+},
+{
+"off": 74092,
+"vaddr": "0x3c03216c",
+"s": "ESP_ERR_MESH_NO_MEMORY"
+},
+{
+"off": 74116,
+"vaddr": "0x3c032184",
+"s": "ESP_ERR_MESH_ARGUMENT"
+},
+{
+"off": 74140,
+"vaddr": "0x3c03219c",
+"s": "ESP_ERR_MESH_EXCEED_MTU"
+},
+{
+"off": 74164,
+"vaddr": "0x3c0321b4",
+"s": "ESP_ERR_MESH_TIMEOUT"
+},
+{
+"off": 74188,
+"vaddr": "0x3c0321cc",
+"s": "ESP_ERR_MESH_DISCONNECTED"
+},
+{
+"off": 74216,
+"vaddr": "0x3c0321e8",
+"s": "ESP_ERR_MESH_QUEUE_FAIL"
+},
+{
+"off": 74240,
+"vaddr": "0x3c032200",
+"s": "ESP_ERR_MESH_QUEUE_FULL"
+},
+{
+"off": 74264,
+"vaddr": "0x3c032218",
+"s": "ESP_ERR_MESH_NO_PARENT_FOUND"
+},
+{
+"off": 74296,
+"vaddr": "0x3c032238",
+"s": "ESP_ERR_MESH_NO_ROUTE_FOUND"
+},
+{
+"off": 74324,
+"vaddr": "0x3c032254",
+"s": "ESP_ERR_MESH_OPTION_NULL"
+},
+{
+"off": 74352,
+"vaddr": "0x3c032270",
+"s": "ESP_ERR_MESH_OPTION_UNKNOWN"
+},
+{
+"off": 74380,
+"vaddr": "0x3c03228c",
+"s": "ESP_ERR_MESH_XON_NO_WINDOW"
+},
+{
+"off": 74408,
+"vaddr": "0x3c0322a8",
+"s": "ESP_ERR_MESH_INTERFACE"
+},
+{
+"off": 74432,
+"vaddr": "0x3c0322c0",
+"s": "ESP_ERR_MESH_DISCARD_DUPLICATE"
+},
+{
+"off": 74464,
+"vaddr": "0x3c0322e0",
+"s": "ESP_ERR_MESH_DISCARD"
+},
+{
+"off": 74488,
+"vaddr": "0x3c0322f8",
+"s": "ESP_ERR_MESH_VOTING"
+},
+{
+"off": 74508,
+"vaddr": "0x3c03230c",
+"s": "ESP_ERR_MESH_XMIT"
+},
+{
+"off": 74528,
+"vaddr": "0x3c032320",
+"s": "ESP_ERR_MESH_QUEUE_READ"
+},
+{
+"off": 74552,
+"vaddr": "0x3c032338",
+"s": "ESP_ERR_MESH_PS"
+},
+{
+"off": 74568,
+"vaddr": "0x3c032348",
+"s": "ESP_ERR_MESH_RECV_RELEASE"
+},
+{
+"off": 74596,
+"vaddr": "0x3c032364",
+"s": "ESP_ERR_ESP_NETIF_BASE"
+},
+{
+"off": 74620,
+"vaddr": "0x3c03237c",
+"s": "ESP_ERR_ESP_NETIF_INVALID_PARAMS"
+},
+{
+"off": 74656,
+"vaddr": "0x3c0323a0",
+"s": "ESP_ERR_ESP_NETIF_IF_NOT_READY"
+},
+{
+"off": 74688,
+"vaddr": "0x3c0323c0",
+"s": "ESP_ERR_ESP_NETIF_DHCPC_START_FAILED"
+},
+{
+"off": 74728,
+"vaddr": "0x3c0323e8",
+"s": "ESP_ERR_ESP_NETIF_DHCP_ALREADY_STARTED"
+},
+{
+"off": 74768,
+"vaddr": "0x3c032410",
+"s": "ESP_ERR_ESP_NETIF_DHCP_ALREADY_STOPPED"
+},
+{
+"off": 74808,
+"vaddr": "0x3c032438",
+"s": "ESP_ERR_ESP_NETIF_NO_MEM"
+},
+{
+"off": 74836,
+"vaddr": "0x3c032454",
+"s": "ESP_ERR_ESP_NETIF_DHCP_NOT_STOPPED"
+},
+{
+"off": 74872,
+"vaddr": "0x3c032478",
+"s": "ESP_ERR_ESP_NETIF_DRIVER_ATTACH_FAILED"
+},
+{
+"off": 74912,
+"vaddr": "0x3c0324a0",
+"s": "ESP_ERR_ESP_NETIF_INIT_FAILED"
+},
+{
+"off": 74944,
+"vaddr": "0x3c0324c0",
+"s": "ESP_ERR_ESP_NETIF_DNS_NOT_CONFIGURED"
+},
+{
+"off": 74984,
+"vaddr": "0x3c0324e8",
+"s": "ESP_ERR_ESP_NETIF_MLD6_FAILED"
+},
+{
+"off": 75016,
+"vaddr": "0x3c032508",
+"s": "ESP_ERR_ESP_NETIF_IP6_ADDR_FAILED"
+},
+{
+"off": 75052,
+"vaddr": "0x3c03252c",
+"s": "ESP_ERR_ESP_NETIF_DHCPS_START_FAILED"
+},
+{
+"off": 75092,
+"vaddr": "0x3c032554",
+"s": "ESP_ERR_ESP_NETIF_TX_FAILED"
+},
+{
+"off": 75120,
+"vaddr": "0x3c032570",
+"s": "ESP_ERR_FLASH_BASE"
+},
+{
+"off": 75140,
+"vaddr": "0x3c032584",
+"s": "ESP_ERR_FLASH_OP_FAIL"
+},
+{
+"off": 75164,
+"vaddr": "0x3c03259c",
+"s": "ESP_ERR_FLASH_OP_TIMEOUT"
+},
+{
+"off": 75192,
+"vaddr": "0x3c0325b8",
+"s": "ESP_ERR_FLASH_NOT_INITIALISED"
+},
+{
+"off": 75224,
+"vaddr": "0x3c0325d8",
+"s": "ESP_ERR_FLASH_UNSUPPORTED_HOST"
+},
+{
+"off": 75256,
+"vaddr": "0x3c0325f8",
+"s": "ESP_ERR_FLASH_UNSUPPORTED_CHIP"
+},
+{
+"off": 75288,
+"vaddr": "0x3c032618",
+"s": "ESP_ERR_FLASH_PROTECTED"
+},
+{
+"off": 75312,
+"vaddr": "0x3c032630",
+"s": "ESP_ERR_HTTP_BASE"
+},
+{
+"off": 75332,
+"vaddr": "0x3c032644",
+"s": "ESP_ERR_HTTP_MAX_REDIRECT"
+},
+{
+"off": 75360,
+"vaddr": "0x3c032660",
+"s": "ESP_ERR_HTTP_CONNECT"
+},
+{
+"off": 75384,
+"vaddr": "0x3c032678",
+"s": "ESP_ERR_HTTP_WRITE_DATA"
+},
+{
+"off": 75408,
+"vaddr": "0x3c032690",
+"s": "ESP_ERR_HTTP_FETCH_HEADER"
+},
+{
+"off": 75436,
+"vaddr": "0x3c0326ac",
+"s": "ESP_ERR_HTTP_INVALID_TRANSPORT"
+},
+{
+"off": 75468,
+"vaddr": "0x3c0326cc",
+"s": "ESP_ERR_HTTP_CONNECTING"
+},
+{
+"off": 75492,
+"vaddr": "0x3c0326e4",
+"s": "ESP_ERR_HTTP_EAGAIN"
+},
+{
+"off": 75512,
+"vaddr": "0x3c0326f8",
+"s": "ESP_ERR_HTTP_CONNECTION_CLOSED"
+},
+{
+"off": 75544,
+"vaddr": "0x3c032718",
+"s": "ESP_ERR_ESP_TLS_BASE"
+},
+{
+"off": 75568,
+"vaddr": "0x3c032730",
+"s": "ESP_ERR_ESP_TLS_CANNOT_RESOLVE_HOSTNAME"
+},
+{
+"off": 75608,
+"vaddr": "0x3c032758",
+"s": "ESP_ERR_ESP_TLS_CANNOT_CREATE_SOCKET"
+},
+{
+"off": 75648,
+"vaddr": "0x3c032780",
+"s": "ESP_ERR_ESP_TLS_UNSUPPORTED_PROTOCOL_FAMILY"
+},
+{
+"off": 75692,
+"vaddr": "0x3c0327ac",
+"s": "ESP_ERR_ESP_TLS_FAILED_CONNECT_TO_HOST"
+},
+{
+"off": 75732,
+"vaddr": "0x3c0327d4",
+"s": "ESP_ERR_ESP_TLS_SOCKET_SETOPT_FAILED"
+},
+{
+"off": 75772,
+"vaddr": "0x3c0327fc",
+"s": "ESP_ERR_ESP_TLS_CONNECTION_TIMEOUT"
+},
+{
+"off": 75808,
+"vaddr": "0x3c032820",
+"s": "ESP_ERR_ESP_TLS_SE_FAILED"
+},
+{
+"off": 75836,
+"vaddr": "0x3c03283c",
+"s": "ESP_ERR_ESP_TLS_TCP_CLOSED_FIN"
+},
+{
+"off": 75868,
+"vaddr": "0x3c03285c",
+"s": "ESP_ERR_MBEDTLS_CERT_PARTLY_OK"
+},
+{
+"off": 75900,
+"vaddr": "0x3c03287c",
+"s": "ESP_ERR_MBEDTLS_CTR_DRBG_SEED_FAILED"
+},
+{
+"off": 75940,
+"vaddr": "0x3c0328a4",
+"s": "ESP_ERR_MBEDTLS_SSL_SET_HOSTNAME_FAILED"
+},
+{
+"off": 75980,
+"vaddr": "0x3c0328cc",
+"s": "ESP_ERR_MBEDTLS_SSL_CONFIG_DEFAULTS_FAILED"
+},
+{
+"off": 76024,
+"vaddr": "0x3c0328f8",
+"s": "ESP_ERR_MBEDTLS_SSL_CONF_ALPN_PROTOCOLS_FAILED"
+},
+{
+"off": 76072,
+"vaddr": "0x3c032928",
+"s": "ESP_ERR_MBEDTLS_X509_CRT_PARSE_FAILED"
+},
+{
+"off": 76112,
+"vaddr": "0x3c032950",
+"s": "ESP_ERR_MBEDTLS_SSL_CONF_OWN_CERT_FAILED"
+},
+{
+"off": 76156,
+"vaddr": "0x3c03297c",
+"s": "ESP_ERR_MBEDTLS_SSL_SETUP_FAILED"
+},
+{
+"off": 76192,
+"vaddr": "0x3c0329a0",
+"s": "ESP_ERR_MBEDTLS_SSL_WRITE_FAILED"
+},
+{
+"off": 76228,
+"vaddr": "0x3c0329c4",
+"s": "ESP_ERR_MBEDTLS_PK_PARSE_KEY_FAILED"
+},
+{
+"off": 76264,
+"vaddr": "0x3c0329e8",
+"s": "ESP_ERR_MBEDTLS_SSL_HANDSHAKE_FAILED"
+},
+{
+"off": 76304,
+"vaddr": "0x3c032a10",
+"s": "ESP_ERR_MBEDTLS_SSL_CONF_PSK_FAILED"
+},
+{
+"off": 76340,
+"vaddr": "0x3c032a34",
+"s": "ESP_ERR_MBEDTLS_SSL_TICKET_SETUP_FAILED"
+},
+{
+"off": 76380,
+"vaddr": "0x3c032a5c",
+"s": "ESP_ERR_WOLFSSL_SSL_SET_HOSTNAME_FAILED"
+},
+{
+"off": 76420,
+"vaddr": "0x3c032a84",
+"s": "ESP_ERR_WOLFSSL_SSL_CONF_ALPN_PROTOCOLS_FAILED"
+},
+{
+"off": 76468,
+"vaddr": "0x3c032ab4",
+"s": "ESP_ERR_WOLFSSL_CERT_VERIFY_SETUP_FAILED"
+},
+{
+"off": 76512,
+"vaddr": "0x3c032ae0",
+"s": "ESP_ERR_WOLFSSL_KEY_VERIFY_SETUP_FAILED"
+},
+{
+"off": 76552,
+"vaddr": "0x3c032b08",
+"s": "ESP_ERR_WOLFSSL_SSL_HANDSHAKE_FAILED"
+},
+{
+"off": 76592,
+"vaddr": "0x3c032b30",
+"s": "ESP_ERR_WOLFSSL_CTX_SETUP_FAILED"
+},
+{
+"off": 76628,
+"vaddr": "0x3c032b54",
+"s": "ESP_ERR_WOLFSSL_SSL_SETUP_FAILED"
+},
+{
+"off": 76664,
+"vaddr": "0x3c032b78",
+"s": "ESP_ERR_WOLFSSL_SSL_WRITE_FAILED"
+},
+{
+"off": 76700,
+"vaddr": "0x3c032b9c",
+"s": "ESP_ERR_HTTPS_OTA_BASE"
+},
+{
+"off": 76724,
+"vaddr": "0x3c032bb4",
+"s": "ESP_ERR_HTTPS_OTA_IN_PROGRESS"
+},
+{
+"off": 76756,
+"vaddr": "0x3c032bd4",
+"s": "ESP_ERR_PING_BASE"
+},
+{
+"off": 76776,
+"vaddr": "0x3c032be8",
+"s": "ESP_ERR_PING_INVALID_PARAMS"
+},
+{
+"off": 76804,
+"vaddr": "0x3c032c04",
+"s": "ESP_ERR_PING_NO_MEM"
+},
+{
+"off": 76824,
+"vaddr": "0x3c032c18",
+"s": "ESP_ERR_HTTPD_BASE"
+},
+{
+"off": 76844,
+"vaddr": "0x3c032c2c",
+"s": "ESP_ERR_HTTPD_HANDLERS_FULL"
+},
+{
+"off": 76872,
+"vaddr": "0x3c032c48",
+"s": "ESP_ERR_HTTPD_HANDLER_EXISTS"
+},
+{
+"off": 76904,
+"vaddr": "0x3c032c68",
+"s": "ESP_ERR_HTTPD_INVALID_REQ"
+},
+{
+"off": 76932,
+"vaddr": "0x3c032c84",
+"s": "ESP_ERR_HTTPD_RESULT_TRUNC"
+},
+{
+"off": 76960,
+"vaddr": "0x3c032ca0",
+"s": "ESP_ERR_HTTPD_RESP_HDR"
+},
+{
+"off": 76984,
+"vaddr": "0x3c032cb8",
+"s": "ESP_ERR_HTTPD_RESP_SEND"
+},
+{
+"off": 77008,
+"vaddr": "0x3c032cd0",
+"s": "ESP_ERR_HTTPD_ALLOC_MEM"
+},
+{
+"off": 77032,
+"vaddr": "0x3c032ce8",
+"s": "ESP_ERR_HTTPD_TASK"
+},
+{
+"off": 77052,
+"vaddr": "0x3c032cfc",
+"s": "ESP_ERR_HW_CRYPTO_BASE"
+},
+{
+"off": 77076,
+"vaddr": "0x3c032d14",
+"s": "ESP_ERR_HW_CRYPTO_DS_HMAC_FAIL"
+},
+{
+"off": 77108,
+"vaddr": "0x3c032d34",
+"s": "ESP_ERR_HW_CRYPTO_DS_INVALID_KEY"
+},
+{
+"off": 77144,
+"vaddr": "0x3c032d58",
+"s": "ESP_ERR_HW_CRYPTO_DS_INVALID_DIGEST"
+},
+{
+"off": 77180,
+"vaddr": "0x3c032d7c",
+"s": "ESP_ERR_HW_CRYPTO_DS_INVALID_PADDING"
+},
+{
+"off": 77220,
+"vaddr": "0x3c032da4",
+"s": "ESP_ERR_MEMPROT_BASE"
+},
+{
+"off": 77244,
+"vaddr": "0x3c032dbc",
+"s": "ESP_ERR_MEMPROT_MEMORY_TYPE_INVALID"
+},
+{
+"off": 77280,
+"vaddr": "0x3c032de0",
+"s": "ESP_ERR_MEMPROT_SPLIT_ADDR_INVALID"
+},
+{
+"off": 77316,
+"vaddr": "0x3c032e04",
+"s": "ESP_ERR_MEMPROT_SPLIT_ADDR_OUT_OF_RANGE"
+},
+{
+"off": 77356,
+"vaddr": "0x3c032e2c",
+"s": "ESP_ERR_MEMPROT_SPLIT_ADDR_UNALIGNED"
+},
+{
+"off": 77396,
+"vaddr": "0x3c032e54",
+"s": "ESP_ERR_MEMPROT_UNIMGMT_BLOCK_INVALID"
+},
+{
+"off": 77436,
+"vaddr": "0x3c032e7c",
+"s": "ESP_ERR_MEMPROT_WORLD_INVALID"
+},
+{
+"off": 77468,
+"vaddr": "0x3c032e9c",
+"s": "ESP_ERR_MEMPROT_AREA_INVALID"
+},
+{
+"off": 77500,
+"vaddr": "0x3c032ebc",
+"s": "ESP_ERR_MEMPROT_CPUID_INVALID"
+},
+{
+"off": 77532,
+"vaddr": "0x3c032edc",
+"s": "block < ETS_EFUSE_BLOCK_MAX"
+},
+{
+"off": 77564,
+"vaddr": "0x3c032efc",
+"s": "/IDF/components/hal/esp32s3/include/hal/efuse_ll.h"
+},
+{
+"off": 77616,
+"vaddr": "0x3c032f30",
+"s": "i == 0 || s_log_cache[(i - 1) / 2].generation < s_log_cache[i].generation"
+},
+{
+"off": 77692,
+"vaddr": "0x3c032f7c",
+"s": "//IDF/components/log/src/log_level/tag_log_level/cache/log_binary_heap.c"
+},
+{
+"off": 77768,
+"vaddr": "0x3c032fc8",
+"s": "heap_size <= HEAP_SIZE_MAX"
+},
+{
+"off": 77796,
+"vaddr": "0x3c032fe4",
+"s": "//IDF/components/heap/heap_caps_init.c"
+},
+{
+"off": 77836,
+"vaddr": "0x3c03300c",
+"s": "heap_init"
+},
+{
+"off": 77848,
+"vaddr": "0x3c033018",
+"s": "D (%lu) %s: New heap initialised at %p"
+},
+{
+"off": 77893,
+"vaddr": "0x3c033045",
+"s": "[0;32mI (%lu) %s: Initializing. RAM available for dynamic allocation:"
+},
+{
+"off": 77968,
+"vaddr": "0x3c033090",
+"s": "heap_idx <= num_heaps"
+},
+{
+"off": 77993,
+"vaddr": "0x3c0330a9",
+"s": "[0;32mI (%lu) %s: At %08X len %08X (%d KiB): %s"
+},
+{
+"off": 78048,
+"vaddr": "0x3c0330e0",
+"s": "heap_idx == num_heaps"
+},
+{
+"off": 78072,
+"vaddr": "0x3c0330f8",
+"s": "SLIST_EMPTY(&registered_heaps)"
+},
+{
+"off": 78104,
+"vaddr": "0x3c033118",
+"s": "heaps_array != NULL"
+},
+{
+"off": 78124,
+"vaddr": "0x3c03312c",
+"s": "CORRUPT HEAP: multi_heap.c:%d detected at 0x%08x"
+},
+{
+"off": 78176,
+"vaddr": "0x3c033160",
+"s": "start_ptr"
+},
+{
+"off": 78188,
+"vaddr": "0x3c03316c",
+"s": "//IDF/components/heap/multi_heap.c"
+},
+{
+"off": 78224,
+"vaddr": "0x3c033190",
+"s": "heap != NULL"
+},
+{
+"off": 78257,
+"vaddr": "0x3c0331b1",
+"s": "%p %s size: %x (%p)"
+},
+{
+"off": 78280,
+"vaddr": "0x3c0331c8",
+"s": "!block_is_last(block)"
+},
+{
+"off": 78304,
+"vaddr": "0x3c0331e0",
+"s": "//IDF/components/heap/tlsf/tlsf_block_functions.h"
+},
+{
+"off": 78356,
+"vaddr": "0x3c033214",
+"s": "tlsf_add_pool: Memory must be aligned by %u bytes."
+},
+{
+"off": 78408,
+"vaddr": "0x3c033248",
+"s": "tlsf_add_pool: Memory size must be between %u and %u bytes."
+},
+{
+"off": 78472,
+"vaddr": "0x3c033288",
+"s": "current && \"free list cannot have a null entry\""
+},
+{
+"off": 78520,
+"vaddr": "0x3c0332b8",
+"s": "//IDF/components/heap/tlsf/tlsf_control_functions.h"
+},
+{
+"off": 78572,
+"vaddr": "0x3c0332ec",
+"s": "block_to_ptr(block) == align_ptr(block_to_ptr(block), ALIGN_SIZE) && \"block not aligned properly\""
+},
+{
+"off": 78672,
+"vaddr": "0x3c033350",
+"s": "block_is_free(block) && \"block should be free\""
+},
+{
+"off": 78720,
+"vaddr": "0x3c033380",
+"s": "//IDF/components/heap/tlsf/tlsf.c"
+},
+{
+"off": 78756,
+"vaddr": "0x3c0333a4",
+"s": "!block_is_free(block_next(block)) && \"next block should not be free\""
+},
+{
+"off": 78828,
+"vaddr": "0x3c0333ec",
+"s": "block_size(block_next(block)) == 0 && \"next block size should be zero\""
+},
+{
+"off": 78900,
+"vaddr": "0x3c033434",
+"s": "prev && \"prev_free field can not be null\""
+},
+{
+"off": 78944,
+"vaddr": "0x3c033460",
+"s": "next && \"next_free field can not be null\""
+},
+{
+"off": 78988,
+"vaddr": "0x3c03348c",
+"s": "tlsf_create: Memory must be aligned to %u bytes."
+},
+{
+"off": 79040,
+"vaddr": "0x3c0334c0",
+"s": "ALIGN_SIZE == control->small_block_size / control->sl_index_count"
+},
+{
+"off": 79108,
+"vaddr": "0x3c033504",
+"s": "0 == (align & (align - 1)) && \"must align to a power of two\""
+},
+{
+"off": 79172,
+"vaddr": "0x3c033544",
+"s": "sl_map && \"internal error - second level bitmap is null\""
+},
+{
+"off": 79232,
+"vaddr": "0x3c033580",
+"s": "block_size(block) >= *size"
+},
+{
+"off": 79260,
+"vaddr": "0x3c03359c",
+"s": "size && \"size must be non-zero\""
+},
+{
+"off": 79292,
+"vaddr": "0x3c0335bc",
+"s": "block_is_free(block) && \"block must be free\""
+},
+{
+"off": 79340,
+"vaddr": "0x3c0335ec",
+"s": "block_to_ptr(remaining) == align_ptr(block_to_ptr(remaining), ALIGN_SIZE) && \"remaining block not aligned properly\""
+},
+{
+"off": 79456,
+"vaddr": "0x3c033660",
+"s": "block_size(block) == remain_size + size + block_header_overhead"
+},
+{
+"off": 79520,
+"vaddr": "0x3c0336a0",
+"s": "block_size(remaining) >= block_size_min && \"block split with invalid size\""
+},
+{
+"off": 79596,
+"vaddr": "0x3c0336ec",
+"s": "gap >= gap_minimum && \"gap size too small\""
+},
+{
+"off": 79640,
+"vaddr": "0x3c033718",
+"s": "!block_is_free(block) && \"block already marked as free\""
+},
+{
+"off": 79696,
+"vaddr": "0x3c033750",
+"s": "prev && \"prev physical block can't be null\""
+},
+{
+"off": 79740,
+"vaddr": "0x3c03377c",
+"s": "block_is_free(prev) && \"prev block is not free though marked as such\""
+},
+{
+"off": 79812,
+"vaddr": "0x3c0337c4",
+"s": "!block_is_last(prev) && \"previous block can't be last\""
+},
+{
+"off": 79868,
+"vaddr": "0x3c0337fc",
+"s": "next && \"next physical block can't be null\""
+},
+{
+"off": 79912,
+"vaddr": "0x3c033828",
+"s": "memory_layout"
+},
+{
+"off": 79928,
+"vaddr": "0x3c033838",
+"s": "D (%lu) %s: Checking %d reserved memory ranges:"
+},
+{
+"off": 79984,
+"vaddr": "0x3c033870",
+"s": "D (%lu) %s: Reserved memory range 0x%08x - 0x%08x"
+},
+{
+"off": 80040,
+"vaddr": "0x3c0338a8",
+"s": "reserved[i].start <= reserved[i].end"
+},
+{
+"off": 80080,
+"vaddr": "0x3c0338d0",
+"s": "//IDF/components/heap/port/memory_layout_utils.c"
+},
+{
+"off": 80132,
+"vaddr": "0x3c033904",
+"s": "reserved[i + 1].start > reserved[i].start"
+},
+{
+"off": 80177,
+"vaddr": "0x3c033931",
+"s": "[0;31mE (%lu) %s: SOC_RESERVE_MEMORY_REGION region range 0x%08x - 0x%08x overlaps with 0x%08x - 0x%08x"
+},
+{
+"off": 80288,
+"vaddr": "0x3c0339a0",
+"s": "D (%lu) %s: Building list of available memory regions:"
+},
+{
+"off": 80348,
+"vaddr": "0x3c0339dc",
+"s": "D (%lu) %s: Available memory region 0x%08x - 0x%08x"
+},
+{
+"off": 80428,
+"vaddr": "0x3c033a2c",
+"s": "SPIRAM"
+},
+{
+"off": 80436,
+"vaddr": "0x3c033a34",
+"s": "RTCRAM"
+},
+{
+"off": 80444,
+"vaddr": "0x3c033a3c",
+"s": "heap != NULL && \"free() target pointer is outside heap areas\""
+},
+{
+"off": 80508,
+"vaddr": "0x3c033a7c",
+"s": "//IDF/components/heap/heap_caps_base.c"
+},
+{
+"off": 80548,
+"vaddr": "0x3c033aa4",
+"s": "esp_ptr_in_diram_dram((void *)dstart) || esp_ptr_in_rtc_dram_fast((void *)dstart)"
+},
+{
+"off": 80632,
+"vaddr": "0x3c033af8",
+"s": "esp_ptr_in_diram_dram((void *)dend) || esp_ptr_in_rtc_dram_fast((void *)dend)"
+},
+{
+"off": 80712,
+"vaddr": "0x3c033b48",
+"s": "(dstart & 3) == 0"
+},
+{
+"off": 80732,
+"vaddr": "0x3c033b5c",
+"s": "(dend & 3) == 0"
+},
+{
+"off": 80748,
+"vaddr": "0x3c033b6c",
+"s": "heap != NULL && \"realloc() pointer is outside heap areas\""
+},
+{
+"off": 80808,
+"vaddr": "0x3c033ba8",
+"s": "old_size > 0"
+},
+{
+"off": 80824,
+"vaddr": "0x3c033bb8",
+"s": "core_id >= 0 && core_id < SOC_CPU_CORES_NUM"
+},
+{
+"off": 80868,
+"vaddr": "0x3c033be4",
+"s": "//IDF/components/esp_hw_support/cpu.c"
+},
+{
+"off": 80908,
+"vaddr": "0x3c033c0c",
+"s": "!((vd->flags & VECDESC_FL_SHARED) && (vd->flags & VECDESC_FL_NONSHARED))"
+},
+{
+"off": 80984,
+"vaddr": "0x3c033c58",
+"s": "//IDF/components/esp_hw_support/intr_alloc.c"
+},
+{
+"off": 81032,
+"vaddr": "0x3c033c88",
+"s": "svd != NULL"
+},
+{
+"off": 81044,
+"vaddr": "0x3c033c94",
+"s": "intr_alloc"
+},
+{
+"off": 81057,
+"vaddr": "0x3c033ca1",
+"s": "[0;31mE (%lu) %s: No free interrupt inputs for %s interrupt (flags 0x%X)"
+},
+{
+"off": 81136,
+"vaddr": "0x3c033cf0",
+"s": "intr_num >= 0 && intr_num < SOC_CPU_INTR_NUM"
+},
+{
+"off": 81184,
+"vaddr": "0x3c033d20",
+"s": "//IDF/components/esp_hw_support/include/esp_cpu.h"
+},
+{
+"off": 81236,
+"vaddr": "0x3c033d54",
+"s": "D (%lu) %s: Connected src %d to int %d (cpu %lu)"
+},
+{
+"off": 81296,
+"vaddr": "0x3c033d90",
+"s": "periph < PERIPH_MODULE_MAX"
+},
+{
+"off": 81324,
+"vaddr": "0x3c033dac",
+"s": "//IDF/components/esp_hw_support/periph_ctrl.c"
+},
+{
+"off": 81372,
+"vaddr": "0x3c033ddc",
+"s": "sleep_gpio"
+},
+{
+"off": 81385,
+"vaddr": "0x3c033de9",
+"s": "[0;32mI (%lu) %s: Configure to isolate all GPIO pins in sleep state"
+},
+{
+"off": 81460,
+"vaddr": "0x3c033e34",
+"s": "Enable"
+},
+{
+"off": 81468,
+"vaddr": "0x3c033e3c",
+"s": "Disable"
+},
+{
+"off": 81477,
+"vaddr": "0x3c033e45",
+"s": "[0;32mI (%lu) %s: %s automatic switching of GPIO sleep configuration"
+},
+{
+"off": 81552,
+"vaddr": "0x3c033e90",
+"s": "rtcinit"
+},
+{
+"off": 81561,
+"vaddr": "0x3c033e99",
+"s": "[0;33mW (%lu) %s: o_code calibration fail"
+},
+{
+"off": 81612,
+"vaddr": "0x3c033ecc",
+"s": "D (%lu) %s: not burn core voltage in efuse or burn wrong voltage value in blk version: 0%d"
+},
+{
+"off": 81712,
+"vaddr": "0x3c033f30",
+"s": "D (%lu) %s: core voltage not decided in efuse, use default value."
+},
+{
+"off": 81784,
+"vaddr": "0x3c033f78",
+"s": "slowclk_cycles"
+},
+{
+"off": 81800,
+"vaddr": "0x3c033f88",
+"s": "//IDF/components/esp_hw_support/port/esp32s3/rtc_time.c"
+},
+{
+"off": 81856,
+"vaddr": "0x3c033fc0",
+"s": "period"
+},
+{
+"off": 81864,
+"vaddr": "0x3c033fc8",
+"s": "Fatal error: Main I/D split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 81960,
+"vaddr": "0x3c034028",
+"s": "Fatal error: IRAM0 I_0 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82056,
+"vaddr": "0x3c034088",
+"s": "Fatal error: IRAM0 I_1 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82152,
+"vaddr": "0x3c0340e8",
+"s": "Fatal error: DRAM0 D_0 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82248,
+"vaddr": "0x3c034148",
+"s": "Fatal error: DRAM0 D_1 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82344,
+"vaddr": "0x3c0341a8",
+"s": "Fatal error: IRAM0 PMS AREA_0 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82436,
+"vaddr": "0x3c034204",
+"s": "Fatal error: IRAM0 PMS AREA_1 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82528,
+"vaddr": "0x3c034260",
+"s": "Fatal error: IRAM0 PMS AREA_2 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82620,
+"vaddr": "0x3c0342bc",
+"s": "Fatal error: IRAM0 PMS AREA_3 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82712,
+"vaddr": "0x3c034318",
+"s": "Fatal error: DRAM0 PMS AREA_0 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82804,
+"vaddr": "0x3c034374",
+"s": "Fatal error: DRAM0 PMS AREA_1 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82896,
+"vaddr": "0x3c0343d0",
+"s": "Fatal error: DRAM0 PMS AREA_2 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 82988,
+"vaddr": "0x3c03442c",
+"s": "Fatal error: DRAM0 PMS AREA_3 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+},
+{
+"off": 83080,
+"vaddr": "0x3c034488",
+"s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not enabled on core %d)"
+},
+{
+"off": 83172,
+"vaddr": "0x3c0344e4",
+"s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not enabled on core %d)"
+},
+{
+"off": 83264,
+"vaddr": "0x3c034540",
+"s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - split address lock)"
+},
+{
+"off": 83364,
+"vaddr": "0x3c0345a4",
+"s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - global PMS lock)"
+},
+{
+"off": 83464,
+"vaddr": "0x3c034608",
+"s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - monitor lock on core %d)"
+},
+{
+"off": 83572,
+"vaddr": "0x3c034674",
+"s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not locked - split address lock)"
+},
+{
+"off": 83672,
+"vaddr": "0x3c0346d8",
+"s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not locked - global PMS lock)"
+},
+{
+"off": 83772,
+"vaddr": "0x3c03473c",
+"s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not locked - monitor lock on core %d)"
+},
+{
+"off": 83880,
+"vaddr": "0x3c0347a8",
+"s": "core_id >= 0 && core_id < SOC_CPU_CORES_NUM && intr_desc_ret != NULL"
+},
+{
+"off": 83952,
+"vaddr": "0x3c0347f0",
+"s": "//IDF/components/esp_hw_support/port/esp32s3/esp_cpu_intr.c"
+},
+{
+"off": 84012,
+"vaddr": "0x3c03482c",
+"s": "s_sleep_sub_mode_ref_cnt[mode] >= 0"
+},
+{
+"off": 84048,
+"vaddr": "0x3c034850",
+"s": "//IDF/components/esp_hw_support/sleep_modes.c"
+},
+{
+"off": 84096,
+"vaddr": "0x3c034880",
+"s": "esp_clk_tree_common"
+},
+{
+"off": 84116,
+"vaddr": "0x3c034894",
+"s": "main_task"
+},
+{
+"off": 84129,
+"vaddr": "0x3c0348a1",
+"s": "[0;32mI (%lu) %s: Started on CPU%d"
+},
+{
+"off": 84172,
+"vaddr": "0x3c0348cc",
+"s": "esp_task_wdt_init(&twdt_config)"
+},
+{
+"off": 84204,
+"vaddr": "0x3c0348ec",
+"s": "/IDF/components/freertos/app_startup.c"
+},
+{
+"off": 84245,
+"vaddr": "0x3c034915",
+"s": "[0;32mI (%lu) %s: Calling app_main()"
+},
+{
+"off": 84289,
+"vaddr": "0x3c034941",
+"s": "[0;32mI (%lu) %s: Returned from app_main()"
+},
+{
+"off": 84348,
+"vaddr": "0x3c03497c",
+"s": "//IDF/components/freertos/app_startup.c"
+},
+{
+"off": 84388,
+"vaddr": "0x3c0349a4",
+"s": "app_start"
+},
+{
+"off": 84400,
+"vaddr": "0x3c0349b0",
+"s": "D (%lu) %s: Starting scheduler on CPU0"
+},
+{
+"off": 84444,
+"vaddr": "0x3c0349dc",
+"s": "D (%lu) %s: Starting scheduler on CPU%d"
+},
+{
+"off": 84492,
+"vaddr": "0x3c034a0c",
+"s": "pxQueueSetContainer"
+},
+{
+"off": 84512,
+"vaddr": "0x3c034a20",
+"s": "//IDF/components/freertos/FreeRTOS-Kernel/queue.c"
+},
+{
+"off": 84564,
+"vaddr": "0x3c034a54",
+"s": "pxQueueSetContainer->uxMessagesWaiting < pxQueueSetContainer->uxLength"
+},
+{
+"off": 84636,
+"vaddr": "0x3c034a9c",
+"s": "pxQueue"
+},
+{
+"off": 84644,
+"vaddr": "0x3c034aa4",
+"s": "xReturn != ( ( ( BaseType_t ) 0 ) )"
+},
+{
+"off": 84680,
+"vaddr": "0x3c034ac8",
+"s": "pxStaticQueue"
+},
+{
+"off": 84696,
+"vaddr": "0x3c034ad8",
+"s": "xSize == sizeof( Queue_t )"
+},
+{
+"off": 84724,
+"vaddr": "0x3c034af4",
+"s": "pxNewQueue"
+},
+{
+"off": 84736,
+"vaddr": "0x3c034b00",
+"s": "ppxStaticQueue"
+},
+{
+"off": 84752,
+"vaddr": "0x3c034b10",
+"s": "xSemaphore"
+},
+{
+"off": 84764,
+"vaddr": "0x3c034b1c",
+"s": "xHandle"
+},
+{
+"off": 84772,
+"vaddr": "0x3c034b24",
+"s": "!( ( pvItemToQueue == ((void *)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) )"
+},
+{
+"off": 84860,
+"vaddr": "0x3c034b7c",
+"s": "!( ( xCopyPosition == ( ( BaseType_t ) 2 ) ) && ( pxQueue->uxLength != 1 ) )"
+},
+{
+"off": 84940,
+"vaddr": "0x3c034bcc",
+"s": "!( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) && ( xTicksToWait != 0 ) )"
+},
+{
+"off": 85024,
+"vaddr": "0x3c034c20",
+"s": "pxMutex"
+},
+{
+"off": 85032,
+"vaddr": "0x3c034c28",
+"s": "pxQueue->uxItemSize == 0"
+},
+{
+"off": 85060,
+"vaddr": "0x3c034c44",
+"s": "!( ( pxQueue->pcHead == ((void *)0) ) && ( pxQueue->u.xSemaphore.xMutexHolder != ((void *)0) ) )"
+},
+{
+"off": 85160,
+"vaddr": "0x3c034ca8",
+"s": "( pxQueue )"
+},
+{
+"off": 85172,
+"vaddr": "0x3c034cb4",
+"s": "!( ( ( pvBuffer ) == ((void *)0) ) && ( ( pxQueue )->uxItemSize != ( UBaseType_t ) 0U ) )"
+},
+{
+"off": 85264,
+"vaddr": "0x3c034d10",
+"s": "!( ( pvBuffer == ((void *)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) )"
+},
+{
+"off": 85348,
+"vaddr": "0x3c034d64",
+"s": "uxTaskPriority < ( 25 )"
+},
+{
+"off": 85372,
+"vaddr": "0x3c034d7c",
+"s": "//IDF/components/freertos/FreeRTOS-Kernel/tasks.c"
+},
+{
+"off": 85424,
+"vaddr": "0x3c034db0",
+"s": "pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 )"
+},
+{
+"off": 85476,
+"vaddr": "0x3c034de4",
+"s": "uxPriority < ( 25 )"
+},
+{
+"off": 85496,
+"vaddr": "0x3c034df8",
+"s": "( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 0 )"
+},
+{
+"off": 85632,
+"vaddr": "0x3c034e80",
+"s": "uxNewPriority < ( 25 )"
+},
+{
+"off": 85656,
+"vaddr": "0x3c034e98",
+"s": "( ( ( ( BaseType_t ) xCoreID ) >= 0 && ( ( BaseType_t ) xCoreID ) < 2 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 )"
+},
+{
+"off": 85800,
+"vaddr": "0x3c034f28",
+"s": "//IDF/components/freertos/esp_additions/freertos_tasks_c_additions.h"
+},
+{
+"off": 85872,
+"vaddr": "0x3c034f70",
+"s": "( xIdleTaskHandle[ xCoreID ] != ((void *)0) )"
+},
+{
+"off": 85920,
+"vaddr": "0x3c034fa0",
+"s": "xPortGetCoreID() == 0"
+},
+{
+"off": 85944,
+"vaddr": "0x3c034fb8",
+"s": "( ( ( ( pxDelayedTaskList )->uxNumberOfItems == ( UBaseType_t ) 0 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) )"
+},
+{
+"off": 86064,
+"vaddr": "0x3c035030",
+"s": "( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 )"
+},
+{
+"off": 86192,
+"vaddr": "0x3c0350b0",
+"s": "xTaskScheduled == ( ( BaseType_t ) 1 )"
+},
+{
+"off": 86232,
+"vaddr": "0x3c0350d8",
+"s": "pxEventList"
+},
+{
+"off": 86244,
+"vaddr": "0x3c0350e4",
+"s": "pxUnblockedTCB"
+},
+{
+"off": 86260,
+"vaddr": "0x3c0350f4",
+"s": "uxSchedulerSuspended[ uxPendCore ] != ( UBaseType_t ) 0U"
+},
+{
+"off": 86320,
+"vaddr": "0x3c035130",
+"s": "pxTimeOut"
+},
+{
+"off": 86332,
+"vaddr": "0x3c03513c",
+"s": "pxTicksToWait"
+},
+{
+"off": 86348,
+"vaddr": "0x3c03514c",
+"s": "pxTCB == pxCurrentTCBs[ xPortGetCoreID() ]"
+},
+{
+"off": 86392,
+"vaddr": "0x3c035178",
+"s": "pxTCB->uxMutexesHeld"
+},
+{
+"off": 86416,
+"vaddr": "0x3c035190",
+"s": "pxTCB != pxCurrentTCBs[ xPortGetCoreID() ]"
+},
+{
+"off": 86460,
+"vaddr": "0x3c0351bc",
+"s": "uxIndexToWait < 1"
+},
+{
+"off": 86480,
+"vaddr": "0x3c0351d0",
+"s": "uxIndexToNotify < 1"
+},
+{
+"off": 86500,
+"vaddr": "0x3c0351e4",
+"s": "xTaskToNotify"
+},
+{
+"off": 86516,
+"vaddr": "0x3c0351f4",
+"s": "xTickCount == ( TickType_t ) 0"
+},
+{
+"off": 86548,
+"vaddr": "0x3c035214",
+"s": "( ( &( pxTCB->xEventListItem ) )->pxContainer ) == ((void *)0)"
+},
+{
+"off": 86612,
+"vaddr": "0x3c035254",
+"s": "xCoreID != 0"
+},
+{
+"off": 86628,
+"vaddr": "0x3c035264",
+"s": "( ( ( ( BaseType_t ) xCoreID ) >= 0 && ( ( BaseType_t ) xCoreID ) < 2 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 ) || xCoreID == ( ( BaseType_t ) 0x7FFFFFFF )"
+},
+{
+"off": 86816,
+"vaddr": "0x3c035320",
+"s": "xPortcheckValidStackMem(puxStackBuffer)"
+},
+{
+"off": 86856,
+"vaddr": "0x3c035348",
+"s": "xPortCheckValidTCBMem(pxTaskBuffer)"
+},
+{
+"off": 86892,
+"vaddr": "0x3c03536c",
+"s": "xSize == sizeof( TCB_t )"
+},
+{
+"off": 86920,
+"vaddr": "0x3c035388",
+"s": "xReturn != ( -1 )"
+},
+{
+"off": 86940,
+"vaddr": "0x3c03539c",
+"s": "FreeRTOS"
+},
+{
+"off": 86953,
+"vaddr": "0x3c0353a9",
+"s": "[0;31mE (%lu) %s: FreeRTOS Task \"%s\" should not return, Aborting now!"
+},
+{
+"off": 87028,
+"vaddr": "0x3c0353f4",
+"s": "(uxStackPointer & ( 0x000f )) == 0"
+},
+{
+"off": 87064,
+"vaddr": "0x3c035418",
+"s": "//IDF/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c"
+},
+{
+"off": 87140,
+"vaddr": "0x3c035464",
+"s": "//IDF/components/esp_hw_support/include/spinlock.h"
+},
+{
+"off": 87192,
+"vaddr": "0x3c035498",
+"s": "lock->count > 0 && lock->count < 0xFF"
+},
+{
+"off": 87232,
+"vaddr": "0x3c0354c0",
+"s": "lock->owner == core_owner_id"
+},
+{
+"off": 87264,
+"vaddr": "0x3c0354e0",
+"s": "lock->count == 0"
+},
+{
+"off": 87284,
+"vaddr": "0x3c0354f4",
+"s": "lock->owner == SPINLOCK_FREE || lock->owner == other_core_owner_id"
+},
+{
+"off": 87352,
+"vaddr": "0x3c035538",
+"s": "lock->count < 0xFF"
+},
+{
+"off": 87372,
+"vaddr": "0x3c03554c",
+"s": "core_owner_id == lock->owner"
+},
+{
+"off": 87404,
+"vaddr": "0x3c03556c",
+"s": "lock->count < 0x100"
+},
+{
+"off": 87424,
+"vaddr": "0x3c035580",
+"s": "nesting > 0"
+},
+{
+"off": 87436,
+"vaddr": "0x3c03558c",
+"s": "***ERROR*** A stack overflow in task "
+},
+{
+"off": 87476,
+"vaddr": "0x3c0355b4",
+"s": " has been detected."
+},
+{
+"off": 87497,
+"vaddr": "0x3c0355c9",
+"s": "[0;31mE (%lu) %s: Fatal error: TLSP deletion callback at index %d overwritten with non-excutable pointer %p"
+},
+{
+"off": 87612,
+"vaddr": "0x3c03563c",
+"s": "pxTCBBufferTemp != NULL"
+},
+{
+"off": 87636,
+"vaddr": "0x3c035654",
+"s": "//IDF/components/freertos/port_common.c"
+},
+{
+"off": 87676,
+"vaddr": "0x3c03567c",
+"s": "pxStackBufferTemp != NULL"
+},
+{
+"off": 87704,
+"vaddr": "0x3c035698",
+"s": "esp_intr_alloc(ETS_SYSTIMER_TARGET0_INTR_SOURCE + cpuid, ESP_INTR_FLAG_IRAM | level, SysTickIsrHandler, &systimer_hal, NULL)"
+},
+{
+"off": 87832,
+"vaddr": "0x3c035718",
+"s": "/IDF/components/freertos/port_systick.c"
+},
+{
+"off": 87872,
+"vaddr": "0x3c035740",
+"s": "h != ((void *)0)"
+},
+{
+"off": 87892,
+"vaddr": "0x3c035754",
+"s": "//IDF/components/newlib/locks.c"
+},
+{
+"off": 87924,
+"vaddr": "0x3c035774",
+"s": "xQueueGetMutexHolder( ( h ) ) == ((void *)0)"
+},
+{
+"off": 87972,
+"vaddr": "0x3c0357a4",
+"s": "lock != NULL && \"Uninitialized lock used\""
+},
+{
+"off": 88016,
+"vaddr": "0x3c0357d0",
+"s": "handle == (SemaphoreHandle_t) &s_common_mutex"
+},
+{
+"off": 88064,
+"vaddr": "0x3c035800",
+"s": "handle == (SemaphoreHandle_t) &s_common_recursive_mutex"
+},
+{
+"off": 88124,
+"vaddr": "0x3c03583c",
+"s": "/dev/console"
+},
+{
+"off": 88140,
+"vaddr": "0x3c03584c",
+"s": "tls != NULL"
+},
+{
+"off": 88152,
+"vaddr": "0x3c035858",
+"s": "//IDF/components/pthread/pthread_local_storage.c"
+},
+{
+"off": 88204,
+"vaddr": "0x3c03588c",
+"s": "system_time"
+},
+{
+"off": 88217,
+"vaddr": "0x3c035899",
+"s": "[0;33mW (%lu) %s: Register shutdown handler failed, err = 0x%x"
+},
+{
+"off": 88288,
+"vaddr": "0x3c0358e0",
+"s": "alarm_id < sizeof(timestamp_id) / sizeof(timestamp_id[0])"
+},
+{
+"off": 88348,
+"vaddr": "0x3c03591c",
+"s": "//IDF/components/esp_timer/src/esp_timer_impl_systimer.c"
+},
+{
+"off": 88408,
+"vaddr": "0x3c035958",
+"s": "esp_timer_systimer"
+},
+{
+"off": 88429,
+"vaddr": "0x3c03596d",
+"s": "[0;31mE (%lu) %s: timer ISR is already initialized"
+},
+{
+"off": 88489,
+"vaddr": "0x3c0359a9",
+"s": "[0;31mE (%lu) %s: esp_intr_alloc failed (0x%x)"
+},
+{
+"off": 88545,
+"vaddr": "0x3c0359e1",
+"s": "[0;31mE (%lu) %s: Can not enable ISR (0x%0x)"
+},
+{
+"off": 88596,
+"vaddr": "0x3c035a14",
+"s": "fd >= 0 && fd < 3"
+},
+{
+"off": 88616,
+"vaddr": "0x3c035a28",
+"s": "//IDF/components/esp_driver_uart/src/uart_vfs.c"
+},
+{
+"off": 88664,
+"vaddr": "0x3c035a58",
+"s": "/dev/uart"
+},
+{
+"off": 88676,
+"vaddr": "0x3c035a64",
+"s": "esp_vfs_register_fs(\"/dev/uart\", &s_vfs_uart, ESP_VFS_FLAG_STATIC, NULL)"
+},
+{
+"off": 88752,
+"vaddr": "0x3c035ab0",
+"s": "/IDF/components/esp_driver_uart/src/uart_vfs.c"
+},
+{
+"off": 88800,
+"vaddr": "0x3c035ae0",
+"s": "c != NONE"
+},
+{
+"off": 88812,
+"vaddr": "0x3c035aec",
+"s": "s_ctx[fd]->peek_char == NONE"
+},
+{
+"off": 88853,
+"vaddr": "0x3c035b15",
+"s": "[0;31mE (%lu) %s: %s(%d): uart_num error"
+},
+{
+"off": 88901,
+"vaddr": "0x3c035b45",
+"s": "[0;33mW (%lu) %s: Fail to enqueue pattern position, pattern queue is full."
+},
+{
+"off": 88985,
+"vaddr": "0x3c035b99",
+"s": "[0;31mE (%lu) %s: %s(%d): data bit error"
+},
+{
+"off": 89033,
+"vaddr": "0x3c035bc9",
+"s": "[0;31mE (%lu) %s: %s(%d): stop bit error"
+},
+{
+"off": 89081,
+"vaddr": "0x3c035bf9",
+"s": "[0;31mE (%lu) %s: %s(%d): Invalid src_clk"
+},
+{
+"off": 89129,
+"vaddr": "0x3c035c29",
+"s": "[0;31mE (%lu) %s: %s(%d): rx flow thresh error"
+},
+{
+"off": 89185,
+"vaddr": "0x3c035c61",
+"s": "[0;31mE (%lu) %s: %s(%d): hw_flowctrl mode error"
+},
+{
+"off": 89241,
+"vaddr": "0x3c035c99",
+"s": "[0;31mE (%lu) %s: %s(%d): uart driver error"
+},
+{
+"off": 89293,
+"vaddr": "0x3c035ccd",
+"s": "[0;31mE (%lu) %s: %s(%d): empty intr threshold error"
+},
+{
+"off": 89353,
+"vaddr": "0x3c035d09",
+"s": "[0;31mE (%lu) %s: %s(%d): tx_io_num error"
+},
+{
+"off": 89401,
+"vaddr": "0x3c035d39",
+"s": "[0;31mE (%lu) %s: %s(%d): rx_io_num error"
+},
+{
+"off": 89449,
+"vaddr": "0x3c035d69",
+"s": "[0;31mE (%lu) %s: %s(%d): rts_io_num error"
+},
+{
+"off": 89501,
+"vaddr": "0x3c035d9d",
+"s": "[0;31mE (%lu) %s: %s(%d): cts_io_num error"
+},
+{
+"off": 89553,
+"vaddr": "0x3c035dd1",
+"s": "[0;33mW (%lu) %s: GPIO %d is not usable, maybe used by others"
+},
+{
+"off": 89621,
+"vaddr": "0x3c035e15",
+"s": "[0;31mE (%lu) %s: %s(%d): param null"
+},
+{
+"off": 89665,
+"vaddr": "0x3c035e41",
+"s": "[0;31mE (%lu) %s: %s(%d): not able to power down in light sleep"
+},
+{
+"off": 89736,
+"vaddr": "0x3c035e88",
+"s": "!(is_rs485_mode && disabled && uart_hal_get_intraw_mask(&(uart_context[uart_num].hal)) & UART_INTR_TX_DONE)"
+},
+{
+"off": 89844,
+"vaddr": "0x3c035ef4",
+"s": "//IDF/components/esp_driver_uart/src/uart.c"
+},
+{
+"off": 89889,
+"vaddr": "0x3c035f21",
+"s": "[0;31mE (%lu) %s: %s(%d): buffer null"
+},
+{
+"off": 89933,
+"vaddr": "0x3c035f4d",
+"s": "[0;31mE (%lu) %s: %s(%d): uart size error"
+},
+{
+"off": 89981,
+"vaddr": "0x3c035f7d",
+"s": "[0;31mE (%lu) %s: %s(%d): uart data null"
+},
+{
+"off": 90029,
+"vaddr": "0x3c035fad",
+"s": "[0;31mE (%lu) %s: %s(%d): break_num error"
+},
+{
+"off": 90077,
+"vaddr": "0x3c035fdd",
+"s": "[0;31mE (%lu) %s: rx_buffered_len error"
+},
+{
+"off": 90125,
+"vaddr": "0x3c03600d",
+"s": "[0;32mI (%lu) %s: ALREADY NULL"
+},
+{
+"off": 90165,
+"vaddr": "0x3c036035",
+"s": "[0;31mE (%lu) %s: %s(%d): uart rx buffer length error"
+},
+{
+"off": 90225,
+"vaddr": "0x3c036071",
+"s": "[0;31mE (%lu) %s: %s(%d): uart tx buffer length error"
+},
+{
+"off": 90285,
+"vaddr": "0x3c0360ad",
+"s": "[0;33mW (%lu) %s: ESP_INTR_FLAG_IRAM flag is set while CONFIG_UART_ISR_IN_IRAM is not enabled, flag updated"
+},
+{
+"off": 90401,
+"vaddr": "0x3c036121",
+"s": "[0;31mE (%lu) %s: UART driver malloc error"
+},
+{
+"off": 90453,
+"vaddr": "0x3c036155",
+"s": "[0;32mI (%lu) %s: queue free spaces: %lu"
+},
+{
+"off": 90501,
+"vaddr": "0x3c036185",
+"s": "[0;31mE (%lu) %s: UART driver already installed"
+},
+{
+"off": 90557,
+"vaddr": "0x3c0361bd",
+"s": "[0;31mE (%lu) %s: %s(%d): Could not allocate an interrupt for UART"
+},
+{
+"off": 90633,
+"vaddr": "0x3c036209",
+"s": "[0;31mE (%lu) %s: %s(%d): Could not configure the interrupt for UART"
+},
+{
+"off": 90708,
+"vaddr": "0x3c036254",
+"s": "/dev/secondary"
+},
+{
+"off": 90724,
+"vaddr": "0x3c036264",
+"s": "s_ctx.peek_char == NONE"
+},
+{
+"off": 90748,
+"vaddr": "0x3c03627c",
+"s": "//IDF/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c"
+},
+{
+"off": 90820,
+"vaddr": "0x3c0362c4",
+"s": "/dev/uart/0"
+},
+{
+"off": 90836,
+"vaddr": "0x3c0362d4",
+"s": "strncmp(src_path, vfs->path_prefix, vfs->path_prefix_len) == 0"
+},
+{
+"off": 90900,
+"vaddr": "0x3c036314",
+"s": "//IDF/components/vfs/vfs.c"
+},
+{
+"off": 90928,
+"vaddr": "0x3c036330",
+"s": "/dev/null"
+},
+{
+"off": 90940,
+"vaddr": "0x3c03633c",
+"s": "start != ((void *)0)"
+},
+{
+"off": 90964,
+"vaddr": "0x3c036354",
+"s": "//IDF/components/espcoredump/src/core_dump_common.c"
+},
+{
+"off": 91016,
+"vaddr": "0x3c036388",
+"s": "ESP_CORE_DUMP_INFO"
+},
+{
+"off": 91036,
+"vaddr": "0x3c03639c",
+"s": "ESP_EXTRA_INFO"
+},
+{
+"off": 91052,
+"vaddr": "0x3c0363ac",
+"s": "ESP_PANIC_DETAILS"
+},
+{
+"off": 91072,
+"vaddr": "0x3c0363c0",
+"s": "stk_paddr != ((void *)0) && stk_vaddr != ((void *)0)"
+},
+{
+"off": 91128,
+"vaddr": "0x3c0363f8",
+"s": "//IDF/components/espcoredump/src/port/xtensa/core_dump_port.c"
+},
+{
+"off": 91192,
+"vaddr": "0x3c036438",
+"s": "task != ((void *)0) && reg_dump != ((void *)0)"
+},
+{
+"off": 91250,
+"vaddr": "0x3c036472",
+"s": "***********************"
+},
+{
+"off": 91274,
+"vaddr": "0x3c03648a",
+"s": "MAKCU 2024-2025,"
+},
+{
+"off": 91291,
+"vaddr": "0x3c03649b",
+"s": "Designer: .ihack"
+},
+{
+"off": 91308,
+"vaddr": "0x3c0364ac",
+"s": "www.makcu.com"
+},
+{
+"off": 91322,
+"vaddr": "0x3c0364ba",
+"s": "firmware version: %s"
+},
+{
+"off": 91343,
+"vaddr": "0x3c0364cf",
+"s": "***********************"
+},
+{
+"off": 91380,
+"vaddr": "0x3c0364f4",
+"s": "buttons()"
+},
+{
+"off": 91392,
+"vaddr": "0x3c036500",
+"s": "buttons("
+},
+{
+"off": 91404,
+"vaddr": "0x3c03650c",
+"s": "Original"
+},
+{
+"off": 91416,
+"vaddr": "0x3c036518",
+"s": "Spoofed"
+},
+{
+"off": 91424,
+"vaddr": "0x3c036520",
+"s": "Mouse does not have a serial number"
+},
+{
+"off": 91464,
+"vaddr": "0x3c036548",
+"s": "%s Serial: %s"
+},
+{
+"off": 91480,
+"vaddr": "0x3c036558",
+"s": "Unknown indicator: 0x%02X"
+},
+{
+"off": 91508,
+"vaddr": "0x3c036574",
+"s": "left()"
+},
+{
+"off": 91516,
+"vaddr": "0x3c03657c",
+"s": "catch_ml"
+},
+{
+"off": 91528,
+"vaddr": "0x3c036588",
+"s": "catch_mr"
+},
+{
+"off": 91540,
+"vaddr": "0x3c036594",
+"s": "catch_mm"
+},
+{
+"off": 91552,
+"vaddr": "0x3c0365a0",
+"s": "catch_ms1"
+},
+{
+"off": 91564,
+"vaddr": "0x3c0365ac",
+"s": "catch_ms2"
+},
+{
+"off": 91576,
+"vaddr": "0x3c0365b8",
+"s": "catch_unknown"
+},
+{
+"off": 91592,
+"vaddr": "0x3c0365c8",
+"s": "right()"
+},
+{
+"off": 91600,
+"vaddr": "0x3c0365d0",
+"s": "middle()"
+},
+{
+"off": 91612,
+"vaddr": "0x3c0365dc",
+"s": "front()"
+},
+{
+"off": 91636,
+"vaddr": "0x3c0365f4",
+"s": "lock_mx()"
+},
+{
+"off": 91648,
+"vaddr": "0x3c036600",
+"s": "lock_my()"
+},
+{
+"off": 91660,
+"vaddr": "0x3c03660c",
+"s": "lock_mx("
+},
+{
+"off": 91672,
+"vaddr": "0x3c036618",
+"s": "lock_my("
+},
+{
+"off": 91684,
+"vaddr": "0x3c036624",
+"s": "lock_ml()"
+},
+{
+"off": 91696,
+"vaddr": "0x3c036630",
+"s": "lock_mr()"
+},
+{
+"off": 91708,
+"vaddr": "0x3c03663c",
+"s": "lock_mm()"
+},
+{
+"off": 91720,
+"vaddr": "0x3c036648",
+"s": "lock_ms1()"
+},
+{
+"off": 91732,
+"vaddr": "0x3c036654",
+"s": "lock_ms2()"
+},
+{
+"off": 91744,
+"vaddr": "0x3c036660",
+"s": "lock_ml("
+},
+{
+"off": 91756,
+"vaddr": "0x3c03666c",
+"s": "lock_mr("
+},
+{
+"off": 91768,
+"vaddr": "0x3c036678",
+"s": "lock_mm("
+},
+{
+"off": 91780,
+"vaddr": "0x3c036684",
+"s": "lock_ms1("
+},
+{
+"off": 91792,
+"vaddr": "0x3c036690",
+"s": "lock_ms2("
+},
+{
+"off": 91804,
+"vaddr": "0x3c03669c",
+"s": "catch_ml()"
+},
+{
+"off": 91816,
+"vaddr": "0x3c0366a8",
+"s": "catch_mr()"
+},
+{
+"off": 91828,
+"vaddr": "0x3c0366b4",
+"s": "catch_mm()"
+},
+{
+"off": 91840,
+"vaddr": "0x3c0366c0",
+"s": "catch_ms1()"
+},
+{
+"off": 91852,
+"vaddr": "0x3c0366cc",
+"s": "catch_ms2()"
+},
+{
+"off": 91864,
+"vaddr": "0x3c0366d8",
+"s": "catch_ml("
+},
+{
+"off": 91876,
+"vaddr": "0x3c0366e4",
+"s": "catch_mr("
+},
+{
+"off": 91888,
+"vaddr": "0x3c0366f0",
+"s": "catch_mm("
+},
+{
+"off": 91900,
+"vaddr": "0x3c0366fc",
+"s": "catch_ms1("
+},
+{
+"off": 91912,
+"vaddr": "0x3c036708",
+"s": "catch_ms2("
+},
+{
+"off": 91932,
+"vaddr": "0x3c03671c",
+"s": "wheel("
+},
+{
+"off": 91948,
+"vaddr": "0x3c03672c",
+"s": "right("
+},
+{
+"off": 91956,
+"vaddr": "0x3c036734",
+"s": "middle("
+},
+{
+"off": 91964,
+"vaddr": "0x3c03673c",
+"s": "front("
+},
+{
+"off": 91988,
+"vaddr": "0x3c036754",
+"s": "version"
+},
+{
+"off": 91996,
+"vaddr": "0x3c03675c",
+"s": "silent("
+},
+{
+"off": 92004,
+"vaddr": "0x3c036764",
+"s": "serial("
+},
+{
+"off": 92012,
+"vaddr": "0x3c03676c",
+"s": "MouseCommitTask"
+},
+{
+"off": 92028,
+"vaddr": "0x3c03677c",
+"s": "BezierTimer"
+},
+{
+"off": 92040,
+"vaddr": "0x3c036788",
+"s": "bezier_timer"
+},
+{
+"off": 92056,
+"vaddr": "0x3c036798",
+"s": "/./main/components/Mouse_Commit/Mouse_Commit.c"
+},
+{
+"off": 92104,
+"vaddr": "0x3c0367c8",
+"s": "%s(%d)"
+},
+{
+"off": 92112,
+"vaddr": "0x3c0367d0",
+"s": "EFUSE_BURN"
+},
+{
+"off": 92125,
+"vaddr": "0x3c0367dd",
+"s": "[0;32mI (%lu) %s: USB_PHY_SEL efuse burned successfully."
+},
+{
+"off": 92189,
+"vaddr": "0x3c03681d",
+"s": "[0;32mI (%lu) %s: Burning USB_PHY_SEL efuse is not supported."
+},
+{
+"off": 92257,
+"vaddr": "0x3c036861",
+"s": "[0;31mE (%lu) %s: Failed to burn USB_PHY_SEL efuse. Error: %s"
+},
+{
+"off": 92325,
+"vaddr": "0x3c0368a5",
+"s": "[0;31mE (%lu) %s: Failed to read UART_PRINT_CONTROL efuse. Error: %s"
+},
+{
+"off": 92401,
+"vaddr": "0x3c0368f1",
+"s": "[0;32mI (%lu) %s: UART_PRINT_CONTROL efuse burned successfully."
+},
+{
+"off": 92473,
+"vaddr": "0x3c036939",
+"s": "[0;32mI (%lu) %s: Burning UART_PRINT_CONTROL efuse is not supported."
+},
+{
+"off": 92549,
+"vaddr": "0x3c036985",
+"s": "[0;31mE (%lu) %s: Failed to burn UART_PRINT_CONTROL efuse. Error: %s"
+},
+{
+"off": 92633,
+"vaddr": "0x3c0369d9",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 92669,
+"vaddr": "0x3c0369fd",
+"s": " HID Endpoint Summary "
+},
+{
+"off": 92713,
+"vaddr": "0x3c036a29",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 92734,
+"vaddr": "0x3c036a3e",
+"s": " IN:  0x%02X   OUT: 0x%02X"
+},
+{
+"off": 92769,
+"vaddr": "0x3c036a61",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 92793,
+"vaddr": "0x3c036a79",
+"s": " Mouse "
+},
+{
+"off": 92813,
+"vaddr": "0x3c036a8d",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 92834,
+"vaddr": "0x3c036aa2",
+"s": " Report ID:       0x%02X"
+},
+{
+"off": 92865,
+"vaddr": "0x3c036ac1",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 92886,
+"vaddr": "0x3c036ad6",
+"s": " URB Size:        %u bytes"
+},
+{
+"off": 92921,
+"vaddr": "0x3c036af9",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 92942,
+"vaddr": "0x3c036b0e",
+"s": " Buttons:"
+},
+{
+"off": 92961,
+"vaddr": "0x3c036b21",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 92982,
+"vaddr": "0x3c036b36",
+"s": "   %-2d: sz=%2u bits"
+},
+{
+"off": 93009,
+"vaddr": "0x3c036b51",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93030,
+"vaddr": "0x3c036b66",
+"s": " Axes:"
+},
+{
+"off": 93045,
+"vaddr": "0x3c036b75",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93066,
+"vaddr": "0x3c036b8a",
+"s": "   X: sz=%2u bits"
+},
+{
+"off": 93093,
+"vaddr": "0x3c036ba5",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93114,
+"vaddr": "0x3c036bba",
+"s": "   Y: sz=%2u bits"
+},
+{
+"off": 93141,
+"vaddr": "0x3c036bd5",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93162,
+"vaddr": "0x3c036bea",
+"s": "   W: sz=%2u bits"
+},
+{
+"off": 93189,
+"vaddr": "0x3c036c05",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93210,
+"vaddr": "0x3c036c1a",
+"s": "   P: sz=%2u bits"
+},
+{
+"off": 93237,
+"vaddr": "0x3c036c35",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93261,
+"vaddr": "0x3c036c4d",
+"s": " Keyboard "
+},
+{
+"off": 93281,
+"vaddr": "0x3c036c61",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93302,
+"vaddr": "0x3c036c76",
+"s": " Modifier: sz=%2u bits"
+},
+{
+"off": 93333,
+"vaddr": "0x3c036c95",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93354,
+"vaddr": "0x3c036caa",
+"s": " Keycodes (%u):"
+},
+{
+"off": 93377,
+"vaddr": "0x3c036cc1",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93398,
+"vaddr": "0x3c036cd6",
+"s": " LEDs: sz=%2u bits"
+},
+{
+"off": 93425,
+"vaddr": "0x3c036cf1",
+"s": "[0;32mI (%lu) %s: "
+},
+{
+"off": 93573,
+"vaddr": "0x3c036d85",
+"s": "[0;31mE (%lu) %s: Failed to allocate memory for context_stack"
+},
+{
+"off": 93641,
+"vaddr": "0x3c036dc9",
+"s": "[0;31mE (%lu) %s: Context stack overflow"
+},
+{
+"off": 93689,
+"vaddr": "0x3c036df9",
+"s": "[0;33mW (%lu) %s: Context stack underflow"
+},
+{
+"off": 93737,
+"vaddr": "0x3c036e29",
+"s": "[0;32mI (%lu) %s: Keyboard input item marked constant; skipping"
+},
+{
+"off": 93809,
+"vaddr": "0x3c036e71",
+"s": "[0;32mI (%lu) %s: Assigned modifier_offset: %d bits, size: %d bits"
+},
+{
+"off": 93885,
+"vaddr": "0x3c036ebd",
+"s": "[0;32mI (%lu) %s: Assigned %d keycodes starting at offset %d bits, size %d bits each"
+},
+{
+"off": 93977,
+"vaddr": "0x3c036f19",
+"s": "[0;33mW (%lu) %s: Keycode array skipped: usage_min=0x%04X, usage_max=0x%04X not in expected range"
+},
+{
+"off": 94081,
+"vaddr": "0x3c036f81",
+"s": "[0;33mW (%lu) %s: Skipping input item: usage_page=0x%04X, local.count=%d"
+},
+{
+"off": 94161,
+"vaddr": "0x3c036fd1",
+"s": "[0;32mI (%lu) %s: UsageMin = %u started new local state at index %d (page=0x%04X)"
+},
+{
+"off": 94249,
+"vaddr": "0x3c037029",
+"s": "[0;31mE (%lu) %s: Local state container overflow at UsageMin"
+},
+{
+"off": 94317,
+"vaddr": "0x3c03706d",
+"s": "[0;32mI (%lu) %s: UsageMax = %u finalized entry; usage_count=%u at index %d (page=0x%04X)"
+},
+{
+"off": 94413,
+"vaddr": "0x3c0370cd",
+"s": "[0;31mE (%lu) %s: Local state container overflow at UsageMax"
+},
+{
+"off": 94481,
+"vaddr": "0x3c037111",
+"s": "[0;32mI (%lu) %s: Single Usage = %u recorded at index %d (count now %d, page=0x%04X)"
+},
+{
+"off": 94573,
+"vaddr": "0x3c03716d",
+"s": "[0;31mE (%lu) %s: Local state container overflow at single Usage"
+},
+{
+"off": 94645,
+"vaddr": "0x3c0371b5",
+"s": "[0;33mW (%lu) %s: Unknown Local item tag 0x%02X (data=0x%lx) encountered"
+},
+{
+"off": 94725,
+"vaddr": "0x3c037205",
+"s": "[0;31mE (%lu) %s: current_context is NULL"
+},
+{
+"off": 94773,
+"vaddr": "0x3c037235",
+"s": "[0;31mE (%lu) %s: endpoint is NULL"
+},
+{
+"off": 94817,
+"vaddr": "0x3c037261",
+"s": "[0;32mI (%lu) %s: Updated Report ID to: 0x%02X"
+},
+{
+"off": 94873,
+"vaddr": "0x3c037299",
+"s": "[0;32mI (%lu) %s: process_global_item: Found Report ID 0x%02X"
+},
+{
+"off": 94941,
+"vaddr": "0x3c0372dd",
+"s": "[0;32mI (%lu) %s: Locked mouse_report_id = 0x%02X"
+},
+{
+"off": 94997,
+"vaddr": "0x3c037315",
+"s": "[0;32mI (%lu) %s: Locked keyboard_report_id = 0x%02X"
+},
+{
+"off": 95057,
+"vaddr": "0x3c037351",
+"s": "[0;32mI (%lu) %s: Found Usage Page: 0x%04X"
+},
+{
+"off": 95109,
+"vaddr": "0x3c037385",
+"s": "[0;32mI (%lu) %s: Found Report Size: %d"
+},
+{
+"off": 95157,
+"vaddr": "0x3c0373b5",
+"s": "[0;32mI (%lu) %s: Found Report Count: %d"
+},
+{
+"off": 95205,
+"vaddr": "0x3c0373e5",
+"s": "[0;32mI (%lu) %s: Found Logical Minimum: %d"
+},
+{
+"off": 95257,
+"vaddr": "0x3c037419",
+"s": "[0;32mI (%lu) %s: Found Logical Maximum: %d"
+},
+{
+"off": 95309,
+"vaddr": "0x3c03744d",
+"s": "[0;32mI (%lu) %s: Found Physical Minimum: %d"
+},
+{
+"off": 95361,
+"vaddr": "0x3c037481",
+"s": "[0;32mI (%lu) %s: Found Physical Maximum: %d"
+},
+{
+"off": 95413,
+"vaddr": "0x3c0374b5",
+"s": "[0;32mI (%lu) %s: Found Unit Exponent: %d"
+},
+{
+"off": 95461,
+"vaddr": "0x3c0374e5",
+"s": "[0;32mI (%lu) %s: Found Unit: %d"
+},
+{
+"off": 95501,
+"vaddr": "0x3c03750d",
+"s": "[0;32mI (%lu) %s: Global PUSH: Data = %d"
+},
+{
+"off": 95549,
+"vaddr": "0x3c03753d",
+"s": "[0;31mE (%lu) %s: Global state stack overflow"
+},
+{
+"off": 95601,
+"vaddr": "0x3c037571",
+"s": "[0;32mI (%lu) %s: Global POP: Data = %d"
+},
+{
+"off": 95649,
+"vaddr": "0x3c0375a1",
+"s": "[0;31mE (%lu) %s: Global state stack underflow"
+},
+{
+"off": 95705,
+"vaddr": "0x3c0375d9",
+"s": "[0;32mI (%lu) %s: Skipping unknown Global item tag: 0x%02X, Data=0x%08X"
+},
+{
+"off": 95784,
+"vaddr": "0x3c037628",
+"s": "BUTTON_LEFT"
+},
+{
+"off": 95796,
+"vaddr": "0x3c037634",
+"s": "BUTTON_RIGHT"
+},
+{
+"off": 95812,
+"vaddr": "0x3c037644",
+"s": "BUTTON_SIDE1"
+},
+{
+"off": 95828,
+"vaddr": "0x3c037654",
+"s": "BUTTON_MIDDLE"
+},
+{
+"off": 95844,
+"vaddr": "0x3c037664",
+"s": "BUTTON_SIDE2"
+},
+{
+"off": 95860,
+"vaddr": "0x3c037674",
+"s": "BUTTON_6"
+},
+{
+"off": 95872,
+"vaddr": "0x3c037680",
+"s": "BUTTON_7"
+},
+{
+"off": 95884,
+"vaddr": "0x3c03768c",
+"s": "BUTTON_8"
+},
+{
+"off": 95896,
+"vaddr": "0x3c037698",
+"s": "BUTTON_9"
+},
+{
+"off": 95908,
+"vaddr": "0x3c0376a4",
+"s": "BUTTON_10"
+},
+{
+"off": 95920,
+"vaddr": "0x3c0376b0",
+"s": "BUTTON_11"
+},
+{
+"off": 95932,
+"vaddr": "0x3c0376bc",
+"s": "BUTTON_12"
+},
+{
+"off": 95944,
+"vaddr": "0x3c0376c8",
+"s": "BUTTON_13"
+},
+{
+"off": 95956,
+"vaddr": "0x3c0376d4",
+"s": "BUTTON_14"
+},
+{
+"off": 95968,
+"vaddr": "0x3c0376e0",
+"s": "BUTTON_15"
+},
+{
+"off": 95980,
+"vaddr": "0x3c0376ec",
+"s": "BUTTON_16"
+},
+{
+"off": 95992,
+"vaddr": "0x3c0376f8",
+"s": "UNKNOWN_BUTTON"
+},
+{
+"off": 96009,
+"vaddr": "0x3c037709",
+"s": "[0;33mW (%lu) %s: Button usage 0x%04X out of range"
+},
+{
+"off": 96069,
+"vaddr": "0x3c037745",
+"s": "[0;32mI (%lu) %s: Assigned %s: Offset %d bits, Size %d bits"
+},
+{
+"off": 96136,
+"vaddr": "0x3c037788",
+"s": "Y-axis"
+},
+{
+"off": 96144,
+"vaddr": "0x3c037790",
+"s": "X-axis"
+},
+{
+"off": 96161,
+"vaddr": "0x3c0377a1",
+"s": "[0;32mI (%lu) %s: Unhandled Generic Desktop Usage 0x%04X"
+},
+{
+"off": 96237,
+"vaddr": "0x3c0377ed",
+"s": "[0;32mI (%lu) %s: Unhandled Consumer Usage 0x%04X"
+},
+{
+"off": 96293,
+"vaddr": "0x3c037825",
+"s": "[0;32mI (%lu) %s: Entered Mouse Collection (Usage: 0x%02X); Report ID: 0x%02X"
+},
+{
+"off": 96377,
+"vaddr": "0x3c037879",
+"s": "[0;32mI (%lu) %s: Set endpoint->mouse_report_data->mouse_report_id = 0x%02X"
+},
+{
+"off": 96461,
+"vaddr": "0x3c0378cd",
+"s": "[0;31mE (%lu) %s: Failed to allocate MouseReportData in process_main_item"
+},
+{
+"off": 96541,
+"vaddr": "0x3c03791d",
+"s": "[0;32mI (%lu) %s: Entered Keyboard Collection (Usage: 0x%02X); Report ID: 0x%02X"
+},
+{
+"off": 96629,
+"vaddr": "0x3c037975",
+"s": "[0;32mI (%lu) %s: Set endpoint->keyboard_report_data->keyboard_report_id = 0x%02X"
+},
+{
+"off": 96717,
+"vaddr": "0x3c0379cd",
+"s": "[0;31mE (%lu) %s: Failed to allocate KeyboardReportData"
+},
+{
+"off": 96781,
+"vaddr": "0x3c037a0d",
+"s": "[0;33mW (%lu) %s: Unbalanced End Collection"
+},
+{
+"off": 96833,
+"vaddr": "0x3c037a41",
+"s": "[0;32mI (%lu) %s: Exiting Collection (Usage Page: 0x%04X, Usage: 0x%04X)"
+},
+{
+"off": 96921,
+"vaddr": "0x3c037a99",
+"s": "[0;32mI (%lu) %s: %s Item marked constant; skipping custom assignment"
+},
+{
+"off": 96997,
+"vaddr": "0x3c037ae5",
+"s": "[0;32mI (%lu) %s: Pointer header detected and skipped"
+},
+{
+"off": 97057,
+"vaddr": "0x3c037b21",
+"s": "[0;32mI (%lu) %s: Skipping unknown usage page 0x%04X for %d fields => %d bits"
+},
+{
+"off": 97141,
+"vaddr": "0x3c037b75",
+"s": "[0;32mI (%lu) %s: Skipping leftover %d fields => %d bits"
+},
+{
+"off": 97205,
+"vaddr": "0x3c037bb5",
+"s": "[0;32mI (%lu) %s: Skipping Input Item outside mouse/keyboard collection"
+},
+{
+"off": 97285,
+"vaddr": "0x3c037c05",
+"s": "[0;32mI (%lu) %s: Assigned led_offset: %d bits, size: %d bits"
+},
+{
+"off": 97352,
+"vaddr": "0x3c037c48",
+"s": "Feature"
+},
+{
+"off": 97360,
+"vaddr": "0x3c037c50",
+"s": "Feature (array)"
+},
+{
+"off": 97377,
+"vaddr": "0x3c037c61",
+"s": "[0;32mI (%lu) %s: Updating bit_index by %d bits for unknown MAIN item"
+},
+{
+"off": 97453,
+"vaddr": "0x3c037cad",
+"s": "[0;32mI (%lu) %s: No report size or count, bit_index not updated for unknown MAIN item"
+},
+{
+"off": 97565,
+"vaddr": "0x3c037d1d",
+"s": "[0;31mE (%lu) %s: Failed to allocate MouseReportData"
+},
+{
+"off": 97625,
+"vaddr": "0x3c037d59",
+"s": "[0;32mI (%lu) %s: Parsing HID report descriptor for Endpoint IN: 0x%02X, OUT: 0x%02X"
+},
+{
+"off": 97717,
+"vaddr": "0x3c037db5",
+"s": "[0;31mE (%lu) %s: Descriptor data read failed"
+},
+{
+"off": 97769,
+"vaddr": "0x3c037de9",
+"s": "[0;32mI (%lu) %s: Processing Item: Type=0x%02X, Tag=0x%02X, Data=0x%08X"
+},
+{
+"off": 97849,
+"vaddr": "0x3c037e39",
+"s": "[0;32mI (%lu) %s: Locked mouse_report_id = 0x%02X from Input item"
+},
+{
+"off": 97921,
+"vaddr": "0x3c037e81",
+"s": "[0;32mI (%lu) %s: Locked keyboard_report_id = 0x%02X from Input item"
+},
+{
+"off": 97997,
+"vaddr": "0x3c037ecd",
+"s": "[0;31mE (%lu) %s: Failed to process MAIN item at index %d"
+},
+{
+"off": 98061,
+"vaddr": "0x3c037f0d",
+"s": "[0;33mW (%lu) %s: Encountered reserved/unknown item type"
+},
+{
+"off": 98125,
+"vaddr": "0x3c037f4d",
+"s": "[0;32mI (%lu) %s: Finished processing descriptor. i=%d, length=%d"
+},
+{
+"off": 98197,
+"vaddr": "0x3c037f95",
+"s": "[0;31mE (%lu) %s: Neither Mouse nor Keyboard Report Descriptor found for this endpoint"
+},
+{
+"off": 98293,
+"vaddr": "0x3c037ff5",
+"s": "[0;32mI (%lu) %s: Set mouse_endpoint_atomic to %p for endpoint 0x%02X"
+},
+{
+"off": 98369,
+"vaddr": "0x3c038041",
+"s": "[0;32mI (%lu) %s: Set keyboard_endpoint_atomic to %p for endpoint 0x%02X"
+},
+{
+"off": 98449,
+"vaddr": "0x3c038091",
+"s": "[0;32mI (%lu) %s: Endpoint 0x%02X parsed successfully; has_parsed flag set to true"
+},
+{
+"off": 98541,
+"vaddr": "0x3c0380ed",
+"s": "[0;32mI (%lu) %s: Final Mouse Report Size: %d bytes (bit_index=%d, has_report_id=%s)"
+},
+{
+"off": 98633,
+"vaddr": "0x3c038149",
+"s": "[0;32mI (%lu) %s: Final Keyboard Report Size: %d bytes (bit_index=%d, has_report_id=%s)"
+},
+{
+"off": 98728,
+"vaddr": "0x3c0381a8",
+"s": "gpio_config(&io_conf)"
+},
+{
+"off": 98752,
+"vaddr": "0x3c0381c0",
+"s": "./main/components/RGB/RGB.c"
+},
+{
+"off": 98781,
+"vaddr": "0x3c0381dd",
+"s": "[0;31mE (%lu) %s: Failed to create flash queue"
+},
+{
+"off": 98836,
+"vaddr": "0x3c038214",
+"s": "LedFlashTask"
+},
+{
+"off": 98853,
+"vaddr": "0x3c038225",
+"s": "[0;31mE (%lu) %s: Failed to create flash task"
+},
+{
+"off": 98904,
+"vaddr": "0x3c038258",
+"s": "crash_dump"
+},
+{
+"off": 98917,
+"vaddr": "0x3c038265",
+"s": "[0;33mW (%lu) %s: No coredump partition found."
+},
+{
+"off": 98973,
+"vaddr": "0x3c03829d",
+"s": "[0;31mE (%lu) %s: Failed to read coredump size: %s"
+},
+{
+"off": 99033,
+"vaddr": "0x3c0382d9",
+"s": "[0;32mI (%lu) %s: No valid crash dump present."
+},
+{
+"off": 99089,
+"vaddr": "0x3c038311",
+"s": "[0;33mW (%lu) %s: Crash dump detected (%lu bytes). Sending readable strings over UART0..."
+},
+{
+"off": 99184,
+"vaddr": "0x3c038370",
+"s": "COREDUMP_STRINGS_START"
+},
+{
+"off": 99209,
+"vaddr": "0x3c038389",
+"s": "[0;31mE (%lu) %s: Failed to read chunk at offset %u: %s"
+},
+{
+"off": 99320,
+"vaddr": "0x3c0383f8",
+"s": "COREDUMP_STRINGS_END"
+},
+{
+"off": 99345,
+"vaddr": "0x3c038411",
+"s": "[0;33mW (%lu) %s: Readable strings sent. Erasing dump from flash..."
+},
+{
+"off": 99421,
+"vaddr": "0x3c03845d",
+"s": "[0;31mE (%lu) %s: Failed to erase coredump: %s"
+},
+{
+"off": 99477,
+"vaddr": "0x3c038495",
+"s": "[0;32mI (%lu) %s: Crash dump erased."
+},
+{
+"off": 99520,
+"vaddr": "0x3c0384c0",
+"s": "storage"
+},
+{
+"off": 99529,
+"vaddr": "0x3c0384c9",
+"s": "[0;31mE (%lu) %s: Namespace cannot be NULL."
+},
+{
+"off": 99581,
+"vaddr": "0x3c0384fd",
+"s": "[0;33mW (%lu) %s: Namespace '%s' does not exist. Nothing to erase."
+},
+{
+"off": 99657,
+"vaddr": "0x3c038549",
+"s": "[0;31mE (%lu) %s: Error opening NVS namespace '%s' to erase: %s"
+},
+{
+"off": 99729,
+"vaddr": "0x3c038591",
+"s": "[0;32mI (%lu) %s: Successfully erased and committed namespace '%s'."
+},
+{
+"off": 99805,
+"vaddr": "0x3c0385dd",
+"s": "[0;31mE (%lu) %s: Failed to commit erase for namespace '%s': %s"
+},
+{
+"off": 99877,
+"vaddr": "0x3c038625",
+"s": "[0;31mE (%lu) %s: Failed to erase namespace '%s': %s"
+},
+{
+"off": 99936,
+"vaddr": "0x3c038660",
+"s": "true (115200)"
+},
+{
+"off": 99952,
+"vaddr": "0x3c038670",
+"s": "false (4 Mbps)"
+},
+{
+"off": 99969,
+"vaddr": "0x3c038681",
+"s": "[0;31mE (%lu) %s: Data pointer is NULL."
+},
+{
+"off": 100017,
+"vaddr": "0x3c0386b1",
+"s": "[0;32mI (%lu) %s: nvs_set_baud_rate called with baud_rate: %ld"
+},
+{
+"off": 100089,
+"vaddr": "0x3c0386f9",
+"s": "[0;33mW (%lu) %s: Baud rate %ld is below minimum. Clamping to 115200."
+},
+{
+"off": 100165,
+"vaddr": "0x3c038745",
+"s": "[0;33mW (%lu) %s: Baud rate %ld is above maximum. Clamping to 4000000."
+},
+{
+"off": 100245,
+"vaddr": "0x3c038795",
+"s": "[0;32mI (%lu) %s: is_115k set to: %s"
+},
+{
+"off": 100288,
+"vaddr": "0x3c0387c0",
+"s": "config"
+},
+{
+"off": 100297,
+"vaddr": "0x3c0387c9",
+"s": "[0;31mE (%lu) %s: Failed to open NVS namespace '%s': %s"
+},
+{
+"off": 100360,
+"vaddr": "0x3c038808",
+"s": "baud_rate"
+},
+{
+"off": 100373,
+"vaddr": "0x3c038815",
+"s": "[0;32mI (%lu) %s: Baud rate %ld set and verified in NVS."
+},
+{
+"off": 100437,
+"vaddr": "0x3c038855",
+"s": "[0;32mI (%lu) %s: Applied baud rate change to Serial0."
+},
+{
+"off": 100501,
+"vaddr": "0x3c038895",
+"s": "[0;31mE (%lu) %s: Verification failed: wrote %ld, read %ld"
+},
+{
+"off": 100569,
+"vaddr": "0x3c0388d9",
+"s": "[0;31mE (%lu) %s: Failed to commit baud rate to NVS: %s"
+},
+{
+"off": 100633,
+"vaddr": "0x3c038919",
+"s": "[0;31mE (%lu) %s: Failed to set baud rate in NVS: %s"
+},
+{
+"off": 100693,
+"vaddr": "0x3c038955",
+"s": "[0;31mE (%lu) %s: Baud rate pointer is NULL."
+},
+{
+"off": 100745,
+"vaddr": "0x3c038989",
+"s": "[0;33mW (%lu) %s: Failed to open NVS namespace '%s': %s"
+},
+{
+"off": 100809,
+"vaddr": "0x3c0389c9",
+"s": "[0;33mW (%lu) %s: Baud rate key '%s' not found in namespace '%s'."
+},
+{
+"off": 100881,
+"vaddr": "0x3c038a11",
+"s": "[0;31mE (%lu) %s: Failed to retrieve baud rate from NVS: %s."
+},
+{
+"off": 100949,
+"vaddr": "0x3c038a55",
+"s": "[0;32mI (%lu) %s: Baud rate retrieved from NVS: %ld."
+},
+{
+"off": 101009,
+"vaddr": "0x3c038a91",
+"s": "[0;33mW (%lu) %s: NVS partition truncated or new version found. Erasing storage partition."
+},
+{
+"off": 101109,
+"vaddr": "0x3c038af5",
+"s": "[0;31mE (%lu) %s: Failed to erase storage partition: %s"
+},
+{
+"off": 101173,
+"vaddr": "0x3c038b35",
+"s": "[0;31mE (%lu) %s: Failed to initialize storage partition after erase: %s"
+},
+{
+"off": 101253,
+"vaddr": "0x3c038b85",
+"s": "[0;31mE (%lu) %s: Failed to initialize storage partition: %s"
+},
+{
+"off": 101321,
+"vaddr": "0x3c038bc9",
+"s": "[0;32mI (%lu) %s: Storage partition initialized successfully."
+},
+{
+"off": 101389,
+"vaddr": "0x3c038c0d",
+"s": "[0;31mE (%lu) %s: Failed to initialize storage partition after %d attempts. Aborting storage initialization."
+},
+{
+"off": 101505,
+"vaddr": "0x3c038c81",
+"s": "[0;31mE (%lu) %s: Failed to open NVS namespace '%s' from storage partition: %s"
+},
+{
+"off": 101593,
+"vaddr": "0x3c038cd9",
+"s": "[0;32mI (%lu) %s: Closed NVS handle after initialization."
+},
+{
+"off": 101657,
+"vaddr": "0x3c038d19",
+"s": "[0;33mW (%lu) %s: Could not load stored baud rate, defaulting to %d"
+},
+{
+"off": 101733,
+"vaddr": "0x3c038d65",
+"s": "[0;32mI (%lu) %s: UART speed loaded from NVS: %ld."
+},
+{
+"off": 101792,
+"vaddr": "0x3c038da0",
+"s": "uart_events"
+},
+{
+"off": 101805,
+"vaddr": "0x3c038dad",
+"s": "[0;32mI (%lu) %s: Mouse ep 0x%02X report ID mismatch: expected 0x%02X, got 0x%02X; sending directly"
+},
+{
+"off": 101913,
+"vaddr": "0x3c038e19",
+"s": "[0;32mI (%lu) %s: Keyboard ep 0x%02X report ID mismatch: expected 0x%02X, got 0x%02X; sending directly"
+},
+{
+"off": 102025,
+"vaddr": "0x3c038e89",
+"s": "[0;31mE (%lu) %s: Invalid UART frame length: %u "
+},
+{
+"off": 102076,
+"vaddr": "0x3c038ebc",
+"s": " dropping frame"
+},
+{
+"off": 102101,
+"vaddr": "0x3c038ed5",
+"s": "[0;31mE (%lu) %s: Failed to create HID queues "
+},
+{
+"off": 102150,
+"vaddr": "0x3c038f06",
+"s": " aborting init"
+},
+{
+"off": 102172,
+"vaddr": "0x3c038f1c",
+"s": "uart_event_task"
+},
+{
+"off": 102188,
+"vaddr": "0x3c038f2c",
+"s": "hid_data_processing"
+},
+{
+"off": 102208,
+"vaddr": "0x3c038f40",
+"s": "hid_parse_task"
+},
+{
+"off": 102224,
+"vaddr": "0x3c038f50",
+"s": "SERIAL_SETUP"
+},
+{
+"off": 102241,
+"vaddr": "0x3c038f61",
+"s": "[0;32mI (%lu) %s: MAKCU baud rate successfully changed to %u."
+},
+{
+"off": 102312,
+"vaddr": "0x3c038fa8",
+"s": "uart_param_config(UART_NUM_0, &uart0_config)"
+},
+{
+"off": 102360,
+"vaddr": "0x3c038fd8",
+"s": "./main/components/UART/uart0.c"
+},
+{
+"off": 102392,
+"vaddr": "0x3c038ff8",
+"s": "uart_set_pin(UART_NUM_0, UART_0_TX, UART_0_RX, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE)"
+},
+{
+"off": 102480,
+"vaddr": "0x3c039050",
+"s": "uart_driver_install(UART_NUM_0, RX_BUFFER_SIZE, 1024, 20, &uart0_rx_events, 0)"
+},
+{
+"off": 102560,
+"vaddr": "0x3c0390a0",
+"s": "uart0_in"
+},
+{
+"off": 102572,
+"vaddr": "0x3c0390ac",
+"s": "UART0_Send_Task"
+},
+{
+"off": 102588,
+"vaddr": "0x3c0390bc",
+"s": "UART0FrameConsumer"
+},
+{
+"off": 102608,
+"vaddr": "0x3c0390d0",
+"s": "Reset Baud Rate Task"
+},
+{
+"off": 102632,
+"vaddr": "0x3c0390e8",
+"s": "hid_data"
+},
+{
+"off": 102644,
+"vaddr": "0x3c0390f4",
+"s": "CommitFrame"
+},
+{
+"off": 102657,
+"vaddr": "0x3c039101",
+"s": "[0;31mE (%lu) %s: Failed to create HID-data thread"
+},
+{
+"off": 102717,
+"vaddr": "0x3c03913d",
+"s": "[31m[E/usbd_core] "
+},
+{
+"off": 102736,
+"vaddr": "0x3c039150",
+"s": "ep:%02x clear halt"
+},
+{
+"off": 102768,
+"vaddr": "0x3c039170",
+"s": "ep:%02x set halt"
+},
+{
+"off": 102788,
+"vaddr": "0x3c039184",
+"s": "standard request error"
+},
+{
+"off": 102816,
+"vaddr": "0x3c0391a0",
+"s": "Request buffer too small"
+},
+{
+"off": 102844,
+"vaddr": "0x3c0391bc",
+"s": "bus overflow"
+},
+{
+"off": 102860,
+"vaddr": "0x3c0391cc",
+"s": "No memory to alloc for g_usbd_core[busid].usbd_ep0_mq"
+},
+{
+"off": 102916,
+"vaddr": "0x3c039204",
+"s": "usbd_ep0"
+},
+{
+"off": 102928,
+"vaddr": "0x3c039210",
+"s": "No memory to alloc for g_usbd_core[busid].usbd_ep0_thread"
+},
+{
+"off": 102989,
+"vaddr": "0x3c03924d",
+"s": "[31m[E/USB] "
+},
+{
+"off": 103004,
+"vaddr": "0x3c03925c",
+"s": "dwc2 has less endpoints than config, please check"
+},
+{
+"off": 103056,
+"vaddr": "0x3c039290",
+"s": "This dwc2 version does not support dma mode, so stop working"
+},
+{
+"off": 103120,
+"vaddr": "0x3c0392d0",
+"s": "Your fifo config is overflow, please check"
+},
+{
+"off": 103168,
+"vaddr": "0x3c039300",
+"s": "Ep addr %02x overflow"
+},
+{
+"off": 103192,
+"vaddr": "0x3c039318",
+"s": "Ep addr %02x fifo overflow"
+},
+{
+"off": 103224,
+"vaddr": "0x3c039338",
+"s": "USB Phy Init Failed!"
+},
+{
+"off": 103248,
+"vaddr": "0x3c039350",
+"s": "USB Interrupt Init Failed!"
+},
+{
+"off": 103280,
+"vaddr": "0x3c039370",
+"s": "usb_phy"
+},
+{
+"off": 103289,
+"vaddr": "0x3c039379",
+"s": "[0;31mE (%lu) %s: %s(%d): io_num argument is invalid"
+},
+{
+"off": 103349,
+"vaddr": "0x3c0393b5",
+"s": "[0;31mE (%lu) %s: %s(%d): handle argument is invalid"
+},
+{
+"off": 103409,
+"vaddr": "0x3c0393f1",
+"s": "[0;31mE (%lu) %s: %s(%d): mode argument is invalid"
+},
+{
+"off": 103469,
+"vaddr": "0x3c03942d",
+"s": "[0;31mE (%lu) %s: %s(%d): phy source is not USB_OTG"
+},
+{
+"off": 103528,
+"vaddr": "0x3c039468",
+"s": "otg_sig"
+},
+{
+"off": 103536,
+"vaddr": "0x3c039470",
+"s": "//IDF/components/usb/usb_phy.c"
+},
+{
+"off": 103569,
+"vaddr": "0x3c039491",
+"s": "[0;31mE (%lu) %s: %s(%d): speed argument is invalid"
+},
+{
+"off": 103629,
+"vaddr": "0x3c0394cd",
+"s": "[0;31mE (%lu) %s: %s(%d): set speed not supported"
+},
+{
+"off": 103685,
+"vaddr": "0x3c039505",
+"s": "[0;31mE (%lu) %s: %s(%d): UTMI can be HighSpeed only"
+},
+{
+"off": 103745,
+"vaddr": "0x3c039541",
+"s": "[0;31mE (%lu) %s: %s(%d): argument is invalid"
+},
+{
+"off": 103797,
+"vaddr": "0x3c039575",
+"s": "[0;31mE (%lu) %s: %s(%d): USB_PHY is not initialized"
+},
+{
+"off": 103857,
+"vaddr": "0x3c0395b1",
+"s": "[0;31mE (%lu) %s: %s(%d): specified PHY argument is invalid"
+},
+{
+"off": 103925,
+"vaddr": "0x3c0395f5",
+"s": "[0;31mE (%lu) %s: %s(%d): specified source argument is invalid"
+},
+{
+"off": 103997,
+"vaddr": "0x3c03963d",
+"s": "[0;31mE (%lu) %s: %s(%d): ext_io_conf must be provided for ext PHY"
+},
+{
+"off": 104073,
+"vaddr": "0x3c039689",
+"s": "[0;31mE (%lu) %s: %s(%d): UTMI PHY not supported on this target"
+},
+{
+"off": 104145,
+"vaddr": "0x3c0396d1",
+"s": "[0;31mE (%lu) %s: %s(%d): no mem for USB_PHY driver"
+},
+{
+"off": 104205,
+"vaddr": "0x3c03970d",
+"s": "[0;31mE (%lu) %s: %s(%d): usb_phy driver installation failed"
+},
+{
+"off": 104273,
+"vaddr": "0x3c039751",
+"s": "[0;31mE (%lu) %s: %s(%d): no mem for phy context"
+},
+{
+"off": 104329,
+"vaddr": "0x3c039789",
+"s": "[0;31mE (%lu) %s: %s(%d): selected PHY is in use"
+},
+{
+"off": 104384,
+"vaddr": "0x3c0397c0",
+"s": "usb_dwc_info.controllers[otg11_index].internal_phy_io"
+},
+{
+"off": 104441,
+"vaddr": "0x3c0397f9",
+"s": "[0;31mE (%lu) %s: %s(%d): no mem for storing I/O pins"
+},
+{
+"off": 104500,
+"vaddr": "0x3c039834",
+"s": "phy_external_iopins_configure(phy_context->iopins, fsls_sig)"
+},
+{
+"off": 104564,
+"vaddr": "0x3c039874",
+"s": "/IDF/components/usb/usb_phy.c"
+},
+{
+"off": 104596,
+"vaddr": "0x3c039894",
+"s": "usb_phy_otg_set_mode(*handle_ret, config->otg_mode)"
+},
+{
+"off": 104648,
+"vaddr": "0x3c0398c8",
+"s": "usb_phy_otg_dev_set_speed(*handle_ret, config->otg_speed)"
+},
+{
+"off": 104708,
+"vaddr": "0x3c039904",
+"s": "phy_otg_iopins_configure(config->otg_io_conf, otg_sig)"
+},
+{
+"off": 104764,
+"vaddr": "0x3c03993c",
+"s": "Unhandled interrupt %d on cpu %d!"
+},
+{
+"off": 104809,
+"vaddr": "0x3c039969",
+"s": "[0;31mE (%lu) %s: %s(%d): %s"
+},
+{
+"off": 104844,
+"vaddr": "0x3c03998c",
+"s": "GPIO number error"
+},
+{
+"off": 104864,
+"vaddr": "0x3c0399a0",
+"s": "GPIO interrupt type error"
+},
+{
+"off": 104892,
+"vaddr": "0x3c0399bc",
+"s": "GPIO output gpio_num error"
+},
+{
+"off": 104920,
+"vaddr": "0x3c0399d8",
+"s": "GPIO pull mode error"
+},
+{
+"off": 104945,
+"vaddr": "0x3c0399f1",
+"s": "[0;31mE (%lu) %s: io_num=%d can only be input"
+},
+{
+"off": 104997,
+"vaddr": "0x3c039a25",
+"s": "[0;31mE (%lu) %s: GPIO_PIN mask error "
+},
+{
+"off": 105045,
+"vaddr": "0x3c039a55",
+"s": "[0;32mI (%lu) %s: GPIO[%lu]| InputEn: %d| OutputEn: %d| OpenDrain: %d| Pullup: %d| Pulldown: %d| Intr:%d "
+},
+{
+"off": 105156,
+"vaddr": "0x3c039ac4",
+"s": "GPIO isr service is not installed, call gpio_install_isr_service() first"
+},
+{
+"off": 105232,
+"vaddr": "0x3c039b10",
+"s": "GPIO ISR null"
+},
+{
+"off": 105249,
+"vaddr": "0x3c039b21",
+"s": "[0;31mE (%lu) %s: esp_ipc_call_blocking failed (0x%x)"
+},
+{
+"off": 105308,
+"vaddr": "0x3c039b5c",
+"s": "GPIO isr service already installed"
+},
+{
+"off": 105344,
+"vaddr": "0x3c039b80",
+"s": "GPIO drive capability error"
+},
+{
+"off": 105381,
+"vaddr": "0x3c039ba5",
+"s": "[0;31mE (%lu) %s: %s(%d): RTCIO number error"
+},
+{
+"off": 105432,
+"vaddr": "0x3c039bd8",
+"s": "partition"
+},
+{
+"off": 105445,
+"vaddr": "0x3c039be5",
+"s": "[0;31mE (%lu) %s: No MD5 found in partition table"
+},
+{
+"off": 105501,
+"vaddr": "0x3c039c1d",
+"s": "[0;31mE (%lu) %s: Partition table MD5 mismatch"
+},
+{
+"off": 105557,
+"vaddr": "0x3c039c55",
+"s": "[0;31mE (%lu) %s: load_partitions returned 0x%x"
+},
+{
+"off": 105612,
+"vaddr": "0x3c039c8c",
+"s": "SLIST_EMPTY(&s_partition_list)"
+},
+{
+"off": 105644,
+"vaddr": "0x3c039cac",
+"s": "//IDF/components/esp_partition/partition.c"
+},
+{
+"off": 105688,
+"vaddr": "0x3c039cd8",
+"s": "iterator != NULL"
+},
+{
+"off": 105708,
+"vaddr": "0x3c039cec",
+"s": "partition != NULL"
+},
+{
+"off": 105728,
+"vaddr": "0x3c039d00",
+"s": "//IDF/components/esp_partition/partition_target.c"
+},
+{
+"off": 105780,
+"vaddr": "0x3c039d34",
+"s": "mosi_len <= 32"
+},
+{
+"off": 105796,
+"vaddr": "0x3c039d44",
+"s": "//IDF/components/bootloader_support/bootloader_flash/src/bootloader_flash.c"
+},
+{
+"off": 105872,
+"vaddr": "0x3c039d90",
+"s": "miso_len <= 32"
+},
+{
+"off": 105888,
+"vaddr": "0x3c039da0",
+"s": "miso_byte_num <= 4"
+},
+{
+"off": 105908,
+"vaddr": "0x3c039db4",
+"s": "/IDF/components/hal/esp32s3/include/hal/cache_ll.h"
+},
+{
+"off": 105968,
+"vaddr": "0x3c039df0",
+"s": "hw_mem_regions[i].region_size % CONFIG_MMU_PAGE_SIZE == 0"
+},
+{
+"off": 106028,
+"vaddr": "0x3c039e2c",
+"s": "//IDF/components/esp_mm/esp_mmu_map.c"
+},
+{
+"off": 106068,
+"vaddr": "0x3c039e54",
+"s": "(mmu_ll_vaddr_to_laddr((uint32_t)&_instruction_reserved_end) - mmu_ll_vaddr_to_laddr((uint32_t)&_instruction_reserved_start)) == irom_len_to_reserve"
+},
+{
+"off": 106220,
+"vaddr": "0x3c039eec",
+"s": "(mmu_ll_vaddr_to_laddr((uint32_t)&_rodata_reserved_end) - mmu_ll_vaddr_to_laddr((uint32_t)&_rodata_reserved_start)) == drom_len_to_reserve"
+},
+{
+"off": 106360,
+"vaddr": "0x3c039f78",
+"s": "available_region_idx == region_num"
+},
+{
+"off": 106397,
+"vaddr": "0x3c039f9d",
+"s": "[0;31mE (%lu) %s: %s(%d): null pointer"
+},
+{
+"off": 106445,
+"vaddr": "0x3c039fcd",
+"s": "[0;31mE (%lu) %s: %s(%d): invalid caps"
+},
+{
+"off": 106493,
+"vaddr": "0x3c039ffd",
+"s": "[0;31mE (%lu) %s: no such vaddr range"
+},
+{
+"off": 106537,
+"vaddr": "0x3c03a029",
+"s": "[0;31mE (%lu) %s: %s(%d): paddr must be rounded up to the nearest multiple of CONFIG_MMU_PAGE_SIZE"
+},
+{
+"off": 106645,
+"vaddr": "0x3c03a095",
+"s": "[0;31mE (%lu) %s: %s(%d): no mem"
+},
+{
+"off": 106685,
+"vaddr": "0x3c03a0bd",
+"s": "[0;31mE (%lu) %s: paddr block is overlapped with an already mapped paddr block"
+},
+{
+"off": 106781,
+"vaddr": "0x3c03a11d",
+"s": "[0;33mW (%lu) %s: paddr block is mapped already, vaddr_start: %p, size: 0x%x"
+},
+{
+"off": 106865,
+"vaddr": "0x3c03a171",
+"s": "[0;31mE (%lu) %s: %s(%d): munmap target pointer is outside external memory regions"
+},
+{
+"off": 106957,
+"vaddr": "0x3c03a1cd",
+"s": "[0;31mE (%lu) %s: %s(%d): munmap target pointer isn't mapped yet"
+},
+{
+"off": 107029,
+"vaddr": "0x3c03a215",
+"s": "[0;31mE (%lu) %s: %s(%d): not a valid external virtual address"
+},
+{
+"off": 107101,
+"vaddr": "0x3c03a25d",
+"s": "[0;31mE (%lu) %s: %s(%d): vaddr isn't mapped"
+},
+{
+"off": 107152,
+"vaddr": "0x3c03a290",
+"s": "s_flash_op_mutex != NULL"
+},
+{
+"off": 107180,
+"vaddr": "0x3c03a2ac",
+"s": "//IDF/components/spi_flash/cache_utils.c"
+},
+{
+"off": 107224,
+"vaddr": "0x3c03a2d8",
+"s": "esp_task_stack_is_sane_cache_disabled()"
+},
+{
+"off": 107264,
+"vaddr": "0x3c03a300",
+"s": "s_flash_op_cpu == -1"
+},
+{
+"off": 107288,
+"vaddr": "0x3c03a318",
+"s": "other_cpuid == 1"
+},
+{
+"off": 107308,
+"vaddr": "0x3c03a32c",
+"s": "cpuid == s_flash_op_cpu"
+},
+{
+"off": 107332,
+"vaddr": "0x3c03a344",
+"s": "!(xTaskGetSchedulerState() == taskSCHEDULER_NOT_STARTED && cpuid != 0)"
+},
+{
+"off": 107413,
+"vaddr": "0x3c03a395",
+"s": "[0;32mI (%lu) %s: Instruction cache: size %dKB, %dWays, cache line size %dByte"
+},
+{
+"off": 107500,
+"vaddr": "0x3c03a3ec",
+"s": "new_array_id < block_nums"
+},
+{
+"off": 107528,
+"vaddr": "0x3c03a408",
+"s": "//IDF/components/spi_flash/flash_mmap.c"
+},
+{
+"off": 107568,
+"vaddr": "0x3c03a430",
+"s": "0 && \"invalid handle, or handle already unmapped\""
+},
+{
+"off": 107620,
+"vaddr": "0x3c03a464",
+"s": "io <= ESP_MSPI_IO_D7"
+},
+{
+"off": 107644,
+"vaddr": "0x3c03a47c",
+"s": "//IDF/components/spi_flash/flash_ops.c"
+},
+{
+"off": 107684,
+"vaddr": "0x3c03a4a4",
+"s": "D (%lu) %s: trying chip: %s"
+},
+{
+"off": 107721,
+"vaddr": "0x3c03a4c9",
+"s": "[0;32mI (%lu) %s: detected chip: %s"
+},
+{
+"off": 107765,
+"vaddr": "0x3c03a4f5",
+"s": "[0;31mE (%lu) %s: failed to get chip size"
+},
+{
+"off": 107813,
+"vaddr": "0x3c03a525",
+"s": "[0;33mW (%lu) %s: Detected flash size > 16 MB, but access beyond 16 MB is not supported for this flash model yet."
+},
+{
+"off": 107933,
+"vaddr": "0x3c03a59d",
+"s": "[0;32mI (%lu) %s: flash io: %s"
+},
+{
+"off": 107972,
+"vaddr": "0x3c03a5c4",
+"s": "len_remain < len"
+},
+{
+"off": 107992,
+"vaddr": "0x3c03a5d8",
+"s": "//IDF/components/spi_flash/esp_flash_api.c"
+},
+{
+"off": 108037,
+"vaddr": "0x3c03a605",
+"s": "[0;31mE (%lu) %s: esp_flash_get_size failed, flash error code: %d"
+},
+{
+"off": 108108,
+"vaddr": "0x3c03a64c",
+"s": "len_remain < length"
+},
+{
+"off": 108129,
+"vaddr": "0x3c03a661",
+"s": "[0;33mW (%lu) %s: get_chip_caps function pointer hasn't been initialized"
+},
+{
+"off": 108209,
+"vaddr": "0x3c03a6b1",
+"s": "[0;31mE (%lu) %s: chip %s doesn't support reading unique id"
+},
+{
+"off": 108281,
+"vaddr": "0x3c03a6f9",
+"s": "[0;33mW (%lu) %s: Octal flash chip is using but %s mode is selected, will automatically switch to Octal mode"
+},
+{
+"off": 108397,
+"vaddr": "0x3c03a76d",
+"s": "[0;31mE (%lu) %s: Detected size(%dk) smaller than the size in the binary image header(%dk). Probe failed."
+},
+{
+"off": 108509,
+"vaddr": "0x3c03a7dd",
+"s": "[0;33mW (%lu) %s: Detected size(%dk) larger than the size in the binary image header(%dk). Using the size in the binary image header."
+},
+{
+"off": 108649,
+"vaddr": "0x3c03a869",
+"s": "[0;31mE (%lu) %s: %s(%d): 32bit address feature check failed"
+},
+{
+"off": 108716,
+"vaddr": "0x3c03a8ac",
+"s": "chip_status == 0"
+},
+{
+"off": 108736,
+"vaddr": "0x3c03a8c0",
+"s": "//IDF/components/spi_flash/spi_flash_os_func_app.c"
+},
+{
+"off": 108788,
+"vaddr": "0x3c03a8f4",
+"s": "core_id < CONFIG_FREERTOS_NUMBER_OF_CORES"
+},
+{
+"off": 108832,
+"vaddr": "0x3c03a920",
+"s": "//IDF/components/esp_system/crosscore_int.c"
+},
+{
+"off": 108880,
+"vaddr": "0x3c03a950",
+"s": "/IDF/components/esp_system/crosscore_int.c"
+},
+{
+"off": 108924,
+"vaddr": "0x3c03a97c",
+"s": "task_wdt"
+},
+{
+"off": 108937,
+"vaddr": "0x3c03a989",
+"s": "[0;31mE (%lu) %s: %s(%d): task watchdog was never initialized"
+},
+{
+"off": 109005,
+"vaddr": "0x3c03a9cd",
+"s": "[0;31mE (%lu) %s: %s(%d): task not found"
+},
+{
+"off": 109053,
+"vaddr": "0x3c03a9fd",
+"s": "[0;31mE (%lu) %s: %s(%d): user not found"
+},
+{
+"off": 109101,
+"vaddr": "0x3c03aa2d",
+"s": "[0;31mE (%lu) %s: %s(%d): task is already subscribed"
+},
+{
+"off": 109161,
+"vaddr": "0x3c03aa69",
+"s": "[0;31mE (%lu) %s: %s(%d): user is already subscribed"
+},
+{
+"off": 109221,
+"vaddr": "0x3c03aaa5",
+"s": "[0;31mE (%lu) %s: Aborting."
+},
+{
+"off": 109256,
+"vaddr": "0x3c03aac8",
+"s": "ret == pdTRUE"
+},
+{
+"off": 109272,
+"vaddr": "0x3c03aad8",
+"s": "//IDF/components/esp_system/task_wdt/task_wdt.c"
+},
+{
+"off": 109321,
+"vaddr": "0x3c03ab09",
+"s": "[0;31mE (%lu) %s: Print CPU %d (current core) backtrace"
+},
+{
+"off": 109385,
+"vaddr": "0x3c03ab49",
+"s": "[0;31mE (%lu) %s: Print CPU %d backtrace"
+},
+{
+"off": 109433,
+"vaddr": "0x3c03ab79",
+"s": "[0;31mE (%lu) %s: %s(%d): TWDT was never initialized"
+},
+{
+"off": 109492,
+"vaddr": "0x3c03abb4",
+"s": "idle_task_handle"
+},
+{
+"off": 109512,
+"vaddr": "0x3c03abc8",
+"s": "esp_task_wdt_add(idle_task_handle)"
+},
+{
+"off": 109548,
+"vaddr": "0x3c03abec",
+"s": "/IDF/components/esp_system/task_wdt/task_wdt.c"
+},
+{
+"off": 109596,
+"vaddr": "0x3c03ac1c",
+"s": "esp_register_freertos_idle_hook_for_cpu(idle_hook_cb, core_num)"
+},
+{
+"off": 109661,
+"vaddr": "0x3c03ac5d",
+"s": "[0;31mE (%lu) %s: %s(%d): Invalid arguments"
+},
+{
+"off": 109713,
+"vaddr": "0x3c03ac91",
+"s": "[0;31mE (%lu) %s: %s(%d): TWDT already initialized"
+},
+{
+"off": 109773,
+"vaddr": "0x3c03accd",
+"s": "[0;31mE (%lu) %s: %s(%d): insufficient memory"
+},
+{
+"off": 109824,
+"vaddr": "0x3c03ad00",
+"s": " (CPU 1)"
+},
+{
+"off": 109836,
+"vaddr": "0x3c03ad0c",
+"s": " (CPU 0)"
+},
+{
+"off": 109848,
+"vaddr": "0x3c03ad18",
+"s": " (CPU 0/1)"
+},
+{
+"off": 109860,
+"vaddr": "0x3c03ad24",
+"s": "Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:"
+},
+{
+"off": 109953,
+"vaddr": "0x3c03ad81",
+"s": "[0;31mE (%lu) %s: %s"
+},
+{
+"off": 109981,
+"vaddr": "0x3c03ad9d",
+"s": "[0;31mE (%lu) %s:  - %s%s"
+},
+{
+"off": 110021,
+"vaddr": "0x3c03adc5",
+"s": "[0;31mE (%lu) %s: CPU %d: %s"
+},
+{
+"off": 110056,
+"vaddr": "0x3c03ade8",
+"s": "cpus_fail != 0"
+},
+{
+"off": 110072,
+"vaddr": "0x3c03adf8",
+"s": "flash_hal"
+},
+{
+"off": 110085,
+"vaddr": "0x3c03ae05",
+"s": "[0;31mE (%lu) %s: Target frequency %dMHz higher than supported."
+},
+{
+"off": 110157,
+"vaddr": "0x3c03ae4d",
+"s": "[0;33mW (%lu) %s: Flash clock frequency round down to %d"
+},
+{
+"off": 110220,
+"vaddr": "0x3c03ae8c",
+"s": "/IDF/components/hal/esp32s3/clk_tree_hal.c"
+},
+{
+"off": 110264,
+"vaddr": "0x3c03aeb8",
+"s": "/IDF/components/hal/esp32s3/include/hal/clk_tree_ll.h"
+},
+{
+"off": 110320,
+"vaddr": "0x3c03aef0",
+"s": "clk_hal"
+},
+{
+"off": 110329,
+"vaddr": "0x3c03aef9",
+"s": "[0;33mW (%lu) %s: invalid RTC_XTAL_FREQ_REG value, assume 40MHz"
+},
+{
+"off": 110401,
+"vaddr": "0x3c03af41",
+"s": "[0;31mE (%lu) %s: Invalid cpu config"
+},
+{
+"off": 110444,
+"vaddr": "0x3c03af6c",
+"s": "WIFI_NMI"
+},
+{
+"off": 110456,
+"vaddr": "0x3c03af78",
+"s": "WIFI_PWR"
+},
+{
+"off": 110468,
+"vaddr": "0x3c03af84",
+"s": "WIFI_BB"
+},
+{
+"off": 110476,
+"vaddr": "0x3c03af8c",
+"s": "BT_MAC"
+},
+{
+"off": 110492,
+"vaddr": "0x3c03af9c",
+"s": "BT_BB_NMI"
+},
+{
+"off": 110520,
+"vaddr": "0x3c03afb8",
+"s": "RWBT_NMI"
+},
+{
+"off": 110532,
+"vaddr": "0x3c03afc4",
+"s": "RWBLE_NMI"
+},
+{
+"off": 110544,
+"vaddr": "0x3c03afd0",
+"s": "I2C_MASTER"
+},
+{
+"off": 110596,
+"vaddr": "0x3c03b004",
+"s": "GPIO_NMI"
+},
+{
+"off": 110608,
+"vaddr": "0x3c03b010",
+"s": "GPIO_INTR_2"
+},
+{
+"off": 110620,
+"vaddr": "0x3c03b01c",
+"s": "GPIO_NMI_2"
+},
+{
+"off": 110656,
+"vaddr": "0x3c03b040",
+"s": "LCD_CAM"
+},
+{
+"off": 110704,
+"vaddr": "0x3c03b070",
+"s": "SDIO_HOST"
+},
+{
+"off": 110752,
+"vaddr": "0x3c03b0a0",
+"s": "RTC_CORE"
+},
+{
+"off": 110776,
+"vaddr": "0x3c03b0b8",
+"s": "I2C_EXT0"
+},
+{
+"off": 110788,
+"vaddr": "0x3c03b0c4",
+"s": "I2C_EXT1"
+},
+{
+"off": 110800,
+"vaddr": "0x3c03b0d0",
+"s": "SPI2_DMA"
+},
+{
+"off": 110812,
+"vaddr": "0x3c03b0dc",
+"s": "SPI3_DMA"
+},
+{
+"off": 110828,
+"vaddr": "0x3c03b0ec",
+"s": "TIMER1"
+},
+{
+"off": 110836,
+"vaddr": "0x3c03b0f4",
+"s": "TIMER2"
+},
+{
+"off": 110844,
+"vaddr": "0x3c03b0fc",
+"s": "TG0_T0_LEVEL"
+},
+{
+"off": 110860,
+"vaddr": "0x3c03b10c",
+"s": "TG0_T1_LEVEL"
+},
+{
+"off": 110876,
+"vaddr": "0x3c03b11c",
+"s": "TG0_WDT_LEVEL"
+},
+{
+"off": 110892,
+"vaddr": "0x3c03b12c",
+"s": "TG1_T0_LEVEL"
+},
+{
+"off": 110908,
+"vaddr": "0x3c03b13c",
+"s": "TG1_T1_LEVEL"
+},
+{
+"off": 110924,
+"vaddr": "0x3c03b14c",
+"s": "TG1_WDT_LEVEL"
+},
+{
+"off": 110940,
+"vaddr": "0x3c03b15c",
+"s": "CACHE_IA"
+},
+{
+"off": 110952,
+"vaddr": "0x3c03b168",
+"s": "SYSTIMER_TARGET0"
+},
+{
+"off": 110972,
+"vaddr": "0x3c03b17c",
+"s": "SYSTIMER_TARGET1"
+},
+{
+"off": 110992,
+"vaddr": "0x3c03b190",
+"s": "SYSTIMER_TARGET2"
+},
+{
+"off": 111012,
+"vaddr": "0x3c03b1a4",
+"s": "SPI_MEM_REJECT_CACHE"
+},
+{
+"off": 111036,
+"vaddr": "0x3c03b1bc",
+"s": "DCACHE_PRELOAD0"
+},
+{
+"off": 111052,
+"vaddr": "0x3c03b1cc",
+"s": "ICACHE_PRELOAD0"
+},
+{
+"off": 111068,
+"vaddr": "0x3c03b1dc",
+"s": "DCACHE_SYNC0"
+},
+{
+"off": 111084,
+"vaddr": "0x3c03b1ec",
+"s": "ICACHE_SYNC0"
+},
+{
+"off": 111100,
+"vaddr": "0x3c03b1fc",
+"s": "APB_ADC"
+},
+{
+"off": 111108,
+"vaddr": "0x3c03b204",
+"s": "DMA_IN_CH0"
+},
+{
+"off": 111120,
+"vaddr": "0x3c03b210",
+"s": "DMA_IN_CH1"
+},
+{
+"off": 111132,
+"vaddr": "0x3c03b21c",
+"s": "DMA_IN_CH2"
+},
+{
+"off": 111144,
+"vaddr": "0x3c03b228",
+"s": "DMA_IN_CH3"
+},
+{
+"off": 111156,
+"vaddr": "0x3c03b234",
+"s": "DMA_IN_CH4"
+},
+{
+"off": 111168,
+"vaddr": "0x3c03b240",
+"s": "DMA_OUT_CH0"
+},
+{
+"off": 111180,
+"vaddr": "0x3c03b24c",
+"s": "DMA_OUT_CH1"
+},
+{
+"off": 111192,
+"vaddr": "0x3c03b258",
+"s": "DMA_OUT_CH2"
+},
+{
+"off": 111204,
+"vaddr": "0x3c03b264",
+"s": "DMA_OUT_CH3"
+},
+{
+"off": 111216,
+"vaddr": "0x3c03b270",
+"s": "DMA_OUT_CH4"
+},
+{
+"off": 111240,
+"vaddr": "0x3c03b288",
+"s": "FROM_CPU_INTR0"
+},
+{
+"off": 111256,
+"vaddr": "0x3c03b298",
+"s": "FROM_CPU_INTR1"
+},
+{
+"off": 111272,
+"vaddr": "0x3c03b2a8",
+"s": "FROM_CPU_INTR2"
+},
+{
+"off": 111288,
+"vaddr": "0x3c03b2b8",
+"s": "FROM_CPU_INTR3"
+},
+{
+"off": 111304,
+"vaddr": "0x3c03b2c8",
+"s": "ASSIST_DEBUG"
+},
+{
+"off": 111320,
+"vaddr": "0x3c03b2d8",
+"s": "DMA_APBPERI_PMS"
+},
+{
+"off": 111336,
+"vaddr": "0x3c03b2e8",
+"s": "CORE0_IRAM0_PMS"
+},
+{
+"off": 111352,
+"vaddr": "0x3c03b2f8",
+"s": "CORE0_DRAM0_PMS"
+},
+{
+"off": 111368,
+"vaddr": "0x3c03b308",
+"s": "CORE0_PIF_PMS"
+},
+{
+"off": 111384,
+"vaddr": "0x3c03b318",
+"s": "CORE0_PIF_PMS_SIZE"
+},
+{
+"off": 111404,
+"vaddr": "0x3c03b32c",
+"s": "CORE1_IRAM0_PMS"
+},
+{
+"off": 111420,
+"vaddr": "0x3c03b33c",
+"s": "CORE1_DRAM0_PMS"
+},
+{
+"off": 111436,
+"vaddr": "0x3c03b34c",
+"s": "CORE1_PIF_PMS"
+},
+{
+"off": 111452,
+"vaddr": "0x3c03b35c",
+"s": "CORE1_PIF_PMS_SIZE"
+},
+{
+"off": 111472,
+"vaddr": "0x3c03b370",
+"s": "BACKUP_PMS_VIOLATE"
+},
+{
+"off": 111492,
+"vaddr": "0x3c03b384",
+"s": "CACHE_CORE0_ACS"
+},
+{
+"off": 111508,
+"vaddr": "0x3c03b394",
+"s": "CACHE_CORE1_ACS"
+},
+{
+"off": 111524,
+"vaddr": "0x3c03b3a4",
+"s": "USB_SERIAL_JTAG"
+},
+{
+"off": 111540,
+"vaddr": "0x3c03b3b4",
+"s": "PERI_BACKUP"
+},
+{
+"off": 111552,
+"vaddr": "0x3c03b3c0",
+"s": "DMA_EXTMEM_REJECT"
+},
+{
+"off": 111572,
+"vaddr": "0x3c03b3d4",
+"s": "s_periph_ref_counts > 0"
+},
+{
+"off": 111596,
+"vaddr": "0x3c03b3ec",
+"s": "//IDF/components/esp_hw_support/clk_ctrl_os.c"
+},
+{
+"off": 111644,
+"vaddr": "0x3c03b41c",
+"s": "esp_clk_tree"
+},
+{
+"off": 111661,
+"vaddr": "0x3c03b42d",
+"s": "[0;31mE (%lu) %s: %s(%d): unknown clk src"
+},
+{
+"off": 111709,
+"vaddr": "0x3c03b45d",
+"s": "[0;31mE (%lu) %s: %s(%d): unknown precision"
+},
+{
+"off": 111761,
+"vaddr": "0x3c03b491",
+"s": "[0;31mE (%lu) %s: %s(%d): freq shouldn't be 0, calibration failed"
+},
+{
+"off": 111832,
+"vaddr": "0x3c03b4d8",
+"s": "( pxTimer->xTimerPeriodInTicks > 0 )"
+},
+{
+"off": 111872,
+"vaddr": "0x3c03b500",
+"s": "//IDF/components/freertos/FreeRTOS-Kernel/timers.c"
+},
+{
+"off": 111924,
+"vaddr": "0x3c03b534",
+"s": "Tmr Svc"
+},
+{
+"off": 111932,
+"vaddr": "0x3c03b53c",
+"s": "xReturn"
+},
+{
+"off": 111940,
+"vaddr": "0x3c03b544",
+"s": "( xTimerPeriodInTicks > 0 )"
+},
+{
+"off": 111968,
+"vaddr": "0x3c03b560",
+"s": "xTimer"
+},
+{
+"off": 111976,
+"vaddr": "0x3c03b568",
+"s": "eRunning != eTaskGetState( xTaskToDelete )"
+},
+{
+"off": 112020,
+"vaddr": "0x3c03b594",
+"s": "//IDF/components/freertos/esp_additions/idf_additions.c"
+},
+{
+"off": 112076,
+"vaddr": "0x3c03b5cc",
+"s": "xResult == ( ( BaseType_t ) 1 )"
+},
+{
+"off": 112108,
+"vaddr": "0x3c03b5ec",
+"s": "puxStackBuffer != ((void *)0)"
+},
+{
+"off": 112140,
+"vaddr": "0x3c03b60c",
+"s": "pxTaskBuffer != ((void *)0)"
+},
+{
+"off": 112168,
+"vaddr": "0x3c03b628",
+"s": "esp_timer"
+},
+{
+"off": 112181,
+"vaddr": "0x3c03b635",
+"s": "[0;31mE (%lu) %s: Task is already initialized"
+},
+{
+"off": 112233,
+"vaddr": "0x3c03b669",
+"s": "[0;31mE (%lu) %s: Not enough memory to create timer task"
+},
+{
+"off": 112297,
+"vaddr": "0x3c03b6a9",
+"s": "[0;31mE (%lu) %s: ISR init failed"
+},
+{
+"off": 112336,
+"vaddr": "0x3c03b6d0",
+"s": "(pxRingbuffer->xItemsWaiting > 0) && ((pxRingbuffer->pucRead != pxRingbuffer->pucWrite) || (pxRingbuffer->uxRingbufferFlags & ( ( UBaseType_t ) 4 )))"
+},
+{
+"off": 112488,
+"vaddr": "0x3c03b768",
+"s": "//IDF/components/esp_ringbuf/ringbuf.c"
+},
+{
+"off": 112528,
+"vaddr": "0x3c03b790",
+"s": "pxRingbuffer->pucRead >= pxRingbuffer->pucHead && pxRingbuffer->pucRead < pxRingbuffer->pucTail"
+},
+{
+"off": 112624,
+"vaddr": "0x3c03b7f0",
+"s": "pxRingbuffer->pucRead == pxRingbuffer->pucFree"
+},
+{
+"off": 112672,
+"vaddr": "0x3c03b820",
+"s": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+},
+{
+"off": 112776,
+"vaddr": "0x3c03b888",
+"s": "( ( ( UBaseType_t ) ( pucItem ) & (0x03) ) == 0 )"
+},
+{
+"off": 112828,
+"vaddr": "0x3c03b8bc",
+"s": "pucItem >= pxRingbuffer->pucHead"
+},
+{
+"off": 112864,
+"vaddr": "0x3c03b8e0",
+"s": "pucItem <= pxRingbuffer->pucTail"
+},
+{
+"off": 112900,
+"vaddr": "0x3c03b904",
+"s": "pxCurHeader->xItemLen <= pxRingbuffer->xMaxItemSize"
+},
+{
+"off": 112952,
+"vaddr": "0x3c03b938",
+"s": "(pxCurHeader->uxItemFlags & ( ( UBaseType_t ) 2 )) == 0"
+},
+{
+"off": 113008,
+"vaddr": "0x3c03b970",
+"s": "(pxCurHeader->uxItemFlags & ( ( UBaseType_t ) 1 )) == 0"
+},
+{
+"off": 113064,
+"vaddr": "0x3c03b9a8",
+"s": "pxRingbuffer->pucFree <= pxRingbuffer->pucHead + pxRingbuffer->xSize"
+},
+{
+"off": 113136,
+"vaddr": "0x3c03b9f0",
+"s": "pxIsSplit != ((void *)0)"
+},
+{
+"off": 113164,
+"vaddr": "0x3c03ba0c",
+"s": "( ( ( UBaseType_t ) ( pxRingbuffer->pucRead ) & (0x03) ) == 0 )"
+},
+{
+"off": 113228,
+"vaddr": "0x3c03ba4c",
+"s": "(pxHeader->xItemLen <= pxRingbuffer->xMaxItemSize) || (pxHeader->uxItemFlags & ( ( UBaseType_t ) 2 ))"
+},
+{
+"off": 113332,
+"vaddr": "0x3c03bab4",
+"s": "pxHeader->xItemLen <= pxRingbuffer->xMaxItemSize"
+},
+{
+"off": 113384,
+"vaddr": "0x3c03bae8",
+"s": "pcReturn >= pxRingbuffer->pucHead && pcReturn <= pxRingbuffer->pucTail"
+},
+{
+"off": 113456,
+"vaddr": "0x3c03bb30",
+"s": "pcReturn >= pxRingbuffer->pucHead && pcReturn < pxRingbuffer->pucTail"
+},
+{
+"off": 113528,
+"vaddr": "0x3c03bb78",
+"s": "( ( ( UBaseType_t ) ( pxRingbuffer->pucAcquire ) & (0x03) ) == 0 )"
+},
+{
+"off": 113596,
+"vaddr": "0x3c03bbbc",
+"s": "xRemLen >= sizeof(ItemHeader_t)"
+},
+{
+"off": 113628,
+"vaddr": "0x3c03bbdc",
+"s": "(pxCurHeader->uxItemFlags & ( ( UBaseType_t ) 8 )) == 0"
+},
+{
+"off": 113684,
+"vaddr": "0x3c03bc14",
+"s": "pxRingbuffer->pucWrite <= pxRingbuffer->pucHead + pxRingbuffer->xSize"
+},
+{
+"off": 113756,
+"vaddr": "0x3c03bc5c",
+"s": "*pvItem2 < *pvItem1"
+},
+{
+"off": 113776,
+"vaddr": "0x3c03bc70",
+"s": "xIsSplit == ( ( BaseType_t ) 0 )"
+},
+{
+"off": 113812,
+"vaddr": "0x3c03bc94",
+"s": "(uint8_t *)pucItem >= pxRingbuffer->pucHead"
+},
+{
+"off": 113856,
+"vaddr": "0x3c03bcc0",
+"s": "(uint8_t *)pucItem < pxRingbuffer->pucTail"
+},
+{
+"off": 113900,
+"vaddr": "0x3c03bcec",
+"s": "xBufferSize > 0"
+},
+{
+"off": 113916,
+"vaddr": "0x3c03bcfc",
+"s": "xBufferType < RINGBUF_TYPE_MAX"
+},
+{
+"off": 113948,
+"vaddr": "0x3c03bd1c",
+"s": "pucRingbufferStorage != ((void *)0) && pxStaticRingbuffer != ((void *)0)"
+},
+{
+"off": 114024,
+"vaddr": "0x3c03bd68",
+"s": "( ( ( UBaseType_t ) ( xBufferSize ) & (0x03) ) == 0 )"
+},
+{
+"off": 114080,
+"vaddr": "0x3c03bda0",
+"s": "pxRingbuffer"
+},
+{
+"off": 114096,
+"vaddr": "0x3c03bdb0",
+"s": "ppvItem != ((void *)0)"
+},
+{
+"off": 114120,
+"vaddr": "0x3c03bdc8",
+"s": "(pxRingbuffer->uxRingbufferFlags & (( ( UBaseType_t ) 2 ) | ( ( UBaseType_t ) 1 ))) == 0"
+},
+{
+"off": 114212,
+"vaddr": "0x3c03be24",
+"s": "pvItem != ((void *)0)"
+},
+{
+"off": 114236,
+"vaddr": "0x3c03be3c",
+"s": "pvItem != ((void *)0) || xItemSize == 0"
+},
+{
+"off": 114276,
+"vaddr": "0x3c03be64",
+"s": "pxRingbuffer && pxItemSize"
+},
+{
+"off": 114304,
+"vaddr": "0x3c03be80",
+"s": "pxRingbuffer->uxRingbufferFlags & ( ( UBaseType_t ) 2 )"
+},
+{
+"off": 114360,
+"vaddr": "0x3c03beb8",
+"s": "pxRingbuffer && ppucRingbufferStorage && ppxStaticRingbuffer"
+},
+{
+"off": 114424,
+"vaddr": "0x3c03bef8",
+"s": "nvs_open_from_partition"
+},
+{
+"off": 114452,
+"vaddr": "0x3c03bf14",
+"s": "D (%lu) %s: %s %s %d"
+},
+{
+"off": 114480,
+"vaddr": "0x3c03bf30",
+"s": "nvs_close"
+},
+{
+"off": 114492,
+"vaddr": "0x3c03bf3c",
+"s": "D (%lu) %s: %s %d"
+},
+{
+"off": 114516,
+"vaddr": "0x3c03bf54",
+"s": "nvs_set"
+},
+{
+"off": 114524,
+"vaddr": "0x3c03bf5c",
+"s": "D (%lu) %s: %s %s %d %ld"
+},
+{
+"off": 114556,
+"vaddr": "0x3c03bf7c",
+"s": "nvs_get"
+},
+{
+"off": 114564,
+"vaddr": "0x3c03bf84",
+"s": "D (%lu) %s: %s %s %ld"
+},
+{
+"off": 114592,
+"vaddr": "0x3c03bfa0",
+"s": "D (%lu) %s: CRC32 mismatch for entry %d"
+},
+{
+"off": 114640,
+"vaddr": "0x3c03bfd0",
+"s": "D (%lu) %s: Invalid span %u for datatype %#04x"
+},
+{
+"off": 114692,
+"vaddr": "0x3c03c004",
+"s": "D (%lu) %s: Invalid span %u for BLOB_IDX"
+},
+{
+"off": 114740,
+"vaddr": "0x3c03c034",
+"s": "D (%lu) %s: Invalid chunk index %u for BLOB_IDX"
+},
+{
+"off": 114796,
+"vaddr": "0x3c03c06c",
+"s": "D (%lu) %s: Data size %u bytes exceeds maximum possible size %u bytes for BLOB_IDX"
+},
+{
+"off": 114884,
+"vaddr": "0x3c03c0c4",
+"s": "D (%lu) %s: Invalid chunk index %u for BLOB_DATA"
+},
+{
+"off": 114940,
+"vaddr": "0x3c03c0fc",
+"s": "D (%lu) %s: Variable data length %u bytes exceeds page boundary. Maximum calculated from the current entry position within page is %u bytes for datatype %#04x "
+},
+{
+"off": 115108,
+"vaddr": "0x3c03c1a4",
+"s": "D (%lu) %s: Span %u exceeds page boundary. Maximum calculated from the current entry position within page is %u for datatype %#04x "
+},
+{
+"off": 115248,
+"vaddr": "0x3c03c230",
+"s": "D (%lu) %s: Span %i does not match span %u calculated from variable data length %u bytes for datatype %#04x"
+},
+{
+"off": 115364,
+"vaddr": "0x3c03c2a4",
+"s": "D (%lu) %s: Invalid datatype %#04x"
+},
+{
+"off": 115404,
+"vaddr": "0x3c03c2cc",
+"s": "phys_offs != SPI_FLASH_CACHE2PHYS_FAIL"
+},
+{
+"off": 115444,
+"vaddr": "0x3c03c2f4",
+"s": "//IDF/components/app_update/esp_ota_ops.c"
+},
+{
+"off": 115488,
+"vaddr": "0x3c03c320",
+"s": "it != NULL"
+},
+{
+"off": 115500,
+"vaddr": "0x3c03c32c",
+"s": "esp_efuse_read_field_bit"
+},
+{
+"off": 115528,
+"vaddr": "0x3c03c348",
+"s": "esp_efuse_utility_read_reg"
+},
+{
+"off": 115556,
+"vaddr": "0x3c03c364",
+"s": "write_reg"
+},
+{
+"off": 115568,
+"vaddr": "0x3c03c370",
+"s": "esp_efuse_utility_process"
+},
+{
+"off": 115779,
+"vaddr": "0x3c03c443",
+"s": "`__esp_system_init_fn_init_flash"
+},
+{
+"off": 115847,
+"vaddr": "0x3c03c487",
+"s": "'esp_clk_init"
+},
+{
+"off": 115864,
+"vaddr": "0x3c03c498",
+"s": "esp_reset_reason_set_hint"
+},
+{
+"off": 116219,
+"vaddr": "0x3c03c5fb",
+"s": "<ipc_task"
+},
+{
+"off": 116232,
+"vaddr": "0x3c03c608",
+"s": "esp_ipc_init"
+},
+{
+"off": 118007,
+"vaddr": "0x3c03ccf7",
+"s": "<esp_log_cache_get_level"
+},
+{
+"off": 118032,
+"vaddr": "0x3c03cd10",
+"s": "esp_log_cache_set_level"
+},
+{
+"off": 118056,
+"vaddr": "0x3c03cd28",
+"s": "heap_caps_calloc"
+},
+{
+"off": 118076,
+"vaddr": "0x3c03cd3c",
+"s": "heap_caps_realloc"
+},
+{
+"off": 118096,
+"vaddr": "0x3c03cd50",
+"s": "heap_caps_realloc_default"
+},
+{
+"off": 118124,
+"vaddr": "0x3c03cd6c",
+"s": "heap_caps_malloc_default"
+},
+{
+"off": 118152,
+"vaddr": "0x3c03cd88",
+"s": "heap_caps_malloc"
+},
+{
+"off": 118172,
+"vaddr": "0x3c03cd9c",
+"s": "heap_caps_init"
+},
+{
+"off": 118188,
+"vaddr": "0x3c03cdac",
+"s": "register_heap"
+},
+{
+"off": 118204,
+"vaddr": "0x3c03cdbc",
+"s": "multi_heap_realloc_impl"
+},
+{
+"off": 118228,
+"vaddr": "0x3c03cdd4",
+"s": "multi_heap_register_impl"
+},
+{
+"off": 118256,
+"vaddr": "0x3c03cdf0",
+"s": "tlsf_realloc"
+},
+{
+"off": 118272,
+"vaddr": "0x3c03ce00",
+"s": "block_merge_next"
+},
+{
+"off": 118292,
+"vaddr": "0x3c03ce14",
+"s": "block_absorb"
+},
+{
+"off": 118308,
+"vaddr": "0x3c03ce24",
+"s": "block_merge_prev"
+},
+{
+"off": 118328,
+"vaddr": "0x3c03ce38",
+"s": "tlsf_free"
+},
+{
+"off": 118340,
+"vaddr": "0x3c03ce44",
+"s": "tlsf_memalign_offs"
+},
+{
+"off": 118360,
+"vaddr": "0x3c03ce58",
+"s": "block_split"
+},
+{
+"off": 118372,
+"vaddr": "0x3c03ce64",
+"s": "block_trim_free"
+},
+{
+"off": 118388,
+"vaddr": "0x3c03ce74",
+"s": "block_prepare_used"
+},
+{
+"off": 118408,
+"vaddr": "0x3c03ce88",
+"s": "search_suitable_block"
+},
+{
+"off": 118432,
+"vaddr": "0x3c03cea0",
+"s": "block_locate_free"
+},
+{
+"off": 118452,
+"vaddr": "0x3c03ceb4",
+"s": "control_construct"
+},
+{
+"off": 118472,
+"vaddr": "0x3c03cec8",
+"s": "remove_free_block"
+},
+{
+"off": 118492,
+"vaddr": "0x3c03cedc",
+"s": "align_ptr"
+},
+{
+"off": 118504,
+"vaddr": "0x3c03cee8",
+"s": "insert_free_block"
+},
+{
+"off": 118524,
+"vaddr": "0x3c03cefc",
+"s": "align_up"
+},
+{
+"off": 118536,
+"vaddr": "0x3c03cf08",
+"s": "block_next"
+},
+{
+"off": 118548,
+"vaddr": "0x3c03cf14",
+"s": "s_prepare_reserved_regions"
+},
+{
+"off": 118860,
+"vaddr": "0x3c03d04c",
+"s": "heap_caps_realloc_base"
+},
+{
+"off": 118884,
+"vaddr": "0x3c03d064",
+"s": "dram_alloc_to_iram_addr"
+},
+{
+"off": 118908,
+"vaddr": "0x3c03d07c",
+"s": "heap_caps_free"
+},
+{
+"off": 118924,
+"vaddr": "0x3c03d08c",
+"s": "esp_cpu_unstall"
+},
+{
+"off": 118940,
+"vaddr": "0x3c03d09c",
+"s": "esp_cpu_stall"
+},
+{
+"off": 118956,
+"vaddr": "0x3c03d0ac",
+"s": "esp_intr_disable"
+},
+{
+"off": 118976,
+"vaddr": "0x3c03d0c0",
+"s": "intr_free_for_current_cpu"
+},
+{
+"off": 119004,
+"vaddr": "0x3c03d0dc",
+"s": "esp_cpu_intr_edge_ack"
+},
+{
+"off": 119028,
+"vaddr": "0x3c03d0f4",
+"s": "esp_cpu_intr_set_handler"
+},
+{
+"off": 119056,
+"vaddr": "0x3c03d110",
+"s": "is_vect_desc_usable"
+},
+{
+"off": 119076,
+"vaddr": "0x3c03d124",
+"s": "find_desc_for_source"
+},
+{
+"off": 119100,
+"vaddr": "0x3c03d13c",
+"s": "periph_module_enable"
+},
+{
+"off": 119124,
+"vaddr": "0x3c03d154",
+"s": "rtc_time_us_to_slowclk"
+},
+{
+"off": 119148,
+"vaddr": "0x3c03d16c",
+"s": "rtc_clk_cal"
+},
+{
+"off": 119214,
+"vaddr": "0x3c03d1ae",
+"s": "=@esp_cpu_intr_get_desc"
+},
+{
+"off": 119752,
+"vaddr": "0x3c03d3c8",
+"s": "esp_sleep_sub_mode_config"
+},
+{
+"off": 119780,
+"vaddr": "0x3c03d3e4",
+"s": "main_task"
+},
+{
+"off": 119792,
+"vaddr": "0x3c03d3f0",
+"s": "esp_startup_start_app"
+},
+{
+"off": 119816,
+"vaddr": "0x3c03d408",
+"s": "vQueueDelete"
+},
+{
+"off": 119832,
+"vaddr": "0x3c03d418",
+"s": "uxQueueSpacesAvailable"
+},
+{
+"off": 119856,
+"vaddr": "0x3c03d430",
+"s": "xQueueReceiveFromISR"
+},
+{
+"off": 119880,
+"vaddr": "0x3c03d448",
+"s": "xQueueSemaphoreTake"
+},
+{
+"off": 119900,
+"vaddr": "0x3c03d45c",
+"s": "xQueueReceive"
+},
+{
+"off": 119916,
+"vaddr": "0x3c03d46c",
+"s": "xQueueGiveFromISR"
+},
+{
+"off": 119936,
+"vaddr": "0x3c03d480",
+"s": "xQueueGenericSendFromISR"
+},
+{
+"off": 119964,
+"vaddr": "0x3c03d49c",
+"s": "prvNotifyQueueSetContainer"
+},
+{
+"off": 119992,
+"vaddr": "0x3c03d4b8",
+"s": "xQueueGenericSend"
+},
+{
+"off": 120012,
+"vaddr": "0x3c03d4cc",
+"s": "xQueueCreateCountingSemaphore"
+},
+{
+"off": 120044,
+"vaddr": "0x3c03d4ec",
+"s": "xQueueCreateCountingSemaphoreStatic"
+},
+{
+"off": 120080,
+"vaddr": "0x3c03d510",
+"s": "xQueueTakeMutexRecursive"
+},
+{
+"off": 120108,
+"vaddr": "0x3c03d52c",
+"s": "xQueueGiveMutexRecursive"
+},
+{
+"off": 120136,
+"vaddr": "0x3c03d548",
+"s": "xQueueGetMutexHolder"
+},
+{
+"off": 120160,
+"vaddr": "0x3c03d560",
+"s": "xQueueGenericCreate"
+},
+{
+"off": 120180,
+"vaddr": "0x3c03d574",
+"s": "xQueueGenericGetStaticBuffers"
+},
+{
+"off": 120212,
+"vaddr": "0x3c03d594",
+"s": "xQueueGenericCreateStatic"
+},
+{
+"off": 120240,
+"vaddr": "0x3c03d5b0",
+"s": "xQueueGenericReset"
+},
+{
+"off": 120260,
+"vaddr": "0x3c03d5c4",
+"s": "xTaskGetCurrentTaskHandleForCore"
+},
+{
+"off": 120296,
+"vaddr": "0x3c03d5e8",
+"s": "xTaskGetIdleTaskHandleForCore"
+},
+{
+"off": 120328,
+"vaddr": "0x3c03d608",
+"s": "xTaskCreateStaticPinnedToCore"
+},
+{
+"off": 120360,
+"vaddr": "0x3c03d628",
+"s": "prvInitialiseNewTask"
+},
+{
+"off": 120384,
+"vaddr": "0x3c03d640",
+"s": "xTaskCreatePinnedToCore"
+},
+{
+"off": 120408,
+"vaddr": "0x3c03d658",
+"s": "xTaskIncrementTickOtherCores"
+},
+{
+"off": 120440,
+"vaddr": "0x3c03d678",
+"s": "vTaskGenericNotifyGiveFromISR"
+},
+{
+"off": 120472,
+"vaddr": "0x3c03d698",
+"s": "xTaskGenericNotifyFromISR"
+},
+{
+"off": 120500,
+"vaddr": "0x3c03d6b4",
+"s": "xTaskGenericNotify"
+},
+{
+"off": 120520,
+"vaddr": "0x3c03d6c8",
+"s": "ulTaskGenericNotifyTake"
+},
+{
+"off": 120544,
+"vaddr": "0x3c03d6e0",
+"s": "vTaskPriorityDisinheritAfterTimeout"
+},
+{
+"off": 120580,
+"vaddr": "0x3c03d704",
+"s": "xTaskPriorityDisinherit"
+},
+{
+"off": 120604,
+"vaddr": "0x3c03d71c",
+"s": "xTaskCheckForTimeOut"
+},
+{
+"off": 120628,
+"vaddr": "0x3c03d734",
+"s": "xTaskRemoveFromEventList"
+},
+{
+"off": 120656,
+"vaddr": "0x3c03d750",
+"s": "vTaskPlaceOnEventListRestricted"
+},
+{
+"off": 120688,
+"vaddr": "0x3c03d770",
+"s": "vTaskPlaceOnEventList"
+},
+{
+"off": 120712,
+"vaddr": "0x3c03d788",
+"s": "prvSelectHighestPriorityTaskSMP"
+},
+{
+"off": 120744,
+"vaddr": "0x3c03d7a8",
+"s": "xTaskIncrementTick"
+},
+{
+"off": 120764,
+"vaddr": "0x3c03d7bc",
+"s": "pcTaskGetName"
+},
+{
+"off": 120780,
+"vaddr": "0x3c03d7cc",
+"s": "xTaskResumeAll"
+},
+{
+"off": 120796,
+"vaddr": "0x3c03d7dc",
+"s": "vTaskStartScheduler"
+},
+{
+"off": 120816,
+"vaddr": "0x3c03d7f0",
+"s": "prvIsYieldRequiredSMP"
+},
+{
+"off": 120840,
+"vaddr": "0x3c03d808",
+"s": "vTaskPrioritySet"
+},
+{
+"off": 120860,
+"vaddr": "0x3c03d81c",
+"s": "vTaskDelay"
+},
+{
+"off": 120872,
+"vaddr": "0x3c03d828",
+"s": "prvDeleteTCB"
+},
+{
+"off": 120888,
+"vaddr": "0x3c03d838",
+"s": "vTaskDelete"
+},
+{
+"off": 120928,
+"vaddr": "0x3c03d860",
+"s": "spinlock_release"
+},
+{
+"off": 120948,
+"vaddr": "0x3c03d874",
+"s": "vPortExitCritical"
+},
+{
+"off": 120968,
+"vaddr": "0x3c03d888",
+"s": "spinlock_acquire"
+},
+{
+"off": 120988,
+"vaddr": "0x3c03d89c",
+"s": "pxPortInitialiseStack"
+},
+{
+"off": 121012,
+"vaddr": "0x3c03d8b4",
+"s": "vApplicationGetTimerTaskMemory"
+},
+{
+"off": 121044,
+"vaddr": "0x3c03d8d4",
+"s": "vApplicationGetIdleTaskMemory"
+},
+{
+"off": 121082,
+"vaddr": "0x3c03d8fa",
+"s": "7@vSystimerSetup"
+},
+{
+"off": 121100,
+"vaddr": "0x3c03d90c",
+"s": "esp_newlib_locks_init"
+},
+{
+"off": 121124,
+"vaddr": "0x3c03d924",
+"s": "check_lock_nonzero"
+},
+{
+"off": 121144,
+"vaddr": "0x3c03d938",
+"s": "lock_release_generic"
+},
+{
+"off": 121168,
+"vaddr": "0x3c03d950",
+"s": "lock_acquire_generic"
+},
+{
+"off": 121192,
+"vaddr": "0x3c03d968",
+"s": "_lock_close"
+},
+{
+"off": 121204,
+"vaddr": "0x3c03d974",
+"s": "pthread_cleanup_thread_specific_data_callback"
+},
+{
+"off": 121258,
+"vaddr": "0x3c03d9aa",
+"s": "7@esp_timer_impl_set_alarm_id"
+},
+{
+"off": 121288,
+"vaddr": "0x3c03d9c8",
+"s": "uart_vfs_dev_register"
+},
+{
+"off": 121312,
+"vaddr": "0x3c03d9e0",
+"s": "uart_write"
+},
+{
+"off": 121324,
+"vaddr": "0x3c03d9ec",
+"s": "uart_return_char"
+},
+{
+"off": 121344,
+"vaddr": "0x3c03da00",
+"s": "uart_read"
+},
+{
+"off": 121356,
+"vaddr": "0x3c03da0c",
+"s": "uart_close"
+},
+{
+"off": 121368,
+"vaddr": "0x3c03da18",
+"s": "uart_fstat"
+},
+{
+"off": 121380,
+"vaddr": "0x3c03da24",
+"s": "uart_fcntl"
+},
+{
+"off": 121392,
+"vaddr": "0x3c03da30",
+"s": "uart_fsync"
+},
+{
+"off": 121587,
+"vaddr": "0x3c03daf3",
+"s": "?uart_driver_delete"
+},
+{
+"off": 121608,
+"vaddr": "0x3c03db08",
+"s": "uart_driver_install"
+},
+{
+"off": 121628,
+"vaddr": "0x3c03db1c",
+"s": "uart_flush_input"
+},
+{
+"off": 121648,
+"vaddr": "0x3c03db30",
+"s": "uart_get_buffered_data_len"
+},
+{
+"off": 121676,
+"vaddr": "0x3c03db4c",
+"s": "uart_reenable_intr_mask"
+},
+{
+"off": 121700,
+"vaddr": "0x3c03db64",
+"s": "uart_read_bytes"
+},
+{
+"off": 121716,
+"vaddr": "0x3c03db74",
+"s": "uart_write_bytes"
+},
+{
+"off": 121736,
+"vaddr": "0x3c03db88",
+"s": "uart_wait_tx_done"
+},
+{
+"off": 121756,
+"vaddr": "0x3c03db9c",
+"s": "uart_wait_tx_done"
+},
+{
+"off": 121776,
+"vaddr": "0x3c03dbb0",
+"s": "uart_intr_config"
+},
+{
+"off": 121796,
+"vaddr": "0x3c03dbc4",
+"s": "uart_param_config"
+},
+{
+"off": 121816,
+"vaddr": "0x3c03dbd8",
+"s": "uart_set_pin"
+},
+{
+"off": 121832,
+"vaddr": "0x3c03dbe8",
+"s": "uart_enable_tx_intr"
+},
+{
+"off": 121852,
+"vaddr": "0x3c03dbfc",
+"s": "uart_pattern_queue_reset"
+},
+{
+"off": 121880,
+"vaddr": "0x3c03dc18",
+"s": "uart_pattern_pop_pos"
+},
+{
+"off": 121904,
+"vaddr": "0x3c03dc30",
+"s": "uart_get_baudrate"
+},
+{
+"off": 121924,
+"vaddr": "0x3c03dc44",
+"s": "uart_set_baudrate"
+},
+{
+"off": 121944,
+"vaddr": "0x3c03dc58",
+"s": "uart_get_parity"
+},
+{
+"off": 121960,
+"vaddr": "0x3c03dc68",
+"s": "uart_set_parity"
+},
+{
+"off": 121976,
+"vaddr": "0x3c03dc78",
+"s": "uart_get_stop_bits"
+},
+{
+"off": 121996,
+"vaddr": "0x3c03dc8c",
+"s": "uart_set_stop_bits"
+},
+{
+"off": 122016,
+"vaddr": "0x3c03dca0",
+"s": "uart_get_word_length"
+},
+{
+"off": 122040,
+"vaddr": "0x3c03dcb8",
+"s": "uart_set_word_length"
+},
+{
+"off": 122064,
+"vaddr": "0x3c03dcd0",
+"s": "usb_serial_jtag_return_char"
+},
+{
+"off": 122372,
+"vaddr": "0x3c03de04",
+"s": "translate_path"
+},
+{
+"off": 122508,
+"vaddr": "0x3c03de8c",
+"s": "esp_core_dump_get_user_ram_info"
+},
+{
+"off": 122571,
+"vaddr": "0x3c03decb",
+"s": "`esp_core_dump_get_task_regs_dump"
+},
+{
+"off": 122608,
+"vaddr": "0x3c03def0",
+"s": "esp_core_dump_get_stack"
+},
+{
+"off": 123632,
+"vaddr": "0x3c03e2f0",
+"s": "initialize_mouse_commit_task"
+},
+{
+"off": 123696,
+"vaddr": "0x3c03e330",
+"s": "led_init"
+},
+{
+"off": 123768,
+"vaddr": "0x3c03e378",
+"s": "setupUart0"
+},
+{
+"off": 123800,
+"vaddr": "0x3c03e398",
+"s": "usb_phy_get_phy_status"
+},
+{
+"off": 123824,
+"vaddr": "0x3c03e3b0",
+"s": "usb_del_phy"
+},
+{
+"off": 123836,
+"vaddr": "0x3c03e3bc",
+"s": "phy_otg_iopins_configure"
+},
+{
+"off": 123864,
+"vaddr": "0x3c03e3d8",
+"s": "phy_configure_pin_output"
+},
+{
+"off": 123892,
+"vaddr": "0x3c03e3f4",
+"s": "phy_configure_pin_input"
+},
+{
+"off": 123916,
+"vaddr": "0x3c03e40c",
+"s": "phy_external_iopins_configure"
+},
+{
+"off": 123948,
+"vaddr": "0x3c03e42c",
+"s": "usb_phy_install"
+},
+{
+"off": 123964,
+"vaddr": "0x3c03e43c",
+"s": "usb_new_phy"
+},
+{
+"off": 123976,
+"vaddr": "0x3c03e448",
+"s": "usb_new_phy"
+},
+{
+"off": 123988,
+"vaddr": "0x3c03e454",
+"s": "usb_phy_otg_dev_set_speed"
+},
+{
+"off": 124016,
+"vaddr": "0x3c03e470",
+"s": "usb_phy_otg_set_mode"
+},
+{
+"off": 124040,
+"vaddr": "0x3c03e488",
+"s": "usb_phy_otg_set_mode"
+},
+{
+"off": 124112,
+"vaddr": "0x3c03e4d0",
+"s": "gpio_func_sel"
+},
+{
+"off": 124128,
+"vaddr": "0x3c03e4e0",
+"s": "gpio_sleep_sel_dis"
+},
+{
+"off": 124148,
+"vaddr": "0x3c03e4f4",
+"s": "gpio_sleep_sel_en"
+},
+{
+"off": 124168,
+"vaddr": "0x3c03e508",
+"s": "gpio_sleep_pullup_dis"
+},
+{
+"off": 124192,
+"vaddr": "0x3c03e520",
+"s": "gpio_sleep_pulldown_dis"
+},
+{
+"off": 124216,
+"vaddr": "0x3c03e538",
+"s": "gpio_sleep_pullup_en"
+},
+{
+"off": 124240,
+"vaddr": "0x3c03e550",
+"s": "gpio_sleep_pulldown_en"
+},
+{
+"off": 124264,
+"vaddr": "0x3c03e568",
+"s": "gpio_sleep_set_pull_mode"
+},
+{
+"off": 124292,
+"vaddr": "0x3c03e584",
+"s": "gpio_sleep_output_disable"
+},
+{
+"off": 124320,
+"vaddr": "0x3c03e5a0",
+"s": "gpio_sleep_output_enable"
+},
+{
+"off": 124348,
+"vaddr": "0x3c03e5bc",
+"s": "gpio_sleep_input_disable"
+},
+{
+"off": 124376,
+"vaddr": "0x3c03e5d8",
+"s": "gpio_sleep_input_enable"
+},
+{
+"off": 124400,
+"vaddr": "0x3c03e5f0",
+"s": "gpio_sleep_set_direction"
+},
+{
+"off": 124428,
+"vaddr": "0x3c03e60c",
+"s": "gpio_set_drive_capability"
+},
+{
+"off": 124456,
+"vaddr": "0x3c03e628",
+"s": "gpio_isr_register"
+},
+{
+"off": 124476,
+"vaddr": "0x3c03e63c",
+"s": "gpio_isr_handler_add"
+},
+{
+"off": 124500,
+"vaddr": "0x3c03e654",
+"s": "gpio_install_isr_service"
+},
+{
+"off": 124528,
+"vaddr": "0x3c03e670",
+"s": "gpio_input_disable"
+},
+{
+"off": 124548,
+"vaddr": "0x3c03e684",
+"s": "gpio_set_level"
+},
+{
+"off": 124564,
+"vaddr": "0x3c03e694",
+"s": "gpio_od_enable"
+},
+{
+"off": 124580,
+"vaddr": "0x3c03e6a4",
+"s": "gpio_od_disable"
+},
+{
+"off": 124596,
+"vaddr": "0x3c03e6b4",
+"s": "gpio_output_enable"
+},
+{
+"off": 124616,
+"vaddr": "0x3c03e6c8",
+"s": "gpio_output_disable"
+},
+{
+"off": 124636,
+"vaddr": "0x3c03e6dc",
+"s": "gpio_input_enable"
+},
+{
+"off": 124656,
+"vaddr": "0x3c03e6f0",
+"s": "gpio_intr_disable"
+},
+{
+"off": 124676,
+"vaddr": "0x3c03e704",
+"s": "gpio_intr_enable"
+},
+{
+"off": 124696,
+"vaddr": "0x3c03e718",
+"s": "gpio_set_intr_type"
+},
+{
+"off": 124716,
+"vaddr": "0x3c03e72c",
+"s": "gpio_pulldown_dis"
+},
+{
+"off": 124736,
+"vaddr": "0x3c03e740",
+"s": "gpio_pulldown_en"
+},
+{
+"off": 124756,
+"vaddr": "0x3c03e754",
+"s": "gpio_pullup_dis"
+},
+{
+"off": 124772,
+"vaddr": "0x3c03e764",
+"s": "gpio_pullup_en"
+},
+{
+"off": 124788,
+"vaddr": "0x3c03e774",
+"s": "rtc_gpio_deinit"
+},
+{
+"off": 124804,
+"vaddr": "0x3c03e784",
+"s": "esp_partition_get"
+},
+{
+"off": 124824,
+"vaddr": "0x3c03e798",
+"s": "esp_partition_next"
+},
+{
+"off": 124844,
+"vaddr": "0x3c03e7ac",
+"s": "esp_partition_mmap"
+},
+{
+"off": 124864,
+"vaddr": "0x3c03e7c0",
+"s": "esp_partition_erase_range"
+},
+{
+"off": 124892,
+"vaddr": "0x3c03e7dc",
+"s": "esp_partition_write_raw"
+},
+{
+"off": 124916,
+"vaddr": "0x3c03e7f4",
+"s": "esp_partition_read_raw"
+},
+{
+"off": 124940,
+"vaddr": "0x3c03e80c",
+"s": "esp_partition_write"
+},
+{
+"off": 124960,
+"vaddr": "0x3c03e820",
+"s": "esp_partition_read"
+},
+{
+"off": 124980,
+"vaddr": "0x3c03e834",
+"s": "bootloader_flash_execute_command_common"
+},
+{
+"off": 125020,
+"vaddr": "0x3c03e85c",
+"s": "esp_mmu_vaddr_to_paddr"
+},
+{
+"off": 125044,
+"vaddr": "0x3c03e874",
+"s": "esp_mmu_unmap"
+},
+{
+"off": 125060,
+"vaddr": "0x3c03e884",
+"s": "esp_mmu_map"
+},
+{
+"off": 125072,
+"vaddr": "0x3c03e890",
+"s": "esp_mmu_map"
+},
+{
+"off": 125084,
+"vaddr": "0x3c03e89c",
+"s": "s_reserve_drom_region"
+},
+{
+"off": 125108,
+"vaddr": "0x3c03e8b4",
+"s": "cache_ll_l1_get_bus"
+},
+{
+"off": 125128,
+"vaddr": "0x3c03e8c8",
+"s": "s_reserve_irom_region"
+},
+{
+"off": 125152,
+"vaddr": "0x3c03e8e0",
+"s": "esp_mmu_map_init"
+},
+{
+"off": 125196,
+"vaddr": "0x3c03e90c",
+"s": "spi_flash_enable_interrupts_caches_and_other_cpu"
+},
+{
+"off": 125248,
+"vaddr": "0x3c03e940",
+"s": "spi_flash_disable_interrupts_caches_and_other_cpu"
+},
+{
+"off": 125300,
+"vaddr": "0x3c03e974",
+"s": "spi_flash_init_lock"
+},
+{
+"off": 125320,
+"vaddr": "0x3c03e988",
+"s": "spi_flash_munmap"
+},
+{
+"off": 125340,
+"vaddr": "0x3c03e99c",
+"s": "esp_mspi_get_io"
+},
+{
+"off": 125368,
+"vaddr": "0x3c03e9b8",
+"s": "esp_flash_write"
+},
+{
+"off": 125384,
+"vaddr": "0x3c03e9c8",
+"s": "esp_flash_erase_region"
+},
+{
+"off": 125408,
+"vaddr": "0x3c03e9e0",
+"s": "slowrd"
+},
+{
+"off": 125418,
+"vaddr": "0x3c03e9ea",
+"s": "fastrd"
+},
+{
+"off": 125468,
+"vaddr": "0x3c03ea1c",
+"s": "not used"
+},
+{
+"off": 125478,
+"vaddr": "0x3c03ea26",
+"s": "not used"
+},
+{
+"off": 125488,
+"vaddr": "0x3c03ea30",
+"s": "not used"
+},
+{
+"off": 125498,
+"vaddr": "0x3c03ea3a",
+"s": "not used"
+},
+{
+"off": 125508,
+"vaddr": "0x3c03ea44",
+"s": "not used"
+},
+{
+"off": 125518,
+"vaddr": "0x3c03ea4e",
+"s": "not used"
+},
+{
+"off": 125528,
+"vaddr": "0x3c03ea58",
+"s": "not used"
+},
+{
+"off": 125538,
+"vaddr": "0x3c03ea62",
+"s": "not used"
+},
+{
+"off": 125548,
+"vaddr": "0x3c03ea6c",
+"s": "not used"
+},
+{
+"off": 125558,
+"vaddr": "0x3c03ea76",
+"s": "not used"
+},
+{
+"off": 125568,
+"vaddr": "0x3c03ea80",
+"s": "opi_str"
+},
+{
+"off": 125578,
+"vaddr": "0x3c03ea8a",
+"s": "opi_dtr"
+},
+{
+"off": 125588,
+"vaddr": "0x3c03ea94",
+"s": "esp_flash_init_default_chip"
+},
+{
+"off": 125616,
+"vaddr": "0x3c03eab0",
+"s": "spi_flash"
+},
+{
+"off": 125628,
+"vaddr": "0x3c03eabc",
+"s": "spi_flash_os_check_yield"
+},
+{
+"off": 125656,
+"vaddr": "0x3c03ead8",
+"s": "esp_crosscore_int_send"
+},
+{
+"off": 125680,
+"vaddr": "0x3c03eaf0",
+"s": "esp_crosscore_int_init"
+},
+{
+"off": 125704,
+"vaddr": "0x3c03eb08",
+"s": "esp_task_wdt_reset"
+},
+{
+"off": 125724,
+"vaddr": "0x3c03eb1c",
+"s": "add_entry"
+},
+{
+"off": 125736,
+"vaddr": "0x3c03eb28",
+"s": "esp_task_wdt_add"
+},
+{
+"off": 125756,
+"vaddr": "0x3c03eb3c",
+"s": "subscribe_idle"
+},
+{
+"off": 125772,
+"vaddr": "0x3c03eb4c",
+"s": "task_wdt_isr"
+},
+{
+"off": 125788,
+"vaddr": "0x3c03eb5c",
+"s": "esp_task_wdt_init"
+},
+{
+"off": 125808,
+"vaddr": "0x3c03eb70",
+"s": "task_wdt_timeout_abort"
+},
+{
+"off": 125832,
+"vaddr": "0x3c03eb88",
+"s": "clk_ll_rtc_slow_get_src"
+},
+{
+"off": 125856,
+"vaddr": "0x3c03eba0",
+"s": "clk_hal_soc_root_get_freq_mhz"
+},
+{
+"off": 128096,
+"vaddr": "0x3c03f460",
+"s": "periph_rtc_dig_clk8m_disable"
+},
+{
+"off": 128128,
+"vaddr": "0x3c03f480",
+"s": "esp_clk_tree_src_get_freq_hz"
+},
+{
+"off": 128164,
+"vaddr": "0x3c03f4a4",
+"s": "xTimerGenericCommand"
+},
+{
+"off": 128188,
+"vaddr": "0x3c03f4bc",
+"s": "prvInitialiseNewTimer"
+},
+{
+"off": 128212,
+"vaddr": "0x3c03f4d4",
+"s": "prvProcessReceivedCommands"
+},
+{
+"off": 128240,
+"vaddr": "0x3c03f4f0",
+"s": "xTimerCreateTimerTask"
+},
+{
+"off": 128264,
+"vaddr": "0x3c03f508",
+"s": "vSemaphoreDeleteWithCaps"
+},
+{
+"off": 128292,
+"vaddr": "0x3c03f524",
+"s": "vQueueDeleteWithCaps"
+},
+{
+"off": 128316,
+"vaddr": "0x3c03f53c",
+"s": "vRingbufferDeleteWithCaps"
+},
+{
+"off": 128344,
+"vaddr": "0x3c03f558",
+"s": "xRingbufferGetStaticBuffer"
+},
+{
+"off": 128372,
+"vaddr": "0x3c03f574",
+"s": "vRingbufferGetInfo"
+},
+{
+"off": 128392,
+"vaddr": "0x3c03f588",
+"s": "xRingbufferGetCurFreeSize"
+},
+{
+"off": 128420,
+"vaddr": "0x3c03f5a4",
+"s": "xRingbufferGetMaxItemSize"
+},
+{
+"off": 128448,
+"vaddr": "0x3c03f5c0",
+"s": "vRingbufferReturnItemFromISR"
+},
+{
+"off": 128480,
+"vaddr": "0x3c03f5e0",
+"s": "vRingbufferReturnItem"
+},
+{
+"off": 128504,
+"vaddr": "0x3c03f5f8",
+"s": "xRingbufferReceiveUpTo"
+},
+{
+"off": 128528,
+"vaddr": "0x3c03f610",
+"s": "prvReceiveGenericFromISR"
+},
+{
+"off": 128556,
+"vaddr": "0x3c03f62c",
+"s": "xRingbufferReceiveFromISR"
+},
+{
+"off": 128584,
+"vaddr": "0x3c03f648",
+"s": "prvReceiveGeneric"
+},
+{
+"off": 128604,
+"vaddr": "0x3c03f65c",
+"s": "xRingbufferReceive"
+},
+{
+"off": 128624,
+"vaddr": "0x3c03f670",
+"s": "xRingbufferSendFromISR"
+},
+{
+"off": 128648,
+"vaddr": "0x3c03f688",
+"s": "xRingbufferSend"
+},
+{
+"off": 128664,
+"vaddr": "0x3c03f698",
+"s": "xRingbufferCreateStatic"
+},
+{
+"off": 128688,
+"vaddr": "0x3c03f6b0",
+"s": "prvCheckItemFitsDefault"
+},
+{
+"off": 128712,
+"vaddr": "0x3c03f6c8",
+"s": "prvSendItemDoneNoSplit"
+},
+{
+"off": 128736,
+"vaddr": "0x3c03f6e0",
+"s": "prvAcquireItemNoSplit"
+},
+{
+"off": 128760,
+"vaddr": "0x3c03f6f8",
+"s": "prvGetItemDefault"
+},
+{
+"off": 128780,
+"vaddr": "0x3c03f70c",
+"s": "prvReturnItemDefault"
+},
+{
+"off": 128804,
+"vaddr": "0x3c03f724",
+"s": "prvCopyItemAllowSplit"
+},
+{
+"off": 128828,
+"vaddr": "0x3c03f73c",
+"s": "prvCheckItemFitsByteBuffer"
+},
+{
+"off": 128856,
+"vaddr": "0x3c03f758",
+"s": "prvCopyItemByteBuf"
+},
+{
+"off": 128876,
+"vaddr": "0x3c03f76c",
+"s": "prvGetItemByteBuf"
+},
+{
+"off": 128896,
+"vaddr": "0x3c03f780",
+"s": "prvReturnItemByteBuf"
+},
+{
+"off": 129051,
+"vaddr": "0x3c03f81b",
+"s": "Besp_ota_get_running_partition"
+},
+{
+"off": 129117,
+"vaddr": "0x3c03f85d",
+"s": "St9exception"
+},
+{
+"off": 129139,
+"vaddr": "0x3c03f873",
+"s": "<St9bad_alloc"
+},
+{
+"off": 129211,
+"vaddr": "0x3c03f8bb",
+"s": "Bstd::bad_alloc"
+},
+{
+"off": 129243,
+"vaddr": "0x3c03f8db",
+"s": "0123456789abcdef"
+},
+{
+"off": 129260,
+"vaddr": "0x3c03f8ec",
+"s": "0123456789ABCDEF"
+},
+{
+"off": 129289,
+"vaddr": "0x3c03f909",
+"s": "Infinity"
+},
+{
+"off": 129302,
+"vaddr": "0x3c03f916",
+"s": "REENT malloc succeeded"
+},
+{
+"off": 129325,
+"vaddr": "0x3c03f92d",
+"s": "/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdlib/dtoa.c"
+},
+{
+"off": 129409,
+"vaddr": "0x3c03f981",
+"s": "Balloc succeeded"
+},
+{
+"off": 129426,
+"vaddr": "0x3c03f992",
+"s": "/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdlib/mprec.c"
+},
+{
+"off": 129605,
+"vaddr": "0x3c03fa45",
+"s": "!)@:F,@zj/@\\G1@|"
+},
+{
+"off": 129642,
+"vaddr": "0x3c03fa6a",
+"s": ":@:F<@Z"
+},
+{
+"off": 129650,
+"vaddr": "0x3c03fa72",
+"s": "=@zj?@L~@@\\GA@l"
+},
+{
+"off": 130049,
+"vaddr": "0x3c03fc01",
+"s": "         (((((                  "
+},
+{
+"off": 130114,
+"vaddr": "0x3c03fc42",
+"s": "AAAAAA"
+},
+{
+"off": 130146,
+"vaddr": "0x3c03fc62",
+"s": "BBBBBB"
+},
+{
+"off": 130847,
+"vaddr": "0x3c03ff1f",
+"s": "B0000000000000000                "
+},
+{
+"off": 131419,
+"vaddr": "0x3c04015b",
+"s": "B0000000000000000                "
+},
+{
+"off": 131991,
+"vaddr": "0x3c040397",
+"s": "B0000000000000000                C"
+},
+{
+"off": 133227,
+"vaddr": "0x3c04086b",
+"s": "B0000000000000000                "
+},
+{
+"off": 134351,
+"vaddr": "0x3fc93e47",
+"s": "B,o7@to7@tz"
+},
+{
+"off": 134433,
+"vaddr": "0x3fc93e99",
+"s": "m7@ n7@Pn7@"
+},
+{
+"off": 136715,
+"vaddr": "0x3fc94783",
+"s": "<I %s: Brownout detector was triggered"
+},
+{
+"off": 141366,
+"vaddr": "0x3fc959ae",
+"s": "7@E %s: restore cache fail"
+},
+{
+"off": 141396,
+"vaddr": "0x3fc959cc",
+"s": "E %s: flash acquire lock failed"
+},
+{
+"off": 141432,
+"vaddr": "0x3fc959f0",
+"s": "E %s: flash encrypted write length must be multiple of 16"
+},
+{
+"off": 141492,
+"vaddr": "0x3fc95a2c",
+"s": "E %s: flash encrypted write address must be 16 bytes aligned"
+},
+{
+"off": 141556,
+"vaddr": "0x3fc95a6c",
+"s": "E %s: restore cache fail"
+},
+{
+"off": 141602,
+"vaddr": "0x3fc95a9a",
+"s": "7@spi_flash"
+},
+{
+"off": 141899,
+"vaddr": "0x3fc95bc3",
+"s": "BD!8@x"
+},
+{
+"off": 141946,
+"vaddr": "0x3fc95bf2",
+"s": "8@Tasks currently running:"
+},
+{
+"off": 141976,
+"vaddr": "0x3fc95c10",
+"s": "mspi_timing_config_set_psram_clock"
+},
+{
+"off": 142012,
+"vaddr": "0x3fc95c34",
+"s": "mspi_timing_config_set_flash_clock"
+},
+{
+"off": 142083,
+"vaddr": "0x3fc95c7b",
+"s": "`rtc_clk_cpu_freq_to_8m"
+},
+{
+"off": 142108,
+"vaddr": "0x3fc95c94",
+"s": "clk_ll_cpu_set_divider"
+},
+{
+"off": 142132,
+"vaddr": "0x3fc95cac",
+"s": "clk_ll_rtc_slow_get_src"
+},
+{
+"off": 142156,
+"vaddr": "0x3fc95cc4",
+"s": "esp_cache_get_alignment"
+},
+{
+"off": 142180,
+"vaddr": "0x3fc95cdc",
+"s": "cache_level && (cache_level <= CACHE_LL_LEVEL_NUMS)"
+},
+{
+"off": 142232,
+"vaddr": "0x3fc95d10",
+"s": "/IDF/components/hal/cache_hal.c"
+},
+{
+"off": 142264,
+"vaddr": "0x3fc95d30",
+"s": "cache_level <= CACHE_LL_LEVEL_NUMS"
+},
+{
+"off": 142312,
+"vaddr": "0x3fc95d60",
+"s": "/IDF/components/hal/esp32s3/include/hal/cache_ll.h"
+},
+{
+"off": 142364,
+"vaddr": "0x3fc95d94",
+"s": "/IDF/components/hal/esp32s3/include/hal/clk_tree_ll.h"
+},
+{
+"off": 142420,
+"vaddr": "0x3fc95dcc",
+"s": "rtc_clk"
+},
+{
+"off": 142429,
+"vaddr": "0x3fc95dd5",
+"s": "[0;33mW (%lu) %s: invalid RTC_XTAL_FREQ_REG value, assume 40MHz"
+},
+{
+"off": 142501,
+"vaddr": "0x3fc95e1d",
+"s": "[0;31mE (%lu) %s: unsupported frequency configuration"
+},
+{
+"off": 142560,
+"vaddr": "0x3fc95e58",
+"s": "divider > 0"
+},
+{
+"off": 142572,
+"vaddr": "0x3fc95e64",
+"s": "0 && \"LDO dbias need to modified\""
+},
+{
+"off": 142608,
+"vaddr": "0x3fc95e88",
+"s": "//IDF/components/esp_hw_support/port/esp32s3/rtc_clk.c"
+},
+{
+"off": 142664,
+"vaddr": "0x3fc95ec0",
+"s": "freqdiv > 0"
+},
+{
+"off": 142676,
+"vaddr": "0x3fc95ecc",
+"s": "//IDF/components/esp_hw_support/port/esp32s3/mspi_timing_config.c"
+},
+{
+"off": 142744,
+"vaddr": "0x3fc95f10",
+"s": "abort() was called at PC 0x"
+},
+{
+"off": 142772,
+"vaddr": "0x3fc95f2c",
+"s": " on core "
+},
+{
+"off": 142784,
+"vaddr": "0x3fc95f38",
+"s": "<cached disabled>"
+},
+{
+"off": 142808,
+"vaddr": "0x3fc95f50",
+"s": "assert failed: "
+},
+{
+"off": 142845,
+"vaddr": "0x3fc95f75",
+"s": "[0;31mE (%lu) %s: %s(%d): null pointer"
+},
+{
+"off": 142893,
+"vaddr": "0x3fc95fa5",
+"s": "[0;31mE (%lu) %s: %s(%d): not supported cap matches"
+},
+{
+"off": 142952,
+"vaddr": "0x3fc95fe0",
+"s": "Octal Flash"
+},
+{
+"off": 142965,
+"vaddr": "0x3fc95fed",
+"s": "[0;31mE (%lu) %s: Detected MXIC Flash, but memory type is not Octal"
+},
+{
+"off": 143041,
+"vaddr": "0x3fc96039",
+"s": "[0;31mE (%lu) %s: No detected Flash chip, please check the menuconfig to see if the chip is supported"
+},
+{
+"off": 143149,
+"vaddr": "0x3fc960a5",
+"s": "[0;31mE (%lu) %s: configure host io mode failed - unsupported"
+},
+{
+"off": 143217,
+"vaddr": "0x3fc960e9",
+"s": "[0;31mE (%lu) %s: No response from device when trying to retrieve Unique ID"
+},
+{
+"off": 143300,
+"vaddr": "0x3fc9613c",
+"s": "out_write_protect!=NULL"
+},
+{
+"off": 143324,
+"vaddr": "0x3fc96154",
+"s": "//IDF/components/spi_flash/spi_flash_chip_generic.c"
+},
+{
+"off": 143376,
+"vaddr": "0x3fc96188",
+"s": "D (%lu) %s: set_io_mode: status before 0x%x"
+},
+{
+"off": 143428,
+"vaddr": "0x3fc961bc",
+"s": "D (%lu) %s: set_io_mode: status after 0x%x"
+},
+{
+"off": 143476,
+"vaddr": "0x3fc961ec",
+"s": "(io_mode == SPI_FLASH_OPI_STR) || (io_mode == SPI_FLASH_OPI_DTR)"
+},
+{
+"off": 143544,
+"vaddr": "0x3fc96230",
+"s": "//IDF/components/spi_flash/spi_flash_chip_mxic_opi.c"
+},
+{
+"off": 143601,
+"vaddr": "0x3fc96269",
+"s": "[0;31mE (%lu) %s: no response"
+},
+{
+"off": 143640,
+"vaddr": "0x3fc96290",
+"s": "out_write_protected!=NULL"
+},
+{
+"off": 143668,
+"vaddr": "0x3fc962ac",
+"s": "start_address < 0x1000000"
+},
+{
+"off": 143696,
+"vaddr": "0x3fc962c8",
+"s": "//IDF/components/spi_flash/memspi_host_driver.c"
+},
+{
+"off": 143744,
+"vaddr": "0x3fc962f8",
+"s": "address + length <= 0x1000000"
+},
+{
+"off": 143776,
+"vaddr": "0x3fc96318",
+"s": "%s failed: esp_err_t 0x%x"
+},
+{
+"off": 143812,
+"vaddr": "0x3fc9633c",
+"s": " at 0x%08x"
+},
+{
+"off": 143824,
+"vaddr": "0x3fc96348",
+"s": "file: \"%s\" line %d"
+},
+{
+"off": 143843,
+"vaddr": "0x3fc9635b",
+"s": "func: %s"
+},
+{
+"off": 143852,
+"vaddr": "0x3fc96364",
+"s": "expression: %s"
+},
+{
+"off": 143868,
+"vaddr": "0x3fc96374",
+"s": "ESP_ERROR_CHECK"
+},
+{
+"off": 143884,
+"vaddr": "0x3fc96384",
+"s": "vaddr % page_size_in_bytes == 0"
+},
+{
+"off": 143916,
+"vaddr": "0x3fc963a4",
+"s": "/IDF/components/hal/mmu_hal.c"
+},
+{
+"off": 143948,
+"vaddr": "0x3fc963c4",
+"s": "paddr % page_size_in_bytes == 0"
+},
+{
+"off": 143980,
+"vaddr": "0x3fc963e4",
+"s": "mmu_ll_check_valid_paddr_region(mmu_id, paddr, len)"
+},
+{
+"off": 144032,
+"vaddr": "0x3fc96418",
+"s": "mmu_hal_check_valid_ext_vaddr_region(mmu_id, vaddr, len, MMU_VADDR_DATA | MMU_VADDR_INSTRUCTION)"
+},
+{
+"off": 144132,
+"vaddr": "0x3fc9647c",
+"s": "mmu_hal_check_valid_ext_vaddr_region(mmu_id, vaddr, 1, MMU_VADDR_DATA | MMU_VADDR_INSTRUCTION)"
+},
+{
+"off": 144228,
+"vaddr": "0x3fc964dc",
+"s": "mmu_ll_check_valid_paddr_region(mmu_id, paddr, 1)"
+},
+{
+"off": 144280,
+"vaddr": "0x3fc96510",
+"s": "plaintext_offs + size <= SOC_FLASH_ENCRYPTED_XTS_AES_BLOCK_MAX"
+},
+{
+"off": 144344,
+"vaddr": "0x3fc96550",
+"s": "/IDF/components/hal/esp32s3/include/hal/spi_flash_encrypted_ll.h"
+},
+{
+"off": 144412,
+"vaddr": "0x3fc96594",
+"s": "period < (1 << 26)"
+},
+{
+"off": 144432,
+"vaddr": "0x3fc965a8",
+"s": "/IDF/components/hal/esp32s3/include/hal/systimer_ll.h"
+},
+{
+"off": 144488,
+"vaddr": "0x3fc965e0",
+"s": "cache_ll_get_line_size"
+},
+{
+"off": 144512,
+"vaddr": "0x3fc965f8",
+"s": "cache_hal_get_cache_line_size"
+},
+{
+"off": 144544,
+"vaddr": "0x3fc96618",
+"s": "cache_hal_unfreeze"
+},
+{
+"off": 144564,
+"vaddr": "0x3fc9662c",
+"s": "cache_hal_freeze"
+},
+{
+"off": 144584,
+"vaddr": "0x3fc96640",
+"s": "cache_hal_resume"
+},
+{
+"off": 144604,
+"vaddr": "0x3fc96654",
+"s": "cache_hal_suspend"
+},
+{
+"off": 144624,
+"vaddr": "0x3fc96668",
+"s": "cache_hal_enable"
+},
+{
+"off": 144644,
+"vaddr": "0x3fc9667c",
+"s": "cache_hal_disable"
+},
+{
+"off": 144664,
+"vaddr": "0x3fc96690",
+"s": "mmu_hal_paddr_to_vaddr"
+},
+{
+"off": 144688,
+"vaddr": "0x3fc966a8",
+"s": "mmu_hal_vaddr_to_paddr"
+},
+{
+"off": 144712,
+"vaddr": "0x3fc966c0",
+"s": "mmu_hal_unmap_region"
+},
+{
+"off": 144736,
+"vaddr": "0x3fc966d8",
+"s": "mmu_hal_map_region"
+},
+{
+"off": 144756,
+"vaddr": "0x3fc966ec",
+"s": "spi_flash_encrypt_ll_plaintext_save"
+},
+{
+"off": 144792,
+"vaddr": "0x3fc96710",
+"s": "systimer_ll_set_alarm_period"
+},
+{
+"off": 144824,
+"vaddr": "0x3fc96730",
+"s": "memspi_host_program_page"
+},
+{
+"off": 144852,
+"vaddr": "0x3fc9674c",
+"s": "memspi_host_erase_block"
+},
+{
+"off": 144876,
+"vaddr": "0x3fc96764",
+"s": "memspi_host_erase_sector"
+},
+{
+"off": 144904,
+"vaddr": "0x3fc96780",
+"s": "memspi"
+},
+{
+"off": 144950,
+"vaddr": "0x3fc967ae",
+"s": "7@D!8@d"
+},
+{
+"off": 144962,
+"vaddr": "0x3fc967ba",
+"s": "7@|!8@|"
+},
+{
+"off": 145021,
+"vaddr": "0x3fc967f5",
+"s": "(8@t)8@"
+},
+{
+"off": 145065,
+"vaddr": "0x3fc96821",
+"s": "$8@X%8@"
+},
+{
+"off": 145085,
+"vaddr": "0x3fc96835",
+"s": "+8@p(8@"
+},
+{
+"off": 145109,
+"vaddr": "0x3fc9684d",
+"s": "$8@,&8@"
+},
+{
+"off": 145121,
+"vaddr": "0x3fc96859",
+"s": "\"8@boya"
+},
+{
+"off": 145153,
+"vaddr": "0x3fc96879",
+"s": "(8@x58@"
+},
+{
+"off": 145196,
+"vaddr": "0x3fc968a4",
+"s": "048@X%8@"
+},
+{
+"off": 145217,
+"vaddr": "0x3fc968b9",
+"s": "+8@d\"8@(\"8@"
+},
+{
+"off": 145241,
+"vaddr": "0x3fc968d1",
+"s": "\"8@,&8@"
+},
+{
+"off": 145260,
+"vaddr": "0x3fc968e4",
+"s": "spi_flash_chip_generic_get_write_protect"
+},
+{
+"off": 145325,
+"vaddr": "0x3fc96925",
+"s": "(8@t)8@"
+},
+{
+"off": 145369,
+"vaddr": "0x3fc96951",
+"s": "$8@X%8@"
+},
+{
+"off": 145389,
+"vaddr": "0x3fc96965",
+"s": "+8@p(8@"
+},
+{
+"off": 145413,
+"vaddr": "0x3fc9697d",
+"s": "$8@,&8@8$8@"
+},
+{
+"off": 145425,
+"vaddr": "0x3fc96989",
+"s": "\"8@generic"
+},
+{
+"off": 145436,
+"vaddr": "0x3fc96994",
+"s": "chip_generic"
+},
+{
+"off": 145473,
+"vaddr": "0x3fc969b9",
+"s": "(8@t)8@"
+},
+{
+"off": 145517,
+"vaddr": "0x3fc969e5",
+"s": "$8@X%8@"
+},
+{
+"off": 145561,
+"vaddr": "0x3fc96a11",
+"s": "$8@,&8@"
+},
+{
+"off": 145573,
+"vaddr": "0x3fc96a1d",
+"s": "\"8@issi"
+},
+{
+"off": 145605,
+"vaddr": "0x3fc96a3d",
+"s": "(8@t)8@"
+},
+{
+"off": 145649,
+"vaddr": "0x3fc96a69",
+"s": "$8@X%8@"
+},
+{
+"off": 145697,
+"vaddr": "0x3fc96a99",
+"s": ",8@P.8@"
+},
+{
+"off": 145705,
+"vaddr": "0x3fc96aa1",
+"s": "\"8@mxic"
+},
+{
+"off": 145716,
+"vaddr": "0x3fc96aac",
+"s": "spi_flash_chip_mxic_opi_get_write_protect"
+},
+{
+"off": 145760,
+"vaddr": "0x3fc96ad8",
+"s": "spi_flash_chip_mxic_opi_get_data_length_zoom"
+},
+{
+"off": 145821,
+"vaddr": "0x3fc96b15",
+"s": "(8@X.8@"
+},
+{
+"off": 145877,
+"vaddr": "0x3fc96b4d",
+"s": "08@`18@"
+},
+{
+"off": 145897,
+"vaddr": "0x3fc96b61",
+"s": "48@\\38@"
+},
+{
+"off": 145929,
+"vaddr": "0x3fc96b81",
+"s": "08@mxic (opi)"
+},
+{
+"off": 145965,
+"vaddr": "0x3fc96ba5",
+"s": "(8@t)8@"
+},
+{
+"off": 146009,
+"vaddr": "0x3fc96bd1",
+"s": "$8@X%8@"
+},
+{
+"off": 146029,
+"vaddr": "0x3fc96be5",
+"s": "+8@p(8@"
+},
+{
+"off": 146053,
+"vaddr": "0x3fc96bfd",
+"s": "$8@,&8@(48@"
+},
+{
+"off": 146093,
+"vaddr": "0x3fc96c25",
+"s": "(8@x58@"
+},
+{
+"off": 146136,
+"vaddr": "0x3fc96c50",
+"s": "048@X%8@"
+},
+{
+"off": 146157,
+"vaddr": "0x3fc96c65",
+"s": "+8@p(8@"
+},
+{
+"off": 146181,
+"vaddr": "0x3fc96c7d",
+"s": "$8@,&8@"
+},
+{
+"off": 146193,
+"vaddr": "0x3fc96c89",
+"s": "\"8@winbond"
+},
+{
+"off": 146204,
+"vaddr": "0x3fc96c94",
+"s": "chip_wb"
+},
+{
+"off": 146413,
+"vaddr": "0x40374059",
+"s": " 84@30@"
+},
+{
+"off": 146594,
+"vaddr": "0x4037410e",
+"s": "I@@IPPI``IppI"
+},
+{
+"off": 151209,
+"vaddr": "0x40375315",
+"s": ",8@h-8@"
+},
+{
+"off": 151269,
+"vaddr": "0x40375351",
+"s": "-8@8-8@"
+},
+{
+"off": 154226,
+"vaddr": "0x40375ede",
+"s": "\"  `  t"
+},
+{
+"off": 157311,
+"vaddr": "0x40376aeb",
+"s": "  t00t@@tPPt``t"
+},
+{
+"off": 157371,
+"vaddr": "0x40376b27",
+"s": "  t00t@@tPPt"
+},
+{
+"off": 157427,
+"vaddr": "0x40376b5f",
+"s": "  t00t@@tPPt``tppt"
+},
+{
+"off": 158507,
+"vaddr": "0x40376f97",
+"s": "jZz{`eb"
+},
+{
+"off": 159606,
+"vaddr": "0x403773e2",
+"s": ")Q9aIqba"
+},
+{
+"off": 170243,
+"vaddr": "0x40379d6f",
+"s": "U0``tPPtF7"
+},
+{
+"off": 170281,
+"vaddr": "0x40379d95",
+"s": "U0``tPPt"
+},
+{
+"off": 170328,
+"vaddr": "0x40379dc4",
+"s": "U0``tPPt="
+},
+{
+"off": 170425,
+"vaddr": "0x40379e25",
+"s": "``tPPt"
+},
+{
+"off": 170464,
+"vaddr": "0x40379e4c",
+"s": "``tPPt0"
+},
+{
+"off": 183756,
+"vaddr": "0x4037d238",
+"s": "@puAPW"
+},
+{
+"off": 188568,
+"vaddr": "0x4037e504",
+"s": "&5/&E&"
+},
+{
+"off": 188968,
+"vaddr": "0x4037e694",
+"s": "&5/&E&"
+},
+{
+"off": 193980,
+"vaddr": "0x4037fa28",
+"s": ";E@BA="
+},
+{
+"off": 194611,
+"vaddr": "0x4037fc9f",
+"s": "&&U&6>"
+},
+{
+"off": 196739,
+"vaddr": "0x42000083",
+"s": "<Db7@,b7@('"
+},
+{
+"off": 196793,
+"vaddr": "0x420000b9",
+"s": "l7@Pm7@L"
+},
+{
+"off": 198396,
+"vaddr": "0x420006fc",
+"s": "$}7@4>"
+},
+{
+"off": 199242,
+"vaddr": "0x42000a4a",
+"s": "7@\\d7@L"
+},
+{
+"off": 199337,
+"vaddr": "0x42000aa9",
+"s": "j7@(j7@"
+},
+{
+"off": 200139,
+"vaddr": "0x42000dcb",
+"s": "<,q7@|e"
+},
+{
+"off": 201027,
+"vaddr": "0x42001143",
+"s": "<coreCOREIDLEipc0ipc1\\"
+},
+{
+"off": 202639,
+"vaddr": "0x4200178f",
+"s": "<D}7@t"
+},
+{
+"off": 202794,
+"vaddr": "0x4200182a",
+"s": "7@P 8@"
+},
+{
+"off": 203270,
+"vaddr": "0x42001a06",
+"s": "7@(p7@"
+},
+{
+"off": 203642,
+"vaddr": "0x42001b7a",
+"s": "V?LUUUUU"
+},
+{
+"off": 203651,
+"vaddr": "0x42001b83",
+"s": "?IUUUUU"
+},
+{
+"off": 203931,
+"vaddr": "0x42001c9b",
+"s": "?to7@d"
+},
+{
+"off": 204739,
+"vaddr": "0x42001fc3",
+"s": "?lr7@<"
+},
+{
+"off": 207631,
+"vaddr": "0x42002b0f",
+"s": " e1*f:N"
+},
+{
+"off": 211411,
+"vaddr": "0x420039d3",
+"s": " %H)&j"
+},
+{
+"off": 212362,
+"vaddr": "0x42003d8a",
+"s": "&X>&hAfx"
+},
+{
+"off": 217398,
+"vaddr": "0x42005136",
+"s": "*0  tF"
+},
+{
+"off": 219396,
+"vaddr": "0x42005904",
+"s": "0@I PP"
+},
+{
+"off": 222628,
+"vaddr": "0x420065a4",
+"s": "&((&HE!_"
+},
+{
+"off": 222800,
+"vaddr": "0x42006650",
+"s": "&(<&Hi!4"
+},
+{
+"off": 223304,
+"vaddr": "0x42006848",
+"s": "&(2&HW!"
+},
+{
+"off": 223504,
+"vaddr": "0x42006910",
+"s": "&((&H;!"
+},
+{
+"off": 225043,
+"vaddr": "0x42006f13",
+"s": "UKwKffu"
+},
+{
+"off": 230120,
+"vaddr": "0x420082e8",
+"s": ")aiAyQ"
+},
+{
+"off": 230246,
+"vaddr": "0x42008366",
+"s": "y%I59E"
+},
+{
+"off": 230552,
+"vaddr": "0x42008498",
+"s": "\"&#8VS"
+},
+{
+"off": 232805,
+"vaddr": "0x42008d65",
+"s": "0S @$ "
+},
+{
+"off": 232965,
+"vaddr": "0x42008e05",
+"s": "3 3cVs"
+},
+{
+"off": 239097,
+"vaddr": "0x4200a5f9",
+"s": "Qpy0P]0"
+},
+{
+"off": 239235,
+"vaddr": "0x4200a683",
+"s": "px0PY0%/"
+},
+{
+"off": 239369,
+"vaddr": "0x4200a709",
+"s": "P[0`j0"
+},
+{
+"off": 239520,
+"vaddr": "0x4200a7a0",
+"s": "0s 0S "
+},
+{
+"off": 249573,
+"vaddr": "0x4200cee5",
+"s": "pp``wc"
+},
+{
+"off": 250360,
+"vaddr": "0x4200d1f8",
+"s": "T9!91YAYQ"
+},
+{
+"off": 251538,
+"vaddr": "0x4200d692",
+"s": "a#\"a$\"a%\"a&"
+},
+{
+"off": 251874,
+"vaddr": "0x4200d7e2",
+"s": "\"  `  tF"
+},
+{
+"off": 252027,
+"vaddr": "0x4200d87b",
+"s": "\"  `  t"
+},
+{
+"off": 255876,
+"vaddr": "0x4200e784",
+"s": "0c 79!&+"
+},
+{
+"off": 260026,
+"vaddr": "0x4200f7ba",
+"s": "PPtRh("
+},
+{
+"off": 261040,
+"vaddr": "0x4200fbb0",
+"s": "\"jJ\"j9"
+},
+{
+"off": 263176,
+"vaddr": "0x42010408",
+"s": "D@@`@@t"
+},
+{
+"off": 266267,
+"vaddr": "0x4201101b",
+"s": "0xb78r"
+},
+{
+"off": 266378,
+"vaddr": "0x4201108a",
+"s": "@ %A ( F"
+},
+{
+"off": 268110,
+"vaddr": "0x4201174e",
+"s": "Y&Y6Rf"
+},
+{
+"off": 269481,
+"vaddr": "0x42011ca9",
+"s": "z'9;&R{"
+},
+{
+"off": 271648,
+"vaddr": "0x42012520",
+"s": "rA1rA0"
+},
+{
+"off": 271703,
+"vaddr": "0x42012557",
+"s": "rH\\rH`"
+},
+{
+"off": 276836,
+"vaddr": "0x42013964",
+"s": "`F `v "
+},
+{
+"off": 279273,
+"vaddr": "0x420142e9",
+"s": "AiQYq9"
+},
+{
+"off": 279533,
+"vaddr": "0x420143ed",
+"s": "X@@t78c"
+},
+{
+"off": 279747,
+"vaddr": "0x420144c3",
+"s": "wbbErbF"
+},
+{
+"off": 281270,
+"vaddr": "0x42014ab6",
+"s": "&Z#f*H"
+},
+{
+"off": 281816,
+"vaddr": "0x42014cd8",
+"s": "&Z5f*f2"
+},
+{
+"off": 282649,
+"vaddr": "0x42015019",
+"s": ")QYa9qv"
+},
+{
+"off": 282777,
+"vaddr": "0x42015099",
+"s": "(QXa8q"
+},
+{
+"off": 282805,
+"vaddr": "0x420150b5",
+"s": ")QYa2a"
+},
+{
+"off": 282851,
+"vaddr": "0x420150e3",
+"s": "(QXa8q"
+},
+{
+"off": 283737,
+"vaddr": "0x42015459",
+"s": "|pptKf"
+},
+{
+"off": 283851,
+"vaddr": "0x420154cb",
+"s": "|  tKw"
+},
+{
+"off": 286411,
+"vaddr": "0x42015ecb",
+"s": "  t00d"
+},
+{
+"off": 286827,
+"vaddr": "0x4201606b",
+"s": "  t00d"
+},
+{
+"off": 287332,
+"vaddr": "0x42016264",
+"s": "yQpG PW"
+},
+{
+"off": 287951,
+"vaddr": "0x420164cf",
+"s": "gPlc;f`bA"
+},
+{
+"off": 291409,
+"vaddr": "0x42017251",
+"s": "9f&0y)"
+},
+{
+"off": 295764,
+"vaddr": "0x42018354",
+"s": "IQ)a2a"
+},
+{
+"off": 296201,
+"vaddr": "0x42018509",
+"s": "01A08 "
+},
+{
+"off": 299093,
+"vaddr": "0x42019055",
+"s": "wpp`p tF"
+},
+{
+"off": 299110,
+"vaddr": "0x42019066",
+"s": "\"  `  t"
+},
+{
+"off": 300451,
+"vaddr": "0x420195a3",
+"s": "iCYS)cI"
+},
+{
+"off": 306460,
+"vaddr": "0x4201ad1c",
+"s": "&\"h&2\\"
+},
+{
+"off": 309571,
+"vaddr": "0x4201b943",
+"s": "yQyAya"
+},
+{
+"off": 311861,
+"vaddr": "0x4201c235",
+"s": "00t@@tf"
+},
+{
+"off": 313450,
+"vaddr": "0x4201c86a",
+"s": "yJyZyjyzy"
+},
+{
+"off": 315195,
+"vaddr": "0x4201cf3b",
+"s": "00t@@t"
+},
+{
+"off": 315389,
+"vaddr": "0x4201cffd",
+"s": "I!I1IAIQIaIq"
+},
+{
+"off": 322544,
+"vaddr": "0x4201ebf0",
+"s": ":SI!PQAW:"
+},
+{
+"off": 325660,
+"vaddr": "0x4201f81c",
+"s": "Bf(Rf)"
+},
+{
+"off": 327402,
+"vaddr": "0x4201feea",
+"s": "yByRyb2R"
+},
+{
+"off": 327773,
+"vaddr": "0x4202005d",
+"s": "yByRyb"
+},
+{
+"off": 328943,
+"vaddr": "0x420204ef",
+"s": "9QIaYqba"
+},
+{
+"off": 328995,
+"vaddr": "0x42020523",
+"s": "ra%ba$}"
+},
+{
+"off": 329103,
+"vaddr": "0x4202058f",
+"s": "ra%Ra#ba$"
+},
+{
+"off": 334223,
+"vaddr": "0x4202198f",
+"s": "YHPPtF"
+},
+{
+"off": 334274,
+"vaddr": "0x420219c2",
+"s": "U#PO1}"
+},
+{
+"off": 335653,
+"vaddr": "0x42021f25",
+"s": "f```ba"
+},
+{
+"off": 338755,
+"vaddr": "0x42022b43",
+"s": "YIPPtF"
+},
+{
+"off": 346727,
+"vaddr": "0x42024a67",
+"s": "YHPPtF"
+},
+{
+"off": 346778,
+"vaddr": "0x42024a9a",
+"s": "U#PO1}"
+},
+{
+"off": 348157,
+"vaddr": "0x42024ffd",
+"s": "f```ba"
+},
+{
+"off": 351259,
+"vaddr": "0x42025c1b",
+"s": "YIPPtF"
+},
+{
+"off": 355784,
+"vaddr": "0x42026dc8",
+"s": "ba%jaY"
+},
+{
+"off": 359215,
+"vaddr": "0x42027b2f",
+"s": "IH@@tF"
+},
+{
+"off": 364504,
+"vaddr": "0x42028fd8",
+"s": "ba%jaY"
+},
+{
+"off": 366331,
+"vaddr": "0x420296fb",
+"s": "f```Pf"
+},
+{
+"off": 366492,
+"vaddr": "0x4202979c",
+"s": "za0P`P"
+},
+{
+"off": 374935,
+"vaddr": "0x4202b897",
+"s": "YHPPtF"
+},
+{
+"off": 385345,
+"vaddr": "0x4202e141",
+"s": "@GA D "
+},
+{
+"off": 392651,
+"vaddr": "0x403811e7",
+"s": "Ds*$VRP"
+},
+{
+"off": 393414,
+"vaddr": "0x403814e2",
+"s": "`T%00``e$"
+},
+{
+"off": 393759,
+"vaddr": "0x4038163b",
+"s": "```PP`"
+},
+{
+"off": 395303,
+"vaddr": "0x40381c43",
+"s": "\"  `  t"
+},
+{
+"off": 402211,
+"vaddr": "0x4038373f",
+"s": "yaiQYAy!y"
+},
+{
+"off": 402257,
+"vaddr": "0x4038376d",
+"s": "yaiQYAy!y"
+},
+{
+"off": 402328,
+"vaddr": "0x403837b4",
+"s": "yaiQyAy19"
+},
+{
+"off": 402414,
+"vaddr": "0x4038380a",
+"s": "yaiQyAy1Y!9"
+},
+{
+"off": 402611,
+"vaddr": "0x403838cf",
+"s": "0\"  0` 3"
+},
+{
+"off": 402672,
+"vaddr": "0x4038390c",
+"s": "i#y3 aA"
+},
+{
+"off": 402996,
+"vaddr": "0x40383a50",
+"s": ")Q9aIqY"
+},
+{
+"off": 403435,
+"vaddr": "0x40383c07",
+"s": " 4  300"
+}
+]

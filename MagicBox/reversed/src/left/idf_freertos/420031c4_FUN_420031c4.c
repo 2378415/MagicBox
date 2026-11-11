@@ -1,0 +1,6 @@
+void FUN_420031c4(void)
+
+{
+  (*DAT_42000280)(PTR_FUN_4200027c,PTR_LAB_42000278);
+  return;
+}

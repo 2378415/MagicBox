@@ -1,0 +1,7 @@
+void FUN_40376a28(void)
+
+{
+  FUN_4037bf20();
+  FUN_4037c094(PTR_DAT_40374724);
+  return;
+}

@@ -1,0 +1,107 @@
+/* prototypes for right/hid - generated from decompiled bodies, not original headers */
+#ifndef RE_RIGHT_HID_H
+#define RE_RIGHT_HID_H
+
+#include "re_types.h"
+
+extern undefined4 DAT_42000160;
+extern undefined4 DAT_420001e4;
+extern undefined4 DAT_42000240;
+extern undefined4 DAT_420002fc;
+extern undefined4 DAT_420003bc;
+extern undefined4 DAT_420003d0;
+extern undefined4 DAT_420004fc;
+extern undefined4 DAT_42000634;
+extern undefined4 DAT_42000894;
+extern undefined4 DAT_42000a8c;
+extern undefined4 DAT_42000ad0;
+extern undefined4 DAT_42000ad4;
+extern undefined4 DAT_42000af8;
+extern undefined4 DAT_42000b2c;
+extern undefined4 DAT_42000b30;
+extern undefined4 DAT_42000b98;
+extern undefined4 DAT_42000b9c;
+extern undefined4 DAT_42000bc8;
+extern undefined4 DAT_42000bcc;
+extern undefined4 DAT_42000c58;
+extern undefined4 DAT_42000c60;
+extern undefined4 DAT_42000c68;
+extern undefined4 DAT_42000c7c;
+extern undefined4 DAT_42000c84;
+extern undefined4 DAT_42000d68;
+extern undefined4 DAT_42000d6c;
+extern undefined4 DAT_42000d70;
+extern undefined4 DAT_42000d84;
+extern undefined4 DAT_42001210;
+extern undefined4 DAT_42001220;
+extern undefined4 DAT_420012a4;
+extern undefined4 PTR_DAT_42000ad8;
+extern undefined4 PTR_DAT_42000ae0;
+extern undefined4 PTR_DAT_42000b00;
+extern undefined4 PTR_DAT_42000b08;
+extern undefined4 PTR_DAT_42000ba0;
+extern undefined4 PTR_DAT_42000ba8;
+extern undefined4 PTR_DAT_42000bdc;
+extern undefined4 PTR_DAT_42000be0;
+extern undefined4 PTR_DAT_42000c1c;
+extern undefined4 PTR_DAT_42000c24;
+extern undefined4 PTR_FUN_420006f0;
+extern undefined4 PTR_FUN_42000c88;
+extern undefined4 PTR_FUN_42000cb8;
+extern undefined4 PTR_FUN_42000d74;
+extern undefined4 PTR_FUN_4200119c;
+extern undefined4 PTR_PTR_420012a0;
+extern undefined4 PTR_s_DeviceRemovable__0x_02x_42000c48;
+extern undefined4 PTR_s_Do_not_support_LS_FS_device_on_H_42000b04;
+extern undefined4 PTR_s_Fail_to_alloc_hid_class_42000adc;
+extern undefined4 PTR_s_Fail_to_alloc_hub_class_42000c70;
+extern undefined4 PTR_s_Failed_to_create_hub_mq_42000cb0;
+extern undefined4 PTR_s_Failed_to_create_hub_thread_42000cbc;
+extern undefined4 PTR_s_HID_descriptor_not_found_42000ae4;
+extern undefined4 PTR_s_HID_interface_not_found_42000aec;
+extern undefined4 PTR_s_HID_report_descriptor_not_found_42000ae8;
+extern undefined4 PTR_s_Hub_Descriptor__42000c4c;
+extern undefined4 PTR_s_Hub_depth__d__is_overflow_42000c74;
+extern undefined4 PTR_s_No_memory_to_alloc_int_timer_42000c90;
+extern undefined4 PTR_s_PortPwrCtrlMask__0x_02x_42000c50;
+extern undefined4 PTR_s_SuperSpeed_Hub_Descriptor__42000c2c;
+extern undefined4 PTR_s_Unable_to_set_hub_depth_42000c78;
+extern undefined4 PTR_s__dev_hub_d_42000c80;
+extern undefined4 PTR_s__dev_input_d_42000af0;
+extern undefined4 PTR_s_bDescriptorType__0x_02x_42000c34;
+extern undefined4 PTR_s_bHubContrCurrent__0x_02x_42000c44;
+extern undefined4 PTR_s_bLength__0x_02x_42000c30;
+extern undefined4 PTR_s_bNbrPorts__0x_02x_42000c38;
+extern undefined4 PTR_s_bPwrOn2PwrGood__0x_02x_42000c40;
+extern undefined4 PTR_s_bus_overflow_42000bd8;
+extern undefined4 PTR_s_hubint_tim_42000c8c;
+extern undefined4 PTR_s_invalid_device_bLength_0x_02x_42000c20;
+extern undefined4 PTR_s_unexpected_descriptor_0x_02x_42000c28;
+extern undefined4 PTR_s_usbh_hub_u_42000cb4;
+extern undefined4 PTR_s_wHubCharacteristics__0x_04x_42000c3c;
+
+int FUN_4200be20(void);
+undefined4 FUN_4200beac(int param_1,byte param_2);
+void FUN_4200c3b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,uint param_6, char param_7);
+undefined4 FUN_4200d104(int param_1,byte *param_2,undefined4 param_3);
+void FUN_4200de08(undefined4 *param_1,undefined1 param_2,undefined4 param_3);
+undefined4 FUN_4200df3c(char param_1,undefined4 param_2);
+undefined4 FUN_4200e59c(int param_1,undefined4 param_2);
+undefined4 FUN_4200e5dc(byte *param_1);
+undefined4 FUN_4200e6a4(char *param_1);
+undefined4 FUN_4200e7e4(int param_1,undefined4 param_2,undefined4 param_3);
+int FUN_4200e93c(void);
+undefined4 FUN_4200ea4c(int param_1,ushort param_2,ushort param_3);
+void hubint_tim(void);
+undefined4 FUN_4200f12c(int param_1);
+void FUN_42010198(int *param_1);
+int FUN_42017b5c(undefined1 *param_1,int param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,undefined4 param_6);
+undefined4 FUN_42018690(undefined4 *param_1,int *param_2);
+int FUN_420207d0(int param_1);
+int FUN_420207dc(void);
+int FUN_420207ec(void);
+undefined8 FUN_420207fc(int param_1,uint param_2,int *param_3);
+void FUN_4202475c(void);
+undefined4 FUN_42024764(int param_1);
+
+#endif /* RE_RIGHT_HID_H */

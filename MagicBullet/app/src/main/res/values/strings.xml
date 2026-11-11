@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MagicBullet</string>
+
+    <!-- tabs -->
+    <string name="tab_preview">预览</string>
+    <string name="tab_yolo">Yolo</string>
+    <string name="tab_keys">键鼠</string>
+    <string name="tab_aim">瞄准</string>
+
+    <!-- preview -->
+    <string name="preview_waiting">等待 USB 采集卡…</string>
+    <string name="preview_rescan">重新扫描</string>
+    <string name="preview_expand">全屏</string>
+    <string name="preview_collapse">还原</string>
+    <string name="preview_device">设备</string>
+    <string name="preview_device_unknown">未连接</string>
+    <string name="preview_mode_placeholder">—</string>
+
+    <!-- yolo -->
+    <string name="yolo_title">推理参数</string>
+    <string name="yolo_group_model">模型</string>
+    <string name="yolo_group_backend">推理后端</string>
+    <string name="yolo_group_threshold">阈值</string>
+    <string name="yolo_group_output">输出</string>
+    <string name="yolo_group_stats">运行状态</string>
+    <string name="yolo_model_file">模型文件</string>
+    <string name="yolo_input_size">输入尺寸</string>
+    <string name="yolo_conf">置信度门限</string>
+    <string name="yolo_iou">NMS IoU</string>
+    <string name="yolo_max_det">最大检测数</string>
+    <string name="yolo_draw">在预览上画框</string>
+    <string name="yolo_classes">类别过滤</string>
+    <string name="yolo_stat_fps">采集 FPS</string>
+    <string name="yolo_stat_infer">推理耗时</string>
+    <string name="yolo_stat_latency">端到端延迟</string>
+    <string name="yolo_stat_na">—</string>
+    <string name="yolo_reset">恢复默认</string>
+    <string name="yolo_backend_cpu">CPU</string>
+    <string name="yolo_backend_nnapi">NNAPI</string>
+    <string name="yolo_backend_gpu">GPU</string>
+    <string name="yolo_not_implemented">参数已保存，推理尚未接入</string>
+
+    <string name="class_person">人物</string>
+    <string name="class_vehicle">车辆</string>
+    <string name="class_animal">动物</string>
+    <string name="class_other">其他</string>
+
+    <!-- placeholders -->
+    <string name="keys_title">键鼠控制</string>
+    <string name="keys_desc">功能开发中</string>
+    <string name="keys_hint">规划：CH343 串口通信、MAKCU 注入、灵敏度与加速度曲线、按键映射。</string>
+    <string name="aim_title">瞄准</string>
+    <string name="aim_desc">功能开发中</string>
+    <string name="aim_hint">规划：瞄准策略、平滑曲线、触发按键、目标选择优先级。</string>
+    <string name="yolo_model_builtin">内置模型（COCO 80 类）</string>
+    <string name="yolo_model_no_import">未导入自定义模型</string>
+    <string name="yolo_pick_model">选择本地模型</string>
+    <string name="yolo_delete_model">删除模型</string>
+    <string name="yolo_group_labels">类目（一行一个）</string>
+    <string name="yolo_labels_hint">person&#10;bicycle&#10;car</string>
+    <string name="yolo_importing">导入中…</string>
+    <string name="yolo_import_failed">导入失败：</string>
+    <string name="yolo_labels_ok">共 %1$d 行 · 类别 id 0–%2$d</string>
+    <string name="yolo_model_ready">%1$s</string>
+    <string name="yolo_backend_fmt">后端：%1$s</string>
+    <string name="yolo_apply">应用</string>
+    <string name="yolo_applied">已应用</string>
+    <string name="yolo_toast_applied">已应用：conf %1$.2f · IoU %2$.2f · 最多 %3$d</string>
+    <string name="yolo_toast_unchanged">配置未变化</string>
+    <string name="yolo_toast_failed">应用失败：%1$s</string>
+    <string name="yolo_fail_layout">该模型的输出格式暂不支持</string>
+    <string name="yolo_fail_values">阈值超出有效范围</string>
+    <string name="roi_full">全屏</string>
+    <string name="roi_1080">1080²</string>
+    <string name="roi_720">720²</string>
+    <string name="roi_640">640²</string>
+    <string name="roi_apply">应用裁切</string>
+    <string name="roi_applied">已应用裁切：%1$s</string>
+    <string name="roi_unchanged">裁切区域未变化</string>
+    <string name="roi_too_small">该尺寸小于模型输入，只会放大插值</string>
+    <string name="cap_2k60">2K60</string>
+    <string name="cap_2k30">2K30</string>
+    <string name="cap_1080_60">1080p60</string>
+    <string name="cap_1080_30">1080p30</string>
+    <string name="cap_switched">已切换到 %1$s @ %2$dfps</string>
+    <string name="cap_failed">切换失败，已回退到 %1$s</string>
+    <string name="cap_no_device">采集卡未连接</string>
+    <string name="cap_unchanged">已是该采集模式</string>
+    <string name="cap_restart_required">已设为 %1$s @ %2$dfps，重启 app 后生效</string>
+
+    <!-- keys tab: control port (binary protocol) -->
+    <string name="keys_status_idle">控制口未连接</string>
+    <string name="keys_link_idle">未连接 · 921600 8N1</string>
+    <string name="keys_connect">连接</string>
+    <string name="keys_disconnect">断开</string>
+    <string name="keys_ping">PING</string>
+    <string name="keys_pad_title">方向（每次 200 counts）</string>
+    <string name="keys_left">← 左</string>
+    <string name="keys_up">↑ 上</string>
+    <string name="keys_down">↓ 下</string>
+    <string name="keys_right">→ 右</string>
+    <string name="keys_sumv_title">自定义 SUMV（0x36 二进制帧）</string>
+    <string name="keys_dx_hint">dx</string>
+    <string name="keys_dy_hint">dy</string>
+    <string name="keys_speed_hint">speed</string>
+    <string name="keys_dx_default">200</string>
+    <string name="keys_dy_default">0</string>
+    <string name="keys_speed_default">400</string>
+    <string name="keys_send">发送 SUMV</string>
+    <string name="keys_state">SUMV 状态</string>
+    <string name="keys_mode_aim">瞄准档 0x00</string>
+    <string name="keys_mode_human">拟人档 0x40</string>
+    <string name="keys_mode_turbo">极速档 0x80</string>
+    <string name="keys_profile_aim">瞄准剖面</string>
+    <string name="keys_profile_human">拟人剖面</string>
+    <string name="keys_profile_turbo">极速</string>
+    <string name="keys_tremor">手颤</string>
+    <string name="keys_mode_unknown">mode —</string>
+    <string name="keys_mode_fmt">mode 0x%1$02X · 手颤%2$s · 子运动%3$s · 过冲%4$s</string>
+    <string name="keys_on">开</string>
+    <string name="keys_off">关</string>
+    <string name="keys_log_title">串口日志</string>
+    <string name="keys_need_delta">dx 和 dy 都是 0，没有位移</string>
+    <string name="keys_not_connected">先点「连接」把控制口打开</string>
+
+    <!-- aim tab -->
+    <string name="aim_status_idle">瞄准未布防</string>
+    <string name="aim_status_armed">已布防 · 等热键</string>
+    <string name="aim_status_aiming">瞄准中</string>
+    <string name="aim_stats_idle">触发 0 次 · 误差 — · 无目标</string>
+    <string name="aim_state_idle">AIM — · rounds — · 死区 —</string>
+    <string name="aim_hid_idle">按键 — · 审计 —</string>
+    <string name="aim_auto_idle">自校准增益 —</string>
+    <string name="aim_state_unsupported">未收到 AIM_STATE：固件可能不支持 0x3C</string>
+    <string name="aim_arm">布防</string>
+    <string name="aim_disarm">取消布防</string>
+    <string name="aim_learn">学习按键</string>
+    <string name="aim_apply">应用</string>
+    <string name="aim_applied">参数已应用</string>
+    <string name="aim_save_all">保存配置（应用整页参数）</string>
+    <string name="aim_saved_all">已保存并应用整页配置</string>
+    <string name="aim_speed_title">瞄准速度（每发时长预算）</string>
+    <string name="aim_speed_default">10 ms</string>
+    <string name="aim_hotkey_title">启动热键</string>
+    <string name="aim_key_right">右键</string>
+    <string name="aim_key_rear">侧后键</string>
+    <string name="aim_key_front">侧前键</string>
+    <string name="aim_hold">按住生效（关 = 按一下切换）</string>
+    <string name="aim_volume_key">音量键也可触发</string>
+    <string name="aim_passthrough">热键照常传给 PC（仅监听）</string>
+    <string name="aim_rect_title">瞄准范围（准心 = 矩形中心）</string>
+    <string name="aim_rect_edit">在预览页编辑范围</string>
+    <string name="aim_loop_title">目标与闭环</string>
+    <string name="aim_labels">参与瞄准的类目（逗号分隔）</string>
+    <string name="aim_labels_hint">head,body</string>
+    <string name="aim_deadzone">死区 px</string>
+    <string name="aim_gain">增益</string>
+    <string name="aim_maxcounts">上限 counts</string>
+    <string name="aim_clamp">会话钳位 4000 counts</string>
+    <string name="aim_turbo">极速档（bit1）</string>
+    <string name="aim_pxpercount">px/count</string>
+    <string name="aim_log_title">运行日志</string>
+    <string name="aim_adv_title">高级（一般不用改）</string>
+    <string name="aim_stable">稳定帧数</string>
+    <string name="aim_trackmin">最小轨迹帧</string>
+    <string name="aim_offsetx">准心偏移 X</string>
+    <string name="aim_offsety">准心偏移 Y</string>
+    <string name="aim_auto_dead">自适应死区（按框抖动）</string>
+    <string name="aim_ads_bucket">按开镜灵敏度分开学增益</string>
+    <string name="aim_export">导出配置</string>
+    <string name="aim_import">导入配置</string>    <string name="aim_exported">已导出到：</string>
+    <string name="aim_imported">配置已导入</string>
+    <string name="aim_import_missing">还没有导出过配置</string>
+    <string name="aim_export_failed">操作失败：</string>
+    <string name="aim_loop_help">死区(px)：误差小于它就停手，防在目标上来回微抖（自学习时作下限）\n增益：每发只走误差的比例，0.6=走 60%，超过 0.85 容易过冲\n单帧上限(counts)：一发最多走多少，200 counts ≈ 250 px，防误检时炸屏（自学习时作上限）\npx/count：1 count 等于多少物理像素，换分辨率或系统缩放后要重标（125% 约 1.25，100% 约 1.0）\n※ 死区与单帧上限可自学习：高级区两个开关打开时，这里填的是下限/上限</string>
+    <string name="aim_adv_help">稳定帧数：目标连续出现几帧之后才允许动（默认 3，防假检出）\n最小轨迹帧：少于几帧不采信速度估计（默认 3）\n准心偏移 X/Y：把瞄准点整体平移多少像素，用于准心不在矩形正中心的情况\n自适应死区：按目标框抖动 P90 自动放大死区（静止目标上更稳，手填值作下限）\n自学习单帧上限：按目标框高度与跳变噪声自动定一发最多走多远（手填值作上限）\n开镜增益桶：腰射与开镜各学一份自校准增益（两者灵敏度不同）\n导出/导入配置：把全部参数（含学到的增益）存成 aim_config.json</string>    <string name="aim_auto_maxstep">自学习单帧上限（按框高与跳变噪声）</string>
+    <string name="calib_title">准心校准（放大）</string>
+    <string name="calib_help">双指缩放（1–12×）· 拖框内移动 · 拖 8 个手柄改大小 · 框外拖动平移画面\n框中心那个红点就是准心：把它对到游戏准心上，点保存即可。</string>
+    <string name="calib_grabbing">抓帧中…</string>
+    <string name="calib_grab_failed">没抓到帧（采集卡未连？）——仍可拖动矩形</string>
+    <string name="calib_info_idle">框 — · 中心 —</string>
+    <string name="calib_zoom">缩放</string>
+    <string name="calib_zoom_1x">1×</string>
+    <string name="calib_zoom_2x">2×</string>
+    <string name="calib_zoom_4x">4×</string>
+    <string name="calib_zoom_8x">8×</string>
+    <string name="calib_nudge">微调（1 采集像素）</string>
+    <string name="calib_up">▲</string>
+    <string name="calib_down">▼</string>
+    <string name="calib_left">◀</string>
+    <string name="calib_right">▶</string>
+    <string name="calib_grid">像素网格</string>
+    <string name="calib_loupe">放大镜</string>
+    <string name="calib_centre">矩形吸到画面中心</string>
+    <string name="calib_save">保存</string>
+    <string name="calib_cancel">取消</string>
+    <string name="aim_calib_open">放大校准准心</string>
+    <string name="aim_hotkey_mask_idle">当前热键 0x02（可多选，任一个触发即生效）</string>
+    <string name="keys_last_hid">读上条报告</string>
+    <string name="keys_last_hid_hint">上条报告：—</string>
+    <string name="aim_head_bias">头部锚点 1=下巴</string>
+    <string name="aim_center_tol">居中容差 %（默认 1）</string>
+    <string name="aim_centered_head">居中优先：居中且最下面（最近）优先</string>
+    <string name="aim_pick_size">选近优先：框更大（更近）优先</string>
+    <string name="aim_size_gate">换人门槛 %（默认 8，越大越不换人）</string>
+    <string name="aim_size_reach">选敌横向范围 %（默认 15，0=只认居中）</string>
+    <string name="aim_size_delta">换人最小差 %（默认 1，防抖）</string>
+    <string name="aim_switch_frames">换人确认帧（默认 3）</string>
+    <string name="aim_size_ema">尺寸平滑 %（默认 30，越大越灵敏）</string>
+    <string name="keys_btn_log">读按键日志</string>
+</resources>

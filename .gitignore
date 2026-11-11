@@ -1,0 +1,56 @@
+# ============================================================
+# MagicBox 发布仓库 .gitignore
+# 目标：只跟踪源码 / 文档 / 构建必需的少量二进制，
+# 构建产物、第三方工具链、临时脚本和大体积中间件一律不入库。
+# ============================================================
+
+# ---------- 通用 ----------
+**/__pycache__/
+*.py[cod]
+*.log
+!**/libuvc/src/**/*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# ---------- MagicBullet（Android / Gradle） ----------
+MagicBullet/.gradle/
+MagicBullet/build/
+MagicBullet/app/build/
+MagicBullet/app/.cxx/
+MagicBullet/.cxx/
+MagicBullet/libuvc/build/
+MagicBullet/local.properties
+MagicBullet/*.iml
+MagicBullet/.idea/
+MagicBullet/captures/
+
+# 研究草稿：克隆的参考仓库、截图、设备 dump
+MagicBullet/.research/
+
+# 训练 / 量化 / 本地依赖解包（重建代价高但体积巨大，不入库）
+MagicBullet/models/venv-tflite/
+MagicBullet/models/ort-aar/
+MagicBullet/models/qnn-aar/
+MagicBullet/models/aar/
+MagicBullet/models/calib/
+MagicBullet/models/*.pt
+MagicBullet/models/yolov8n.onnx
+MagicBullet/模型/
+
+# ---------- MagicBox（ESP32 固件重建 / 逆向工作区） ----------
+MagicBox/work/
+MagicBox/ghidra-projects/
+MagicBox/tools/rizin/
+MagicBox/tools/rizin-static.zip
+MagicBox/官方固件/烧录工具*.exe
+
+MagicBox/AMagicBox-Rebuild/build/
+MagicBox/AMagicBox-Rebuild/app_left/build/
+MagicBox/AMagicBox-Rebuild/app_right/build/
+MagicBox/AMagicBox-Rebuild/**/managed_components/
+MagicBox/AMagicBox-Rebuild/**/sdkconfig
+MagicBox/AMagicBox-Rebuild/**/sdkconfig.old
+MagicBox/AMagicBox-Rebuild/.pytest_cache/
+MagicBox/AMagicBox-Rebuild/**/.pytest_cache/
+MagicBox/AMagicBox-Rebuild/**/build/

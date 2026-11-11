@@ -1,0 +1,16 @@
+// 420175a0  FUN_420175a0  FUN_420175a0  size=44
+
+void FUN_420175a0(void)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = DAT_42001180;
+  *DAT_42001190 = PTR_FUN_42001194;
+  FUN_420174ac(uVar1,4,0);
+  FUN_420174ac(DAT_4200117c,8,1);
+  FUN_420174ac(DAT_42001184,0x12,2);
+  return;
+}
+
+

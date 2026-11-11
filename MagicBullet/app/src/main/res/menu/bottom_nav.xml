@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab_preview"
+        android:icon="@drawable/ic_tab_preview"
+        android:title="@string/tab_preview" />
+
+    <item
+        android:id="@+id/tab_yolo"
+        android:icon="@drawable/ic_tab_yolo"
+        android:title="@string/tab_yolo" />
+
+    <item
+        android:id="@+id/tab_keys"
+        android:icon="@drawable/ic_tab_keys"
+        android:title="@string/tab_keys" />
+
+    <item
+        android:id="@+id/tab_aim"
+        android:icon="@drawable/ic_tab_aim"
+        android:title="@string/tab_aim" />
+
+</menu>

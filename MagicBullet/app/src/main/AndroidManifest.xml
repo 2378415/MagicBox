@@ -1,0 +1,55 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" />
+
+    <!--
+      Required even though this app never uses Camera2: for a USB device that
+      reports video capture (any UVC capture card), UsbUserPermissionManager
+      refuses the USB permission request outright - without showing the system
+      dialog - unless the caller holds CAMERA. See
+      UsbUserPermissionManager#requestPermission / #hasPermission.
+    -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MagicBullet">
+
+        <!--
+          QNN HTP reaches the cDSP through FastRPC: libQnnHtpV81Stub.so dlopens
+          libcdsprpc.so, which lives in /vendor/lib64. Since Android 12 a linker
+          namespace only exposes a vendor library the app declares here, and without
+          it QnnDevice_create fails with QNN_DEVICE_ERROR_INVALID_CONFIG.
+        -->
+        <uses-native-library
+            android:name="libcdsprpc.so"
+            android:required="false" />
+        <uses-native-library
+            android:name="libOpenCL.so"
+            android:required="false" />
+
+        <activity
+            android:name=".ui.calib.AimCalibActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.MagicBullet" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

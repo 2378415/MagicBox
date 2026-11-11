@@ -1,0 +1,29 @@
+# ---> AL
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+*.app
+.snapshots/*
+
+# Android / Gradle
+.gradle/
+build/
+app/build/
+libuvc/build/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local research scratch (screenshots, cloned reference repos, device dumps)
+.research/
+
+

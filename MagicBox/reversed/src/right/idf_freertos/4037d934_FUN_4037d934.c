@@ -1,0 +1,15 @@
+undefined4 FUN_4037d934(void)
+
+{
+  undefined4 uVar1;
+  uint uVar2;
+  undefined4 uVar3;
+  undefined1 in_PRID;
+  
+  uVar3 = rsil(3);
+  uVar2 = rsr(in_PRID);
+  memw();
+  uVar1 = *(undefined4 *)((uVar2 >> 0xd & 1) * 4 + DAT_40374d64);
+  (*DAT_40374d10)(uVar3);
+  return uVar1;
+}

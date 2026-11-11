@@ -1,0 +1,6359 @@
+{
+ "bin": "官方固件\\V3.7_RIGHT.bin",
+ "hits": [
+  {
+   "code": "0x40374a3a",
+   "lit": "0x403747bc",
+   "str": "0x3c033ee0",
+   "s": "mosi_len <= 32"
+  },
+  {
+   "code": "0x40374c2c",
+   "lit": "0x40374c60",
+   "str": "0x3c037334",
+   "s": "xQueueGenericCreate"
+  },
+  {
+   "code": "0x40374e52",
+   "lit": "0x40374f5c",
+   "str": "0x3c0328dc",
+   "s": "xTaskToNotify"
+  },
+  {
+   "code": "0x40374f58",
+   "lit": "0x40374fb4",
+   "str": "0x3c032ad0",
+   "s": "xReturn != ( -1 )"
+  },
+  {
+   "code": "0x4037528d",
+   "lit": "0x40375290",
+   "str": "0x3fc95ec0",
+   "s": "(io_mode == SPI_FLASH_OPI_STR) || (io_mode == SPI_FLASH_OPI_DTR)"
+  },
+  {
+   "code": "0x403757e1",
+   "lit": "0x40374500",
+   "str": "0x3c0301c8",
+   "s": "(hint & (~RST_REASON_MASK)) == 0"
+  },
+  {
+   "code": "0x403757e4",
+   "lit": "0x40374504",
+   "str": "0x3c0368a4",
+   "s": "esp_reset_reason_set_hint"
+  },
+  {
+   "code": "0x40375bf8",
+   "lit": "0x403745c0",
+   "str": "0x3c030a60",
+   "s": " 0x%08lX:0x%08lX"
+  },
+  {
+   "code": "0x40375dd4",
+   "lit": "0x40374604",
+   "str": "0x3c030a84",
+   "s": " |<-CORRUPTED"
+  },
+  {
+   "code": "0x40375dea",
+   "lit": "0x40374608",
+   "str": "0x3c030a94",
+   "s": " |<-CONTINUES"
+  },
+  {
+   "code": "0x40375e62",
+   "lit": "0x40374610",
+   "str": "0x3c030ac0",
+   "s": "cpuid == xPortGetCoreID()"
+  },
+  {
+   "code": "0x40376023",
+   "lit": "0x40374648",
+   "str": "0x3c036a84",
+   "s": "heap_caps_malloc"
+  },
+  {
+   "code": "0x4037608a",
+   "lit": "0x4037465c",
+   "str": "0x3c036a68",
+   "s": "heap_caps_malloc_default"
+  },
+  {
+   "code": "0x403760b7",
+   "lit": "0x40374660",
+   "str": "0x3c036a38",
+   "s": "heap_caps_realloc"
+  },
+  {
+   "code": "0x4037612a",
+   "lit": "0x40374664",
+   "str": "0x3c036a4c",
+   "s": "heap_caps_realloc_default"
+  },
+  {
+   "code": "0x40376159",
+   "lit": "0x40374668",
+   "str": "0x3c036a24",
+   "s": "heap_caps_calloc"
+  },
+  {
+   "code": "0x4037619c",
+   "lit": "0x40374674",
+   "str": "0x3c031478",
+   "s": "esp_ptr_in_diram_dram((void *)dstart) || esp_ptr_in_rtc_dram_fast((void *)dstart)"
+  },
+  {
+   "code": "0x4037619f",
+   "lit": "0x40374678",
+   "str": "0x3c036d84",
+   "s": "dram_alloc_to_iram_addr"
+  },
+  {
+   "code": "0x403761d6",
+   "lit": "0x40374688",
+   "str": "0x3c0314f4",
+   "s": "esp_ptr_in_diram_dram((void *)dend) || esp_ptr_in_rtc_dram_fast((void *)dend)"
+  },
+  {
+   "code": "0x403761d9",
+   "lit": "0x40374678",
+   "str": "0x3c036d84",
+   "s": "dram_alloc_to_iram_addr"
+  },
+  {
+   "code": "0x403761ea",
+   "lit": "0x4037468c",
+   "str": "0x3c031544",
+   "s": "(dstart & 3) == 0"
+  },
+  {
+   "code": "0x403761ed",
+   "lit": "0x40374678",
+   "str": "0x3c036d84",
+   "s": "dram_alloc_to_iram_addr"
+  },
+  {
+   "code": "0x403761fe",
+   "lit": "0x40374690",
+   "str": "0x3c031558",
+   "s": "(dend & 3) == 0"
+  },
+  {
+   "code": "0x40376201",
+   "lit": "0x40374678",
+   "str": "0x3c036d84",
+   "s": "dram_alloc_to_iram_addr"
+  },
+  {
+   "code": "0x4037627d",
+   "lit": "0x403746a0",
+   "str": "0x3c031568",
+   "s": "heap != NULL && \"free() target pointer is outside heap areas\""
+  },
+  {
+   "code": "0x40376280",
+   "lit": "0x403746a4",
+   "str": "0x3c036d9c",
+   "s": "heap_caps_free"
+  },
+  {
+   "code": "0x403763fb",
+   "lit": "0x403746ac",
+   "str": "0x3c0315a8",
+   "s": "heap != NULL && \"realloc() pointer is outside heap areas\""
+  },
+  {
+   "code": "0x403763fe",
+   "lit": "0x403746b0",
+   "str": "0x3c036d6c",
+   "s": "heap_caps_realloc_base"
+  },
+  {
+   "code": "0x4037642d",
+   "lit": "0x403746ac",
+   "str": "0x3c0315a8",
+   "s": "heap != NULL && \"realloc() pointer is outside heap areas\""
+  },
+  {
+   "code": "0x40376430",
+   "lit": "0x403746b0",
+   "str": "0x3c036d6c",
+   "s": "heap_caps_realloc_base"
+  },
+  {
+   "code": "0x403764af",
+   "lit": "0x403746b4",
+   "str": "0x3c0315e4",
+   "s": "old_size > 0"
+  },
+  {
+   "code": "0x403764b2",
+   "lit": "0x403746b0",
+   "str": "0x3c036d6c",
+   "s": "heap_caps_realloc_base"
+  },
+  {
+   "code": "0x403766d3",
+   "lit": "0x403746d8",
+   "str": "0x3c031648",
+   "s": "svd != NULL"
+  },
+  {
+   "code": "0x403766d6",
+   "lit": "0x403746dc",
+   "str": "0x3c036dcc",
+   "s": "esp_intr_disable"
+  },
+  {
+   "code": "0x403769aa",
+   "lit": "0x40374720",
+   "str": "0x3c032e40",
+   "s": "lock != NULL && \"Uninitialized lock used\""
+  },
+  {
+   "code": "0x403769ad",
+   "lit": "0x40374724",
+   "str": "0x3c0376f0",
+   "s": "check_lock_nonzero"
+  },
+  {
+   "code": "0x403769d9",
+   "lit": "0x4037472c",
+   "str": "0x3c032e8c",
+   "s": "h != ((void *)0)"
+  },
+  {
+   "code": "0x403769dc",
+   "lit": "0x40374730",
+   "str": "0x3c03771c",
+   "s": "lock_acquire_generic"
+  },
+  {
+   "code": "0x40376a76",
+   "lit": "0x40374738",
+   "str": "0x3c037704",
+   "s": "lock_release_generic"
+  },
+  {
+   "code": "0x40376adb",
+   "lit": "0x4037473c",
+   "str": "0x3c032ea4",
+   "s": "xQueueGetMutexHolder( ( h ) ) == ((void *)0)"
+  },
+  {
+   "code": "0x40376ade",
+   "lit": "0x40374740",
+   "str": "0x3c037734",
+   "s": "_lock_close"
+  },
+  {
+   "code": "0x40376da3",
+   "lit": "0x40374774",
+   "str": "0x3c033e10",
+   "s": "Unhandled interrupt %d on cpu %d!"
+  },
+  {
+   "code": "0x40376e55",
+   "lit": "0x40374780",
+   "str": "0x3fc94408",
+   "s": "@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@@[7@"
+  },
+  {
+   "code": "0x42000cd5",
+   "lit": "0x42000cd8",
+   "str": "0x3c033c1c",
+   "s": "COREDUMP_START"
+  },
+  {
+   "code": "0x42001198",
+   "lit": "0x42000d98",
+   "str": "0x3c037b68",
+   "s": "led_init"
+  },
+  {
+   "code": "0x42001664",
+   "lit": "0x42000038",
+   "str": "0x3c030120",
+   "s": "flash_ret == ESP_OK"
+  },
+  {
+   "code": "0x42001667",
+   "lit": "0x4200003c",
+   "str": "0x3c036850",
+   "s": "__esp_system_init_fn_init_flash"
+  },
+  {
+   "code": "0x4200187f",
+   "lit": "0x420000ac",
+   "str": "0x3c030160",
+   "s": "rtc_clk_xtal_freq_get() == SOC_XTAL_FREQ_40M"
+  },
+  {
+   "code": "0x420018e4",
+   "lit": "0x42000ae8",
+   "str": "0x3c033474",
+   "s": "HID report descriptor not found"
+  },
+  {
+   "code": "0x42001f7a",
+   "lit": "0x420001b0",
+   "str": "0x3c030228",
+   "s": "Guru Meditation Error: Core "
+  },
+  {
+   "code": "0x42001f85",
+   "lit": "0x420001b4",
+   "str": "0x3c030248",
+   "s": " panic'ed ("
+  },
+  {
+   "code": "0x42001fe7",
+   "lit": "0x420001c4",
+   "str": "0x3c03025c",
+   "s": "Setting breakpoint at 0x"
+  },
+  {
+   "code": "0x42001ff2",
+   "lit": "0x420001c8",
+   "str": "0x3c030278",
+   "s": " and returning..."
+  },
+  {
+   "code": "0x420020a6",
+   "lit": "0x420001dc",
+   "str": "0x3c0302a0",
+   "s": "Re-entered core dump! Exception happened during core dump!"
+  },
+  {
+   "code": "0x42002118",
+   "lit": "0x420001e0",
+   "str": "0x3c0302e0",
+   "s": "Rebooting..."
+  },
+  {
+   "code": "0x42002194",
+   "lit": "0x42000c28",
+   "str": "0x3c0338cc",
+   "s": "unexpected descriptor 0x%02x"
+  },
+  {
+   "code": "0x4200221f",
+   "lit": "0x42000208",
+   "str": "0x3c0302f0",
+   "s": "Unknown"
+  },
+  {
+   "code": "0x42002466",
+   "lit": "0x42000258",
+   "str": "0x3c0302f8",
+   "s": "Debug exception reason: "
+  },
+  {
+   "code": "0x4200246f",
+   "lit": "0x4200025c",
+   "str": "0x3c030314",
+   "s": "SingleStep "
+  },
+  {
+   "code": "0x42002478",
+   "lit": "0x42000260",
+   "str": "0x3c030320",
+   "s": "HwBreakpoint "
+  },
+  {
+   "code": "0x42002484",
+   "lit": "0x42000264",
+   "str": "0x3c030330",
+   "s": "Watchpoint 1 triggered "
+  },
+  {
+   "code": "0x4200248d",
+   "lit": "0x42000268",
+   "str": "0x3c030348",
+   "s": "Watchpoint 0 triggered "
+  },
+  {
+   "code": "0x42002496",
+   "lit": "0x4200026c",
+   "str": "0x3c030360",
+   "s": "BREAK instr "
+  },
+  {
+   "code": "0x4200249f",
+   "lit": "0x42000270",
+   "str": "0x3c030370",
+   "s": "BREAKN instr "
+  },
+  {
+   "code": "0x420024a8",
+   "lit": "0x42000274",
+   "str": "0x3c030380",
+   "s": "DebugIntr "
+  },
+  {
+   "code": "0x420024c7",
+   "lit": "0x42000280",
+   "str": "0x3c03038c",
+   "s": "Memory dump at 0x"
+  },
+  {
+   "code": "0x4200254c",
+   "lit": "0x42000290",
+   "str": "0x3c0303a8",
+   "s": "Icache sync parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x4200257e",
+   "lit": "0x420002a4",
+   "str": "0x3c0303fc",
+   "s": "Icache preload parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x420025a0",
+   "lit": "0x420002a8",
+   "str": "0x3c03044c",
+   "s": "Dcache sync parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x420025d2",
+   "lit": "0x420002b4",
+   "str": "0x3c030498",
+   "s": "Dcache preload parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x420025f4",
+   "lit": "0x420002b8",
+   "str": "0x3c0304e8",
+   "s": "Write back error occurred while dcache tries to write back to flash"
+  },
+  {
+   "code": "0x420025fa",
+   "lit": "0x420002bc",
+   "str": "0x3c030530",
+   "s": "The following backtrace may not indicate the code that caused Cache invalid access"
+  },
+  {
+   "code": "0x4200260e",
+   "lit": "0x420002c4",
+   "str": "0x3c030588",
+   "s": "MMU entry fault error occurred while accessing the address 0x"
+  },
+  {
+   "code": "0x42002626",
+   "lit": "0x420002cc",
+   "str": "0x3c0305c8",
+   "s": " (invalid mmu entry)"
+  },
+  {
+   "code": "0x42002661",
+   "lit": "0x420002dc",
+   "str": "0x3c0305e8",
+   "s": " register dump:"
+  },
+  {
+   "code": "0x420026db",
+   "lit": "0x420002e8",
+   "str": "0x3c0305fc",
+   "s": " was running in ISR context:"
+  },
+  {
+   "code": "0x420026e4",
+   "lit": "0x420002ec",
+   "str": "0x3c03061c",
+   "s": "EPC1    : 0x"
+  },
+  {
+   "code": "0x420026f2",
+   "lit": "0x420002f0",
+   "str": "0x3c03062c",
+   "s": "  EPC2    : 0x"
+  },
+  {
+   "code": "0x42002700",
+   "lit": "0x420002f4",
+   "str": "0x3c03063c",
+   "s": "  EPC3    : 0x"
+  },
+  {
+   "code": "0x4200270e",
+   "lit": "0x420002f8",
+   "str": "0x3c03064c",
+   "s": "  EPC4    : 0x"
+  },
+  {
+   "code": "0x42002734",
+   "lit": "0x42000308",
+   "str": "0x3c0302f0",
+   "s": "Unknown"
+  },
+  {
+   "code": "0x42002739",
+   "lit": "0x4200030c",
+   "str": "0x3c03077c",
+   "s": "Exception was unhandled."
+  },
+  {
+   "code": "0x4200277c",
+   "lit": "0x42000314",
+   "str": "0x3c030798",
+   "s": "Unknown reason"
+  },
+  {
+   "code": "0x4200292c",
+   "lit": "0x4200036c",
+   "str": "0x3c030b04",
+   "s": "res == pdTRUE"
+  },
+  {
+   "code": "0x4200292f",
+   "lit": "0x42000370",
+   "str": "0x3c036a14",
+   "s": "esp_ipc_init"
+  },
+  {
+   "code": "0x42002aa1",
+   "lit": "0x420002a4",
+   "str": "0x3c0303fc",
+   "s": "Icache preload parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x42002b11",
+   "lit": "0x42000314",
+   "str": "0x3c030798",
+   "s": "Unknown reason"
+  },
+  {
+   "code": "0x42002d50",
+   "lit": "0x420003f0",
+   "str": "0x3c030b1c",
+   "s": "heap_size <= HEAP_SIZE_MAX"
+  },
+  {
+   "code": "0x42002d53",
+   "lit": "0x420003f4",
+   "str": "0x3c036abc",
+   "s": "register_heap"
+  },
+  {
+   "code": "0x42002e7a",
+   "lit": "0x42000400",
+   "str": "0x3c030b60",
+   "s": "heap_idx <= num_heaps"
+  },
+  {
+   "code": "0x42002e7d",
+   "lit": "0x42000404",
+   "str": "0x3c036aac",
+   "s": "heap_caps_init"
+  },
+  {
+   "code": "0x42002ece",
+   "lit": "0x42000410",
+   "str": "0x3c036a98",
+   "s": "spinlock_initialize"
+  },
+  {
+   "code": "0x42002f22",
+   "lit": "0x4200041c",
+   "str": "0x3c030bb4",
+   "s": "heap_idx == num_heaps"
+  },
+  {
+   "code": "0x42002f25",
+   "lit": "0x42000404",
+   "str": "0x3c036aac",
+   "s": "heap_caps_init"
+  },
+  {
+   "code": "0x42002f3b",
+   "lit": "0x42000420",
+   "str": "0x3c030bcc",
+   "s": "SLIST_EMPTY(&registered_heaps)"
+  },
+  {
+   "code": "0x42002f3e",
+   "lit": "0x42000404",
+   "str": "0x3c036aac",
+   "s": "heap_caps_init"
+  },
+  {
+   "code": "0x42002f83",
+   "lit": "0x42000428",
+   "str": "0x3c030bec",
+   "s": "heaps_array != NULL"
+  },
+  {
+   "code": "0x42002f86",
+   "lit": "0x42000404",
+   "str": "0x3c036aac",
+   "s": "heap_caps_init"
+  },
+  {
+   "code": "0x4200304f",
+   "lit": "0x42000444",
+   "str": "0x3c0313cc",
+   "s": "reserved[i].start <= reserved[i].end"
+  },
+  {
+   "code": "0x42003052",
+   "lit": "0x42000448",
+   "str": "0x3c036c34",
+   "s": "s_prepare_reserved_regions"
+  },
+  {
+   "code": "0x4200306e",
+   "lit": "0x42000450",
+   "str": "0x3c031428",
+   "s": "reserved[i + 1].start > reserved[i].start"
+  },
+  {
+   "code": "0x42003071",
+   "lit": "0x42000448",
+   "str": "0x3c036c34",
+   "s": "s_prepare_reserved_regions"
+  },
+  {
+   "code": "0x420033e8",
+   "lit": "0x42000488",
+   "str": "0x3c031648",
+   "s": "svd != NULL"
+  },
+  {
+   "code": "0x420033eb",
+   "lit": "0x4200048c",
+   "str": "0x3c036e44",
+   "s": "find_desc_for_source"
+  },
+  {
+   "code": "0x42003462",
+   "lit": "0x42000494",
+   "str": "0x3c031684",
+   "s": "!((vd->flags & VECDESC_FL_SHARED) && (vd->flags & VECDESC_FL_NONSHARED))"
+  },
+  {
+   "code": "0x42003465",
+   "lit": "0x42000498",
+   "str": "0x3c036e30",
+   "s": "is_vect_desc_usable"
+  },
+  {
+   "code": "0x420037e8",
+   "lit": "0x420004a4",
+   "str": "0x3c0316d0",
+   "s": "intr_num >= 0 && intr_num < SOC_CPU_INTR_NUM"
+  },
+  {
+   "code": "0x420037eb",
+   "lit": "0x420004a8",
+   "str": "0x3c036e14",
+   "s": "esp_cpu_intr_set_handler"
+  },
+  {
+   "code": "0x42003814",
+   "lit": "0x420004a4",
+   "str": "0x3c0316d0",
+   "s": "intr_num >= 0 && intr_num < SOC_CPU_INTR_NUM"
+  },
+  {
+   "code": "0x42003817",
+   "lit": "0x420004a8",
+   "str": "0x3c036e14",
+   "s": "esp_cpu_intr_set_handler"
+  },
+  {
+   "code": "0x42003838",
+   "lit": "0x420004a4",
+   "str": "0x3c0316d0",
+   "s": "intr_num >= 0 && intr_num < SOC_CPU_INTR_NUM"
+  },
+  {
+   "code": "0x4200383b",
+   "lit": "0x420004b4",
+   "str": "0x3c036dfc",
+   "s": "esp_cpu_intr_edge_ack"
+  },
+  {
+   "code": "0x4200397d",
+   "lit": "0x420004d0",
+   "str": "0x3c036de0",
+   "s": "intr_free_for_current_cpu"
+  },
+  {
+   "code": "0x42005729",
+   "lit": "0x420005dc",
+   "str": "0x3c031834",
+   "s": "Fatal error: Main I/D split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200574b",
+   "lit": "0x420005e0",
+   "str": "0x3c031894",
+   "s": "Fatal error: IRAM0 I_0 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200576f",
+   "lit": "0x420005e4",
+   "str": "0x3c0318f4",
+   "s": "Fatal error: IRAM0 I_1 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200579f",
+   "lit": "0x420005e8",
+   "str": "0x3c031954",
+   "s": "Fatal error: DRAM0 D_0 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x420057c3",
+   "lit": "0x420005ec",
+   "str": "0x3c0319b4",
+   "s": "Fatal error: DRAM0 D_1 split line configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x420057e7",
+   "lit": "0x420005f0",
+   "str": "0x3c031a14",
+   "s": "Fatal error: IRAM0 PMS AREA_0 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200580b",
+   "lit": "0x420005f4",
+   "str": "0x3c031a70",
+   "s": "Fatal error: IRAM0 PMS AREA_1 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200582f",
+   "lit": "0x420005f8",
+   "str": "0x3c031acc",
+   "s": "Fatal error: IRAM0 PMS AREA_2 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x42005857",
+   "lit": "0x420005fc",
+   "str": "0x3c031b28",
+   "s": "Fatal error: IRAM0 PMS AREA_3 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200587b",
+   "lit": "0x42000600",
+   "str": "0x3c031b84",
+   "s": "Fatal error: DRAM0 PMS AREA_0 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200589f",
+   "lit": "0x42000604",
+   "str": "0x3c031be0",
+   "s": "Fatal error: DRAM0 PMS AREA_1 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x420058c3",
+   "lit": "0x42000608",
+   "str": "0x3c031c3c",
+   "s": "Fatal error: DRAM0 PMS AREA_2 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x420058e8",
+   "lit": "0x4200060c",
+   "str": "0x3c031c98",
+   "s": "Fatal error: DRAM0 PMS AREA_3 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200591f",
+   "lit": "0x42000610",
+   "str": "0x3c031cf4",
+   "s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not enabled on core %d)"
+  },
+  {
+   "code": "0x4200595f",
+   "lit": "0x42000614",
+   "str": "0x3c031d50",
+   "s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not enabled on core %d)"
+  },
+  {
+   "code": "0x42005997",
+   "lit": "0x42000618",
+   "str": "0x3c031dac",
+   "s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - split address lock)"
+  },
+  {
+   "code": "0x420059bd",
+   "lit": "0x4200061c",
+   "str": "0x3c031e10",
+   "s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - global PMS lock)"
+  },
+  {
+   "code": "0x420059eb",
+   "lit": "0x42000620",
+   "str": "0x3c031e74",
+   "s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - monitor lock on core %d)"
+  },
+  {
+   "code": "0x42005a1b",
+   "lit": "0x42000624",
+   "str": "0x3c031ee0",
+   "s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not locked - split address lock)"
+  },
+  {
+   "code": "0x42005a41",
+   "lit": "0x42000628",
+   "str": "0x3c031f44",
+   "s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not locked - global PMS lock)"
+  },
+  {
+   "code": "0x42005a6f",
+   "lit": "0x4200062c",
+   "str": "0x3c031fa8",
+   "s": "Fatal error: DRAM0 PMS configuration corrupted (memory protection not locked - monitor lock on core %d)"
+  },
+  {
+   "code": "0x42005b0e",
+   "lit": "0x4200064c",
+   "str": "0x3c032014",
+   "s": "core_id >= 0 && core_id < SOC_CPU_CORES_NUM && intr_desc_ret != NULL"
+  },
+  {
+   "code": "0x42005b8f",
+   "lit": "0x42000664",
+   "str": "0x3c032118",
+   "s": "s_sleep_sub_mode_ref_cnt[mode] >= 0"
+  },
+  {
+   "code": "0x42005b92",
+   "lit": "0x42000668",
+   "str": "0x3c037158",
+   "s": "esp_sleep_sub_mode_config"
+  },
+  {
+   "code": "0x42005bea",
+   "lit": "0x42000674",
+   "str": "0x3c03213c",
+   "s": "source_approx_freq"
+  },
+  {
+   "code": "0x42005bed",
+   "lit": "0x42000678",
+   "str": "0x3c037198",
+   "s": "clk_tree_rtc_slow_calibration"
+  },
+  {
+   "code": "0x42005d5d",
+   "lit": "0x420006a0",
+   "str": "0x3c037174",
+   "s": "esp_clk_tree_lp_fast_get_freq_hz"
+  },
+  {
+   "code": "0x42005d9b",
+   "lit": "0x420006a8",
+   "str": "0x3c032ed4",
+   "s": "handle == (SemaphoreHandle_t) &s_common_mutex"
+  },
+  {
+   "code": "0x42005d9e",
+   "lit": "0x420006ac",
+   "str": "0x3c0376d8",
+   "s": "esp_newlib_locks_init"
+  },
+  {
+   "code": "0x42005dbf",
+   "lit": "0x420006b8",
+   "str": "0x3c032f04",
+   "s": "handle == (SemaphoreHandle_t) &s_common_recursive_mutex"
+  },
+  {
+   "code": "0x42005dc2",
+   "lit": "0x420006ac",
+   "str": "0x3c0376d8",
+   "s": "esp_newlib_locks_init"
+  },
+  {
+   "code": "0x42005ee3",
+   "lit": "0x420006ec",
+   "str": "0x3c032f44",
+   "s": "/dev/console"
+  },
+  {
+   "code": "0x4200620e",
+   "lit": "0x42000724",
+   "str": "0x3c032f54",
+   "s": "tls != NULL"
+  },
+  {
+   "code": "0x42006211",
+   "lit": "0x42000728",
+   "str": "0x3c037740",
+   "s": "pthread_cleanup_thread_specific_data_callback"
+  },
+  {
+   "code": "0x4200713c",
+   "lit": "0x420007f4",
+   "str": "0x3c032fa0",
+   "s": "fd >= 0 && fd < 3"
+  },
+  {
+   "code": "0x4200713f",
+   "lit": "0x420007f8",
+   "str": "0x3c0377d4",
+   "s": "uart_fcntl"
+  },
+  {
+   "code": "0x4200719c",
+   "lit": "0x420007f4",
+   "str": "0x3c032fa0",
+   "s": "fd >= 0 && fd < 3"
+  },
+  {
+   "code": "0x4200719f",
+   "lit": "0x42000800",
+   "str": "0x3c0377c8",
+   "s": "uart_fstat"
+  },
+  {
+   "code": "0x420071d0",
+   "lit": "0x420007f4",
+   "str": "0x3c032fa0",
+   "s": "fd >= 0 && fd < 3"
+  },
+  {
+   "code": "0x420071d3",
+   "lit": "0x42000808",
+   "str": "0x3c0377bc",
+   "s": "uart_close"
+  },
+  {
+   "code": "0x420071f8",
+   "lit": "0x4200080c",
+   "str": "0x3c032fe4",
+   "s": "s_ctx[fd]->peek_char == NONE"
+  },
+  {
+   "code": "0x420071fb",
+   "lit": "0x42000810",
+   "str": "0x3c03779c",
+   "s": "uart_return_char"
+  },
+  {
+   "code": "0x42007218",
+   "lit": "0x420007f4",
+   "str": "0x3c032fa0",
+   "s": "fd >= 0 && fd < 3"
+  },
+  {
+   "code": "0x4200721b",
+   "lit": "0x42000814",
+   "str": "0x3c0377e0",
+   "s": "uart_fsync"
+  },
+  {
+   "code": "0x4200725e",
+   "lit": "0x420007f4",
+   "str": "0x3c032fa0",
+   "s": "fd >= 0 && fd < 3"
+  },
+  {
+   "code": "0x42007261",
+   "lit": "0x42000820",
+   "str": "0x3c0377b0",
+   "s": "uart_read"
+  },
+  {
+   "code": "0x420072ce",
+   "lit": "0x42000824",
+   "str": "0x3c033004",
+   "s": "c != NONE"
+  },
+  {
+   "code": "0x420072d1",
+   "lit": "0x42000820",
+   "str": "0x3c0377b0",
+   "s": "uart_read"
+  },
+  {
+   "code": "0x4200736e",
+   "lit": "0x420007f4",
+   "str": "0x3c032fa0",
+   "s": "fd >= 0 && fd < 3"
+  },
+  {
+   "code": "0x42007371",
+   "lit": "0x42000828",
+   "str": "0x3c037790",
+   "s": "uart_write"
+  },
+  {
+   "code": "0x420073fe",
+   "lit": "0x42000830",
+   "str": "0x3c033010",
+   "s": "/dev/uart"
+  },
+  {
+   "code": "0x42007406",
+   "lit": "0x42000834",
+   "str": "0x3c03301c",
+   "s": "esp_vfs_register_fs(\"/dev/uart\", &s_vfs_uart, ESP_VFS_FLAG_STATIC, NULL)"
+  },
+  {
+   "code": "0x4200740f",
+   "lit": "0x4200083c",
+   "str": "0x3c033068",
+   "s": "/IDF/components/esp_driver_uart/src/uart_vfs.c"
+  },
+  {
+   "code": "0x42008114",
+   "lit": "0x42000498",
+   "str": "0x3c036e30",
+   "s": "is_vect_desc_usable"
+  },
+  {
+   "code": "0x42008e73",
+   "lit": "0x420008ec",
+   "str": "0x3c033098",
+   "s": "!(is_rs485_mode && disabled && uart_hal_get_intraw_mask(&(uart_context[uart_num].hal)) & UART_INTR_TX_DONE)"
+  },
+  {
+   "code": "0x42008e76",
+   "lit": "0x420008f0",
+   "str": "0x3c0378b8",
+   "s": "uart_wait_tx_done"
+  },
+  {
+   "code": "0x420099db",
+   "lit": "0x4200093c",
+   "str": "0x3c033130",
+   "s": "s_ctx.peek_char == NONE"
+  },
+  {
+   "code": "0x420099de",
+   "lit": "0x42000940",
+   "str": "0x3c0378cc",
+   "s": "usb_serial_jtag_return_char"
+  },
+  {
+   "code": "0x42009a86",
+   "lit": "0x42000950",
+   "str": "0x3c033190",
+   "s": "/dev/secondary"
+  },
+  {
+   "code": "0x42009b59",
+   "lit": "0x42000964",
+   "str": "0x3c0331a0",
+   "s": "/dev/uart/0"
+  },
+  {
+   "code": "0x42009b68",
+   "lit": "0x4200096c",
+   "str": "0x3c033190",
+   "s": "/dev/secondary"
+  },
+  {
+   "code": "0x42009c0e",
+   "lit": "0x42000964",
+   "str": "0x3c0331a0",
+   "s": "/dev/uart/0"
+  },
+  {
+   "code": "0x42009c7a",
+   "lit": "0x42000974",
+   "str": "0x3c032f44",
+   "s": "/dev/console"
+  },
+  {
+   "code": "0x42009ee3",
+   "lit": "0x42000990",
+   "str": "0x3c0331d8",
+   "s": "strncmp(src_path, vfs->path_prefix, vfs->path_prefix_len) == 0"
+  },
+  {
+   "code": "0x42009ee6",
+   "lit": "0x42000994",
+   "str": "0x3c037a00",
+   "s": "translate_path"
+  },
+  {
+   "code": "0x4200abda",
+   "lit": "0x420009bc",
+   "str": "0x3c033218",
+   "s": "/dev/null"
+  },
+  {
+   "code": "0x4200ac36",
+   "lit": "0x420009c4",
+   "str": "0x3c033224",
+   "s": "start != ((void *)0)"
+  },
+  {
+   "code": "0x4200ac39",
+   "lit": "0x420009c8",
+   "str": "0x3c037a88",
+   "s": "esp_core_dump_get_user_ram_info"
+  },
+  {
+   "code": "0x4200aea2",
+   "lit": "0x420004a8",
+   "str": "0x3c036e14",
+   "s": "esp_cpu_intr_set_handler"
+  },
+  {
+   "code": "0x4200aeb2",
+   "lit": "0x42000a10",
+   "str": "0x3fc959ec",
+   "s": "Pz7@T{7@"
+  },
+  {
+   "code": "0x4200b143",
+   "lit": "0x42000a1c",
+   "str": "0x3c033270",
+   "s": "checksum_size <= 32"
+  },
+  {
+   "code": "0x4200b1c5",
+   "lit": "0x42000a28",
+   "str": "0x3c0332b8",
+   "s": "Calculated checksum"
+  },
+  {
+   "code": "0x4200b1ce",
+   "lit": "0x42000a2c",
+   "str": "0x3c0332cc",
+   "s": "Image checksum"
+  },
+  {
+   "code": "0x4200b735",
+   "lit": "0x42000a40",
+   "str": "0x3c0332e4",
+   "s": "ESP_PANIC_DETAILS"
+  },
+  {
+   "code": "0x4200b7be",
+   "lit": "0x42000a48",
+   "str": "0x3c0332f8",
+   "s": "ESP_CORE_DUMP_INFO"
+  },
+  {
+   "code": "0x4200b7da",
+   "lit": "0x42000a4c",
+   "str": "0x3c03330c",
+   "s": "ESP_EXTRA_INFO"
+  },
+  {
+   "code": "0x4200b814",
+   "lit": "0x42000a40",
+   "str": "0x3c0332e4",
+   "s": "ESP_PANIC_DETAILS"
+  },
+  {
+   "code": "0x4200b95a",
+   "lit": "0x42000a50",
+   "str": "0x3c03331c",
+   "s": "checksum != ((void *)0)"
+  },
+  {
+   "code": "0x4200b95d",
+   "lit": "0x42000a54",
+   "str": "0x3c037ae4",
+   "s": "core_dump_crc_print"
+  },
+  {
+   "code": "0x4200b97b",
+   "lit": "0x42000a60",
+   "str": "0x3c03336c",
+   "s": "'%08lx'"
+  },
+  {
+   "code": "0x4200bd52",
+   "lit": "0x42000aa8",
+   "str": "0x3c033378",
+   "s": "stk_paddr != ((void *)0) && stk_vaddr != ((void *)0)"
+  },
+  {
+   "code": "0x4200bd55",
+   "lit": "0x42000aac",
+   "str": "0x3c037b1c",
+   "s": "esp_core_dump_get_stack"
+  },
+  {
+   "code": "0x4200bdc6",
+   "lit": "0x42000ac0",
+   "str": "0x3c0333f0",
+   "s": "task != ((void *)0) && reg_dump != ((void *)0)"
+  },
+  {
+   "code": "0x4200bdc9",
+   "lit": "0x42000ac4",
+   "str": "0x3c037af8",
+   "s": "esp_core_dump_get_task_regs_dump"
+  },
+  {
+   "code": "0x4200bec4",
+   "lit": "0x42000adc",
+   "str": "0x3c033434",
+   "s": "Fail to alloc hid_class"
+  },
+  {
+   "code": "0x4200bf18",
+   "lit": "0x42000ae4",
+   "str": "0x3c033458",
+   "s": "HID descriptor not found"
+  },
+  {
+   "code": "0x4200bf41",
+   "lit": "0x42000ae8",
+   "str": "0x3c033474",
+   "s": "HID report descriptor not found"
+  },
+  {
+   "code": "0x4200bf7d",
+   "lit": "0x42000aec",
+   "str": "0x3c033498",
+   "s": "HID interface not found"
+  },
+  {
+   "code": "0x4200bfe1",
+   "lit": "0x42000af0",
+   "str": "0x3c0334b4",
+   "s": "/dev/input%d"
+  },
+  {
+   "code": "0x4200c402",
+   "lit": "0x42000b04",
+   "str": "0x3c0334d8",
+   "s": "Do not support LS/FS device on HS hub"
+  },
+  {
+   "code": "0x4200cba6",
+   "lit": "0x420002a8",
+   "str": "0x3c03044c",
+   "s": "Dcache sync parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x4200cf9d",
+   "lit": "0x42000b18",
+   "str": "0x3c033500",
+   "s": "This dwc2 version does not support dma mode, so stop working"
+  },
+  {
+   "code": "0x4200cfcc",
+   "lit": "0x42000b1c",
+   "str": "0x3c033540",
+   "s": "Your fifo config is overflow, please check"
+  },
+  {
+   "code": "0x4200d6f1",
+   "lit": "0x42000b40",
+   "str": "0x3c033570",
+   "s": "USB Phy Init Failed!"
+  },
+  {
+   "code": "0x4200d725",
+   "lit": "0x42000b50",
+   "str": "0x3c033588",
+   "s": "USB Interrupt Init Failed!"
+  },
+  {
+   "code": "0x4200d94b",
+   "lit": "0x42000a4c",
+   "str": "0x3c03330c",
+   "s": "ESP_EXTRA_INFO"
+  },
+  {
+   "code": "0x4200d9ad",
+   "lit": "0x42000b74",
+   "str": "0x3c0335a8",
+   "s": "usb_tim"
+  },
+  {
+   "code": "0x4200db6f",
+   "lit": "0x42000ba4",
+   "str": "0x3c0335c4",
+   "s": "invalid device bLength 0x%02x"
+  },
+  {
+   "code": "0x4200db9b",
+   "lit": "0x42000bac",
+   "str": "0x3c0335e4",
+   "s": "unexpected device descriptor 0x%02x"
+  },
+  {
+   "code": "0x4200dc47",
+   "lit": "0x42000bb0",
+   "str": "0x3c03360c",
+   "s": "invalid config bLength 0x%02x"
+  },
+  {
+   "code": "0x4200dc73",
+   "lit": "0x42000bb4",
+   "str": "0x3c03362c",
+   "s": "unexpected config descriptor 0x%02x"
+  },
+  {
+   "code": "0x4200dd0d",
+   "lit": "0x42000bbc",
+   "str": "0x3c033654",
+   "s": "Interface num overflow"
+  },
+  {
+   "code": "0x4200dd30",
+   "lit": "0x42000bc0",
+   "str": "0x3c033670",
+   "s": "Interface altsetting num overflow"
+  },
+  {
+   "code": "0x4200dd51",
+   "lit": "0x42000bc4",
+   "str": "0x3c033694",
+   "s": "Endpoint num overflow"
+  },
+  {
+   "code": "0x4200df4d",
+   "lit": "0x42000bd8",
+   "str": "0x3c0336b0",
+   "s": "bus overflow"
+  },
+  {
+   "code": "0x4200e0a7",
+   "lit": "0x42000bf0",
+   "str": "0x3c0336c0",
+   "s": "Failed to get device descriptor,errorcode:%d"
+  },
+  {
+   "code": "0x4200e0c7",
+   "lit": "0x4200060c",
+   "str": "0x3c031c98",
+   "s": "Fatal error: DRAM0 PMS AREA_3 configuration corrupted (expected 0x%08lX, stored 0x%08lX)"
+  },
+  {
+   "code": "0x4200e12b",
+   "lit": "0x42000bf4",
+   "str": "0x3c0336f0",
+   "s": "Failed to allocate devaddr,errorcode:%d"
+  },
+  {
+   "code": "0x4200e17b",
+   "lit": "0x42000bf8",
+   "str": "0x3c03371c",
+   "s": "Failed to set devaddr,errorcode:%d"
+  },
+  {
+   "code": "0x4200e1e7",
+   "lit": "0x42000bfc",
+   "str": "0x3c033744",
+   "s": "Failed to get full device descriptor,errorcode:%d"
+  },
+  {
+   "code": "0x4200e260",
+   "lit": "0x42000c00",
+   "str": "0x3c033778",
+   "s": "Failed to get config descriptor,errorcode:%d"
+  },
+  {
+   "code": "0x4200e2bb",
+   "lit": "0x42000c04",
+   "str": "0x3c0337a8",
+   "s": "wTotalLength %d is overflow, default is %d"
+  },
+  {
+   "code": "0x4200e323",
+   "lit": "0x42000c08",
+   "str": "0x3c0337d8",
+   "s": "Failed to get full config descriptor,errorcode:%d"
+  },
+  {
+   "code": "0x4200e360",
+   "lit": "0x42000c0c",
+   "str": "0x3c03380c",
+   "s": "Parse config fail"
+  },
+  {
+   "code": "0x4200e38d",
+   "lit": "0x42000c10",
+   "str": "0x3c033820",
+   "s": "No memory to alloc for raw_config_desc"
+  },
+  {
+   "code": "0x4200e403",
+   "lit": "0x42000c14",
+   "str": "0x3c03384c",
+   "s": "Failed to set configuration,errorcode:%d"
+  },
+  {
+   "code": "0x4200e468",
+   "lit": "0x42000c18",
+   "str": "0x3c033878",
+   "s": "do not support Class:0x%02x,Subclass:0x%02x,Protocl:0x%02x"
+  },
+  {
+   "code": "0x4200e5f3",
+   "lit": "0x42000c20",
+   "str": "0x3c0335c4",
+   "s": "invalid device bLength 0x%02x"
+  },
+  {
+   "code": "0x4200e620",
+   "lit": "0x42000c28",
+   "str": "0x3c0338cc",
+   "s": "unexpected descriptor 0x%02x"
+  },
+  {
+   "code": "0x4200e638",
+   "lit": "0x42000c2c",
+   "str": "0x3c0338ec",
+   "s": "SuperSpeed Hub Descriptor:"
+  },
+  {
+   "code": "0x4200e644",
+   "lit": "0x42000c30",
+   "str": "0x3c03390c",
+   "s": "bLength: 0x%02x             "
+  },
+  {
+   "code": "0x4200e650",
+   "lit": "0x42000c34",
+   "str": "0x3c03392c",
+   "s": "bDescriptorType: 0x%02x     "
+  },
+  {
+   "code": "0x4200e65c",
+   "lit": "0x42000c38",
+   "str": "0x3c03394c",
+   "s": "bNbrPorts: 0x%02x           "
+  },
+  {
+   "code": "0x4200e671",
+   "lit": "0x42000c3c",
+   "str": "0x3c03396c",
+   "s": "wHubCharacteristics: 0x%04x "
+  },
+  {
+   "code": "0x4200e67d",
+   "lit": "0x42000c40",
+   "str": "0x3c03398c",
+   "s": "bPwrOn2PwrGood: 0x%02x      "
+  },
+  {
+   "code": "0x4200e689",
+   "lit": "0x42000c44",
+   "str": "0x3c0339ac",
+   "s": "bHubContrCurrent: 0x%02x    "
+  },
+  {
+   "code": "0x4200e695",
+   "lit": "0x42000c48",
+   "str": "0x3c0339cc",
+   "s": "DeviceRemovable: 0x%02x     "
+  },
+  {
+   "code": "0x4200e6bb",
+   "lit": "0x42000c20",
+   "str": "0x3c0335c4",
+   "s": "invalid device bLength 0x%02x"
+  },
+  {
+   "code": "0x4200e6e8",
+   "lit": "0x42000c28",
+   "str": "0x3c0338cc",
+   "s": "unexpected descriptor 0x%02x"
+  },
+  {
+   "code": "0x4200e700",
+   "lit": "0x42000c4c",
+   "str": "0x3c0339ec",
+   "s": "Hub Descriptor:"
+  },
+  {
+   "code": "0x4200e70c",
+   "lit": "0x42000c30",
+   "str": "0x3c03390c",
+   "s": "bLength: 0x%02x             "
+  },
+  {
+   "code": "0x4200e718",
+   "lit": "0x42000c34",
+   "str": "0x3c03392c",
+   "s": "bDescriptorType: 0x%02x     "
+  },
+  {
+   "code": "0x4200e724",
+   "lit": "0x42000c38",
+   "str": "0x3c03394c",
+   "s": "bNbrPorts: 0x%02x           "
+  },
+  {
+   "code": "0x4200e739",
+   "lit": "0x42000c3c",
+   "str": "0x3c03396c",
+   "s": "wHubCharacteristics: 0x%04x "
+  },
+  {
+   "code": "0x4200e745",
+   "lit": "0x42000c40",
+   "str": "0x3c03398c",
+   "s": "bPwrOn2PwrGood: 0x%02x      "
+  },
+  {
+   "code": "0x4200e751",
+   "lit": "0x42000c44",
+   "str": "0x3c0339ac",
+   "s": "bHubContrCurrent: 0x%02x    "
+  },
+  {
+   "code": "0x4200e75d",
+   "lit": "0x42000c48",
+   "str": "0x3c0339cc",
+   "s": "DeviceRemovable: 0x%02x     "
+  },
+  {
+   "code": "0x4200e769",
+   "lit": "0x42000c50",
+   "str": "0x3c033a00",
+   "s": "PortPwrCtrlMask: 0x%02x     "
+  },
+  {
+   "code": "0x4200eaa8",
+   "lit": "0x42000c70",
+   "str": "0x3c033a20",
+   "s": "Fail to alloc hub_class"
+  },
+  {
+   "code": "0x4200eafb",
+   "lit": "0x42000c74",
+   "str": "0x3c033a3c",
+   "s": "Hub depth(%d) is overflow"
+  },
+  {
+   "code": "0x4200eb30",
+   "lit": "0x42000c78",
+   "str": "0x3c033a58",
+   "s": "Unable to set hub depth "
+  },
+  {
+   "code": "0x4200ec71",
+   "lit": "0x42000c80",
+   "str": "0x3c033a74",
+   "s": "/dev/hub%d"
+  },
+  {
+   "code": "0x4200ecca",
+   "lit": "0x42000c8c",
+   "str": "0x3c033a80",
+   "s": "hubint_tim"
+  },
+  {
+   "code": "0x4200ece1",
+   "lit": "0x42000c90",
+   "str": "0x3c033a8c",
+   "s": "No memory to alloc int_timer"
+  },
+  {
+   "code": "0x4200edc3",
+   "lit": "0x42000c94",
+   "str": "0x3c033aac",
+   "s": "Failed to read port %u status, errorcode: %d"
+  },
+  {
+   "code": "0x4200ee07",
+   "lit": "0x42000c98",
+   "str": "0x3c033adc",
+   "s": "Failed to clear port %u, change mask:%04x, errorcode:%d"
+  },
+  {
+   "code": "0x4200ee60",
+   "lit": "0x42000c94",
+   "str": "0x3c033aac",
+   "s": "Failed to read port %u status, errorcode: %d"
+  },
+  {
+   "code": "0x4200eee0",
+   "lit": "0x42000c9c",
+   "str": "0x3c033b18",
+   "s": "Failed to debounce port %u"
+  },
+  {
+   "code": "0x4200ef17",
+   "lit": "0x42000ca0",
+   "str": "0x3c033b38",
+   "s": "Failed to reset port %u,errorcode:%d"
+  },
+  {
+   "code": "0x4200ef50",
+   "lit": "0x42000c94",
+   "str": "0x3c033aac",
+   "s": "Failed to read port %u status, errorcode: %d"
+  },
+  {
+   "code": "0x4200ef94",
+   "lit": "0x42000ca4",
+   "str": "0x3c033b60",
+   "s": "Failed to clear port %u reset change, errorcode: %d"
+  },
+  {
+   "code": "0x4200f060",
+   "lit": "0x42000cac",
+   "str": "0x3c033b98",
+   "s": "Port %u enumerate fail"
+  },
+  {
+   "code": "0x4200f170",
+   "lit": "0x42000cb0",
+   "str": "0x3c033bb4",
+   "s": "Failed to create hub mq"
+  },
+  {
+   "code": "0x4200f18c",
+   "lit": "0x42000cb4",
+   "str": "0x3c033bd0",
+   "s": "usbh_hub%u"
+  },
+  {
+   "code": "0x4200f1b9",
+   "lit": "0x42000cbc",
+   "str": "0x3c033bdc",
+   "s": "Failed to create hub thread"
+  },
+  {
+   "code": "0x4200f208",
+   "lit": "0x42000cc8",
+   "str": "0x3c033bfc",
+   "s": "usb_devices"
+  },
+  {
+   "code": "0x4200f20b",
+   "lit": "0x42000ccc",
+   "str": "0x3c033c08",
+   "s": "storage"
+  },
+  {
+   "code": "0x4200f223",
+   "lit": "0x42000cd0",
+   "str": "0x3c033c10",
+   "s": "device_%d"
+  },
+  {
+   "code": "0x4200f29e",
+   "lit": "0x42000cd8",
+   "str": "0x3c033c1c",
+   "s": "COREDUMP_START"
+  },
+  {
+   "code": "0x4200f2ea",
+   "lit": "0x42000ccc",
+   "str": "0x3c033c08",
+   "s": "storage"
+  },
+  {
+   "code": "0x4200f30d",
+   "lit": "0x42000ccc",
+   "str": "0x3c033c08",
+   "s": "storage"
+  },
+  {
+   "code": "0x4200f313",
+   "lit": "0x42000ccc",
+   "str": "0x3c033c08",
+   "s": "storage"
+  },
+  {
+   "code": "0x4200f34a",
+   "lit": "0x42000cf4",
+   "str": "0x3c033c3c",
+   "s": "nvs_store_task"
+  },
+  {
+   "code": "0x4200f3f7",
+   "lit": "0x42000cc8",
+   "str": "0x3c033bfc",
+   "s": "usb_devices"
+  },
+  {
+   "code": "0x4200f3fa",
+   "lit": "0x42000ccc",
+   "str": "0x3c033c08",
+   "s": "storage"
+  },
+  {
+   "code": "0x4200f485",
+   "lit": "0x42000cd0",
+   "str": "0x3c033c10",
+   "s": "device_%d"
+  },
+  {
+   "code": "0x4200f65b",
+   "lit": "0x420003f0",
+   "str": "0x3c030b1c",
+   "s": "heap_size <= HEAP_SIZE_MAX"
+  },
+  {
+   "code": "0x4200f6a1",
+   "lit": "0x42000d18",
+   "str": "0x3c033c4c",
+   "s": "uart_event_task"
+  },
+  {
+   "code": "0x4200fc01",
+   "lit": "0x42000404",
+   "str": "0x3c036aac",
+   "s": "heap_caps_init"
+  },
+  {
+   "code": "0x4200fce7",
+   "lit": "0x42000d58",
+   "str": "0x3c033c5c",
+   "s": "reenumTask"
+  },
+  {
+   "code": "0x4200fd9b",
+   "lit": "0x42000d60",
+   "str": "0x3c039301",
+   "s": "         (((((                  "
+  },
+  {
+   "code": "0x42010184",
+   "lit": "0x42000d7c",
+   "str": "0x3c033c68",
+   "s": "hid_uart"
+  },
+  {
+   "code": "0x42010394",
+   "lit": "0x42000d94",
+   "str": "0x3c033c74",
+   "s": "gpio_config(&io_conf)"
+  },
+  {
+   "code": "0x42010397",
+   "lit": "0x42000d98",
+   "str": "0x3c037b68",
+   "s": "led_init"
+  },
+  {
+   "code": "0x4201039c",
+   "lit": "0x42000d9c",
+   "str": "0x3c033c8c",
+   "s": "./main/components/RGB/RGB.c"
+  },
+  {
+   "code": "0x42010672",
+   "lit": "0x42000dbc",
+   "str": "0x3c033ca8",
+   "s": "otg_sig"
+  },
+  {
+   "code": "0x42010675",
+   "lit": "0x42000dc0",
+   "str": "0x3c037b84",
+   "s": "usb_phy_otg_set_mode"
+  },
+  {
+   "code": "0x42010800",
+   "lit": "0x42000800",
+   "str": "0x3c0377c8",
+   "s": "uart_fstat"
+  },
+  {
+   "code": "0x4201082c",
+   "lit": "0x42000830",
+   "str": "0x3c033010",
+   "s": "/dev/uart"
+  },
+  {
+   "code": "0x420109b8",
+   "lit": "0x42000dcc",
+   "str": "0x3c033cd0",
+   "s": "usb_dwc_info.controllers[otg11_index].internal_phy_io"
+  },
+  {
+   "code": "0x420109bb",
+   "lit": "0x42000dd0",
+   "str": "0x3c037b78",
+   "s": "usb_new_phy"
+  },
+  {
+   "code": "0x42010a04",
+   "lit": "0x42000dd4",
+   "str": "0x3c033d08",
+   "s": "phy_external_iopins_configure(phy_context->iopins, fsls_sig)"
+  },
+  {
+   "code": "0x42010a07",
+   "lit": "0x42000dd0",
+   "str": "0x3c037b78",
+   "s": "usb_new_phy"
+  },
+  {
+   "code": "0x42010a0d",
+   "lit": "0x42000dd8",
+   "str": "0x3c033d48",
+   "s": "/IDF/components/usb/usb_phy.c"
+  },
+  {
+   "code": "0x42010a21",
+   "lit": "0x42000ddc",
+   "str": "0x3c033d68",
+   "s": "usb_phy_otg_set_mode(*handle_ret, config->otg_mode)"
+  },
+  {
+   "code": "0x42010a24",
+   "lit": "0x42000dd0",
+   "str": "0x3c037b78",
+   "s": "usb_new_phy"
+  },
+  {
+   "code": "0x42010a2a",
+   "lit": "0x42000dd8",
+   "str": "0x3c033d48",
+   "s": "/IDF/components/usb/usb_phy.c"
+  },
+  {
+   "code": "0x42010a3e",
+   "lit": "0x42000de0",
+   "str": "0x3c033d9c",
+   "s": "usb_phy_otg_dev_set_speed(*handle_ret, config->otg_speed)"
+  },
+  {
+   "code": "0x42010a41",
+   "lit": "0x42000dd0",
+   "str": "0x3c037b78",
+   "s": "usb_new_phy"
+  },
+  {
+   "code": "0x42010a47",
+   "lit": "0x42000dd8",
+   "str": "0x3c033d48",
+   "s": "/IDF/components/usb/usb_phy.c"
+  },
+  {
+   "code": "0x42010a67",
+   "lit": "0x42000de4",
+   "str": "0x3c033dd8",
+   "s": "phy_otg_iopins_configure(config->otg_io_conf, otg_sig)"
+  },
+  {
+   "code": "0x42010a6a",
+   "lit": "0x42000dd0",
+   "str": "0x3c037b78",
+   "s": "usb_new_phy"
+  },
+  {
+   "code": "0x42010a70",
+   "lit": "0x42000dd8",
+   "str": "0x3c033d48",
+   "s": "/IDF/components/usb/usb_phy.c"
+  },
+  {
+   "code": "0x4201144d",
+   "lit": "0x42001450",
+   "str": "0x3c032194",
+   "s": "esp_task_wdt_init(&twdt_config)"
+  },
+  {
+   "code": "0x42011c9e",
+   "lit": "0x42000268",
+   "str": "0x3c030348",
+   "s": "Watchpoint 0 triggered "
+  },
+  {
+   "code": "0x42011dc2",
+   "lit": "0x42000e30",
+   "str": "0x3c037be4",
+   "s": "esp_partition_next"
+  },
+  {
+   "code": "0x42011e86",
+   "lit": "0x42000e38",
+   "str": "0x3c033e84",
+   "s": "iterator != NULL"
+  },
+  {
+   "code": "0x42011e89",
+   "lit": "0x42000e3c",
+   "str": "0x3c037bd0",
+   "s": "esp_partition_get"
+  },
+  {
+   "code": "0x42011ec6",
+   "lit": "0x42000e40",
+   "str": "0x3c033e98",
+   "s": "partition != NULL"
+  },
+  {
+   "code": "0x42011ec9",
+   "lit": "0x42000e44",
+   "str": "0x3c037c58",
+   "s": "esp_partition_write"
+  },
+  {
+   "code": "0x42011f45",
+   "lit": "0x42000e40",
+   "str": "0x3c033e98",
+   "s": "partition != NULL"
+  },
+  {
+   "code": "0x42011f48",
+   "lit": "0x42000e4c",
+   "str": "0x3c037c40",
+   "s": "esp_partition_read_raw"
+  },
+  {
+   "code": "0x42011f8e",
+   "lit": "0x42000e40",
+   "str": "0x3c033e98",
+   "s": "partition != NULL"
+  },
+  {
+   "code": "0x42011f91",
+   "lit": "0x42000e54",
+   "str": "0x3c037c28",
+   "s": "esp_partition_write_raw"
+  },
+  {
+   "code": "0x42011fde",
+   "lit": "0x42000e40",
+   "str": "0x3c033e98",
+   "s": "partition != NULL"
+  },
+  {
+   "code": "0x42011fe1",
+   "lit": "0x42000e58",
+   "str": "0x3c037c0c",
+   "s": "esp_partition_erase_range"
+  },
+  {
+   "code": "0x4201204c",
+   "lit": "0x42000e40",
+   "str": "0x3c033e98",
+   "s": "partition != NULL"
+  },
+  {
+   "code": "0x4201204f",
+   "lit": "0x42000e5c",
+   "str": "0x3c037bf8",
+   "s": "esp_partition_mmap"
+  },
+  {
+   "code": "0x420120bd",
+   "lit": "0x42000e40",
+   "str": "0x3c033e98",
+   "s": "partition != NULL"
+  },
+  {
+   "code": "0x420120c0",
+   "lit": "0x42000e60",
+   "str": "0x3c037c6c",
+   "s": "esp_partition_read"
+  },
+  {
+   "code": "0x42012222",
+   "lit": "0x42000e84",
+   "str": "0x3c037ccc",
+   "s": "cache_ll_l1_get_bus"
+  },
+  {
+   "code": "0x42012228",
+   "lit": "0x42000e88",
+   "str": "0x3c033f64",
+   "s": "/IDF/components/hal/esp32s3/include/hal/cache_ll.h"
+  },
+  {
+   "code": "0x42012257",
+   "lit": "0x42000e94",
+   "str": "0x3c033f98",
+   "s": "(mmu_ll_vaddr_to_laddr((uint32_t)&_instruction_reserved_end) - mmu_ll_vaddr_to_laddr((uint32_t)&_instruction_reserved_start)) == irom_len_to_reserve"
+  },
+  {
+   "code": "0x4201225a",
+   "lit": "0x42000e98",
+   "str": "0x3c037ce0",
+   "s": "s_reserve_irom_region"
+  },
+  {
+   "code": "0x4201227a",
+   "lit": "0x4200003c",
+   "str": "0x3c036850",
+   "s": "__esp_system_init_fn_init_flash"
+  },
+  {
+   "code": "0x420122d7",
+   "lit": "0x42000ea8",
+   "str": "0x3c034058",
+   "s": "(mmu_ll_vaddr_to_laddr((uint32_t)&_rodata_reserved_end) - mmu_ll_vaddr_to_laddr((uint32_t)&_rodata_reserved_start)) == drom_len_to_reserve"
+  },
+  {
+   "code": "0x420122da",
+   "lit": "0x42000eac",
+   "str": "0x3c037cb4",
+   "s": "s_reserve_drom_region"
+  },
+  {
+   "code": "0x42012387",
+   "lit": "0x42000eb4",
+   "str": "0x3c0340e4",
+   "s": "hw_mem_regions[i].region_size % CONFIG_MMU_PAGE_SIZE == 0"
+  },
+  {
+   "code": "0x4201238a",
+   "lit": "0x42000eb8",
+   "str": "0x3c037cf8",
+   "s": "esp_mmu_map_init"
+  },
+  {
+   "code": "0x4201242e",
+   "lit": "0x42000ec0",
+   "str": "0x3c034120",
+   "s": "available_region_idx == region_num"
+  },
+  {
+   "code": "0x42012431",
+   "lit": "0x42000eb8",
+   "str": "0x3c037cf8",
+   "s": "esp_mmu_map_init"
+  },
+  {
+   "code": "0x42012619",
+   "lit": "0x42000ecc",
+   "str": "0x3c037ca8",
+   "s": "esp_mmu_map"
+  },
+  {
+   "code": "0x42012803",
+   "lit": "0x42000eec",
+   "str": "0x3c03414c",
+   "s": "s_flash_op_mutex != NULL"
+  },
+  {
+   "code": "0x42012806",
+   "lit": "0x42000ef0",
+   "str": "0x3c037d8c",
+   "s": "spi_flash_init_lock"
+  },
+  {
+   "code": "0x420128e8",
+   "lit": "0x42000f00",
+   "str": "0x3c03428c",
+   "s": "0 && \"invalid handle, or handle already unmapped\""
+  },
+  {
+   "code": "0x420128eb",
+   "lit": "0x42000f04",
+   "str": "0x3c037da0",
+   "s": "spi_flash_munmap"
+  },
+  {
+   "code": "0x42012940",
+   "lit": "0x42000f0c",
+   "str": "0x3c0342c0",
+   "s": "io <= ESP_MSPI_IO_D7"
+  },
+  {
+   "code": "0x42012943",
+   "lit": "0x42000f10",
+   "str": "0x3c037db4",
+   "s": "esp_mspi_get_io"
+  },
+  {
+   "code": "0x42012bf5",
+   "lit": "0x42000f70",
+   "str": "0x3c037e2c",
+   "s": "esp_crosscore_int_init"
+  },
+  {
+   "code": "0x42012bfb",
+   "lit": "0x42000f74",
+   "str": "0x3c0343f8",
+   "s": "/IDF/components/esp_system/crosscore_int.c"
+  },
+  {
+   "code": "0x42012da1",
+   "lit": "0x42000f80",
+   "str": "0x3c034424",
+   "s": "ret == pdTRUE"
+  },
+  {
+   "code": "0x42012da4",
+   "lit": "0x42000f84",
+   "str": "0x3c037e64",
+   "s": "task_wdt_timeout_abort"
+  },
+  {
+   "code": "0x42012e74",
+   "lit": "0x42000f9c",
+   "str": "0x3c034464",
+   "s": "idle_task_handle"
+  },
+  {
+   "code": "0x42012e77",
+   "lit": "0x42000fa0",
+   "str": "0x3c037e44",
+   "s": "subscribe_idle"
+  },
+  {
+   "code": "0x42012e8b",
+   "lit": "0x42000fa4",
+   "str": "0x3c034478",
+   "s": "esp_task_wdt_add(idle_task_handle)"
+  },
+  {
+   "code": "0x42012e8e",
+   "lit": "0x42000fa0",
+   "str": "0x3c037e44",
+   "s": "subscribe_idle"
+  },
+  {
+   "code": "0x42012e94",
+   "lit": "0x42000fa8",
+   "str": "0x3c03449c",
+   "s": "/IDF/components/esp_system/task_wdt/task_wdt.c"
+  },
+  {
+   "code": "0x42012ea7",
+   "lit": "0x42000fb0",
+   "str": "0x3c0344cc",
+   "s": "esp_register_freertos_idle_hook_for_cpu(idle_hook_cb, core_num)"
+  },
+  {
+   "code": "0x42012eaa",
+   "lit": "0x42000fa0",
+   "str": "0x3c037e44",
+   "s": "subscribe_idle"
+  },
+  {
+   "code": "0x42012eb0",
+   "lit": "0x42000fa8",
+   "str": "0x3c03449c",
+   "s": "/IDF/components/esp_system/task_wdt/task_wdt.c"
+  },
+  {
+   "code": "0x42012fc7",
+   "lit": "0x42000fc8",
+   "str": "0x3c034530",
+   "s": "Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:"
+  },
+  {
+   "code": "0x4201300b",
+   "lit": "0x42000fc0",
+   "str": "0x3c034518",
+   "s": " (CPU 1)"
+  },
+  {
+   "code": "0x42013011",
+   "lit": "0x42000fbc",
+   "str": "0x3c03450c",
+   "s": " (CPU 0)"
+  },
+  {
+   "code": "0x42013019",
+   "lit": "0x42000fc4",
+   "str": "0x3c034524",
+   "s": " (CPU 0/1)"
+  },
+  {
+   "code": "0x4201309c",
+   "lit": "0x42000fd8",
+   "str": "0x3c034594",
+   "s": "cpus_fail != 0"
+  },
+  {
+   "code": "0x4201309f",
+   "lit": "0x42000fdc",
+   "str": "0x3c037e54",
+   "s": "task_wdt_isr"
+  },
+  {
+   "code": "0x420134bb",
+   "lit": "0x4200101c",
+   "str": "0x3c035dcc",
+   "s": "/IDF/components/hal/esp32s3/include/hal/clk_tree_ll.h"
+  },
+  {
+   "code": "0x4201353f",
+   "lit": "0x42001028",
+   "str": "0x3c038574",
+   "s": "clk_hal_soc_root_get_freq_mhz"
+  },
+  {
+   "code": "0x42013544",
+   "lit": "0x4200102c",
+   "str": "0x3c035e04",
+   "s": "/IDF/components/hal/esp32s3/clk_tree_hal.c"
+  },
+  {
+   "code": "0x42013972",
+   "lit": "0x42001068",
+   "str": "0x3c035e30",
+   "s": "s_periph_ref_counts > 0"
+  },
+  {
+   "code": "0x42013975",
+   "lit": "0x4200106c",
+   "str": "0x3c038ca8",
+   "s": "periph_rtc_dig_clk8m_disable"
+  },
+  {
+   "code": "0x42013ea5",
+   "lit": "0x42000728",
+   "str": "0x3c037740",
+   "s": "pthread_cleanup_thread_specific_data_callback"
+  },
+  {
+   "code": "0x42014ea1",
+   "lit": "0x420002a4",
+   "str": "0x3c0303fc",
+   "s": "Icache preload parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x420153f6",
+   "lit": "0x42000bf4",
+   "str": "0x3c0336f0",
+   "s": "Failed to allocate devaddr,errorcode:%d"
+  },
+  {
+   "code": "0x42016915",
+   "lit": "0x42000b18",
+   "str": "0x3c033500",
+   "s": "This dwc2 version does not support dma mode, so stop working"
+  },
+  {
+   "code": "0x42016cef",
+   "lit": "0x4200110c",
+   "str": "0x3c0367f0",
+   "s": "phys_offs != SPI_FLASH_CACHE2PHYS_FAIL"
+  },
+  {
+   "code": "0x42016d10",
+   "lit": "0x42001118",
+   "str": "0x3c036844",
+   "s": "it != NULL"
+  },
+  {
+   "code": "0x42016d5f",
+   "lit": "0x420001e0",
+   "str": "0x3c0302e0",
+   "s": "Rebooting..."
+  },
+  {
+   "code": "0x42016e74",
+   "lit": "0x420002f4",
+   "str": "0x3c03063c",
+   "s": "  EPC3    : 0x"
+  },
+  {
+   "code": "0x42017197",
+   "lit": "0x42000618",
+   "str": "0x3c031dac",
+   "s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - split address lock)"
+  },
+  {
+   "code": "0x42017612",
+   "lit": "0x420000ac",
+   "str": "0x3c030160",
+   "s": "rtc_clk_xtal_freq_get() == SOC_XTAL_FREQ_40M"
+  },
+  {
+   "code": "0x420176f1",
+   "lit": "0x42000b74",
+   "str": "0x3c0335a8",
+   "s": "usb_tim"
+  },
+  {
+   "code": "0x42017e4f",
+   "lit": "0x420012d0",
+   "str": "0x3c03924f",
+   "s": "Balloc succeeded"
+  },
+  {
+   "code": "0x4201828e",
+   "lit": "0x42000498",
+   "str": "0x3c036e30",
+   "s": "is_vect_desc_usable"
+  },
+  {
+   "code": "0x4201872d",
+   "lit": "0x420012c0",
+   "str": "0x3c0391fb",
+   "s": "/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdlib/dtoa.c"
+  },
+  {
+   "code": "0x42018813",
+   "lit": "0x420011f4",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x420189c5",
+   "lit": "0x42001468",
+   "str": "0x3c0371c4",
+   "s": "esp_startup_start_app"
+  },
+  {
+   "code": "0x420189cb",
+   "lit": "0x42001458",
+   "str": "0x3c0321b4",
+   "s": "/IDF/components/freertos/app_startup.c"
+  },
+  {
+   "code": "0x420192d8",
+   "lit": "0x420011f8",
+   "str": "0x3c0391c4",
+   "s": "0123456789ABCDEF"
+  },
+  {
+   "code": "0x420192e7",
+   "lit": "0x420011f4",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x42019d93",
+   "lit": "0x4200080c",
+   "str": "0x3c032fe4",
+   "s": "s_ctx[fd]->peek_char == NONE"
+  },
+  {
+   "code": "0x42019db2",
+   "lit": "0x420011f4",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x4201a1b4",
+   "lit": "0x420011f8",
+   "str": "0x3c0391c4",
+   "s": "0123456789ABCDEF"
+  },
+  {
+   "code": "0x4201abd0",
+   "lit": "0x42001260",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x4201ae11",
+   "lit": "0x42000ca4",
+   "str": "0x3c033b60",
+   "s": "Failed to clear port %u reset change, errorcode: %d"
+  },
+  {
+   "code": "0x4201b7fb",
+   "lit": "0x420002b4",
+   "str": "0x3c030498",
+   "s": "Dcache preload parameter configuration error, the error address and size is 0x"
+  },
+  {
+   "code": "0x4201b8e7",
+   "lit": "0x42001260",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x4201b967",
+   "lit": "0x420003f4",
+   "str": "0x3c036abc",
+   "s": "register_heap"
+  },
+  {
+   "code": "0x4201b972",
+   "lit": "0x42000400",
+   "str": "0x3c030b60",
+   "s": "heap_idx <= num_heaps"
+  },
+  {
+   "code": "0x4201bc17",
+   "lit": "0x420006b8",
+   "str": "0x3c032f04",
+   "s": "handle == (SemaphoreHandle_t) &s_common_recursive_mutex"
+  },
+  {
+   "code": "0x4201bfcc",
+   "lit": "0x42000a28",
+   "str": "0x3c0332b8",
+   "s": "Calculated checksum"
+  },
+  {
+   "code": "0x4201c109",
+   "lit": "0x42000ba4",
+   "str": "0x3c0335c4",
+   "s": "invalid device bLength 0x%02x"
+  },
+  {
+   "code": "0x4201c24c",
+   "lit": "0x42000cc8",
+   "str": "0x3c033bfc",
+   "s": "usb_devices"
+  },
+  {
+   "code": "0x4201c2a4",
+   "lit": "0x42000ae4",
+   "str": "0x3c033458",
+   "s": "HID descriptor not found"
+  },
+  {
+   "code": "0x4201c341",
+   "lit": "0x42000ddc",
+   "str": "0x3c033d68",
+   "s": "usb_phy_otg_set_mode(*handle_ret, config->otg_mode)"
+  },
+  {
+   "code": "0x4201c3b0",
+   "lit": "0x42001264",
+   "str": "0x3c0391c4",
+   "s": "0123456789ABCDEF"
+  },
+  {
+   "code": "0x4201c3bf",
+   "lit": "0x42001260",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x4201c540",
+   "lit": "0x42000f80",
+   "str": "0x3c034424",
+   "s": "ret == pdTRUE"
+  },
+  {
+   "code": "0x4201c6eb",
+   "lit": "0x420006ec",
+   "str": "0x3c032f44",
+   "s": "/dev/console"
+  },
+  {
+   "code": "0x4201cc52",
+   "lit": "0x42001494",
+   "str": "0x3c038d44",
+   "s": "vSemaphoreDeleteWithCaps"
+  },
+  {
+   "code": "0x4201ce8e",
+   "lit": "0x42001260",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x4201d28c",
+   "lit": "0x42001264",
+   "str": "0x3c0391c4",
+   "s": "0123456789ABCDEF"
+  },
+  {
+   "code": "0x4201d761",
+   "lit": "0x420002f0",
+   "str": "0x3c03062c",
+   "s": "  EPC2    : 0x"
+  },
+  {
+   "code": "0x4201da82",
+   "lit": "0x420002c4",
+   "str": "0x3c030588",
+   "s": "MMU entry fault error occurred while accessing the address 0x"
+  },
+  {
+   "code": "0x4201dbf6",
+   "lit": "0x420006ac",
+   "str": "0x3c0376d8",
+   "s": "esp_newlib_locks_init"
+  },
+  {
+   "code": "0x4201debd",
+   "lit": "0x42000a50",
+   "str": "0x3c03331c",
+   "s": "checksum != ((void *)0)"
+  },
+  {
+   "code": "0x4201e054",
+   "lit": "0x42000494",
+   "str": "0x3c031684",
+   "s": "!((vd->flags & VECDESC_FL_SHARED) && (vd->flags & VECDESC_FL_NONSHARED))"
+  },
+  {
+   "code": "0x4201e209",
+   "lit": "0x42000d9c",
+   "str": "0x3c033c8c",
+   "s": "./main/components/RGB/RGB.c"
+  },
+  {
+   "code": "0x4201e354",
+   "lit": "0x420003f4",
+   "str": "0x3c036abc",
+   "s": "register_heap"
+  },
+  {
+   "code": "0x4201e58a",
+   "lit": "0x42000e3c",
+   "str": "0x3c037bd0",
+   "s": "esp_partition_get"
+  },
+  {
+   "code": "0x4201e98d",
+   "lit": "0x42001520",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x4201ea93",
+   "lit": "0x4200128c",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x4201edd5",
+   "lit": "0x4200083c",
+   "str": "0x3c033068",
+   "s": "/IDF/components/esp_driver_uart/src/uart_vfs.c"
+  },
+  {
+   "code": "0x4201f86a",
+   "lit": "0x420000ac",
+   "str": "0x3c030160",
+   "s": "rtc_clk_xtal_freq_get() == SOC_XTAL_FREQ_40M"
+  },
+  {
+   "code": "0x4201f87a",
+   "lit": "0x4200128c",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x4201fa22",
+   "lit": "0x42000264",
+   "str": "0x3c030330",
+   "s": "Watchpoint 1 triggered "
+  },
+  {
+   "code": "0x4201fc54",
+   "lit": "0x42001288",
+   "str": "0x3c0391c4",
+   "s": "0123456789ABCDEF"
+  },
+  {
+   "code": "0x4201fdda",
+   "lit": "0x4200061c",
+   "str": "0x3c031e10",
+   "s": "Fatal error: IRAM0 PMS configuration corrupted (memory protection not locked - global PMS lock)"
+  },
+  {
+   "code": "0x4201ffee",
+   "lit": "0x42000830",
+   "str": "0x3c033010",
+   "s": "/dev/uart"
+  },
+  {
+   "code": "0x42020051",
+   "lit": "0x420002dc",
+   "str": "0x3c0305e8",
+   "s": " register dump:"
+  },
+  {
+   "code": "0x420200af",
+   "lit": "0x420001b0",
+   "str": "0x3c030228",
+   "s": "Guru Meditation Error: Core "
+  },
+  {
+   "code": "0x420200fd",
+   "lit": "0x42000c8c",
+   "str": "0x3c033a80",
+   "s": "hubint_tim"
+  },
+  {
+   "code": "0x420201eb",
+   "lit": "0x42000c48",
+   "str": "0x3c0339cc",
+   "s": "DeviceRemovable: 0x%02x     "
+  },
+  {
+   "code": "0x42020234",
+   "lit": "0x42000274",
+   "str": "0x3c030380",
+   "s": "DebugIntr "
+  },
+  {
+   "code": "0x4202023a",
+   "lit": "0x42000c98",
+   "str": "0x3c033adc",
+   "s": "Failed to clear port %u, change mask:%04x, errorcode:%d"
+  },
+  {
+   "code": "0x42020284",
+   "lit": "0x420002c4",
+   "str": "0x3c030588",
+   "s": "MMU entry fault error occurred while accessing the address 0x"
+  },
+  {
+   "code": "0x4202031e",
+   "lit": "0x42000d7c",
+   "str": "0x3c033c68",
+   "s": "hid_uart"
+  },
+  {
+   "code": "0x42020359",
+   "lit": "0x42000eec",
+   "str": "0x3c03414c",
+   "s": "s_flash_op_mutex != NULL"
+  },
+  {
+   "code": "0x42020553",
+   "lit": "0x42000e38",
+   "str": "0x3c033e84",
+   "s": "iterator != NULL"
+  },
+  {
+   "code": "0x4202057e",
+   "lit": "0x42000a10",
+   "str": "0x3fc959ec",
+   "s": "Pz7@T{7@"
+  },
+  {
+   "code": "0x42020635",
+   "lit": "0x42000e38",
+   "str": "0x3c033e84",
+   "s": "iterator != NULL"
+  },
+  {
+   "code": "0x420207ed",
+   "lit": "0x42000bf0",
+   "str": "0x3c0336c0",
+   "s": "Failed to get device descriptor,errorcode:%d"
+  },
+  {
+   "code": "0x420209ba",
+   "lit": "0x420012bc",
+   "str": "0x3c0391e4",
+   "s": "REENT malloc succeeded"
+  },
+  {
+   "code": "0x42020c3f",
+   "lit": "0x42001264",
+   "str": "0x3c0391c4",
+   "s": "0123456789ABCDEF"
+  },
+  {
+   "code": "0x42020c6c",
+   "lit": "0x420012d0",
+   "str": "0x3c03924f",
+   "s": "Balloc succeeded"
+  },
+  {
+   "code": "0x42020c74",
+   "lit": "0x420012c0",
+   "str": "0x3c0391fb",
+   "s": "/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdlib/dtoa.c"
+  },
+  {
+   "code": "0x42020c9d",
+   "lit": "0x42000d60",
+   "str": "0x3c039301",
+   "s": "         (((((                  "
+  },
+  {
+   "code": "0x42020dd5",
+   "lit": "0x420011f4",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x42020ed8",
+   "lit": "0x42001334",
+   "str": "0x3c0391b3",
+   "s": "0123456789abcdef"
+  },
+  {
+   "code": "0x42020f1d",
+   "lit": "0x4200137c",
+   "str": "0x3c036ed0",
+   "s": "set_ocode_by_efuse"
+  },
+  {
+   "code": "0x42020f32",
+   "lit": "0x4200139c",
+   "str": "0x3c036e84",
+   "s": "get_rtc_dbias_by_efuse"
+  },
+  {
+   "code": "0x403773b6",
+   "lit": "0x403747bc",
+   "str": "0x3c033ee0",
+   "s": "mosi_len <= 32"
+  },
+  {
+   "code": "0x403773b9",
+   "lit": "0x403747c0",
+   "str": "0x3c037c80",
+   "s": "bootloader_flash_execute_command_common"
+  },
+  {
+   "code": "0x403773ca",
+   "lit": "0x403747c8",
+   "str": "0x3c033f3c",
+   "s": "miso_len <= 32"
+  },
+  {
+   "code": "0x403773cd",
+   "lit": "0x403747c0",
+   "str": "0x3c037c80",
+   "s": "bootloader_flash_execute_command_common"
+  },
+  {
+   "code": "0x403777ba",
+   "lit": "0x40374810",
+   "str": "0x3c037ccc",
+   "s": "cache_ll_l1_get_bus"
+  },
+  {
+   "code": "0x403777c0",
+   "lit": "0x40374814",
+   "str": "0x3c033f64",
+   "s": "/IDF/components/hal/esp32s3/include/hal/cache_ll.h"
+  },
+  {
+   "code": "0x40377814",
+   "lit": "0x40374810",
+   "str": "0x3c037ccc",
+   "s": "cache_ll_l1_get_bus"
+  },
+  {
+   "code": "0x4037781a",
+   "lit": "0x40374814",
+   "str": "0x3c033f64",
+   "s": "/IDF/components/hal/esp32s3/include/hal/cache_ll.h"
+  },
+  {
+   "code": "0x4037799e",
+   "lit": "0x4037482c",
+   "str": "0x3c034194",
+   "s": "esp_task_stack_is_sane_cache_disabled()"
+  },
+  {
+   "code": "0x403779a1",
+   "lit": "0x40374830",
+   "str": "0x3c037d58",
+   "s": "spi_flash_disable_interrupts_caches_and_other_cpu"
+  },
+  {
+   "code": "0x403779c6",
+   "lit": "0x4037483c",
+   "str": "0x3c0341bc",
+   "s": "s_flash_op_cpu == -1"
+  },
+  {
+   "code": "0x403779c9",
+   "lit": "0x40374830",
+   "str": "0x3c037d58",
+   "s": "spi_flash_disable_interrupts_caches_and_other_cpu"
+  },
+  {
+   "code": "0x403779e6",
+   "lit": "0x40374840",
+   "str": "0x3c0341d4",
+   "s": "other_cpuid == 1"
+  },
+  {
+   "code": "0x403779e9",
+   "lit": "0x40374830",
+   "str": "0x3c037d58",
+   "s": "spi_flash_disable_interrupts_caches_and_other_cpu"
+  },
+  {
+   "code": "0x40377ae5",
+   "lit": "0x4037485c",
+   "str": "0x3c0341e8",
+   "s": "cpuid == s_flash_op_cpu"
+  },
+  {
+   "code": "0x40377ae8",
+   "lit": "0x40374860",
+   "str": "0x3c037d24",
+   "s": "spi_flash_enable_interrupts_caches_and_other_cpu"
+  },
+  {
+   "code": "0x40377afd",
+   "lit": "0x40374864",
+   "str": "0x3c034200",
+   "s": "!(xTaskGetSchedulerState() == taskSCHEDULER_NOT_STARTED && cpuid != 0)"
+  },
+  {
+   "code": "0x40377b00",
+   "lit": "0x40374860",
+   "str": "0x3c037d24",
+   "s": "spi_flash_enable_interrupts_caches_and_other_cpu"
+  },
+  {
+   "code": "0x403780af",
+   "lit": "0x4037489c",
+   "str": "0x3c034300",
+   "s": "len_remain < len"
+  },
+  {
+   "code": "0x403780b2",
+   "lit": "0x403748a0",
+   "str": "0x3c037de0",
+   "s": "esp_flash_erase_region"
+  },
+  {
+   "code": "0x40378355",
+   "lit": "0x403748ac",
+   "str": "0x3c034340",
+   "s": "len_remain < length"
+  },
+  {
+   "code": "0x40378358",
+   "lit": "0x403748b0",
+   "str": "0x3c037dd0",
+   "s": "esp_flash_write"
+  },
+  {
+   "code": "0x403785ff",
+   "lit": "0x403748b8",
+   "str": "0x3c034354",
+   "s": "chip_status == 0"
+  },
+  {
+   "code": "0x40378602",
+   "lit": "0x403748bc",
+   "str": "0x3c037df8",
+   "s": "spi_flash_os_check_yield"
+  },
+  {
+   "code": "0x403787a9",
+   "lit": "0x403748e8",
+   "str": "0x3c03439c",
+   "s": "core_id < CONFIG_FREERTOS_NUMBER_OF_CORES"
+  },
+  {
+   "code": "0x403787ac",
+   "lit": "0x403748ec",
+   "str": "0x3c037e14",
+   "s": "esp_crosscore_int_send"
+  },
+  {
+   "code": "0x40378919",
+   "lit": "0x40374900",
+   "str": "0x3c0315f4",
+   "s": "core_id >= 0 && core_id < SOC_CPU_CORES_NUM"
+  },
+  {
+   "code": "0x4037891c",
+   "lit": "0x40374904",
+   "str": "0x3c036dbc",
+   "s": "esp_cpu_stall"
+  },
+  {
+   "code": "0x4037899d",
+   "lit": "0x40374900",
+   "str": "0x3c0315f4",
+   "s": "core_id >= 0 && core_id < SOC_CPU_CORES_NUM"
+  },
+  {
+   "code": "0x403789a0",
+   "lit": "0x40374914",
+   "str": "0x3c036dac",
+   "s": "esp_cpu_unstall"
+  },
+  {
+   "code": "0x40378a51",
+   "lit": "0x4037491c",
+   "str": "0x3fc95b80",
+   "s": "mspi_timing_ll_set_core_clock"
+  },
+  {
+   "code": "0x40378a57",
+   "lit": "0x40374920",
+   "str": "0x3fc95d88",
+   "s": "/IDF/components/hal/esp32s3/include/hal/mspi_timing_tuning_ll.h"
+  },
+  {
+   "code": "0x40378ab9",
+   "lit": "0x4037491c",
+   "str": "0x3fc95b80",
+   "s": "mspi_timing_ll_set_core_clock"
+  },
+  {
+   "code": "0x40378abf",
+   "lit": "0x40374920",
+   "str": "0x3fc95d88",
+   "s": "/IDF/components/hal/esp32s3/include/hal/mspi_timing_tuning_ll.h"
+  },
+  {
+   "code": "0x40378b13",
+   "lit": "0x40374928",
+   "str": "0x3fc95dc8",
+   "s": "freqdiv > 0"
+  },
+  {
+   "code": "0x40378b16",
+   "lit": "0x4037492c",
+   "str": "0x3fc95ba0",
+   "s": "mspi_timing_config_set_flash_clock"
+  },
+  {
+   "code": "0x40378b92",
+   "lit": "0x40374928",
+   "str": "0x3fc95dc8",
+   "s": "freqdiv > 0"
+  },
+  {
+   "code": "0x40378cdf",
+   "lit": "0x40374954",
+   "str": "0x3fc95ce8",
+   "s": "0 && \"LDO dbias need to modified\""
+  },
+  {
+   "code": "0x40379081",
+   "lit": "0x403749b4",
+   "str": "0x3fc95c18",
+   "s": "clk_ll_rtc_slow_get_src"
+  },
+  {
+   "code": "0x40379087",
+   "lit": "0x403749b8",
+   "str": "0x3fc95d44",
+   "s": "/IDF/components/hal/esp32s3/include/hal/clk_tree_ll.h"
+  },
+  {
+   "code": "0x4037917b",
+   "lit": "0x403749b4",
+   "str": "0x3fc95c18",
+   "s": "clk_ll_rtc_slow_get_src"
+  },
+  {
+   "code": "0x40379181",
+   "lit": "0x403749b8",
+   "str": "0x3fc95d44",
+   "s": "/IDF/components/hal/esp32s3/include/hal/clk_tree_ll.h"
+  },
+  {
+   "code": "0x4037951a",
+   "lit": "0x403749fc",
+   "str": "0x3fc95d7c",
+   "s": "divider > 0"
+  },
+  {
+   "code": "0x4037951d",
+   "lit": "0x40374a00",
+   "str": "0x3fc95c00",
+   "s": "clk_ll_cpu_set_divider"
+  },
+  {
+   "code": "0x40379523",
+   "lit": "0x403749b8",
+   "str": "0x3fc95d44",
+   "s": "/IDF/components/hal/esp32s3/include/hal/clk_tree_ll.h"
+  },
+  {
+   "code": "0x4037961c",
+   "lit": "0x40374bb0",
+   "str": "0x3c038db0",
+   "s": "vRingbufferGetInfo"
+  },
+  {
+   "code": "0x40379a4e",
+   "lit": "0x40374a4c",
+   "str": "0x3c0317e4",
+   "s": "slowclk_cycles"
+  },
+  {
+   "code": "0x40379a51",
+   "lit": "0x40374a50",
+   "str": "0x3c036efc",
+   "s": "rtc_clk_cal"
+  },
+  {
+   "code": "0x40379b16",
+   "lit": "0x40374a58",
+   "str": "0x3c03182c",
+   "s": "period"
+  },
+  {
+   "code": "0x40379b19",
+   "lit": "0x40374a5c",
+   "str": "0x3c036ee4",
+   "s": "rtc_time_us_to_slowclk"
+  },
+  {
+   "code": "0x40379ca4",
+   "lit": "0x40374a88",
+   "str": "0x3c035fc8",
+   "s": "(uint8_t *)pucItem >= pxRingbuffer->pucHead"
+  },
+  {
+   "code": "0x40379ca7",
+   "lit": "0x40374a8c",
+   "str": "0x3c038fe4",
+   "s": "prvReturnItemByteBuf"
+  },
+  {
+   "code": "0x40379cbb",
+   "lit": "0x40374a94",
+   "str": "0x3c03601c",
+   "s": "(uint8_t *)pucItem < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x40379cbe",
+   "lit": "0x40374a8c",
+   "str": "0x3c038fe4",
+   "s": "prvReturnItemByteBuf"
+  },
+  {
+   "code": "0x40379cf4",
+   "lit": "0x40374a98",
+   "str": "0x3c036048",
+   "s": "(pxRingbuffer->xItemsWaiting > 0) && ((pxRingbuffer->pucRead != pxRingbuffer->pucWrite) || (pxRingbuffer->uxRingbufferFlags & ( ( UBaseType_t ) 4 )))"
+  },
+  {
+   "code": "0x40379cf7",
+   "lit": "0x40374a9c",
+   "str": "0x3c038fd0",
+   "s": "prvGetItemByteBuf"
+  },
+  {
+   "code": "0x40379d1c",
+   "lit": "0x40374aa0",
+   "str": "0x3c0360e0",
+   "s": "pxRingbuffer->pucRead >= pxRingbuffer->pucHead && pxRingbuffer->pucRead < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x40379d1f",
+   "lit": "0x40374a9c",
+   "str": "0x3c038fd0",
+   "s": "prvGetItemByteBuf"
+  },
+  {
+   "code": "0x40379d33",
+   "lit": "0x40374aa4",
+   "str": "0x3c036140",
+   "s": "pxRingbuffer->pucRead == pxRingbuffer->pucFree"
+  },
+  {
+   "code": "0x40379d36",
+   "lit": "0x40374a9c",
+   "str": "0x3c038fd0",
+   "s": "prvGetItemByteBuf"
+  },
+  {
+   "code": "0x40379dcd",
+   "lit": "0x40374aa8",
+   "str": "0x3c036170",
+   "s": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x40379dd0",
+   "lit": "0x40374aac",
+   "str": "0x3c038fa0",
+   "s": "prvCheckItemFitsByteBuffer"
+  },
+  {
+   "code": "0x40379e20",
+   "lit": "0x40374ab0",
+   "str": "0x3c0361d8",
+   "s": "( ( ( UBaseType_t ) ( pucItem ) & (0x03) ) == 0 )"
+  },
+  {
+   "code": "0x40379e23",
+   "lit": "0x40374ab4",
+   "str": "0x3c038f70",
+   "s": "prvReturnItemDefault"
+  },
+  {
+   "code": "0x40379e37",
+   "lit": "0x40374ab8",
+   "str": "0x3c03620c",
+   "s": "pucItem >= pxRingbuffer->pucHead"
+  },
+  {
+   "code": "0x40379e3a",
+   "lit": "0x40374ab4",
+   "str": "0x3c038f70",
+   "s": "prvReturnItemDefault"
+  },
+  {
+   "code": "0x40379e4e",
+   "lit": "0x40374abc",
+   "str": "0x3c036230",
+   "s": "pucItem <= pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x40379e51",
+   "lit": "0x40374ab4",
+   "str": "0x3c038f70",
+   "s": "prvReturnItemDefault"
+  },
+  {
+   "code": "0x40379e6a",
+   "lit": "0x40374ac0",
+   "str": "0x3c036254",
+   "s": "pxCurHeader->xItemLen <= pxRingbuffer->xMaxItemSize"
+  },
+  {
+   "code": "0x40379e6d",
+   "lit": "0x40374ab4",
+   "str": "0x3c038f70",
+   "s": "prvReturnItemDefault"
+  },
+  {
+   "code": "0x40379e81",
+   "lit": "0x40374ac4",
+   "str": "0x3c036288",
+   "s": "(pxCurHeader->uxItemFlags & ( ( UBaseType_t ) 2 )) == 0"
+  },
+  {
+   "code": "0x40379e84",
+   "lit": "0x40374ab4",
+   "str": "0x3c038f70",
+   "s": "prvReturnItemDefault"
+  },
+  {
+   "code": "0x40379e93",
+   "lit": "0x40374ac8",
+   "str": "0x3c0362c0",
+   "s": "(pxCurHeader->uxItemFlags & ( ( UBaseType_t ) 1 )) == 0"
+  },
+  {
+   "code": "0x40379e96",
+   "lit": "0x40374ab4",
+   "str": "0x3c038f70",
+   "s": "prvReturnItemDefault"
+  },
+  {
+   "code": "0x40379ee5",
+   "lit": "0x40374acc",
+   "str": "0x3c0362f8",
+   "s": "pxRingbuffer->pucFree <= pxRingbuffer->pucHead + pxRingbuffer->xSize"
+  },
+  {
+   "code": "0x40379ee8",
+   "lit": "0x40374ab4",
+   "str": "0x3c038f70",
+   "s": "prvReturnItemDefault"
+  },
+  {
+   "code": "0x40379f43",
+   "lit": "0x40374ad0",
+   "str": "0x3c036340",
+   "s": "pxIsSplit != ((void *)0)"
+  },
+  {
+   "code": "0x40379f46",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x40379f64",
+   "lit": "0x40374a98",
+   "str": "0x3c036048",
+   "s": "(pxRingbuffer->xItemsWaiting > 0) && ((pxRingbuffer->pucRead != pxRingbuffer->pucWrite) || (pxRingbuffer->uxRingbufferFlags & ( ( UBaseType_t ) 4 )))"
+  },
+  {
+   "code": "0x40379f67",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x40379f7b",
+   "lit": "0x40374ad8",
+   "str": "0x3c03635c",
+   "s": "( ( ( UBaseType_t ) ( pxRingbuffer->pucRead ) & (0x03) ) == 0 )"
+  },
+  {
+   "code": "0x40379f7e",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x40379fa1",
+   "lit": "0x40374aa0",
+   "str": "0x3c0360e0",
+   "s": "pxRingbuffer->pucRead >= pxRingbuffer->pucHead && pxRingbuffer->pucRead < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x40379fa4",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x40379fc9",
+   "lit": "0x40374adc",
+   "str": "0x3c03639c",
+   "s": "(pxHeader->xItemLen <= pxRingbuffer->xMaxItemSize) || (pxHeader->uxItemFlags & ( ( UBaseType_t ) 2 ))"
+  },
+  {
+   "code": "0x40379fcc",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x40379fe7",
+   "lit": "0x40374ae0",
+   "str": "0x3c036404",
+   "s": "pxHeader->xItemLen <= pxRingbuffer->xMaxItemSize"
+  },
+  {
+   "code": "0x40379fea",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x4037a01c",
+   "lit": "0x40374ae4",
+   "str": "0x3c036438",
+   "s": "pcReturn >= pxRingbuffer->pucHead && pcReturn <= pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x4037a01f",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x4037a03c",
+   "lit": "0x40374ae8",
+   "str": "0x3c036480",
+   "s": "pcReturn >= pxRingbuffer->pucHead && pcReturn < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x4037a03f",
+   "lit": "0x40374ad4",
+   "str": "0x3c038f5c",
+   "s": "prvGetItemDefault"
+  },
+  {
+   "code": "0x4037a097",
+   "lit": "0x40374aec",
+   "str": "0x3c0364c8",
+   "s": "( ( ( UBaseType_t ) ( pxRingbuffer->pucAcquire ) & (0x03) ) == 0 )"
+  },
+  {
+   "code": "0x4037a09a",
+   "lit": "0x40374af0",
+   "str": "0x3c038f44",
+   "s": "prvAcquireItemNoSplit"
+  },
+  {
+   "code": "0x4037a0b8",
+   "lit": "0x40374aa8",
+   "str": "0x3c036170",
+   "s": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x4037a0bb",
+   "lit": "0x40374af0",
+   "str": "0x3c038f44",
+   "s": "prvAcquireItemNoSplit"
+  },
+  {
+   "code": "0x4037a0cf",
+   "lit": "0x40374af4",
+   "str": "0x3c03650c",
+   "s": "xRemLen >= sizeof(ItemHeader_t)"
+  },
+  {
+   "code": "0x4037a0d2",
+   "lit": "0x40374af0",
+   "str": "0x3c038f44",
+   "s": "prvAcquireItemNoSplit"
+  },
+  {
+   "code": "0x4037a128",
+   "lit": "0x40374ab0",
+   "str": "0x3c0361d8",
+   "s": "( ( ( UBaseType_t ) ( pucItem ) & (0x03) ) == 0 )"
+  },
+  {
+   "code": "0x4037a12b",
+   "lit": "0x40374af8",
+   "str": "0x3c038f2c",
+   "s": "prvSendItemDoneNoSplit"
+  },
+  {
+   "code": "0x4037a13f",
+   "lit": "0x40374ab8",
+   "str": "0x3c03620c",
+   "s": "pucItem >= pxRingbuffer->pucHead"
+  },
+  {
+   "code": "0x4037a142",
+   "lit": "0x40374af8",
+   "str": "0x3c038f2c",
+   "s": "prvSendItemDoneNoSplit"
+  },
+  {
+   "code": "0x4037a156",
+   "lit": "0x40374abc",
+   "str": "0x3c036230",
+   "s": "pucItem <= pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x4037a159",
+   "lit": "0x40374af8",
+   "str": "0x3c038f2c",
+   "s": "prvSendItemDoneNoSplit"
+  },
+  {
+   "code": "0x4037a172",
+   "lit": "0x40374ac0",
+   "str": "0x3c036254",
+   "s": "pxCurHeader->xItemLen <= pxRingbuffer->xMaxItemSize"
+  },
+  {
+   "code": "0x4037a175",
+   "lit": "0x40374af8",
+   "str": "0x3c038f2c",
+   "s": "prvSendItemDoneNoSplit"
+  },
+  {
+   "code": "0x4037a189",
+   "lit": "0x40374ac4",
+   "str": "0x3c036288",
+   "s": "(pxCurHeader->uxItemFlags & ( ( UBaseType_t ) 2 )) == 0"
+  },
+  {
+   "code": "0x4037a18c",
+   "lit": "0x40374af8",
+   "str": "0x3c038f2c",
+   "s": "prvSendItemDoneNoSplit"
+  },
+  {
+   "code": "0x4037a19b",
+   "lit": "0x40374afc",
+   "str": "0x3c03652c",
+   "s": "(pxCurHeader->uxItemFlags & ( ( UBaseType_t ) 8 )) == 0"
+  },
+  {
+   "code": "0x4037a19e",
+   "lit": "0x40374af8",
+   "str": "0x3c038f2c",
+   "s": "prvSendItemDoneNoSplit"
+  },
+  {
+   "code": "0x4037a1f7",
+   "lit": "0x40374b00",
+   "str": "0x3c036564",
+   "s": "pxRingbuffer->pucWrite <= pxRingbuffer->pucHead + pxRingbuffer->xSize"
+  },
+  {
+   "code": "0x4037a1fa",
+   "lit": "0x40374af8",
+   "str": "0x3c038f2c",
+   "s": "prvSendItemDoneNoSplit"
+  },
+  {
+   "code": "0x4037a22e",
+   "lit": "0x40374aec",
+   "str": "0x3c0364c8",
+   "s": "( ( ( UBaseType_t ) ( pxRingbuffer->pucAcquire ) & (0x03) ) == 0 )"
+  },
+  {
+   "code": "0x4037a231",
+   "lit": "0x40374b04",
+   "str": "0x3c038f14",
+   "s": "prvCheckItemFitsDefault"
+  },
+  {
+   "code": "0x4037a254",
+   "lit": "0x40374aa8",
+   "str": "0x3c036170",
+   "s": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x4037a257",
+   "lit": "0x40374b04",
+   "str": "0x3c038f14",
+   "s": "prvCheckItemFitsDefault"
+  },
+  {
+   "code": "0x4037a375",
+   "lit": "0x40374b3c",
+   "str": "0x3c038f00",
+   "s": "spinlock_initialize"
+  },
+  {
+   "code": "0x4037a3a9",
+   "lit": "0x40374aa8",
+   "str": "0x3c036170",
+   "s": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x4037a3ac",
+   "lit": "0x40374b48",
+   "str": "0x3c038fbc",
+   "s": "prvCopyItemByteBuf"
+  },
+  {
+   "code": "0x4037a427",
+   "lit": "0x40374aec",
+   "str": "0x3c0364c8",
+   "s": "( ( ( UBaseType_t ) ( pxRingbuffer->pucAcquire ) & (0x03) ) == 0 )"
+  },
+  {
+   "code": "0x4037a42a",
+   "lit": "0x40374b4c",
+   "str": "0x3c038f88",
+   "s": "prvCopyItemAllowSplit"
+  },
+  {
+   "code": "0x4037a448",
+   "lit": "0x40374aa8",
+   "str": "0x3c036170",
+   "s": "pxRingbuffer->pucAcquire >= pxRingbuffer->pucHead && pxRingbuffer->pucAcquire < pxRingbuffer->pucTail"
+  },
+  {
+   "code": "0x4037a44b",
+   "lit": "0x40374b4c",
+   "str": "0x3c038f88",
+   "s": "prvCopyItemAllowSplit"
+  },
+  {
+   "code": "0x4037a45f",
+   "lit": "0x40374af4",
+   "str": "0x3c03650c",
+   "s": "xRemLen >= sizeof(ItemHeader_t)"
+  },
+  {
+   "code": "0x4037a462",
+   "lit": "0x40374b4c",
+   "str": "0x3c038f88",
+   "s": "prvCopyItemAllowSplit"
+  },
+  {
+   "code": "0x4037a671",
+   "lit": "0x40374b50",
+   "str": "0x3c0365ac",
+   "s": "*pvItem2 < *pvItem1"
+  },
+  {
+   "code": "0x4037a674",
+   "lit": "0x40374b54",
+   "str": "0x3c038e98",
+   "s": "prvReceiveGeneric"
+  },
+  {
+   "code": "0x4037a684",
+   "lit": "0x40374b58",
+   "str": "0x3c0365c0",
+   "s": "xIsSplit == ( ( BaseType_t ) 0 )"
+  },
+  {
+   "code": "0x4037a687",
+   "lit": "0x40374b54",
+   "str": "0x3c038e98",
+   "s": "prvReceiveGeneric"
+  },
+  {
+   "code": "0x4037a753",
+   "lit": "0x40374b50",
+   "str": "0x3c0365ac",
+   "s": "*pvItem2 < *pvItem1"
+  },
+  {
+   "code": "0x4037a756",
+   "lit": "0x40374b5c",
+   "str": "0x3c038e60",
+   "s": "prvReceiveGenericFromISR"
+  },
+  {
+   "code": "0x4037a766",
+   "lit": "0x40374b58",
+   "str": "0x3c0365c0",
+   "s": "xIsSplit == ( ( BaseType_t ) 0 )"
+  },
+  {
+   "code": "0x4037a769",
+   "lit": "0x40374b5c",
+   "str": "0x3c038e60",
+   "s": "prvReceiveGenericFromISR"
+  },
+  {
+   "code": "0x4037a797",
+   "lit": "0x40374b60",
+   "str": "0x3c0365e4",
+   "s": "xBufferSize > 0"
+  },
+  {
+   "code": "0x4037a79a",
+   "lit": "0x40374b64",
+   "str": "0x3c038ee8",
+   "s": "xRingbufferCreateStatic"
+  },
+  {
+   "code": "0x4037a7ab",
+   "lit": "0x40374b68",
+   "str": "0x3c0365f4",
+   "s": "xBufferType < RINGBUF_TYPE_MAX"
+  },
+  {
+   "code": "0x4037a7ae",
+   "lit": "0x40374b64",
+   "str": "0x3c038ee8",
+   "s": "xRingbufferCreateStatic"
+  },
+  {
+   "code": "0x4037a7ca",
+   "lit": "0x40374b6c",
+   "str": "0x3c036614",
+   "s": "pucRingbufferStorage != ((void *)0) && pxStaticRingbuffer != ((void *)0)"
+  },
+  {
+   "code": "0x4037a7cd",
+   "lit": "0x40374b64",
+   "str": "0x3c038ee8",
+   "s": "xRingbufferCreateStatic"
+  },
+  {
+   "code": "0x4037a7e4",
+   "lit": "0x40374b70",
+   "str": "0x3c036660",
+   "s": "( ( ( UBaseType_t ) ( xBufferSize ) & (0x03) ) == 0 )"
+  },
+  {
+   "code": "0x4037a7e7",
+   "lit": "0x40374b64",
+   "str": "0x3c038ee8",
+   "s": "xRingbufferCreateStatic"
+  },
+  {
+   "code": "0x4037a812",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037a815",
+   "lit": "0x40374b78",
+   "str": "0x3c038ed8",
+   "s": "xRingbufferSend"
+  },
+  {
+   "code": "0x4037a834",
+   "lit": "0x40374b7c",
+   "str": "0x3c036734",
+   "s": "pvItem != ((void *)0) || xItemSize == 0"
+  },
+  {
+   "code": "0x4037a837",
+   "lit": "0x40374b78",
+   "str": "0x3c038ed8",
+   "s": "xRingbufferSend"
+  },
+  {
+   "code": "0x4037a87f",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037a882",
+   "lit": "0x40374b80",
+   "str": "0x3c038ec0",
+   "s": "xRingbufferSendFromISR"
+  },
+  {
+   "code": "0x4037a89f",
+   "lit": "0x40374b7c",
+   "str": "0x3c036734",
+   "s": "pvItem != ((void *)0) || xItemSize == 0"
+  },
+  {
+   "code": "0x4037a8a2",
+   "lit": "0x40374b80",
+   "str": "0x3c038ec0",
+   "s": "xRingbufferSendFromISR"
+  },
+  {
+   "code": "0x4037a967",
+   "lit": "0x40374b84",
+   "str": "0x3c03675c",
+   "s": "pxRingbuffer && pxItemSize"
+  },
+  {
+   "code": "0x4037a96a",
+   "lit": "0x40374b88",
+   "str": "0x3c038eac",
+   "s": "xRingbufferReceive"
+  },
+  {
+   "code": "0x4037a9a7",
+   "lit": "0x40374b84",
+   "str": "0x3c03675c",
+   "s": "pxRingbuffer && pxItemSize"
+  },
+  {
+   "code": "0x4037a9aa",
+   "lit": "0x40374b8c",
+   "str": "0x3c038e7c",
+   "s": "xRingbufferReceiveFromISR"
+  },
+  {
+   "code": "0x4037a9e6",
+   "lit": "0x40374b84",
+   "str": "0x3c03675c",
+   "s": "pxRingbuffer && pxItemSize"
+  },
+  {
+   "code": "0x4037a9e9",
+   "lit": "0x40374b90",
+   "str": "0x3c038e48",
+   "s": "xRingbufferReceiveUpTo"
+  },
+  {
+   "code": "0x4037a9fa",
+   "lit": "0x40374b94",
+   "str": "0x3c036778",
+   "s": "pxRingbuffer->uxRingbufferFlags & ( ( UBaseType_t ) 2 )"
+  },
+  {
+   "code": "0x4037a9fd",
+   "lit": "0x40374b90",
+   "str": "0x3c038e48",
+   "s": "xRingbufferReceiveUpTo"
+  },
+  {
+   "code": "0x4037aa32",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037aa35",
+   "lit": "0x40374b98",
+   "str": "0x3c038e30",
+   "s": "vRingbufferReturnItem"
+  },
+  {
+   "code": "0x4037aa43",
+   "lit": "0x40374b9c",
+   "str": "0x3c03671c",
+   "s": "pvItem != ((void *)0)"
+  },
+  {
+   "code": "0x4037aa46",
+   "lit": "0x40374b98",
+   "str": "0x3c038e30",
+   "s": "vRingbufferReturnItem"
+  },
+  {
+   "code": "0x4037aa8e",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037aa91",
+   "lit": "0x40374ba0",
+   "str": "0x3c038e10",
+   "s": "vRingbufferReturnItemFromISR"
+  },
+  {
+   "code": "0x4037aaa3",
+   "lit": "0x40374b9c",
+   "str": "0x3c03671c",
+   "s": "pvItem != ((void *)0)"
+  },
+  {
+   "code": "0x4037aaa6",
+   "lit": "0x40374ba0",
+   "str": "0x3c038e10",
+   "s": "vRingbufferReturnItemFromISR"
+  },
+  {
+   "code": "0x4037aaee",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037aaf1",
+   "lit": "0x40374ba4",
+   "str": "0x3c038dfc",
+   "s": "vRingbufferDelete"
+  },
+  {
+   "code": "0x4037ab16",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037ab19",
+   "lit": "0x40374ba8",
+   "str": "0x3c038de0",
+   "s": "xRingbufferGetMaxItemSize"
+  },
+  {
+   "code": "0x4037ab32",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037ab35",
+   "lit": "0x40374bac",
+   "str": "0x3c038dc4",
+   "s": "xRingbufferGetCurFreeSize"
+  },
+  {
+   "code": "0x4037ab66",
+   "lit": "0x40374b74",
+   "str": "0x3c036698",
+   "s": "pxRingbuffer"
+  },
+  {
+   "code": "0x4037ab69",
+   "lit": "0x40374bb0",
+   "str": "0x3c038db0",
+   "s": "vRingbufferGetInfo"
+  },
+  {
+   "code": "0x4037abd4",
+   "lit": "0x40374bb4",
+   "str": "0x3c0367b0",
+   "s": "pxRingbuffer && ppucRingbufferStorage && ppxStaticRingbuffer"
+  },
+  {
+   "code": "0x4037abd7",
+   "lit": "0x40374bb8",
+   "str": "0x3c038d94",
+   "s": "xRingbufferGetStaticBuffer"
+  },
+  {
+   "code": "0x4037ac67",
+   "lit": "0x40374bbc",
+   "str": "0x3c035f6c",
+   "s": "xResult == ( ( BaseType_t ) 1 )"
+  },
+  {
+   "code": "0x4037ac6a",
+   "lit": "0x40374bc0",
+   "str": "0x3c038d78",
+   "s": "vRingbufferDeleteWithCaps"
+  },
+  {
+   "code": "0x4037af1f",
+   "lit": "0x40374c08",
+   "str": "0x3fc95fc4",
+   "s": "%s failed: esp_err_t 0x%x"
+  },
+  {
+   "code": "0x4037af42",
+   "lit": "0x40374c10",
+   "str": "0x3fc95fe8",
+   "s": " at 0x%08x"
+  },
+  {
+   "code": "0x4037af58",
+   "lit": "0x40374c14",
+   "str": "0x3fc95ff4",
+   "s": "file: \"%s\" line %d"
+  },
+  {
+   "code": "0x4037af85",
+   "lit": "0x40374c20",
+   "str": "0x3fc96020",
+   "s": "ESP_ERROR_CHECK"
+  },
+  {
+   "code": "0x4037b05e",
+   "lit": "0x40374c24",
+   "str": "0x3c03220c",
+   "s": "pxQueueSetContainer"
+  },
+  {
+   "code": "0x4037b061",
+   "lit": "0x40374c28",
+   "str": "0x3c037270",
+   "s": "prvNotifyQueueSetContainer"
+  },
+  {
+   "code": "0x4037b077",
+   "lit": "0x40374c34",
+   "str": "0x3c032254",
+   "s": "pxQueueSetContainer->uxMessagesWaiting < pxQueueSetContainer->uxLength"
+  },
+  {
+   "code": "0x4037b07a",
+   "lit": "0x40374c28",
+   "str": "0x3c037270",
+   "s": "prvNotifyQueueSetContainer"
+  },
+  {
+   "code": "0x4037b0f2",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037b0f5",
+   "lit": "0x40374c40",
+   "str": "0x3c037398",
+   "s": "xQueueGenericReset"
+  },
+  {
+   "code": "0x4037b185",
+   "lit": "0x40374c44",
+   "str": "0x3c0322a4",
+   "s": "xReturn != ( ( ( BaseType_t ) 0 ) )"
+  },
+  {
+   "code": "0x4037b188",
+   "lit": "0x40374c40",
+   "str": "0x3c037398",
+   "s": "xQueueGenericReset"
+  },
+  {
+   "code": "0x4037b1d5",
+   "lit": "0x40374c48",
+   "str": "0x3c0322c8",
+   "s": "pxStaticQueue"
+  },
+  {
+   "code": "0x4037b1d8",
+   "lit": "0x40374c4c",
+   "str": "0x3c037368",
+   "s": "xQueueGenericCreateStatic"
+  },
+  {
+   "code": "0x4037b21f",
+   "lit": "0x40374c50",
+   "str": "0x3c0322d8",
+   "s": "xSize == sizeof( Queue_t )"
+  },
+  {
+   "code": "0x4037b222",
+   "lit": "0x40374c4c",
+   "str": "0x3c037368",
+   "s": "xQueueGenericCreateStatic"
+  },
+  {
+   "code": "0x4037b22e",
+   "lit": "0x40374c54",
+   "str": "0x3c0322f4",
+   "s": "pxNewQueue"
+  },
+  {
+   "code": "0x4037b231",
+   "lit": "0x40374c4c",
+   "str": "0x3c037368",
+   "s": "xQueueGenericCreateStatic"
+  },
+  {
+   "code": "0x4037b256",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037b259",
+   "lit": "0x40374c58",
+   "str": "0x3c037348",
+   "s": "xQueueGenericGetStaticBuffers"
+  },
+  {
+   "code": "0x4037b267",
+   "lit": "0x40374c5c",
+   "str": "0x3c032300",
+   "s": "ppxStaticQueue"
+  },
+  {
+   "code": "0x4037b26a",
+   "lit": "0x40374c58",
+   "str": "0x3c037348",
+   "s": "xQueueGenericGetStaticBuffers"
+  },
+  {
+   "code": "0x4037b2d4",
+   "lit": "0x40374c54",
+   "str": "0x3c0322f4",
+   "s": "pxNewQueue"
+  },
+  {
+   "code": "0x4037b2d7",
+   "lit": "0x40374c60",
+   "str": "0x3c037334",
+   "s": "xQueueGenericCreate"
+  },
+  {
+   "code": "0x4037b2ee",
+   "lit": "0x40374c64",
+   "str": "0x3c032310",
+   "s": "xSemaphore"
+  },
+  {
+   "code": "0x4037b2f1",
+   "lit": "0x40374c68",
+   "str": "0x3c03731c",
+   "s": "xQueueGetMutexHolder"
+  },
+  {
+   "code": "0x4037b34c",
+   "lit": "0x40374c6c",
+   "str": "0x3c03231c",
+   "s": "xHandle"
+  },
+  {
+   "code": "0x4037b34f",
+   "lit": "0x40374c70",
+   "str": "0x3c0372c0",
+   "s": "xQueueCreateCountingSemaphoreStatic"
+  },
+  {
+   "code": "0x4037b388",
+   "lit": "0x40374c6c",
+   "str": "0x3c03231c",
+   "s": "xHandle"
+  },
+  {
+   "code": "0x4037b38b",
+   "lit": "0x40374c74",
+   "str": "0x3c0372a0",
+   "s": "xQueueCreateCountingSemaphore"
+  },
+  {
+   "code": "0x4037b3a3",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037b3a6",
+   "lit": "0x40374c78",
+   "str": "0x3c03728c",
+   "s": "xQueueGenericSend"
+  },
+  {
+   "code": "0x4037b3be",
+   "lit": "0x40374c7c",
+   "str": "0x3c032324",
+   "s": "!( ( pvItemToQueue == ((void *)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) )"
+  },
+  {
+   "code": "0x4037b3c1",
+   "lit": "0x40374c78",
+   "str": "0x3c03728c",
+   "s": "xQueueGenericSend"
+  },
+  {
+   "code": "0x4037b3d5",
+   "lit": "0x40374c80",
+   "str": "0x3c03237c",
+   "s": "!( ( xCopyPosition == ( ( BaseType_t ) 2 ) ) && ( pxQueue->uxLength != 1 ) )"
+  },
+  {
+   "code": "0x4037b3d8",
+   "lit": "0x40374c78",
+   "str": "0x3c03728c",
+   "s": "xQueueGenericSend"
+  },
+  {
+   "code": "0x4037b3f3",
+   "lit": "0x40374c84",
+   "str": "0x3c0323cc",
+   "s": "!( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) && ( xTicksToWait != 0 ) )"
+  },
+  {
+   "code": "0x4037b3f6",
+   "lit": "0x40374c78",
+   "str": "0x3c03728c",
+   "s": "xQueueGenericSend"
+  },
+  {
+   "code": "0x4037b4f2",
+   "lit": "0x40374c8c",
+   "str": "0x3c037384",
+   "s": "spinlock_initialize"
+  },
+  {
+   "code": "0x4037b54e",
+   "lit": "0x40374c94",
+   "str": "0x3c032420",
+   "s": "pxMutex"
+  },
+  {
+   "code": "0x4037b551",
+   "lit": "0x40374c98",
+   "str": "0x3c037300",
+   "s": "xQueueGiveMutexRecursive"
+  },
+  {
+   "code": "0x4037b58e",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037b591",
+   "lit": "0x40374c9c",
+   "str": "0x3c037254",
+   "s": "xQueueGenericSendFromISR"
+  },
+  {
+   "code": "0x4037b5a7",
+   "lit": "0x40374c7c",
+   "str": "0x3c032324",
+   "s": "!( ( pvItemToQueue == ((void *)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) )"
+  },
+  {
+   "code": "0x4037b5aa",
+   "lit": "0x40374c9c",
+   "str": "0x3c037254",
+   "s": "xQueueGenericSendFromISR"
+  },
+  {
+   "code": "0x4037b5c1",
+   "lit": "0x40374c80",
+   "str": "0x3c03237c",
+   "s": "!( ( xCopyPosition == ( ( BaseType_t ) 2 ) ) && ( pxQueue->uxLength != 1 ) )"
+  },
+  {
+   "code": "0x4037b5c4",
+   "lit": "0x40374c9c",
+   "str": "0x3c037254",
+   "s": "xQueueGenericSendFromISR"
+  },
+  {
+   "code": "0x4037b66a",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037b66d",
+   "lit": "0x40374ca0",
+   "str": "0x3c037240",
+   "s": "xQueueGiveFromISR"
+  },
+  {
+   "code": "0x4037b67f",
+   "lit": "0x40374ca4",
+   "str": "0x3c032428",
+   "s": "pxQueue->uxItemSize == 0"
+  },
+  {
+   "code": "0x4037b682",
+   "lit": "0x40374ca0",
+   "str": "0x3c037240",
+   "s": "xQueueGiveFromISR"
+  },
+  {
+   "code": "0x4037b69b",
+   "lit": "0x40374ca8",
+   "str": "0x3c032444",
+   "s": "!( ( pxQueue->pcHead == ((void *)0) ) && ( pxQueue->u.xSemaphore.xMutexHolder != ((void *)0) ) )"
+  },
+  {
+   "code": "0x4037b69e",
+   "lit": "0x40374ca0",
+   "str": "0x3c037240",
+   "s": "xQueueGiveFromISR"
+  },
+  {
+   "code": "0x4037b727",
+   "lit": "0x40374cac",
+   "str": "0x3c0324a8",
+   "s": "( pxQueue )"
+  },
+  {
+   "code": "0x4037b72a",
+   "lit": "0x40374cb0",
+   "str": "0x3c037230",
+   "s": "xQueueReceive"
+  },
+  {
+   "code": "0x4037b742",
+   "lit": "0x40374cb4",
+   "str": "0x3c0324b4",
+   "s": "!( ( ( pvBuffer ) == ((void *)0) ) && ( ( pxQueue )->uxItemSize != ( UBaseType_t ) 0U ) )"
+  },
+  {
+   "code": "0x4037b745",
+   "lit": "0x40374cb0",
+   "str": "0x3c037230",
+   "s": "xQueueReceive"
+  },
+  {
+   "code": "0x4037b764",
+   "lit": "0x40374c84",
+   "str": "0x3c0323cc",
+   "s": "!( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) && ( xTicksToWait != 0 ) )"
+  },
+  {
+   "code": "0x4037b767",
+   "lit": "0x40374cb0",
+   "str": "0x3c037230",
+   "s": "xQueueReceive"
+  },
+  {
+   "code": "0x4037b813",
+   "lit": "0x40374cac",
+   "str": "0x3c0324a8",
+   "s": "( pxQueue )"
+  },
+  {
+   "code": "0x4037b816",
+   "lit": "0x40374cb8",
+   "str": "0x3c03721c",
+   "s": "xQueueSemaphoreTake"
+  },
+  {
+   "code": "0x4037b82a",
+   "lit": "0x40374ca4",
+   "str": "0x3c032428",
+   "s": "pxQueue->uxItemSize == 0"
+  },
+  {
+   "code": "0x4037b82d",
+   "lit": "0x40374cb8",
+   "str": "0x3c03721c",
+   "s": "xQueueSemaphoreTake"
+  },
+  {
+   "code": "0x4037b849",
+   "lit": "0x40374c84",
+   "str": "0x3c0323cc",
+   "s": "!( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) && ( xTicksToWait != 0 ) )"
+  },
+  {
+   "code": "0x4037b84c",
+   "lit": "0x40374cb8",
+   "str": "0x3c03721c",
+   "s": "xQueueSemaphoreTake"
+  },
+  {
+   "code": "0x4037b8cd",
+   "lit": "0x40374d50",
+   "str": "0x3c037640",
+   "s": "vPortExitCritical"
+  },
+  {
+   "code": "0x4037b91b",
+   "lit": "0x40374c94",
+   "str": "0x3c032420",
+   "s": "pxMutex"
+  },
+  {
+   "code": "0x4037b91e",
+   "lit": "0x40374cbc",
+   "str": "0x3c0372e4",
+   "s": "xQueueTakeMutexRecursive"
+  },
+  {
+   "code": "0x4037b95e",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037b961",
+   "lit": "0x40374cc0",
+   "str": "0x3c037204",
+   "s": "xQueueReceiveFromISR"
+  },
+  {
+   "code": "0x4037b977",
+   "lit": "0x40374cc8",
+   "str": "0x3c032510",
+   "s": "!( ( pvBuffer == ((void *)0) ) && ( pxQueue->uxItemSize != ( UBaseType_t ) 0U ) )"
+  },
+  {
+   "code": "0x4037b97a",
+   "lit": "0x40374cc0",
+   "str": "0x3c037204",
+   "s": "xQueueReceiveFromISR"
+  },
+  {
+   "code": "0x4037b9e6",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037b9e9",
+   "lit": "0x40374cd0",
+   "str": "0x3c0371ec",
+   "s": "uxQueueSpacesAvailable"
+  },
+  {
+   "code": "0x4037ba1a",
+   "lit": "0x40374c3c",
+   "str": "0x3c03229c",
+   "s": "pxQueue"
+  },
+  {
+   "code": "0x4037ba1d",
+   "lit": "0x40374cd8",
+   "str": "0x3c0371dc",
+   "s": "vQueueDelete"
+  },
+  {
+   "code": "0x4037bb30",
+   "lit": "0x40374cec",
+   "str": "0x3c032ba4",
+   "s": "(uxStackPointer & ( 0x000f )) == 0"
+  },
+  {
+   "code": "0x4037bb33",
+   "lit": "0x40374cf0",
+   "str": "0x3c037668",
+   "s": "pxPortInitialiseStack"
+  },
+  {
+   "code": "0x4037bb82",
+   "lit": "0x40374d00",
+   "str": "0x3c030120",
+   "s": "flash_ret == ESP_OK"
+  },
+  {
+   "code": "0x4037bbf7",
+   "lit": "0x40374d18",
+   "str": "0x3c037654",
+   "s": "spinlock_acquire"
+  },
+  {
+   "code": "0x4037bc19",
+   "lit": "0x40374d20",
+   "str": "0x3c032c0c",
+   "s": "lock->count > 0 && lock->count < 0xFF"
+  },
+  {
+   "code": "0x4037bc1c",
+   "lit": "0x40374d18",
+   "str": "0x3c037654",
+   "s": "spinlock_acquire"
+  },
+  {
+   "code": "0x4037bc83",
+   "lit": "0x40374d24",
+   "str": "0x3c032c34",
+   "s": "lock->owner == core_owner_id"
+  },
+  {
+   "code": "0x4037bc86",
+   "lit": "0x40374d18",
+   "str": "0x3c037654",
+   "s": "spinlock_acquire"
+  },
+  {
+   "code": "0x4037bc96",
+   "lit": "0x40374d28",
+   "str": "0x3c032c54",
+   "s": "lock->count == 0"
+  },
+  {
+   "code": "0x4037bc99",
+   "lit": "0x40374d18",
+   "str": "0x3c037654",
+   "s": "spinlock_acquire"
+  },
+  {
+   "code": "0x4037bcc4",
+   "lit": "0x40374d30",
+   "str": "0x3c032c68",
+   "s": "lock->owner == SPINLOCK_FREE || lock->owner == other_core_owner_id"
+  },
+  {
+   "code": "0x4037bcc7",
+   "lit": "0x40374d18",
+   "str": "0x3c037654",
+   "s": "spinlock_acquire"
+  },
+  {
+   "code": "0x4037bcdf",
+   "lit": "0x40374d34",
+   "str": "0x3c032cac",
+   "s": "lock->count < 0xFF"
+  },
+  {
+   "code": "0x4037bce2",
+   "lit": "0x40374d18",
+   "str": "0x3c037654",
+   "s": "spinlock_acquire"
+  },
+  {
+   "code": "0x4037bd41",
+   "lit": "0x40374d40",
+   "str": "0x3c03762c",
+   "s": "spinlock_release"
+  },
+  {
+   "code": "0x4037bd58",
+   "lit": "0x40374d44",
+   "str": "0x3c032cc0",
+   "s": "core_owner_id == lock->owner"
+  },
+  {
+   "code": "0x4037bd5b",
+   "lit": "0x40374d40",
+   "str": "0x3c03762c",
+   "s": "spinlock_release"
+  },
+  {
+   "code": "0x4037bd83",
+   "lit": "0x40374d48",
+   "str": "0x3c032ce0",
+   "s": "lock->count < 0x100"
+  },
+  {
+   "code": "0x4037bd86",
+   "lit": "0x40374d40",
+   "str": "0x3c03762c",
+   "s": "spinlock_release"
+  },
+  {
+   "code": "0x4037bdac",
+   "lit": "0x40374d4c",
+   "str": "0x3c032cf4",
+   "s": "nesting > 0"
+  },
+  {
+   "code": "0x4037bdaf",
+   "lit": "0x40374d50",
+   "str": "0x3c037640",
+   "s": "vPortExitCritical"
+  },
+  {
+   "code": "0x4037bde3",
+   "lit": "0x40374d54",
+   "str": "0x3c032d00",
+   "s": "***ERROR*** A stack overflow in task "
+  },
+  {
+   "code": "0x4037bdea",
+   "lit": "0x40374d58",
+   "str": "0x3c032d28",
+   "s": " has been detected."
+  },
+  {
+   "code": "0x4037c190",
+   "lit": "0x40374d88",
+   "str": "0x3c032d3c",
+   "s": "pxTCBBufferTemp != NULL"
+  },
+  {
+   "code": "0x4037c193",
+   "lit": "0x40374d8c",
+   "str": "0x3c0376a0",
+   "s": "vApplicationGetIdleTaskMemory"
+  },
+  {
+   "code": "0x4037c1a0",
+   "lit": "0x40374d94",
+   "str": "0x3c032d7c",
+   "s": "pxStackBufferTemp != NULL"
+  },
+  {
+   "code": "0x4037c1a3",
+   "lit": "0x40374d8c",
+   "str": "0x3c0376a0",
+   "s": "vApplicationGetIdleTaskMemory"
+  },
+  {
+   "code": "0x4037c1d1",
+   "lit": "0x40374d88",
+   "str": "0x3c032d3c",
+   "s": "pxTCBBufferTemp != NULL"
+  },
+  {
+   "code": "0x4037c1d4",
+   "lit": "0x40374d9c",
+   "str": "0x3c037680",
+   "s": "vApplicationGetTimerTaskMemory"
+  },
+  {
+   "code": "0x4037c1e2",
+   "lit": "0x40374d94",
+   "str": "0x3c032d7c",
+   "s": "pxStackBufferTemp != NULL"
+  },
+  {
+   "code": "0x4037c1e5",
+   "lit": "0x40374d9c",
+   "str": "0x3c037680",
+   "s": "vApplicationGetTimerTaskMemory"
+  },
+  {
+   "code": "0x4037c21d",
+   "lit": "0x40374da8",
+   "str": "0x3c032d98",
+   "s": "esp_intr_alloc(ETS_SYSTIMER_TARGET0_INTR_SOURCE + cpuid, ESP_INTR_FLAG_IRAM | level, SysTickIsrHandler, &systimer_hal, NULL)"
+  },
+  {
+   "code": "0x4037c226",
+   "lit": "0x40374db0",
+   "str": "0x3c032e18",
+   "s": "/IDF/components/freertos/port_systick.c"
+  },
+  {
+   "code": "0x4037c693",
+   "lit": "0x40374dd4",
+   "str": "0x3c035e78",
+   "s": "( pxTimer->xTimerPeriodInTicks > 0 )"
+  },
+  {
+   "code": "0x4037c696",
+   "lit": "0x40374dd8",
+   "str": "0x3c038d10",
+   "s": "prvProcessReceivedCommands"
+  },
+  {
+   "code": "0x4037c74a",
+   "lit": "0x40374df0",
+   "str": "0x3c035ed4",
+   "s": "( xTimerPeriodInTicks > 0 )"
+  },
+  {
+   "code": "0x4037c74d",
+   "lit": "0x40374df4",
+   "str": "0x3c038cf8",
+   "s": "prvInitialiseNewTimer"
+  },
+  {
+   "code": "0x4037c7af",
+   "lit": "0x40374df8",
+   "str": "0x3c035ef0",
+   "s": "Tmr Svc"
+  },
+  {
+   "code": "0x4037c7bf",
+   "lit": "0x40374e04",
+   "str": "0x3c035ef8",
+   "s": "xReturn"
+  },
+  {
+   "code": "0x4037c7c2",
+   "lit": "0x40374e08",
+   "str": "0x3c038d2c",
+   "s": "xTimerCreateTimerTask"
+  },
+  {
+   "code": "0x4037c802",
+   "lit": "0x40374e0c",
+   "str": "0x3c035f00",
+   "s": "xTimer"
+  },
+  {
+   "code": "0x4037c805",
+   "lit": "0x40374e10",
+   "str": "0x3c038ce0",
+   "s": "xTimerGenericCommand"
+  },
+  {
+   "code": "0x4037c872",
+   "lit": "0x40374e0c",
+   "str": "0x3c035f00",
+   "s": "xTimer"
+  },
+  {
+   "code": "0x4037c875",
+   "lit": "0x40374e14",
+   "str": "0x3c038ccc",
+   "s": "pvTimerGetTimerID"
+  },
+  {
+   "code": "0x4037ca60",
+   "lit": "0x40374e24",
+   "str": "0x3c032564",
+   "s": "uxTaskPriority < ( 25 )"
+  },
+  {
+   "code": "0x4037ca63",
+   "lit": "0x40374e28",
+   "str": "0x3c0375bc",
+   "s": "prvIsYieldRequiredSMP"
+  },
+  {
+   "code": "0x4037ccca",
+   "lit": "0x40374e38",
+   "str": "0x3c0325b0",
+   "s": "xTaskScheduled == ( ( BaseType_t ) 1 )"
+  },
+  {
+   "code": "0x4037cccd",
+   "lit": "0x40374e3c",
+   "str": "0x3c037554",
+   "s": "prvSelectHighestPriorityTaskSMP"
+  },
+  {
+   "code": "0x4037cd13",
+   "lit": "0x40374e44",
+   "str": "0x3c0325d8",
+   "s": "pxTCB->ucStaticallyAllocated == ( ( uint8_t ) 2 )"
+  },
+  {
+   "code": "0x4037cd16",
+   "lit": "0x40374e48",
+   "str": "0x3c0375f4",
+   "s": "prvDeleteTCB"
+  },
+  {
+   "code": "0x4037cf34",
+   "lit": "0x40374e78",
+   "str": "0x3c03260c",
+   "s": "uxPriority < ( 25 )"
+  },
+  {
+   "code": "0x4037cf37",
+   "lit": "0x40374e7c",
+   "str": "0x3c037410",
+   "s": "prvInitialiseNewTask"
+  },
+  {
+   "code": "0x4037d200",
+   "lit": "0x40374e94",
+   "str": "0x3c032628",
+   "s": "xPortGetCoreID() == 0"
+  },
+  {
+   "code": "0x4037d203",
+   "lit": "0x40374e98",
+   "str": "0x3c037574",
+   "s": "xTaskIncrementTick"
+  },
+  {
+   "code": "0x4037d256",
+   "lit": "0x40374ea0",
+   "str": "0x3c032640",
+   "s": "( ( ( ( pxDelayedTaskList )->uxNumberOfItems == ( UBaseType_t ) 0 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) )"
+  },
+  {
+   "code": "0x4037d259",
+   "lit": "0x40374e98",
+   "str": "0x3c037574",
+   "s": "xTaskIncrementTick"
+  },
+  {
+   "code": "0x4037d56a",
+   "lit": "0x40374eb8",
+   "str": "0x3c0326b8",
+   "s": "pxEventList"
+  },
+  {
+   "code": "0x4037d56d",
+   "lit": "0x40374ebc",
+   "str": "0x3c03753c",
+   "s": "vTaskPlaceOnEventList"
+  },
+  {
+   "code": "0x4037d5b2",
+   "lit": "0x40374eb8",
+   "str": "0x3c0326b8",
+   "s": "pxEventList"
+  },
+  {
+   "code": "0x4037d5b5",
+   "lit": "0x40374ec4",
+   "str": "0x3c03751c",
+   "s": "vTaskPlaceOnEventListRestricted"
+  },
+  {
+   "code": "0x4037d69e",
+   "lit": "0x40374ecc",
+   "str": "0x3c0326c4",
+   "s": "pxUnblockedTCB"
+  },
+  {
+   "code": "0x4037d6a1",
+   "lit": "0x40374ed0",
+   "str": "0x3c037500",
+   "s": "xTaskRemoveFromEventList"
+  },
+  {
+   "code": "0x4037d7d0",
+   "lit": "0x40374ed8",
+   "str": "0x3c0326d4",
+   "s": "uxSchedulerSuspended[ uxPendCore ] != ( UBaseType_t ) 0U"
+  },
+  {
+   "code": "0x4037d7d3",
+   "lit": "0x40374ed0",
+   "str": "0x3c037500",
+   "s": "xTaskRemoveFromEventList"
+  },
+  {
+   "code": "0x4037d882",
+   "lit": "0x40374ee0",
+   "str": "0x3c032710",
+   "s": "pxTimeOut"
+  },
+  {
+   "code": "0x4037d885",
+   "lit": "0x40374ee4",
+   "str": "0x3c0374e8",
+   "s": "xTaskCheckForTimeOut"
+  },
+  {
+   "code": "0x4037d894",
+   "lit": "0x40374eec",
+   "str": "0x3c03271c",
+   "s": "pxTicksToWait"
+  },
+  {
+   "code": "0x4037d897",
+   "lit": "0x40374ee4",
+   "str": "0x3c0374e8",
+   "s": "xTaskCheckForTimeOut"
+  },
+  {
+   "code": "0x4037d97c",
+   "lit": "0x40374ef4",
+   "str": "0x3c03272c",
+   "s": "uxNewPriority < ( 25 )"
+  },
+  {
+   "code": "0x4037d97f",
+   "lit": "0x40374ef8",
+   "str": "0x3c0375d4",
+   "s": "vTaskPrioritySet"
+  },
+  {
+   "code": "0x4037d9ec",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037dadd",
+   "lit": "0x40374f00",
+   "str": "0x3c037588",
+   "s": "pcTaskGetName"
+  },
+  {
+   "code": "0x4037dc18",
+   "lit": "0x40374f08",
+   "str": "0x3c032744",
+   "s": "( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 0 )"
+  },
+  {
+   "code": "0x4037dc1b",
+   "lit": "0x40374f0c",
+   "str": "0x3c037604",
+   "s": "vTaskDelete"
+  },
+  {
+   "code": "0x4037dc43",
+   "lit": "0x40374f08",
+   "str": "0x3c032744",
+   "s": "( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 0 )"
+  },
+  {
+   "code": "0x4037dc46",
+   "lit": "0x40374f10",
+   "str": "0x3c0375e8",
+   "s": "vTaskDelay"
+  },
+  {
+   "code": "0x4037dc7d",
+   "lit": "0x40374f14",
+   "str": "0x3c0327c4",
+   "s": "( ( xTaskGetSchedulerState() == ( ( BaseType_t ) 0 ) ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 )"
+  },
+  {
+   "code": "0x4037dc80",
+   "lit": "0x40374f18",
+   "str": "0x3c037598",
+   "s": "xTaskResumeAll"
+  },
+  {
+   "code": "0x4037df96",
+   "lit": "0x40374f20",
+   "str": "0x3c032844",
+   "s": "pxTCB == pxCurrentTCBs[ xPortGetCoreID() ]"
+  },
+  {
+   "code": "0x4037df99",
+   "lit": "0x40374f24",
+   "str": "0x3c0374d0",
+   "s": "xTaskPriorityDisinherit"
+  },
+  {
+   "code": "0x4037dfab",
+   "lit": "0x40374f2c",
+   "str": "0x3c032870",
+   "s": "pxTCB->uxMutexesHeld"
+  },
+  {
+   "code": "0x4037dfae",
+   "lit": "0x40374f24",
+   "str": "0x3c0374d0",
+   "s": "xTaskPriorityDisinherit"
+  },
+  {
+   "code": "0x4037e071",
+   "lit": "0x40374f2c",
+   "str": "0x3c032870",
+   "s": "pxTCB->uxMutexesHeld"
+  },
+  {
+   "code": "0x4037e074",
+   "lit": "0x40374f34",
+   "str": "0x3c0374ac",
+   "s": "vTaskPriorityDisinheritAfterTimeout"
+  },
+  {
+   "code": "0x4037e0ad",
+   "lit": "0x40374f3c",
+   "str": "0x3c032888",
+   "s": "pxTCB != pxCurrentTCBs[ xPortGetCoreID() ]"
+  },
+  {
+   "code": "0x4037e0b0",
+   "lit": "0x40374f34",
+   "str": "0x3c0374ac",
+   "s": "vTaskPriorityDisinheritAfterTimeout"
+  },
+  {
+   "code": "0x4037e1a3",
+   "lit": "0x40374f44",
+   "str": "0x3c0328b4",
+   "s": "uxIndexToWait < 1"
+  },
+  {
+   "code": "0x4037e1a6",
+   "lit": "0x40374f48",
+   "str": "0x3c037494",
+   "s": "ulTaskGenericNotifyTake"
+  },
+  {
+   "code": "0x4037e296",
+   "lit": "0x40374f50",
+   "str": "0x3c0328c8",
+   "s": "uxIndexToNotify < 1"
+  },
+  {
+   "code": "0x4037e299",
+   "lit": "0x40374f54",
+   "str": "0x3c037480",
+   "s": "xTaskGenericNotify"
+  },
+  {
+   "code": "0x4037e2a8",
+   "lit": "0x40374f5c",
+   "str": "0x3c0328dc",
+   "s": "xTaskToNotify"
+  },
+  {
+   "code": "0x4037e2ab",
+   "lit": "0x40374f54",
+   "str": "0x3c037480",
+   "s": "xTaskGenericNotify"
+  },
+  {
+   "code": "0x4037e35a",
+   "lit": "0x40374f64",
+   "str": "0x3c0328ec",
+   "s": "xTickCount == ( TickType_t ) 0"
+  },
+  {
+   "code": "0x4037e35d",
+   "lit": "0x40374f54",
+   "str": "0x3c037480",
+   "s": "xTaskGenericNotify"
+  },
+  {
+   "code": "0x4037e422",
+   "lit": "0x40374f6c",
+   "str": "0x3c03290c",
+   "s": "( ( &( pxTCB->xEventListItem ) )->pxContainer ) == ((void *)0)"
+  },
+  {
+   "code": "0x4037e425",
+   "lit": "0x40374f54",
+   "str": "0x3c037480",
+   "s": "xTaskGenericNotify"
+  },
+  {
+   "code": "0x4037e46a",
+   "lit": "0x40374f5c",
+   "str": "0x3c0328dc",
+   "s": "xTaskToNotify"
+  },
+  {
+   "code": "0x4037e46d",
+   "lit": "0x40374f74",
+   "str": "0x3c037460",
+   "s": "vTaskGenericNotifyGiveFromISR"
+  },
+  {
+   "code": "0x4037e47c",
+   "lit": "0x40374f50",
+   "str": "0x3c0328c8",
+   "s": "uxIndexToNotify < 1"
+  },
+  {
+   "code": "0x4037e47f",
+   "lit": "0x40374f74",
+   "str": "0x3c037460",
+   "s": "vTaskGenericNotifyGiveFromISR"
+  },
+  {
+   "code": "0x4037e4d1",
+   "lit": "0x40374f6c",
+   "str": "0x3c03290c",
+   "s": "( ( &( pxTCB->xEventListItem ) )->pxContainer ) == ((void *)0)"
+  },
+  {
+   "code": "0x4037e4d4",
+   "lit": "0x40374f74",
+   "str": "0x3c037460",
+   "s": "vTaskGenericNotifyGiveFromISR"
+  },
+  {
+   "code": "0x4037e613",
+   "lit": "0x40374f84",
+   "str": "0x3c03294c",
+   "s": "xCoreID != 0"
+  },
+  {
+   "code": "0x4037e616",
+   "lit": "0x40374f88",
+   "str": "0x3c037440",
+   "s": "xTaskIncrementTickOtherCores"
+  },
+  {
+   "code": "0x4037e6b1",
+   "lit": "0x40374f90",
+   "str": "0x3c0329a4",
+   "s": "( ( ( ( BaseType_t ) xCoreID ) >= 0 && ( ( BaseType_t ) xCoreID ) < 2 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 ) || xCoreID == ( ( BaseType_t ) 0x7FFFFFFF )"
+  },
+  {
+   "code": "0x4037e6b4",
+   "lit": "0x40374f94",
+   "str": "0x3c037428",
+   "s": "xTaskCreatePinnedToCore"
+  },
+  {
+   "code": "0x4037e727",
+   "lit": "0x40374f98",
+   "str": "0x3c032a60",
+   "s": "xPortcheckValidStackMem(puxStackBuffer)"
+  },
+  {
+   "code": "0x4037e72a",
+   "lit": "0x40374f9c",
+   "str": "0x3c0373f0",
+   "s": "xTaskCreateStaticPinnedToCore"
+  },
+  {
+   "code": "0x4037e73f",
+   "lit": "0x40374fa0",
+   "str": "0x3c032a88",
+   "s": "xPortCheckValidTCBMem(pxTaskBuffer)"
+  },
+  {
+   "code": "0x4037e742",
+   "lit": "0x40374f9c",
+   "str": "0x3c0373f0",
+   "s": "xTaskCreateStaticPinnedToCore"
+  },
+  {
+   "code": "0x4037e775",
+   "lit": "0x40374f90",
+   "str": "0x3c0329a4",
+   "s": "( ( ( ( BaseType_t ) xCoreID ) >= 0 && ( ( BaseType_t ) xCoreID ) < 2 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 ) || xCoreID == ( ( BaseType_t ) 0x7FFFFFFF )"
+  },
+  {
+   "code": "0x4037e778",
+   "lit": "0x40374f9c",
+   "str": "0x3c0373f0",
+   "s": "xTaskCreateStaticPinnedToCore"
+  },
+  {
+   "code": "0x4037e795",
+   "lit": "0x40374fa4",
+   "str": "0x3c032aac",
+   "s": "xSize == sizeof( TCB_t )"
+  },
+  {
+   "code": "0x4037e798",
+   "lit": "0x40374f9c",
+   "str": "0x3c0373f0",
+   "s": "xTaskCreateStaticPinnedToCore"
+  },
+  {
+   "code": "0x4037e8d4",
+   "lit": "0x40374fb4",
+   "str": "0x3c032ad0",
+   "s": "xReturn != ( -1 )"
+  },
+  {
+   "code": "0x4037e8d7",
+   "lit": "0x40374fb8",
+   "str": "0x3c0375a8",
+   "s": "vTaskStartScheduler"
+  },
+  {
+   "code": "0x4037e909",
+   "lit": "0x40374fc4",
+   "str": "0x3c032ae4",
+   "s": "( ( ( ( BaseType_t ) xCoreID ) >= 0 && ( ( BaseType_t ) xCoreID ) < 2 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 )"
+  },
+  {
+   "code": "0x4037e90c",
+   "lit": "0x40374fc8",
+   "str": "0x3c0373d0",
+   "s": "xTaskGetIdleTaskHandleForCore"
+  },
+  {
+   "code": "0x4037e923",
+   "lit": "0x40374fcc",
+   "str": "0x3c032b74",
+   "s": "( xIdleTaskHandle[ xCoreID ] != ((void *)0) )"
+  },
+  {
+   "code": "0x4037e926",
+   "lit": "0x40374fc8",
+   "str": "0x3c0373d0",
+   "s": "xTaskGetIdleTaskHandleForCore"
+  },
+  {
+   "code": "0x4037e93d",
+   "lit": "0x40374fc4",
+   "str": "0x3c032ae4",
+   "s": "( ( ( ( BaseType_t ) xCoreID ) >= 0 && ( ( BaseType_t ) xCoreID ) < 2 ) ? ( ( BaseType_t ) 1 ) : ( ( BaseType_t ) 0 ) ) == ( ( BaseType_t ) 1 )"
+  },
+  {
+   "code": "0x4037e940",
+   "lit": "0x40374fd0",
+   "str": "0x3c0373ac",
+   "s": "xTaskGetCurrentTaskHandleForCore"
+  },
+  {
+   "code": "0x4037ead6",
+   "lit": "0x40374fe8",
+   "str": "0x3fc95c30",
+   "s": "cache_level && (cache_level <= CACHE_LL_LEVEL_NUMS)"
+  },
+  {
+   "code": "0x4037ead9",
+   "lit": "0x40374fec",
+   "str": "0x3fc9637c",
+   "s": "cache_hal_disable"
+  },
+  {
+   "code": "0x4037eadf",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037eb15",
+   "lit": "0x40374fe8",
+   "str": "0x3fc95c30",
+   "s": "cache_level && (cache_level <= CACHE_LL_LEVEL_NUMS)"
+  },
+  {
+   "code": "0x4037eb18",
+   "lit": "0x40374ff4",
+   "str": "0x3fc96368",
+   "s": "cache_hal_enable"
+  },
+  {
+   "code": "0x4037eb1e",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037eb7e",
+   "lit": "0x40374fe8",
+   "str": "0x3fc95c30",
+   "s": "cache_level && (cache_level <= CACHE_LL_LEVEL_NUMS)"
+  },
+  {
+   "code": "0x4037eb81",
+   "lit": "0x40374ff8",
+   "str": "0x3fc96354",
+   "s": "cache_hal_suspend"
+  },
+  {
+   "code": "0x4037eb87",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037ebb9",
+   "lit": "0x40374fe8",
+   "str": "0x3fc95c30",
+   "s": "cache_level && (cache_level <= CACHE_LL_LEVEL_NUMS)"
+  },
+  {
+   "code": "0x4037ebbc",
+   "lit": "0x40374ffc",
+   "str": "0x3fc96340",
+   "s": "cache_hal_resume"
+  },
+  {
+   "code": "0x4037ebc2",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037ed0a",
+   "lit": "0x40374fe8",
+   "str": "0x3fc95c30",
+   "s": "cache_level && (cache_level <= CACHE_LL_LEVEL_NUMS)"
+  },
+  {
+   "code": "0x4037ed0d",
+   "lit": "0x4037501c",
+   "str": "0x3fc9632c",
+   "s": "cache_hal_freeze"
+  },
+  {
+   "code": "0x4037ed13",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037ed46",
+   "lit": "0x40374fe8",
+   "str": "0x3fc95c30",
+   "s": "cache_level && (cache_level <= CACHE_LL_LEVEL_NUMS)"
+  },
+  {
+   "code": "0x4037ed49",
+   "lit": "0x40375020",
+   "str": "0x3fc96318",
+   "s": "cache_hal_unfreeze"
+  },
+  {
+   "code": "0x4037ed4f",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037ed89",
+   "lit": "0x4037502c",
+   "str": "0x3fc95c84",
+   "s": "cache_level <= CACHE_LL_LEVEL_NUMS"
+  },
+  {
+   "code": "0x4037ed8c",
+   "lit": "0x40375030",
+   "str": "0x3fc962f8",
+   "s": "cache_hal_get_cache_line_size"
+  },
+  {
+   "code": "0x4037ed92",
+   "lit": "0x40374ff0",
+   "str": "0x3fc95c64",
+   "s": "/IDF/components/hal/cache_hal.c"
+  },
+  {
+   "code": "0x4037edbb",
+   "lit": "0x40375038",
+   "str": "0x3fc962e0",
+   "s": "cache_ll_get_line_size"
+  },
+  {
+   "code": "0x4037edc1",
+   "lit": "0x4037503c",
+   "str": "0x3fc95cb4",
+   "s": "/IDF/components/hal/esp32s3/include/hal/cache_ll.h"
+  },
+  {
+   "code": "0x4037edd5",
+   "lit": "0x40375048",
+   "str": "0x3fc96030",
+   "s": "entry_id < SOC_MMU_ENTRY_NUM"
+  },
+  {
+   "code": "0x4037edd8",
+   "lit": "0x4037504c",
+   "str": "0x3fc963e0",
+   "s": "mmu_ll_check_entry_valid"
+  },
+  {
+   "code": "0x4037edde",
+   "lit": "0x40375050",
+   "str": "0x3fc96050",
+   "s": "/IDF/components/hal/esp32s3/include/hal/mmu_ll.h"
+  },
+  {
+   "code": "0x4037ee09",
+   "lit": "0x40375048",
+   "str": "0x3fc96030",
+   "s": "entry_id < SOC_MMU_ENTRY_NUM"
+  },
+  {
+   "code": "0x4037ee0c",
+   "lit": "0x40375058",
+   "str": "0x3fc963c8",
+   "s": "mmu_ll_get_entry_target"
+  },
+  {
+   "code": "0x4037ee12",
+   "lit": "0x40375050",
+   "str": "0x3fc96050",
+   "s": "/IDF/components/hal/esp32s3/include/hal/mmu_ll.h"
+  },
+  {
+   "code": "0x4037ee79",
+   "lit": "0x40375048",
+   "str": "0x3fc96030",
+   "s": "entry_id < SOC_MMU_ENTRY_NUM"
+  },
+  {
+   "code": "0x4037ee7c",
+   "lit": "0x4037505c",
+   "str": "0x3fc963a8",
+   "s": "mmu_ll_entry_id_to_paddr_base"
+  },
+  {
+   "code": "0x4037ee82",
+   "lit": "0x40375050",
+   "str": "0x3fc96050",
+   "s": "/IDF/components/hal/esp32s3/include/hal/mmu_ll.h"
+  },
+  {
+   "code": "0x4037eeac",
+   "lit": "0x40375064",
+   "str": "0x3fc96084",
+   "s": "mmu_ll_check_valid_paddr_region(mmu_id, paddr, 1)"
+  },
+  {
+   "code": "0x4037eeaf",
+   "lit": "0x40375068",
+   "str": "0x3fc96390",
+   "s": "mmu_hal_paddr_to_vaddr"
+  },
+  {
+   "code": "0x4037eeb5",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037ef67",
+   "lit": "0x40375078",
+   "str": "0x3fc960d8",
+   "s": "vaddr % page_size_in_bytes == 0"
+  },
+  {
+   "code": "0x4037ef6a",
+   "lit": "0x4037507c",
+   "str": "0x3fc9642c",
+   "s": "mmu_hal_map_region"
+  },
+  {
+   "code": "0x4037ef6f",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037ef7b",
+   "lit": "0x40375080",
+   "str": "0x3fc960f8",
+   "s": "paddr % page_size_in_bytes == 0"
+  },
+  {
+   "code": "0x4037ef7e",
+   "lit": "0x4037507c",
+   "str": "0x3fc9642c",
+   "s": "mmu_hal_map_region"
+  },
+  {
+   "code": "0x4037ef84",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037efae",
+   "lit": "0x40375084",
+   "str": "0x3fc96118",
+   "s": "mmu_ll_check_valid_paddr_region(mmu_id, paddr, len)"
+  },
+  {
+   "code": "0x4037efb1",
+   "lit": "0x4037507c",
+   "str": "0x3fc9642c",
+   "s": "mmu_hal_map_region"
+  },
+  {
+   "code": "0x4037efb6",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037efbc",
+   "lit": "0x40375088",
+   "str": "0x3fc9614c",
+   "s": "mmu_hal_check_valid_ext_vaddr_region(mmu_id, vaddr, len, MMU_VADDR_DATA | MMU_VADDR_INSTRUCTION)"
+  },
+  {
+   "code": "0x4037efbf",
+   "lit": "0x4037507c",
+   "str": "0x3fc9642c",
+   "s": "mmu_hal_map_region"
+  },
+  {
+   "code": "0x4037efc4",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037f01f",
+   "lit": "0x40375078",
+   "str": "0x3fc960d8",
+   "s": "vaddr % page_size_in_bytes == 0"
+  },
+  {
+   "code": "0x4037f022",
+   "lit": "0x4037508c",
+   "str": "0x3fc96414",
+   "s": "mmu_hal_unmap_region"
+  },
+  {
+   "code": "0x4037f028",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037f03d",
+   "lit": "0x40375088",
+   "str": "0x3fc9614c",
+   "s": "mmu_hal_check_valid_ext_vaddr_region(mmu_id, vaddr, len, MMU_VADDR_DATA | MMU_VADDR_INSTRUCTION)"
+  },
+  {
+   "code": "0x4037f040",
+   "lit": "0x4037508c",
+   "str": "0x3fc96414",
+   "s": "mmu_hal_unmap_region"
+  },
+  {
+   "code": "0x4037f046",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037f08a",
+   "lit": "0x40375090",
+   "str": "0x3fc961b0",
+   "s": "mmu_hal_check_valid_ext_vaddr_region(mmu_id, vaddr, 1, MMU_VADDR_DATA | MMU_VADDR_INSTRUCTION)"
+  },
+  {
+   "code": "0x4037f08d",
+   "lit": "0x40375094",
+   "str": "0x3fc963fc",
+   "s": "mmu_hal_vaddr_to_paddr"
+  },
+  {
+   "code": "0x4037f093",
+   "lit": "0x4037506c",
+   "str": "0x3fc960b8",
+   "s": "/IDF/components/hal/mmu_hal.c"
+  },
+  {
+   "code": "0x4037f0e2",
+   "lit": "0x40375098",
+   "str": "0x3fc96210",
+   "s": "plaintext_offs + size <= SOC_FLASH_ENCRYPTED_XTS_AES_BLOCK_MAX"
+  },
+  {
+   "code": "0x4037f0e5",
+   "lit": "0x4037509c",
+   "str": "0x3fc96440",
+   "s": "spi_flash_encrypt_ll_plaintext_save"
+  },
+  {
+   "code": "0x4037f0eb",
+   "lit": "0x403750a0",
+   "str": "0x3fc96250",
+   "s": "/IDF/components/hal/esp32s3/include/hal/spi_flash_encrypted_ll.h"
+  },
+  {
+   "code": "0x403805b5",
+   "lit": "0x4037510c",
+   "str": "0x3fc96294",
+   "s": "period < (1 << 26)"
+  },
+  {
+   "code": "0x403805b8",
+   "lit": "0x40375110",
+   "str": "0x3fc96464",
+   "s": "systimer_ll_set_alarm_period"
+  },
+  {
+   "code": "0x403805be",
+   "lit": "0x40375114",
+   "str": "0x3fc962a8",
+   "s": "/IDF/components/hal/esp32s3/include/hal/systimer_ll.h"
+  },
+  {
+   "code": "0x4038077a",
+   "lit": "0x40375118",
+   "str": "0x3c030c00",
+   "s": "CORRUPT HEAP: multi_heap.c:%d detected at 0x%08x"
+  },
+  {
+   "code": "0x403808ef",
+   "lit": "0x4037511c",
+   "str": "0x3c030c64",
+   "s": "heap != NULL"
+  },
+  {
+   "code": "0x403808f2",
+   "lit": "0x40375120",
+   "str": "0x3c036acc",
+   "s": "multi_heap_realloc_impl"
+  },
+  {
+   "code": "0x40380992",
+   "lit": "0x40375128",
+   "str": "0x3c03128c",
+   "s": "!block_is_free(block) && \"block already marked as free\""
+  },
+  {
+   "code": "0x40380995",
+   "lit": "0x4037512c",
+   "str": "0x3c036b58",
+   "s": "tlsf_free"
+  },
+  {
+   "code": "0x403809b0",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x403809b3",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x403809e1",
+   "lit": "0x40375140",
+   "str": "0x3c0312c4",
+   "s": "prev && \"prev physical block can't be null\""
+  },
+  {
+   "code": "0x403809e4",
+   "lit": "0x40375144",
+   "str": "0x3c036b44",
+   "s": "block_merge_prev"
+  },
+  {
+   "code": "0x403809f5",
+   "lit": "0x4037514c",
+   "str": "0x3c0312f0",
+   "s": "block_is_free(prev) && \"prev block is not free though marked as such\""
+  },
+  {
+   "code": "0x403809f8",
+   "lit": "0x40375144",
+   "str": "0x3c036b44",
+   "s": "block_merge_prev"
+  },
+  {
+   "code": "0x40380a5f",
+   "lit": "0x40375150",
+   "str": "0x3c030fec",
+   "s": "prev && \"prev_free field can not be null\""
+  },
+  {
+   "code": "0x40380a62",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40380a70",
+   "lit": "0x40375158",
+   "str": "0x3c031018",
+   "s": "next && \"next_free field can not be null\""
+  },
+  {
+   "code": "0x40380a73",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40380ad8",
+   "lit": "0x4037515c",
+   "str": "0x3c031338",
+   "s": "!block_is_last(prev) && \"previous block can't be last\""
+  },
+  {
+   "code": "0x40380adb",
+   "lit": "0x40375160",
+   "str": "0x3c036b34",
+   "s": "block_absorb"
+  },
+  {
+   "code": "0x40380b06",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40380b09",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40380b48",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40380b4b",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40380b59",
+   "lit": "0x40375168",
+   "str": "0x3c031370",
+   "s": "next && \"next physical block can't be null\""
+  },
+  {
+   "code": "0x40380b5c",
+   "lit": "0x4037516c",
+   "str": "0x3c036b20",
+   "s": "block_merge_next"
+  },
+  {
+   "code": "0x40380bca",
+   "lit": "0x40375150",
+   "str": "0x3c030fec",
+   "s": "prev && \"prev_free field can not be null\""
+  },
+  {
+   "code": "0x40380bcd",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40380bdb",
+   "lit": "0x40375158",
+   "str": "0x3c031018",
+   "s": "next && \"next_free field can not be null\""
+  },
+  {
+   "code": "0x40380bde",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40380c41",
+   "lit": "0x4037515c",
+   "str": "0x3c031338",
+   "s": "!block_is_last(prev) && \"previous block can't be last\""
+  },
+  {
+   "code": "0x40380c44",
+   "lit": "0x40375160",
+   "str": "0x3c036b34",
+   "s": "block_absorb"
+  },
+  {
+   "code": "0x40380c6a",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40380c6d",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40380cf1",
+   "lit": "0x40375170",
+   "str": "0x3c030e28",
+   "s": "current && \"free list cannot have a null entry\""
+  },
+  {
+   "code": "0x40380cf4",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40380d02",
+   "lit": "0x40375178",
+   "str": "0x3c030e8c",
+   "s": "block && \"cannot insert a null entry into the free list\""
+  },
+  {
+   "code": "0x40380d05",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40380d23",
+   "lit": "0x4037517c",
+   "str": "0x3c030ec8",
+   "s": "block_to_ptr(block) == align_ptr(block_to_ptr(block), ALIGN_SIZE) && \"block not aligned properly\""
+  },
+  {
+   "code": "0x40380d26",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40380dc7",
+   "lit": "0x40375180",
+   "str": "0x3c031078",
+   "s": "0 == (align & (align - 1)) && \"must align to a power of two\""
+  },
+  {
+   "code": "0x40380dca",
+   "lit": "0x40375184",
+   "str": "0x3c036c1c",
+   "s": "align_up"
+  },
+  {
+   "code": "0x40380e73",
+   "lit": "0x40375188",
+   "str": "0x3c0310b8",
+   "s": "sl_map && \"internal error - second level bitmap is null\""
+  },
+  {
+   "code": "0x40380e76",
+   "lit": "0x4037518c",
+   "str": "0x3c036ba8",
+   "s": "search_suitable_block"
+  },
+  {
+   "code": "0x40380eb0",
+   "lit": "0x40375190",
+   "str": "0x3c0310f4",
+   "s": "block_size(block) >= *size"
+  },
+  {
+   "code": "0x40380eb3",
+   "lit": "0x40375194",
+   "str": "0x3c036bc0",
+   "s": "block_locate_free"
+  },
+  {
+   "code": "0x40380ec6",
+   "lit": "0x40375150",
+   "str": "0x3c030fec",
+   "s": "prev && \"prev_free field can not be null\""
+  },
+  {
+   "code": "0x40380ec9",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40380ed7",
+   "lit": "0x40375158",
+   "str": "0x3c031018",
+   "s": "next && \"next_free field can not be null\""
+  },
+  {
+   "code": "0x40380eda",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40380f39",
+   "lit": "0x40375198",
+   "str": "0x3c031110",
+   "s": "size && \"size must be non-zero\""
+  },
+  {
+   "code": "0x40380f3c",
+   "lit": "0x4037519c",
+   "str": "0x3c036b94",
+   "s": "block_prepare_used"
+  },
+  {
+   "code": "0x40380f4d",
+   "lit": "0x403751a0",
+   "str": "0x3c031130",
+   "s": "block_is_free(block) && \"block must be free\""
+  },
+  {
+   "code": "0x40380f50",
+   "lit": "0x403751a4",
+   "str": "0x3c036b84",
+   "s": "block_trim_free"
+  },
+  {
+   "code": "0x40380f82",
+   "lit": "0x403751a8",
+   "str": "0x3c031160",
+   "s": "block_to_ptr(remaining) == align_ptr(block_to_ptr(remaining), ALIGN_SIZE) && \"remaining block not aligned properly\""
+  },
+  {
+   "code": "0x40380f85",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40380f98",
+   "lit": "0x403751b0",
+   "str": "0x3c0311d4",
+   "s": "block_size(block) == remain_size + size + block_header_overhead"
+  },
+  {
+   "code": "0x40380f9b",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40380fbb",
+   "lit": "0x403751b4",
+   "str": "0x3c031214",
+   "s": "block_size(remaining) >= block_size_min && \"block split with invalid size\""
+  },
+  {
+   "code": "0x40380fbe",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40380fe5",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40380fe8",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40381019",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x4038101c",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40381097",
+   "lit": "0x40375170",
+   "str": "0x3c030e28",
+   "s": "current && \"free list cannot have a null entry\""
+  },
+  {
+   "code": "0x4038109a",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x403810a8",
+   "lit": "0x40375178",
+   "str": "0x3c030e8c",
+   "s": "block && \"cannot insert a null entry into the free list\""
+  },
+  {
+   "code": "0x403810ab",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40381105",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381108",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x4038118d",
+   "lit": "0x40375180",
+   "str": "0x3c031078",
+   "s": "0 == (align & (align - 1)) && \"must align to a power of two\""
+  },
+  {
+   "code": "0x40381190",
+   "lit": "0x40375184",
+   "str": "0x3c036c1c",
+   "s": "align_up"
+  },
+  {
+   "code": "0x40381203",
+   "lit": "0x40375180",
+   "str": "0x3c031078",
+   "s": "0 == (align & (align - 1)) && \"must align to a power of two\""
+  },
+  {
+   "code": "0x40381206",
+   "lit": "0x40375184",
+   "str": "0x3c036c1c",
+   "s": "align_up"
+  },
+  {
+   "code": "0x403812af",
+   "lit": "0x40375188",
+   "str": "0x3c0310b8",
+   "s": "sl_map && \"internal error - second level bitmap is null\""
+  },
+  {
+   "code": "0x403812b2",
+   "lit": "0x4037518c",
+   "str": "0x3c036ba8",
+   "s": "search_suitable_block"
+  },
+  {
+   "code": "0x403812ec",
+   "lit": "0x40375190",
+   "str": "0x3c0310f4",
+   "s": "block_size(block) >= *size"
+  },
+  {
+   "code": "0x403812ef",
+   "lit": "0x40375194",
+   "str": "0x3c036bc0",
+   "s": "block_locate_free"
+  },
+  {
+   "code": "0x40381302",
+   "lit": "0x40375150",
+   "str": "0x3c030fec",
+   "s": "prev && \"prev_free field can not be null\""
+  },
+  {
+   "code": "0x40381305",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40381314",
+   "lit": "0x40375158",
+   "str": "0x3c031018",
+   "s": "next && \"next_free field can not be null\""
+  },
+  {
+   "code": "0x40381317",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40381386",
+   "lit": "0x40375180",
+   "str": "0x3c031078",
+   "s": "0 == (align & (align - 1)) && \"must align to a power of two\""
+  },
+  {
+   "code": "0x40381389",
+   "lit": "0x403751b8",
+   "str": "0x3c036bfc",
+   "s": "align_ptr"
+  },
+  {
+   "code": "0x403813cd",
+   "lit": "0x403751bc",
+   "str": "0x3c031260",
+   "s": "gap >= gap_minimum && \"gap size too small\""
+  },
+  {
+   "code": "0x403813d0",
+   "lit": "0x403751c0",
+   "str": "0x3c036b64",
+   "s": "tlsf_memalign_offs"
+  },
+  {
+   "code": "0x40381409",
+   "lit": "0x403751a8",
+   "str": "0x3c031160",
+   "s": "block_to_ptr(remaining) == align_ptr(block_to_ptr(remaining), ALIGN_SIZE) && \"remaining block not aligned properly\""
+  },
+  {
+   "code": "0x4038140c",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40381420",
+   "lit": "0x403751b0",
+   "str": "0x3c0311d4",
+   "s": "block_size(block) == remain_size + size + block_header_overhead"
+  },
+  {
+   "code": "0x40381423",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40381443",
+   "lit": "0x403751b4",
+   "str": "0x3c031214",
+   "s": "block_size(remaining) >= block_size_min && \"block split with invalid size\""
+  },
+  {
+   "code": "0x40381446",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x4038146d",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381470",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x403814a6",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x403814a9",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x4038151d",
+   "lit": "0x40375170",
+   "str": "0x3c030e28",
+   "s": "current && \"free list cannot have a null entry\""
+  },
+  {
+   "code": "0x40381520",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x4038153f",
+   "lit": "0x4037517c",
+   "str": "0x3c030ec8",
+   "s": "block_to_ptr(block) == align_ptr(block_to_ptr(block), ALIGN_SIZE) && \"block not aligned properly\""
+  },
+  {
+   "code": "0x40381542",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40381595",
+   "lit": "0x40375198",
+   "str": "0x3c031110",
+   "s": "size && \"size must be non-zero\""
+  },
+  {
+   "code": "0x40381598",
+   "lit": "0x4037519c",
+   "str": "0x3c036b94",
+   "s": "block_prepare_used"
+  },
+  {
+   "code": "0x403815a9",
+   "lit": "0x403751a0",
+   "str": "0x3c031130",
+   "s": "block_is_free(block) && \"block must be free\""
+  },
+  {
+   "code": "0x403815ac",
+   "lit": "0x403751a4",
+   "str": "0x3c036b84",
+   "s": "block_trim_free"
+  },
+  {
+   "code": "0x403815de",
+   "lit": "0x403751a8",
+   "str": "0x3c031160",
+   "s": "block_to_ptr(remaining) == align_ptr(block_to_ptr(remaining), ALIGN_SIZE) && \"remaining block not aligned properly\""
+  },
+  {
+   "code": "0x403815e1",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x403815f4",
+   "lit": "0x403751b0",
+   "str": "0x3c0311d4",
+   "s": "block_size(block) == remain_size + size + block_header_overhead"
+  },
+  {
+   "code": "0x403815f7",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40381617",
+   "lit": "0x403751b4",
+   "str": "0x3c031214",
+   "s": "block_size(remaining) >= block_size_min && \"block split with invalid size\""
+  },
+  {
+   "code": "0x4038161a",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40381641",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381644",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40381675",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381678",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x403816f3",
+   "lit": "0x40375170",
+   "str": "0x3c030e28",
+   "s": "current && \"free list cannot have a null entry\""
+  },
+  {
+   "code": "0x403816f6",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40381704",
+   "lit": "0x40375178",
+   "str": "0x3c030e8c",
+   "s": "block && \"cannot insert a null entry into the free list\""
+  },
+  {
+   "code": "0x40381707",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40381761",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381764",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x403817e0",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x403817e3",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40381822",
+   "lit": "0x40375128",
+   "str": "0x3c03128c",
+   "s": "!block_is_free(block) && \"block already marked as free\""
+  },
+  {
+   "code": "0x40381825",
+   "lit": "0x403751c4",
+   "str": "0x3c036b10",
+   "s": "tlsf_realloc"
+  },
+  {
+   "code": "0x40381865",
+   "lit": "0x40375168",
+   "str": "0x3c031370",
+   "s": "next && \"next physical block can't be null\""
+  },
+  {
+   "code": "0x40381868",
+   "lit": "0x4037516c",
+   "str": "0x3c036b20",
+   "s": "block_merge_next"
+  },
+  {
+   "code": "0x403818cf",
+   "lit": "0x40375150",
+   "str": "0x3c030fec",
+   "s": "prev && \"prev_free field can not be null\""
+  },
+  {
+   "code": "0x403818d2",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x403818e0",
+   "lit": "0x40375158",
+   "str": "0x3c031018",
+   "s": "next && \"next_free field can not be null\""
+  },
+  {
+   "code": "0x403818e3",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x4038194b",
+   "lit": "0x4037515c",
+   "str": "0x3c031338",
+   "s": "!block_is_last(prev) && \"previous block can't be last\""
+  },
+  {
+   "code": "0x4038194e",
+   "lit": "0x40375160",
+   "str": "0x3c036b34",
+   "s": "block_absorb"
+  },
+  {
+   "code": "0x40381977",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x4038197a",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x403819ab",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x403819ae",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x403819d7",
+   "lit": "0x403751c8",
+   "str": "0x3c03139c",
+   "s": "!block_is_free(block) && \"block must be used\""
+  },
+  {
+   "code": "0x403819da",
+   "lit": "0x403751cc",
+   "str": "0x3c036b00",
+   "s": "block_trim_used"
+  },
+  {
+   "code": "0x40381a0a",
+   "lit": "0x403751a8",
+   "str": "0x3c031160",
+   "s": "block_to_ptr(remaining) == align_ptr(block_to_ptr(remaining), ALIGN_SIZE) && \"remaining block not aligned properly\""
+  },
+  {
+   "code": "0x40381a0d",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40381a22",
+   "lit": "0x403751b0",
+   "str": "0x3c0311d4",
+   "s": "block_size(block) == remain_size + size + block_header_overhead"
+  },
+  {
+   "code": "0x40381a25",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40381a46",
+   "lit": "0x403751b4",
+   "str": "0x3c031214",
+   "s": "block_size(remaining) >= block_size_min && \"block split with invalid size\""
+  },
+  {
+   "code": "0x40381a49",
+   "lit": "0x403751ac",
+   "str": "0x3c036b78",
+   "s": "block_split"
+  },
+  {
+   "code": "0x40381a73",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381a76",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40381ab1",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381ab4",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40381ac2",
+   "lit": "0x40375168",
+   "str": "0x3c031370",
+   "s": "next && \"next physical block can't be null\""
+  },
+  {
+   "code": "0x40381ac5",
+   "lit": "0x4037516c",
+   "str": "0x3c036b20",
+   "s": "block_merge_next"
+  },
+  {
+   "code": "0x40381b31",
+   "lit": "0x40375150",
+   "str": "0x3c030fec",
+   "s": "prev && \"prev_free field can not be null\""
+  },
+  {
+   "code": "0x40381b34",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40381b42",
+   "lit": "0x40375158",
+   "str": "0x3c031018",
+   "s": "next && \"next_free field can not be null\""
+  },
+  {
+   "code": "0x40381b45",
+   "lit": "0x40375154",
+   "str": "0x3c036be8",
+   "s": "remove_free_block"
+  },
+  {
+   "code": "0x40381ba9",
+   "lit": "0x4037515c",
+   "str": "0x3c031338",
+   "s": "!block_is_last(prev) && \"previous block can't be last\""
+  },
+  {
+   "code": "0x40381bac",
+   "lit": "0x40375160",
+   "str": "0x3c036b34",
+   "s": "block_absorb"
+  },
+  {
+   "code": "0x40381bd2",
+   "lit": "0x40375134",
+   "str": "0x3c030d68",
+   "s": "!block_is_last(block)"
+  },
+  {
+   "code": "0x40381bd5",
+   "lit": "0x40375138",
+   "str": "0x3c036c28",
+   "s": "block_next"
+  },
+  {
+   "code": "0x40381c59",
+   "lit": "0x40375170",
+   "str": "0x3c030e28",
+   "s": "current && \"free list cannot have a null entry\""
+  },
+  {
+   "code": "0x40381c5c",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40381c6a",
+   "lit": "0x40375178",
+   "str": "0x3c030e8c",
+   "s": "block && \"cannot insert a null entry into the free list\""
+  },
+  {
+   "code": "0x40381c6d",
+   "lit": "0x40375174",
+   "str": "0x3c036c08",
+   "s": "insert_free_block"
+  },
+  {
+   "code": "0x40381d3c",
+   "lit": "0x403751d4",
+   "str": "0x3fc95e18",
+   "s": "abort() was called at PC 0x"
+  },
+  {
+   "code": "0x40381d45",
+   "lit": "0x403751d8",
+   "str": "0x3fc95e34",
+   "s": " on core "
+  },
+  {
+   "code": "0x40381dd4",
+   "lit": "0x403751e4",
+   "str": "0x3fc95e40",
+   "s": "<cached disabled>"
+  },
+  {
+   "code": "0x40381e06",
+   "lit": "0x403751e4",
+   "str": "0x3fc95e40",
+   "s": "<cached disabled>"
+  },
+  {
+   "code": "0x40381e09",
+   "lit": "0x403751ec",
+   "str": "0x3fc95e58",
+   "s": "assert failed: "
+  },
+  {
+   "code": "0x40381fbc",
+   "lit": "0x4037502c",
+   "str": "0x3fc95c84",
+   "s": "cache_level <= CACHE_LL_LEVEL_NUMS"
+  },
+  {
+   "code": "0x40382028",
+   "lit": "0x40375098",
+   "str": "0x3fc96210",
+   "s": "plaintext_offs + size <= SOC_FLASH_ENCRYPTED_XTS_AES_BLOCK_MAX"
+  },
+  {
+   "code": "0x403820d1",
+   "lit": "0x40375218",
+   "str": "0x3fc95f58",
+   "s": "start_address < 0x1000000"
+  },
+  {
+   "code": "0x403820d4",
+   "lit": "0x4037521c",
+   "str": "0x3fc964b8",
+   "s": "memspi_host_erase_sector"
+  },
+  {
+   "code": "0x40382111",
+   "lit": "0x40375218",
+   "str": "0x3fc95f58",
+   "s": "start_address < 0x1000000"
+  },
+  {
+   "code": "0x40382114",
+   "lit": "0x40375224",
+   "str": "0x3fc964a0",
+   "s": "memspi_host_erase_block"
+  },
+  {
+   "code": "0x40382153",
+   "lit": "0x40375228",
+   "str": "0x3fc95fa4",
+   "s": "address + length <= 0x1000000"
+  },
+  {
+   "code": "0x40382156",
+   "lit": "0x4037522c",
+   "str": "0x3fc96484",
+   "s": "memspi_host_program_page"
+  },
+  {
+   "code": "0x40382917",
+   "lit": "0x4037525c",
+   "str": "0x3fc95e74",
+   "s": "out_write_protect!=NULL"
+  },
+  {
+   "code": "0x4038291a",
+   "lit": "0x40375260",
+   "str": "0x3fc96630",
+   "s": "spi_flash_chip_generic_get_write_protect"
+  },
+  {
+   "code": "0x4038323b",
+   "lit": "0x40375290",
+   "str": "0x3fc95ec0",
+   "s": "(io_mode == SPI_FLASH_OPI_STR) || (io_mode == SPI_FLASH_OPI_DTR)"
+  },
+  {
+   "code": "0x4038323e",
+   "lit": "0x40375294",
+   "str": "0x3fc96814",
+   "s": "spi_flash_chip_mxic_opi_get_data_length_zoom"
+  },
+  {
+   "code": "0x403833cf",
+   "lit": "0x403752a8",
+   "str": "0x3fc95f3c",
+   "s": "out_write_protected!=NULL"
+  },
+  {
+   "code": "0x403833d2",
+   "lit": "0x403752ac",
+   "str": "0x3fc967e8",
+   "s": "spi_flash_chip_mxic_opi_get_write_protect"
+  }
+ ]
+}
