@@ -54,3 +54,6 @@ MagicBox/AMagicBox-Rebuild/**/sdkconfig.old
 MagicBox/AMagicBox-Rebuild/.pytest_cache/
 MagicBox/AMagicBox-Rebuild/**/.pytest_cache/
 MagicBox/AMagicBox-Rebuild/**/build/
+
+# ---------- 本地构建日志/发布暂存 ----------
+.build/

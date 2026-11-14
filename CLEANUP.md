@@ -1,5 +1,9 @@
 # 仓库清理方案与执行记录（2026-11-11）
 
+> **补记 2026-11-14**：本文是 11-11 那次瘦身的历史记录，其中的路径（`MagicBox/AMagicBox-Rebuild/…`、`MagicBox/reversed/`、`MagicBox/tools/rizin/`、`MagicBox/backups/`）描述的是**当时**的布局。
+> 11-12 起仓库又做了一轮「只保留可编译固件工程」的瘦身：`AMagicBox-Rebuild/` 这一层目录取消（内容上移为 `MagicBox/`）、`reversed/`（3,071 函数反编译树）、Ghidra 工程、原厂协议逆向文档、`tools/rizin/`、`backups/probe/` 全部移出本仓库，新增 `MagicBox/mouse/`（厂商通道）与 `MagicBox/verification/model/`。
+> 当前真实布局与构建方式以根 [README.md](README.md) 与 [`MagicBox/docs/HANDOVER.md`](MagicBox/docs/HANDOVER.md) 为准，本文仅作清理判据与体量记录留档。
+
 工作区：`D:\GitHub\MagicBox`（git 仓库，仅 1 次 `Initial commit`，两个子项目此前全部处于 untracked 状态）
 原始工程：`D:\JinPeng\MagicBox`、`D:\JinPeng\MagicBullet`（除 `.git` 外与本仓库逐字节一致，已按目录比对文件数与总体积）
 
