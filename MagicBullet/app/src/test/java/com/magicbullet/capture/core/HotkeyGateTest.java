@@ -42,6 +42,35 @@ public class HotkeyGateTest {
     }
 
     @Test
+    public void sixtyMillisApartCountsAsANewPress() {
+        // 窗口是 20 ms：60 ms 后的按下必须算新点击（不能吞掉真实连点）
+        HotkeyGate gate = new HotkeyGate();
+        assertTrue(gate.acceptDown(1_000L));
+        gate.noteUp(1_010L);
+        assertTrue(gate.acceptDown(1_060L));
+        assertEquals(0, gate.suppressed());
+    }
+
+    @Test
+    public void sixtyMillisAfterReleaseIsAccepted() {
+        HotkeyGate gate = new HotkeyGate();
+        assertTrue(gate.acceptDown(1_000L));
+        gate.noteUp(1_100L);
+        assertTrue(gate.acceptDown(1_160L));     // 60 ms after the release > 20 ms window
+        assertEquals(0, gate.suppressed());
+    }
+
+    @Test
+    public void twentyFiveMillisApartIsAlreadyANewPress() {
+        // 20 ms 窗口的紧邻边界：25 ms 后按下应被接受
+        HotkeyGate gate = new HotkeyGate();
+        assertTrue(gate.acceptDown(1_000L));
+        gate.noteUp(1_005L);
+        assertTrue(gate.acceptDown(1_025L));
+        assertEquals(0, gate.suppressed());
+    }
+
+    @Test
     public void lostReleaseDoesNotLockTheHotkey() {
         HotkeyGate gate = new HotkeyGate();
         assertTrue(gate.acceptDown(1_000L));
@@ -55,7 +84,7 @@ public class HotkeyGateTest {
     public void duplicateReportInsideTheSpacingIsIgnored() {
         HotkeyGate gate = new HotkeyGate();
         assertTrue(gate.acceptDown(1_000L));
-        assertFalse(gate.acceptDown(1_090L));    // 90 ms later: same press reported twice
+        assertFalse(gate.acceptDown(1_010L));    // 10 ms later: same press reported twice (< 20 ms)
         assertEquals(1, gate.suppressed());
         assertTrue(gate.acceptDown(1_300L));
     }

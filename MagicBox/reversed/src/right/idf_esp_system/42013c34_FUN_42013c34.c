@@ -1,8 +1,0 @@
-undefined4 FUN_42013c34(undefined4 param_1,undefined4 param_2,undefined4 param_3)
-
-{
-  undefined4 uVar1;
-  
-  uVar1 = FUN_42013c18(param_1,param_2,param_3,0);
-  return uVar1;
-}

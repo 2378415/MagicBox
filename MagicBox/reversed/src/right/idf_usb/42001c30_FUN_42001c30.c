@@ -1,8 +1,0 @@
-// strings: 4Z7@0
-
-void FUN_42001c30(void)
-
-{
-  (*DAT_42000158)(PTR_FUN_42000154,PTR_LAB_42000150);
-  return;
-}

@@ -19,10 +19,14 @@ package com.magicbullet.capture.core;
  */
 final class HotkeyGate {
 
-    /** Minimum time the button must be released before a new press counts as intentional. */
-    static final long MIN_RELEASE_MS = 80L;
+    /**
+     * Minimum time the button must be released before a new press counts as intentional.
+     * 2026-11-13 用户要求继续收紧：80 ms → 50 ms → 20 ms。20 ms 只拦同一次机械抖动里的重复闭合，
+     * 任何真实的人手操作（最快双击也在 100 ms 以上）都不会被吞。
+     */
+    static final long MIN_RELEASE_MS = 20L;
     /** Minimum spacing between two accepted presses, whatever the release history says. */
-    static final long DEBOUNCE_MS = 150L;
+    static final long DEBOUNCE_MS = 20L;
 
     private long mLastDownMs = Long.MIN_VALUE / 2;
     private long mLastUpMs = Long.MIN_VALUE / 2;

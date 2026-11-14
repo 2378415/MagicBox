@@ -1,5 +1,0 @@
-40377f28	esp_flash_erase_region	failed
-420181c0	FUN_420181c0	failed
-4201b200	FUN_4201b200	failed
-4201e3b8	FUN_4201e3b8	failed
-4202206c	FUN_4202206c	failed

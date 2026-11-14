@@ -1,7 +1,0 @@
-void FUN_42020100(void)
-
-{
-  FUN_4202d98c(0,PTR_FUN_42001c84,PTR_DAT_420008ac);
-  FUN_4202000c();
-  return;
-}

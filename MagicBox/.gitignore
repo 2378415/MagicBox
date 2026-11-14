@@ -1,0 +1,8 @@
+﻿build/
+sdkconfig
+sdkconfig.old
+*.log
+verification/fingerprints/*.json
+__pycache__/
+*.pyc
+*.pcap
