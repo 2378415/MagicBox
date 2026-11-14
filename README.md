@@ -370,7 +370,7 @@ python tools\link_probe.py --all  # PING/QUERY/SUMV/EVT 一次性探针
 | 资产 | 字节 | 内容 |
 |---|---:|---|
 | `makcu_left.bin` | 338,544 | 左片**发布版**固件（无 `mx.*` 台架命令） |
-| `makcu_left-bench.bin` | 见 Release | 左片**台架版**固件（含 `mx.*` 探针，跑回归用） |
+| `makcu_left-bench.bin` | 355,056 | 左片**台架版**固件（含 `mx.*` 探针，跑回归/台架用） |
 | `makcu_right.bin` | 292,624 | 右片固件（USB host 侧） |
 | `bootloader-left.bin` / `bootloader-right.bin` | 18,912 | ESP32-S3 二级引导 |
 | `partition-table-left.bin` / `partition-table-right.bin` | 3,072 | 分区表 |
