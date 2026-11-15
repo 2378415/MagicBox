@@ -365,7 +365,7 @@ python tools\link_probe.py --all  # PING/QUERY/SUMV/EVT 一次性探针
 
 ## 8. 发布产物
 
-最新：[`v0.3.0`](https://github.com/2378415/MagicBox/releases/tag/v0.3.0)　历史：[`v0.2.0`](https://github.com/2378415/MagicBox/releases/tag/v0.2.0)、[`v0.1.0`](https://github.com/2378415/MagicBox/releases/tag/v0.1.0)
+最新：[`v0.4.0`](https://github.com/2378415/MagicBox/releases/tag/v0.4.0)　历史：[`v0.3.0`](https://github.com/2378415/MagicBox/releases/tag/v0.3.0)、[`v0.2.0`](https://github.com/2378415/MagicBox/releases/tag/v0.2.0)、[`v0.1.0`](https://github.com/2378415/MagicBox/releases/tag/v0.1.0)
 
 | 资产 | 字节 | 内容 |
 |---|---:|---|
@@ -377,8 +377,13 @@ python tools\link_probe.py --all  # PING/QUERY/SUMV/EVT 一次性探针
 | `MagicBullet-0.1-debug.apk` | 95,011,802 | App debug 包（含内置模型与 ORT/QNN；预览页三色状态徽标） |
 | `SHA256SUMS.txt` | — | 全部资产校验和 |
 
-> **v0.3.0 内容**：固件 **D49**（按键状态机只处理鼠标帧 + 按位抗抖，修「点右键触发左键 / 点左键按下即抬起」，真机 **128 passed**、离线模型 **86 passed**）；
-> App **预览页右上角三色状态徽标**（红 自瞄中 / 绿 已布防 / 黄 未布防，单测 118 项全绿）。细节见 [`30-decisions.md`](MagicBox/docs/30-decisions.md) D49 与 [`瞄准模块.md`](MagicBullet/docs/瞄准模块.md) §27。
+> **v0.4.0 内容**：固件 **D50** —— 修「sumv 运行久了变成一个像素一个像素移动」。根因是轨迹起点存成 **u32**
+> 再与 int64 时钟相减，uptime 越过 2³² µs（**71 min 35 s**）后看门狗每发必判故障、只发首样本；
+> 改成 int64 + 停滞判据 + 位移守恒（`emit_now` 返回 bool），并新增 `mx.wd`/`mx.rr`/`mx.sv` 新字段。
+> 真机 **132 passed**、离线模型 **100 passed**。App 本轮未改（APK 与 v0.3.0 相同）。详见 [`30-decisions.md`](MagicBox/docs/30-decisions.md) D50。
+>
+> **v0.3.0 内容**：固件 **D49**（按键状态机只处理鼠标帧 + 按位抗抖，修「点右键触发左键 / 点左键按下即抬起」）；
+> App **预览页右上角三色状态徽标**（红 自瞄中 / 绿 已布防 / 黄 未布防，单测 118 项全绿）。见 D49 与 [`瞄准模块.md`](MagicBullet/docs/瞄准模块.md) §27。
 
 刷写地址与参数：
 
