@@ -25,6 +25,8 @@ typedef struct {
     uint32_t btn_forwarded;  /* 屏蔽期间透传的按键/滚轮报告数 */
     uint32_t speed_eff;      /* 上一条轨迹被 clamp 后的实际速度 counts/s */
     uint32_t remain_ms;      /* 当前轨迹剩余样本（ms） */
+    uint32_t stalls;         /* 看门狗触发次数（D50 新增） */
+    uint32_t emit_rejected;  /* 报告被让路窗口/未就绪拒收、等下个 tick 重试的次数（D50 新增） */
     bool     active;
 } makcu_sumv_stats_t;
 
@@ -35,6 +37,9 @@ bool makcu_sumv_start(const makcu_sumv_req_t *req);
 void makcu_sumv_stop(void);
 bool makcu_sumv_active(void);
 void makcu_sumv_stats(makcu_sumv_stats_t *out);
+/* 台架专用（D50）：把轨迹起点前移 ms 毫秒，模拟"开机很久"（uptime 越过 2^32 µs）。
+ * 只在 MB_DEBUG_OPCODE 构建里由 `mx.wd bump <ms>` 调用，正常固件不调用。 */
+void makcu_sumv_bench_shift_start(uint32_t ms);
 
 /* ---------------------------------------------------------- AIM（瞄准专用）
  * 客户端只想说"朝这个方向走这么多，越快越好"：

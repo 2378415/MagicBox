@@ -558,11 +558,16 @@ static void handle_frame(void)
         btn_evt_heartbeat();                     /* PING 也算客户端存活 */
         uint8_t rp[12];
         memcpy(&rp[0], s_payload, 4);            /* echo the counter */
-        put_u32(&rp[4], (uint32_t)esp_timer_get_time());
+        /* 2026-11-15（D50）：时钟是 int64 µs，回包只有 4 字节 → 回**低 32 位**，
+         * 并把高 8 位放进原来恒 0 的 rp[11]（12 B 长度与旧字段位置都不变）。
+         * 客户端完整 uptime(µs) = low32 | (rp[11] << 32)；只读 low32 的老客户端在
+         * uptime 越过 2^32（71 min 35 s）时会看到回绕 —— 这正是当年误判的坑。 */
+        const int64_t now_us = esp_timer_get_time();
+        put_u32(&rp[4], (uint32_t)now_us);
         rp[8] = (uint8_t)(s_plans & 0xFF);
         rp[9] = (uint8_t)((s_plans >> 8) & 0xFF);
         rp[10] = s_last_seq;
-        rp[11] = 0;
+        rp[11] = (uint8_t)((uint64_t)now_us >> 32);
         build_reply(s_cmd, s_seq, rp, 12);
         return;
     }

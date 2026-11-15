@@ -17,12 +17,12 @@
 | **厂商通道**（HECATE / G3M PRO） | 识别、读配置、改 DPI 都**不再卡** | `mx.ox`：`out==vin==vf`、`ofail=0`、`venq` 丢弃 0、`vp50 ≈ 31–39 ms`（D47） |
 | **按键事件**（0x39 订阅 → 0x3A/0x3B 环 或 0xE1 推送） | 订阅**不吞**物理点击；通知延迟 **≈0.12 ms** | D48：并发 1000 边沿/秒时 `wire_chg == head_seq == evsent`，`evdrop=0` |
 
-两颗芯片**都是自编固件**：真机回归 **128 passed / 0 failed**，离线模型 **86 passed**，合计 **214 例**。
+两颗芯片**都是自编固件**：真机回归 **132 passed / 0 failed**，离线模型 **100 passed**，合计 **232 例**。
 
 | 镜像 | 尺寸 |
 |---|---|
-| 左片（台架版，带 `mx.*`） | **355,856 B**（D49 前 355,056 B） |
-| 左片（发布版，无台架命令） | **339,104 B**（D49 前 338,528 B） |
+| 左片（台架版，带 `mx.*`） | **356,704 B**（D49 前 355,056 B） |
+| 左片（发布版，无台架命令） | **339,568 B**（D49 前 338,528 B） |
 | 右片（USB host 侧） | **292,624 B** |
 
 ---
@@ -193,7 +193,7 @@ powershell -File tools\reflash.ps1 -Port COM3
 
 ```powershell
 # 离线模型（无需硬件，秒级）
-python -m pytest verification/model -q          # 86 passed
+python -m pytest verification/model -q          # 100 passed
 # 真机回归（盒子 + 中线 COM3）
 $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed，约 4 min
 ```
@@ -202,8 +202,8 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 |---|---|---|
 | T1 编译 | 双 app `idf.py build` | ✅ |
 | T1' 语法 | `xtensa-esp32s3-elf-gcc -fsyntax-only` | ✅ 全部组件 |
-| T2 模型 | 7 个模型文件：`test_step_engine` / `test_bezier_path` / `test_clone_descriptor` / `test_right_reply_model` / `test_button_queue_model` / `test_button_event_channel` / **`test_button_frame_class`（D49）** | **86 passed** |
-| T3 真机 | 12 个用例文件（+`conftest.py`）：协议 / 运动报告 / 键盘 / 按键完整性 / 按键顺序 / 按键×SUMV 并发 / **按键事件×点击** / 克隆描述符 / 隐藏 opcode / 右片帧 / 链路桥 / SUMV opcode | **128 passed** |
+| T2 模型 | 8 个模型文件：`test_step_engine` / `test_bezier_path` / `test_clone_descriptor` / `test_right_reply_model` / `test_button_queue_model` / `test_button_event_channel` / **`test_button_frame_class`（D49）** / **`test_sumv_watchdog`（D50）** | **100 passed** |
+| T3 真机 | 13 个用例文件（+`conftest.py`）：协议 / 运动报告 / 键盘 / 按键完整性 / 按键顺序 / 按键×SUMV 并发 / **按键事件×点击** / 克隆描述符 / 隐藏 opcode / 右片帧 / 链路桥 / SUMV opcode | **128 passed** |
 
 **光标约束**：`verification/regress/conftest.py` 里有 `CursorGuard`（20 ms 守护 + autouse 归位），
 整个测试会话把主机光标钳在**屏幕右上角 240×140 安全区**内；它只动光标、不碰设备计数，
@@ -250,6 +250,7 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 | 右片 HID 推送 gate | 关闭 | 早期"推模式"造成右片客户端任务冻结（死锁），功能已回退，`mx.hi` 的 `gate=0` 表示未启用 |
 | `build/` 不入库 | — | 重跑 `tools/status.py` 前先构建 |
 | ~~点右键触发左键 / 左键按下即抬起~~ | **已修（D49）** | 根因：键盘帧（`ep 0x82` / 8 B，byte0=修饰键位图）进了鼠标按键状态机，LCtrl=`0x01` 就是左键位；叠加抗抖整字节回退。修法：帧分类前置 + 按位抗抖。**旧固件现场仍会复现**，刷 D49 之后的镜像即可 |
+| ~~sumv 运行久了变成"一像素一像素"~~ | **已修（D50）** | 根因：轨迹起点 `s_started_us` 存成 **u32**，uptime 越过 2³² µs（**71 min 35 s**）后与 i64 时钟相减多出 4 294 967 ms → 看门狗每发必判故障，只发首样本。修法：int64 + 停滞判据；`mx.wd` 看 uptime、`mx.rr` 看复位原因 |
 | 松开侧抗抖默认关闭 | 设计如此 | `mx.gd <press> <rel>` 打开（如 `mx.gd 20 6`）；默认关是因为台架注入间隔常 <6 ms，开了会吞掉成对边沿 |
 
 ---
@@ -259,7 +260,7 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 - [ ] 能构建两个 app（`tools/build_app.ps1`，台架 + 发布两套 `-Define`）
 - [ ] 能刷左片（`tools/flash_left_auto.ps1`）与右片（`flash_right.ps1 -Offset 0x10000`）
 - [ ] 刷完会做两件事：必要时 hard-reset/拔插 + **`mx.ac` 重克隆**
-- [ ] 能跑通回归（`MAKCU_PORT=COM3`，**128 passed**；离线模型 86 passed）
+- [ ] 能跑通回归（`MAKCU_PORT=COM3`，**132 passed**；离线模型 100 passed）
 - [ ] 会看四个探针：`mx.hi`（右片）、`mx.ls`（链路）、`mx.ox`（厂商+事件）、`0x3E/0x45`（按键）
 - [ ] 知道 `CONFIG_FREERTOS_HZ=100` ⇒ `vTaskDelay(1)` = 10 ms
 - [ ] 知道"按键字节单一真源 `s_wire_btn_last`"与"主持位窗口只保护注入位"
@@ -281,6 +282,7 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 | 主持位窗口 | 同上（`btn_hold_bits`）+ `control_bin.c` 的 `0x32` | 只保护注入按住的位 |
 | 帧分类（谁进按键状态机） | `app_main.c`（`link_frame_is_keyboard/_is_mouse`） | **D49**：只有鼠标端点（`0x81`，或台架注入的 `ep 0`）进按键逻辑；键盘 8 B / 厂商 64 B / 其它一律只转发 |
 | 短按抗抖 | `app_main.c`（`s_release_guard_ms` / `s_fwd_rel_us[]` / `s_fwd_press_us[]`，`mx.gd`） | 按位；按下侧默认 20 ms，松开侧默认 **0（关）**，`mx.gd <press> <rel>` 可开 |
+| sumv 时刻与看门狗 | `components/makcu_sumv/src/makcu_sumv.c`（`s_started_us` / `s_last_progress_us` / `SUMV_STALL_MS`） | **两个时刻必须 int64**；停滞 200 ms 即停，`total+500` 只作兜底；`mx.wd` / `mx.sv` 看现状 |
 | 运动引擎/让路窗口 | `components/makcu_mouse/src/makcu_mouse.c` | `s_btn_guard_until_us`（2 ms） |
 | sumv / AIM 参数 | `components/makcu_sumv/**`、`mx.mv` | `speed` 决定一切 |
 | 右片下行（OUT）队列 | `app_right/main/app_main.c`、`makcu_hidhost.c` | 16 深 + 池空快路径 |
@@ -415,6 +417,8 @@ PC 侧应看到 `USB\VID_320F&PID_706E` 复合设备 + MI_00/MI_01 + 5 个集合
 | `mx.ei` | 最后一条直送的报告字节 |
 | `mx.hs` / `mx.hq` | 发送被接受 / 传输完成次数 |
 | `mx.gd [press [rel]]` | 短按抗抖窗口（真实鼠标透传路径）：`press` = 按下侧（默认 20 ms），`rel` = 松开侧最小脉宽（默认 **0 = 关**）。**`0` = 两侧全关**（一个按键都不少，代价是微动抖动可能表现为两次点击）。回显 `press,rel`，不写 NVS |
+| `mx.wd [bump <ms>]` | **D50**：裸调用回显 uptime（ms，int64，不回绕）；`bump <ms>` 把轨迹起点前移，模拟"开机很久"（越过 2³² µs）来复现长跑退化。台架专用 |
+| `mx.rr` | **D50**：上一次复位原因（1 上电 / 3 软复位 / 4·7 看门狗 / 5 PANIC / 10 掉电 / 16 未知）。配合 `mx.wd` 的 uptime 判"芯片是不是重启过" |
 | `mx.gd`（无参数） | 回显当前两个窗口值 `press,rel` |
 
 > **2026-11-12 排障记录：改了 HID 发送路径导致控制台任务卡死时怎么救**
@@ -1186,7 +1190,8 @@ python tools\aim_stress.py --mode concurrent --seconds 20 --rate 200 --btn-rate 
 | 2026-11-12 | 按键"永不丢失"三约束（D46）；**厂商通道独立化 + 五根因（D47）**；`mx.vd`/`mx.ox` 扩展；`flash_left_auto.ps1`；174→ 回归扩到 124 例 |
 | 2026-11-13 | 订阅×点击冲突修复（D48 P1）：主持位窗口按位、退订回灌、事件推送离开热路径；并发零丢失验收；事件队列 8→64 |
 | **2026-11-14** | **事件通知延迟 6–8 ms → 0.12 ms**（`km_evttx` + task notification）；全量 **128 + 46 = 174 例**全绿；本文重写 |
-| **2026-11-15** | **D49：按键状态机帧分类（键盘帧不再投影成鼠标按钮）+ 按位抗抖**；离线模型 46 → **86 例**；发布版 339,104 B / 台架版 355,856 B；真机 **128 passed 全绿（已上机验收）** |
+| **2026-11-15** | **D49：按键状态机帧分类（键盘帧不再投影成鼠标按钮）+ 按位抗抖**；离线模型 46 → **86 例**；真机 **128 passed 全绿** |
+| **2026-11-15 晚** | **D50：sumv 长跑退化**（轨迹起点 u32→int64；看门狗改停滞判据；`emit_now` 返回 bool 保住位移；新增 `mx.wd`/`mx.rr`；清 RTC 强制下载位）；离线模型 **100 例**、真机 **132 passed 全绿**；发布版 339,568 B / 台架版 356,704 B |
 
 ---
 

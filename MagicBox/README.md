@@ -53,11 +53,11 @@ powershell -File tools\reflash.ps1 -Port COM3
 | 项 | 现状 |
 |---|---|
 | 命令协议层 | 27/27 handler 全部 implemented，`components/makcu_proto/handlers.def` |
-| 双 app 工程 | `idf.py build` 双端通过（`tools/build_app.ps1`）：左片台架 **355,856 B** / 发布版 **339,104 B**，右片 **292,624 B**（2026-11-15 D49 后） |
+| 双 app 工程 | `idf.py build` 双端通过（`tools/build_app.ps1`）：左片台架 **356,704 B** / 发布版 **339,568 B**，右片 **292,624 B**（2026-11-15 D50 后） |
 | 片间链路 | UART1 帧层 + `0xA0` 会话状态机 + `0xA2` 上报透传，真机单板验证 |
 | 克隆 / 身份 | 描述符克隆 + 身份别名策略 + 每台唯一序列号；EP0 数据注入与序列号读写仍待做 |
 | 厂商通道 | HECATE 识别/读写正常快速：`mx.ox` 的 `out==vin==vf`、`ofail=0`、队列丢弃 0、`vp50 ≈ 31–39 ms`（见 [docs/50-vendor-channel.md](docs/50-vendor-channel.md)）；按键事件订阅 × 物理点击并发实测零丢失（≤1000 边沿/秒），事件通知延迟 **~0.12 ms**（见 D48） |
-| 回归 | 真机 **128 passed / 0 failed**（≈4 min，需台架 COM3）+ 离线模型 **86 passed**，合计 214 例（刷机后先 `mx.ac` 重克隆再跑，否则 9 skipped）；无硬件用 `MAKCU_SKIP_HW=1` 只收集 |
+| 回归 | 真机 **132 passed / 0 failed**（≈4 min，需台架 COM3）+ 离线模型 **100 passed**，合计 232 例（刷机后先 `mx.ac` 重克隆再跑，否则 9 skipped）；无硬件用 `MAKCU_SKIP_HW=1` 只收集 |
 | 按键状态机 | **只处理鼠标帧**（D49）：键盘 8 B boot 报告 / 厂商 64 B 帧 / 其它端点帧一律只转发；抗抖按位回退 + 每键位独立窗口（`mx.gd [press [rel]]`） |
 | 已知限制 | 按鼠标**硬件 DPI 键**，HECATE 显示不刷新（接收器不推送该变化；三条修法已试并撤回，按需求不做） |
 

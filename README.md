@@ -33,7 +33,7 @@
 | **厂商通道**（HECATE / G3M PRO） | 识别、读配置、改 DPI 都不卡 | `out==vin==vf`、`ofail=0`、`venq` 丢弃 0、`vp50` 31–39 ms（D47） |
 | **按键事件**（订阅 → 环 / 推送） | 订阅**不吞**物理点击 | 通知延迟 **117–121 µs（≈0.12 ms）**；1000 边沿/秒零丢失（D48） |
 
-真机回归 **128 passed**，离线模型 **86 passed**，合计 **214 例**全绿。
+真机回归 **132 passed**，离线模型 **100 passed**，合计 **232 例**全绿。
 
 ---
 
@@ -346,8 +346,8 @@ CH343 掉线（`Problem 43` / `PermissionError(13)`）：`pnputil /restart-devic
 |---|---|---|---|
 | T1 编译 | `tools\build_app.ps1` 双 app | ✅ 需 IDF 环境 | 本次发布即由此构建 |
 | T1' 语法 | `xtensa-esp32s3-elf-gcc -fsyntax-only` | ✅ | 全部组件 |
-| T2 离线模型 | `python -m pytest verification/model -q` | ✅ 无需硬件 | 7 文件 **86 passed**（步进引擎、贝塞尔、克隆描述符、右片回复、按键队列模型、事件通道调度、**帧分类/按位抗抖**） |
-| T3 真机回归 | `MAKCU_PORT=COM3 python -m pytest verification/regress -q` | 需台架 | 13 文件 **128 passed**（≈4 min；含按键完整性/顺序、按键×SUMV 并发、按键事件×点击、链路桥、隐藏 opcode） |
+| T2 离线模型 | `python -m pytest verification/model -q` | ✅ 无需硬件 | 8 文件 **100 passed**（步进引擎、贝塞尔、克隆描述符、右片回复、按键队列模型、事件通道调度、帧分类/按位抗抖、**sumv 看门狗/位移守恒**） |
+| T3 真机回归 | `MAKCU_PORT=COM3 python -m pytest verification/regress -q` | 需台架 | 14 文件 **132 passed**（≈4 min；含按键完整性/顺序、按键×SUMV 并发、按键事件×点击、链路桥、隐藏 opcode、**sumv 长跑退化**） |
 | T3' 无硬件 | `MAKCU_SKIP_HW=1 … --collect-only` | ✅ | 只收集不执行 |
 | App 单测 | `gradlew :app:testDebugUnitTest` | ✅ | **118 项** |
 
@@ -369,8 +369,8 @@ python tools\link_probe.py --all  # PING/QUERY/SUMV/EVT 一次性探针
 
 | 资产 | 字节 | 内容 |
 |---|---:|---|
-| `makcu_left.bin` | 339,104 | 左片**发布版**固件（无 `mx.*` 台架命令，日常使用刷这个） |
-| `makcu_left-bench.bin` | 355,856 | 左片**台架版**固件（含 `mx.*` 探针，跑回归/台架用） |
+| `makcu_left.bin` | 339,568 | 左片**发布版**固件（无 `mx.*` 台架命令，日常使用刷这个） |
+| `makcu_left-bench.bin` | 356,704 | 左片**台架版**固件（含 `mx.*` 探针，跑回归/台架用） |
 | `makcu_right.bin` | 292,624 | 右片固件（USB host 侧） |
 | `bootloader-left.bin` / `bootloader-right.bin` | 18,912 | ESP32-S3 二级引导 |
 | `partition-table-left.bin` / `partition-table-right.bin` | 3,072 | 分区表 |

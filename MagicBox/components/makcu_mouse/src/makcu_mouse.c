@@ -108,13 +108,20 @@ void makcu_mouse_set_buttons(uint8_t buttons)
     }
 }
 
-void makcu_mouse_emit_now(int8_t dx, int8_t dy, int8_t wheel)
+/* 2026-11-15（D50）：返回**这一发是否真的交给了下层**。
+ * sumv 引擎必须据此决定要不要推进"已发位置"——旧实现（void）下，被让路窗口吞掉的
+ * 样本仍被记成已发，位移永久丢失（轨迹跑完但光标少走一截）。
+ * 返回 false 的两种情况：让路窗口内、没有挂 HID 报告回调（未挂载）。 */
+bool makcu_mouse_emit_now(int8_t dx, int8_t dy, int8_t wheel)
 {
     /* 让路窗口：按键刚生效，2 ms 内引擎不抢端点，保证按键报告是紧挨着的下一条。
      * 必须用 64 位比较：旧写法 (int32_t)(deadline - now) 在 deadline=0（无窗口）时
      * 会把 (2^32 - uptime) 当成正数 → 开机后大部分时间所有注入都被丢弃（光标不动）。 */
     if (s_btn_guard_until_us != 0 && esp_timer_get_time() < s_btn_guard_until_us) {
-        return;
+        return false;
+    }
+    if (makcu_hid_report_hook == NULL) {
+        return false;
     }
     /* 引擎 1 kHz 注入与真实报告转发会并发；不加锁时一次按键切换前后的两条报告会被穿插，
      * 主机看到“按下→松开→按下”＝游戏里的双击/开镜闪断。 */
@@ -125,6 +132,7 @@ void makcu_mouse_emit_now(int8_t dx, int8_t dy, int8_t wheel)
     } else {
         emit(dx, dy, wheel);
     }
+    return true;
 }
 
 static void emit(int8_t dx, int8_t dy, int8_t wheel)

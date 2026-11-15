@@ -2029,16 +2029,61 @@ static int handle_debug_line(const char *line, int len)
     }
     if (len >= 5 && line[3] == 's' && line[4] == 'v') {
         /* mx.sv -> sumv 状态与计数
-         * active,samples,aborted,rounds,dropped,forwarded,speed_eff,remain_ms */
+         * active,samples,aborted,rounds,dropped,forwarded,speed_eff,remain_ms,stalls,emit_rejected
+         * （后两项 2026-11-15 D50 追加，前 8 个字段位置不变） */
         makcu_sumv_stats_t st;
         makcu_sumv_stats(&st);
-        char out[128];
-        const int n = snprintf(out, sizeof(out), "%u,%lu,%lu,%lu,%lu,%lu,%lu,%lu",
+        char out[160];
+        const int n = snprintf(out, sizeof(out), "%u,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu,%lu",
                                st.active ? 1u : 0u,
                                (unsigned long)st.samples, (unsigned long)st.aborted,
                                (unsigned long)st.rounds, (unsigned long)st.mute_dropped,
                                (unsigned long)st.btn_forwarded,
-                               (unsigned long)st.speed_eff, (unsigned long)st.remain_ms);
+                               (unsigned long)st.speed_eff, (unsigned long)st.remain_ms,
+                               (unsigned long)st.stalls, (unsigned long)st.emit_rejected);
+        makcu_reply(out, (size_t)n);
+        return 1;
+    }
+    if (len >= 5 && line[3] == 'w' && line[4] == 'd') {
+        /* mx.wd bump <ms>  -> 把轨迹起点/进展时刻前移 ms（模拟"开机很久"）
+         * mx.wd             -> 回显当前 uptime（ms，int64 计算，不会回绕）
+         * 台架专用：用来复现 uptime 越过 2^32 µs（71 min 35 s）后的退化。
+         * 注意 `line` 不是 NUL 结尾，按 len 有界扫描。 */
+        const uint32_t now_ms = (uint32_t)(esp_timer_get_time() / 1000);
+        if (len >= 14 && line[5] == ' ' && line[6] == 'b' && line[7] == 'u'
+                && line[8] == 'm' && line[9] == 'p') {
+            unsigned v = 0;
+            for (int i = 10; i < len; i++) {
+                const char ch = line[i];
+                if (ch == ' ' || ch == '\t') {
+                    if (v != 0) { break; }
+                    continue;
+                }
+                if (ch < '0' || ch > '9') { break; }
+                v = v * 10u + (unsigned)(ch - '0');
+            }
+            if (v == 0) {
+                makcu_reply("e", 1);
+                return 1;
+            }
+            makcu_sumv_bench_shift_start(v);
+            char out[24];
+            const int n = snprintf(out, sizeof(out), "bump=%u", v);
+            makcu_reply(out, (size_t)n);
+            return 1;
+        }
+        char out[24];
+        const int n = snprintf(out, sizeof(out), "%lu", (unsigned long)now_ms);
+        makcu_reply(out, (size_t)n);
+        return 1;
+    }
+    if (len >= 5 && line[3] == 'r' && line[4] == 'r') {
+        /* mx.rr -> 上一次复位原因（D50 排障用）：
+         * 1 上电 · 3 软复位(esp_restart) · 4 看门狗(任务/中断) · 5 异常/PANIC ·
+         * 6 掉电(brownout) · 7 深睡唤醒 · 8 外部复位 · 12 未知
+         * 崩溃排查：`mx.rr` 回 5/4 且 `mx.wd` 的 uptime 很短 = 固件重启过。 */
+        char out[32];
+        const int n = snprintf(out, sizeof(out), "%d", (int)esp_reset_reason());
         makcu_reply(out, (size_t)n);
         return 1;
     }
@@ -2624,6 +2669,14 @@ static void evt_tx_task(void *arg)
 
 void app_main(void)
 {
+    /* 2026-11-15（D50 附带）：清掉 RTC 的"强制进 ROM 下载器"位。
+     * `mx.dl` 置位后**不会自动清除**（RTC 域在软复位/崩溃重启后仍然保留），
+     * 于是之后任何一次异常重启都会掉进 ROM 而不是回到 app：控制口表现为一串
+     * `\x80\x80…` 垃圾（ROM 引导信息），很容易被误判成"固件崩了"。
+     * 这里在 app 起步就清掉它；`mx.dl` 本身是"置位 → 立刻复位"，中间不会跑到这里，
+     * 所以下载模式照旧可用。 */
+    REG_CLR_BIT(RTC_CNTL_OPTION1_REG, RTC_CNTL_FORCE_DOWNLOAD_BOOT);
+
     esp_err_t err = nvs_flash_init();
     if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
         ESP_ERROR_CHECK(nvs_flash_erase());

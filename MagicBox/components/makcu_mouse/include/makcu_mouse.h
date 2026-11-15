@@ -75,8 +75,10 @@ void makcu_mouse_emit_event(uint8_t buttons);
  * extra = 超出请求的多发次数。正常终态 in_chg == out_chg 且 extra == 0。 */
 void makcu_mouse_btn_audit(uint32_t *in_chg, uint32_t *out_chg, uint32_t *extra);
 
-/* Emit one report right away (button-only changes have no displacement to queue). */
-void makcu_mouse_emit_now(int8_t dx, int8_t dy, int8_t wheel);
+/* Emit one report right away (button-only changes have no displacement to queue).
+ * 返回 false = 这一发**没有**交给下层（按键让路窗口 2 ms 内 / 无 HID 回调）；
+ * 调用方（sumv 引擎）必须据此决定要不要推进"已发位置"，否则位移会静默丢失（D50）。 */
+bool makcu_mouse_emit_now(int8_t dx, int8_t dy, int8_t wheel);
 
 /* 按键变化优先级最高：立即设置并补发一条零位移报告，绕过 pending 合并与转发去抖。 */
 void makcu_mouse_button_priority(uint8_t buttons);

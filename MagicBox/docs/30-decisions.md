@@ -774,3 +774,68 @@ sumv 早退）**不更新** `s_fwd_btn_last / s_fwd_release_us`，基准在瞄�
 走 UART0 写完（`--after no-reset`，CH343 的 RTS 没接 EN）芯片会停在 ROM 等电源，
 **必须拔插一次左侧数据线**；走 USB-OTG（`VID_303A&PID_0009` / COM4）则 `--after hard-reset`
 能自己启动。为此新增 `tools/flash_left_usb_or_uart.py`：自动优先 USB、退回 UART0 并提示拔插。
+
+---
+
+## D50 sumv 长跑退化：轨迹起点必须是 int64（2026-11-15，已实施并上机验收）
+
+### 现象
+
+`sumv`（含 `0x3C AIM`）**运行久了会变成"一个像素一个像素移动"**，重启盒子后立刻恢复。
+
+### 根因：u32 存的起点与 i64 时钟相减
+
+```c
+static uint32_t s_started_us;                       /* 旧代码 */
+s_started_us = (uint32_t)esp_timer_get_time();      /* 截断 */
+elapsed_ms = (esp_timer_get_time() - (int64_t)s_started_us) / 1000;
+```
+
+`esp_timer_get_time()` 是 **int64 µs**。uptime 越过 **2³² µs = 71 min 35 s** 后，
+`(int64_t)s_started_us` 只剩 `now mod 2³²`，差值直接多出 `k × 4 294 967 ms`：
+
+- 看门狗判据 `elapsed_ms > total_samples + 500`（阈值 ≤ 5 500 ms）**每发必中**；
+- 而 [`makcu_sumv.c`](../components/makcu_sumv/src/makcu_sumv.c) 的起点会"立刻让任务跑第一个样本"，
+  所以每发只发出**首样本**（1 count ≈ 0.8 px）就被 `SUMV_R_FAULT` 掐断；
+- App 每帧重发 ⇒ 每次只挪 1 px ⇒ **"一像素一像素蹭"**。断电/重刷（uptime 清零）即恢复。
+
+同一处截断还污染 `s_last_dur_ms`（u16 → 65535 乱值）与 `0x38` 的 `dur` 字段。
+这是同类事故的**第二次**：`makcu_mouse` 的让路窗口 2026-11-11 就因为 `(int32_t)(deadline - now)`
+在"开机 35.8–71.6 min 区间"把所有注入丢掉，当时改成 int64 只修了那一处。
+
+### 实施
+
+1. `s_started_us` → **int64_t**，两处使用改为 i64 相减；`s_last_dur_ms` 夹到 65535。
+2. 看门狗改**停滞判据**：新增 `s_last_progress_us`（int64，每发出一个样本刷新），
+   `now - s_last_progress_us > SUMV_STALL_MS(200)` → 停；`total_samples + 500` 只作兜底。
+   好处：长轨迹（5000 ms 档）不会被"总时长"误杀；真卡死 200 ms 就停。
+   日志限流 1 s/条（旧实现故障时每发一条都打 `ESP_LOGW`，会把 UART0/控制口刷爆）。
+3. `makcu_mouse_emit_now()` 改为返回 **bool**：让路窗口（按键后 2 ms）/ 未挂载 → `false`；
+   `emit_sample()` 与收尾分支只在 `true` 时推进 `px/py` 和样本序，被拒 → 下一 tick 重试，
+   计 `emit_rejected`。旧实现无条件推进 ⇒ 被吞掉的位移永久丢失（"轨迹跑完光标没走满"）。
+4. 新增台架探针：`mx.sv` 追加 `stalls,emit_rejected`；`mx.wd [bump <ms>]`（uptime / 模拟长跑）；
+   `mx.rr`（复位原因）；`0x35 PING` 的时钟高 8 位放进原来恒 0 的 `rp[11]`（12 B 契约不变）。
+5. app 起步清 `RTC_CNTL_FORCE_DOWNLOAD_BOOT`：`mx.dl` 置的位跨软复位保留，之后任何一次
+   异常重启都会掉进 ROM（控制口读到 `\x80\x80…` 垃圾），清掉后重启回到 app；
+   `mx.dl` 本身是"置位→立刻复位"，不影响下载模式。
+
+### 验收（2026-11-15 23:2x）
+
+| 层 | 结果 |
+|---|---|
+| 离线模型 | **100 passed**（新增 `test_sumv_watchdog.py` 14 例：看门狗 i64 边界、停滞/预算独立、位移守恒、旧实现丢位反证） |
+| 真机回归 | **132 passed / 0 failed**（新增 `test_sumv_long_uptime.py` 4 例：`mx.wd bump 4 295 000` 后 10 发 sumv 全走完、位移守恒 200 counts、`mx.sv` 新字段、bump 后 stop 仍生效） |
+| 固件 | 发布版 **339,568 B**、台架版 **356,704 B**；右片未变（292,624 B） |
+
+### 推翻条件
+
+若"断电重启后仍然一像素一像素"，那与 uptime 无关，属另一类：`t_ms = 1000·D/speed`
+在低速/短距时每样本 <1 count，DDA 本来就 1 count 一蹦（把 `speed` 提上去即可）；
+或按键让路窗口长期占满导致样本反复被拒（现在会计 `emit_rejected`，用 `mx.sv` 一眼可见）。
+
+### 排障备忘：本轮的"假崩溃"教训
+
+调试期间出现过几次"整轮回归全崩、控制口回 `\x80\x80…`"，一度以为是固件崩溃。
+实际是：①CH343 抽风（`PermissionError(13)`，`pnputil /restart-device` 即恢复）；
+②`mx.dl` 的 RTC 强制下载位没清，芯片重启后掉进 ROM。两条都已有对应探测：
+`mx.rr`（复位原因）+ `mx.wd`（uptime）+ 第 5 条修复。

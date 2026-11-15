@@ -128,7 +128,16 @@ typedef struct {
 static sumv_t s_v;
 static sumv_t s_backup;              /* REPLACE 前的快照：新请求退化时回滚，旧轨迹继续跑 */
 static volatile uint32_t s_gen;      /* 轨迹代数：REPLACE 时 +1，任务用它丢弃过期样本 */
-static uint32_t s_started_us;        /* 当前轨迹开始时刻（看门狗 / AIM_STATE 用时） */
+/* 2026-11-15（D50）：**必须是 int64_t**。
+ * `esp_timer_get_time()` 是 int64 µs，旧代码用 u32 存起点、再当完整时间戳与 i64 相减：
+ * uptime 越过 2^32 µs（≈71 min 35 s）后差值直接多出 k×4 294 967 ms，
+ * 看门狗每发必判"超时故障"，轨迹只来得及发首样本 → 观感"一个像素一个像素移动"。
+ * 同类事故第二次（第一次是 makcu_mouse 让路窗口的 int32 相减）。 */
+static int64_t  s_started_us;        /* 当前轨迹开始时刻（看门狗 / 用时统计） */
+/* 停滞检测：最近一次"有进展"（发出样本或样本序前进）的时刻。
+ * 看门狗用它判"发送侧卡住"，比"总时长"更贴近本意，也不会因为轨迹本来就长而误杀。 */
+static int64_t  s_last_progress_us;
+static int64_t  s_last_wd_log_us;    /* 看门狗日志限流（每 1 s 最多一条） */
 static uint8_t  s_last_result = SUMV_R_UNKNOWN;
 static uint16_t s_last_counts;       /* 上一发请求的 counts（切比雪夫长度） */
 static uint16_t s_last_dur_ms;       /* 上一发实际耗时 */
@@ -146,6 +155,8 @@ static volatile uint32_t s_rounds;
 static volatile uint32_t s_mute_dropped;
 static volatile uint32_t s_btn_forwarded;
 static volatile uint32_t s_last_speed_eff;
+static volatile uint32_t s_stalls;          /* 看门狗触发次数（D50 新增） */
+static volatile uint32_t s_emit_rejected;   /* 报告被让路窗口/未就绪拒收、下一 tick 重试的次数 */
 
 bool makcu_sumv_active(void)
 {
@@ -372,7 +383,7 @@ static void path_at(uint32_t u, int32_t *ox, int32_t *oy)
  * 另：进度取 prof_at(ip + 1)，让第一个样本就有位移（省掉 1 ms 的空起步），
  * 最后一个样本正好落在 u=1（终点精确）。
  */
-static void emit_sample(uint32_t gen)
+static bool emit_sample(uint32_t gen)
 {
     /* 进度（剔除停顿） */
     uint32_t ip = s_v.i;
@@ -423,7 +434,7 @@ static void emit_sample(uint32_t gen)
     }
 
     if (gen != s_gen) {
-        return;                     /* 轨迹已被替换：这一发作废 */
+        return true;                /* 轨迹已被替换：这一发作废，但样本序不算数 */
     }
 
     /* DDA：累计位置取整，余量留在 Q16 里 */
@@ -436,29 +447,56 @@ static void emit_sample(uint32_t gen)
     if (dy > 127) { dy = 127; }
     if (dy < -127) { dy = -127; }
     if (dx != 0 || dy != 0) {
-        makcu_mouse_emit_now((int8_t)dx, (int8_t)dy, 0);
-        s_v.px += dx;
-        s_v.py += dy;
+        /* 2026-11-15（D50）：只有**真的交给下层**才推进位置，且只有这时才让调用方 `i++`。
+         * 旧实现调用后无条件 `px/py += dx/dy`，而 `makcu_mouse_emit_now()` 在按键让路窗口
+         * （2 ms）/ 未挂载时会静默 return —— 那条位移就永久丢了，轨迹还以为发过，
+         * 表现为"轨迹跑完了但光标少走一截"，连点时尤其明显。
+         * 被拒时返回 false：位置与样本序都不前进，下一个 tick 重试同一步（位移守恒）。 */
+        if (makcu_mouse_emit_now((int8_t)dx, (int8_t)dy, 0)) {
+            s_v.px += dx;
+            s_v.py += dy;
+            s_samples++;
+            s_last_progress_us = esp_timer_get_time();
+            return true;
+        }
+        s_emit_rejected++;
+        return false;
     }
     s_samples++;
+    s_last_progress_us = esp_timer_get_time();
+    return true;
 }
 
 /* ------------------------------------------------------------ 定时/任务 */
+/* 停滞阈值：轨迹连续这么久一点进展都没有（样本发不出去）才判故障。
+ * 与"总时长"配合使用：正常轨迹最多 total_samples+500 ms；停滞则 200 ms 就停。 */
+#define SUMV_STALL_MS 200
+
 static void sumv_tick(void *arg)
 {
     (void)arg;
-    /* 看门狗：正常轨迹最多 total_samples ms，超过 +500 ms 还在跑说明报告发不出去
-     * （HID 卸载 / 端点卡住），强制收尾，避免状态永远停在 active=1。 */
+    /* 看门狗（D50 重写）：
+     *   ① 停滞判据 `now - s_last_progress_us > 200 ms` —— 发送侧真的卡住了；
+     *   ② 兜底判据 `now - s_started_us > total_samples + 500 ms` —— 防状态机漏更新。
+     * 两个差值都用 **int64** 计算，不再出现"u32 起点与 i64 时钟相减"的回绕。 */
     if (s_v.active) {
-        const uint32_t elapsed_ms = (uint32_t)((esp_timer_get_time() - (int64_t)s_started_us) / 1000);
-        if (elapsed_ms > s_v.total_samples + 500u) {
+        const int64_t now_us = esp_timer_get_time();
+        const int64_t stalled_ms = (now_us - s_last_progress_us) / 1000;
+        const int64_t elapsed_ms = (now_us - s_started_us) / 1000;
+        const int64_t budget_ms = (int64_t)s_v.total_samples + 500;
+        if (stalled_ms > SUMV_STALL_MS || elapsed_ms > budget_ms) {
             s_v.active = false;
             s_last_result = SUMV_R_FAULT;
             s_gen++;
             s_aborted++;
+            s_stalls++;
             (void)esp_timer_stop(s_timer);
-            ESP_LOGW("makcu_sumv", "watchdog: %u ms > %u ms, forced stop",
-                     (unsigned)elapsed_ms, (unsigned)(s_v.total_samples + 500u));
+            if (now_us - s_last_wd_log_us > 1000000) {   /* 每 1 s 最多一条，别刷爆 UART0 */
+                s_last_wd_log_us = now_us;
+                ESP_LOGW("makcu_sumv",
+                         "watchdog: stalled %lld ms / elapsed %lld ms (budget %lld ms), forced stop",
+                         (long long)stalled_ms, (long long)elapsed_ms, (long long)budget_ms);
+            }
             return;
         }
     }
@@ -490,16 +528,23 @@ static void sumv_task(void *arg)
                 const int32_t ey = ry > cap ? cap : (ry < -cap ? -cap : ry);
                 const int32_t cx = ex > 127 ? 127 : (ex < -127 ? -127 : ex);
                 const int32_t cy = ey > 127 ? 127 : (ey < -127 ? -127 : ey);
-                makcu_mouse_emit_now((int8_t)cx, (int8_t)cy, 0);
-                s_v.px += cx;
-                s_v.py += cy;
+                /* 与 emit_sample 同口径：被拒（让路窗口/未就绪）就不推进，下个 tick 再补。 */
+                if (makcu_mouse_emit_now((int8_t)cx, (int8_t)cy, 0)) {
+                    s_v.px += cx;
+                    s_v.py += cy;
+                    s_last_progress_us = esp_timer_get_time();
+                } else {
+                    s_emit_rejected++;
+                    continue;
+                }
             }
             rx = s_v.dx - s_v.px;
             ry = s_v.dy - s_v.py;
             if (rx == 0 && ry == 0) {
                 s_v.active = false;
                 s_rounds++;
-                s_last_dur_ms = (uint16_t)((esp_timer_get_time() - (int64_t)s_started_us) / 1000);
+                const int64_t dur = (esp_timer_get_time() - s_started_us) / 1000;
+                s_last_dur_ms = (uint16_t)(dur > 65535 ? 65535 : (dur < 0 ? 0 : dur));
                 if (s_last_result != SUMV_R_REPLACED) {
                     s_last_result = SUMV_R_STARTED;      /* 正常走完 */
                 }
@@ -509,9 +554,8 @@ static void sumv_task(void *arg)
             }
             continue;
         }
-        emit_sample(gen);
-        if (gen == s_gen) {
-            s_v.i++;
+        if (emit_sample(gen) && gen == s_gen) {
+            s_v.i++;          /* 只有这一发真的进了下层（或被判为"无需发"）才推进样本序 */
         }
     }
 }
@@ -668,7 +712,8 @@ bool makcu_sumv_start(const makcu_sumv_req_t *req)
         s_last_result = SUMV_R_REPLACED;
     }
     s_gen++;                             /* 代数 +1：在飞的旧样本看到不一致就作废 */
-    s_started_us = (uint32_t)esp_timer_get_time();
+    s_started_us = esp_timer_get_time();          /* int64：见文件顶部 D50 注释 */
+    s_last_progress_us = s_started_us;
     s_last_counts = (uint16_t)cheb;
     s_v.active = true;
     if (s_timer != NULL) {
@@ -855,7 +900,19 @@ void makcu_sumv_stats(makcu_sumv_stats_t *out)
     out->btn_forwarded = s_btn_forwarded;
     out->speed_eff = s_last_speed_eff;
     out->remain_ms = s_v.active ? (s_v.total_samples > s_v.i ? s_v.total_samples - s_v.i : 0) : 0;
+    out->stalls = s_stalls;
+    out->emit_rejected = s_emit_rejected;
     out->active = s_v.active;
+}
+
+/* 台架专用（D50）：把"轨迹起点/进展时刻"人为往前拨 ms 毫秒，
+ * 用来模拟"开机很久（uptime 越过 2^32 µs）"的场景，复现长跑退化。
+ * 只在 MB_DEBUG_OPCODE 构建里由 `mx.wd bump <ms>` 调用。 */
+void makcu_sumv_bench_shift_start(uint32_t ms)
+{
+    const int64_t delta = (int64_t)ms * 1000;
+    s_started_us -= delta;
+    s_last_progress_us -= delta;
 }
 
 void makcu_sumv_init(void)
