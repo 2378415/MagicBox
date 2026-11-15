@@ -33,7 +33,7 @@
 | **厂商通道**（HECATE / G3M PRO） | 识别、读配置、改 DPI 都不卡 | `out==vin==vf`、`ofail=0`、`venq` 丢弃 0、`vp50` 31–39 ms（D47） |
 | **按键事件**（订阅 → 环 / 推送） | 订阅**不吞**物理点击 | 通知延迟 **117–121 µs（≈0.12 ms）**；1000 边沿/秒零丢失（D48） |
 
-真机回归 **128 passed**，离线模型 **46 passed**，合计 **174 例**全绿。
+真机回归 **128 passed**，离线模型 **86 passed**，合计 **214 例**全绿。
 
 ---
 
@@ -47,7 +47,7 @@ MagicBox/                            固件工程（ESP-IDF，可直接编译、
 ├── mouse/                           ★ 厂商通道（HECATE / G3M PRO）：mouse_vendor 分发 + g3mpro 协议 + vendor_chan
 ├── docs/                            HANDOVER（接手必读）/ API-control-port / 50-vendor-channel / FEATURES / 40-status / 30-decisions …
 ├── tools/                           构建、刷写、台架、瞄准、状态汇总脚本（41 个，见 tools/README.md）
-├── verification/                    model/(6 文件 46 例) regress/(13 文件 128 例) report/(32 份上机报告) plan-*.md(4 份)
+├── verification/                    model/(7 文件 86 例) regress/(13 文件 128 例) report/(32 份上机报告) plan-*.md(4 份)
 ├── 官方固件/                        V3.2_LEFT.bin 403,536 B、V3.7_RIGHT.bin 341,824 B（唯一事实来源 + 回滚用，勿删）
 └── work/                            出厂备份镜像与回读比对中间产物（不入库）
 
@@ -346,7 +346,7 @@ CH343 掉线（`Problem 43` / `PermissionError(13)`）：`pnputil /restart-devic
 |---|---|---|---|
 | T1 编译 | `tools\build_app.ps1` 双 app | ✅ 需 IDF 环境 | 本次发布即由此构建 |
 | T1' 语法 | `xtensa-esp32s3-elf-gcc -fsyntax-only` | ✅ | 全部组件 |
-| T2 离线模型 | `python -m pytest verification/model -q` | ✅ 无需硬件 | 6 文件 **46 passed**（步进引擎、贝塞尔、克隆描述符、右片回复、按键队列模型、事件通道调度） |
+| T2 离线模型 | `python -m pytest verification/model -q` | ✅ 无需硬件 | 7 文件 **86 passed**（步进引擎、贝塞尔、克隆描述符、右片回复、按键队列模型、事件通道调度、**帧分类/按位抗抖**） |
 | T3 真机回归 | `MAKCU_PORT=COM3 python -m pytest verification/regress -q` | 需台架 | 13 文件 **128 passed**（≈4 min；含按键完整性/顺序、按键×SUMV 并发、按键事件×点击、链路桥、隐藏 opcode） |
 | T3' 无硬件 | `MAKCU_SKIP_HW=1 … --collect-only` | ✅ | 只收集不执行 |
 | App 单测 | `gradlew :app:testDebugUnitTest` | ✅ | **118 项** |
@@ -365,17 +365,20 @@ python tools\link_probe.py --all  # PING/QUERY/SUMV/EVT 一次性探针
 
 ## 8. 发布产物
 
-最新：[`v0.2.0`](https://github.com/2378415/MagicBox/releases/tag/v0.2.0)　首次发布：[`v0.1.0`](https://github.com/2378415/MagicBox/releases/tag/v0.1.0)
+最新：[`v0.3.0`](https://github.com/2378415/MagicBox/releases/tag/v0.3.0)　历史：[`v0.2.0`](https://github.com/2378415/MagicBox/releases/tag/v0.2.0)、[`v0.1.0`](https://github.com/2378415/MagicBox/releases/tag/v0.1.0)
 
 | 资产 | 字节 | 内容 |
 |---|---:|---|
-| `makcu_left.bin` | 338,544 | 左片**发布版**固件（无 `mx.*` 台架命令） |
-| `makcu_left-bench.bin` | 355,056 | 左片**台架版**固件（含 `mx.*` 探针，跑回归/台架用） |
+| `makcu_left.bin` | 339,104 | 左片**发布版**固件（无 `mx.*` 台架命令，日常使用刷这个） |
+| `makcu_left-bench.bin` | 355,856 | 左片**台架版**固件（含 `mx.*` 探针，跑回归/台架用） |
 | `makcu_right.bin` | 292,624 | 右片固件（USB host 侧） |
 | `bootloader-left.bin` / `bootloader-right.bin` | 18,912 | ESP32-S3 二级引导 |
 | `partition-table-left.bin` / `partition-table-right.bin` | 3,072 | 分区表 |
-| `MagicBullet-0.1-debug.apk` | 93,904,529 | App debug 包（含内置模型与 ORT/QNN） |
+| `MagicBullet-0.1-debug.apk` | 95,011,802 | App debug 包（含内置模型与 ORT/QNN；预览页三色状态徽标） |
 | `SHA256SUMS.txt` | — | 全部资产校验和 |
+
+> **v0.3.0 内容**：固件 **D49**（按键状态机只处理鼠标帧 + 按位抗抖，修「点右键触发左键 / 点左键按下即抬起」，真机 **128 passed**、离线模型 **86 passed**）；
+> App **预览页右上角三色状态徽标**（红 自瞄中 / 绿 已布防 / 黄 未布防，单测 118 项全绿）。细节见 [`30-decisions.md`](MagicBox/docs/30-decisions.md) D49 与 [`瞄准模块.md`](MagicBullet/docs/瞄准模块.md) §27。
 
 刷写地址与参数：
 

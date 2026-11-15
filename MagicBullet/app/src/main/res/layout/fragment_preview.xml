@@ -31,6 +31,27 @@
             android:id="@+id/overlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <!-- 右上角状态徽标：红=自瞄中 / 绿=已布防 / 黄=未布防（颜色由 PreviewFragment 设置） -->
+        <TextView
+            android:id="@+id/aim_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_aim_state_badge"
+            android:clickable="false"
+            android:elevation="2dp"
+            android:focusable="false"
+            android:paddingStart="10dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="3dp"
+            android:text="@string/preview_badge_disarmed"
+            android:textColor="@color/badge_text_on_light"
+            android:textSize="12sp"
+            android:textStyle="bold" />
     </com.magicbullet.capture.widget.AspectRatioFrameLayout>
 
     <LinearLayout

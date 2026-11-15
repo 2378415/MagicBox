@@ -124,6 +124,8 @@ static volatile uint8_t s_rep_head, s_rep_tail;
 static volatile uint32_t s_rep_queued, s_rep_dropped_q, s_rep_drained;
 
 void makcu_hiddev_report_verbatim_ep(uint8_t ep, const uint8_t *data, uint16_t len);
+/* D49 补充：显式区分"状态提交"（真实透传 / 0x32 注入）与"运动帧"（引擎 SUMV/AIM）。 */
+static void send_report_ep(uint8_t ep, const uint8_t *data, uint16_t len, bool motion);
 
 /* 按键报告插队槽（2026-11-11）。
  *
@@ -164,6 +166,11 @@ static volatile uint32_t s_urg_stamp_us;      /* 最老一条入队时刻 */
 /* S2：按键审计改为在"真正上线"处统计——只有这里看得见透传与注入两条路径。 */
 static volatile uint32_t s_wire_btn_chg;   /* 上线报告中按键字节发生变化的次数 */
 static uint8_t           s_wire_btn_last;  /* 上一条上线报告的按键字节 */
+/* D49 补充（2026-11-15）：「提交意图」= 最近一次**状态提交**（真实透传 / 0x32 注入）的按键字节。
+ * 它比 s_wire_btn_last 早（后者要等真正上线），所以"按下还压在队列里、紧接着的松开"
+ * 不会因为"与线上同值"被降级进运动 FIFO —— 那样出队时会被方案 A 改写回旧状态，边沿就丢了
+ * （实测：70 次/秒 × SUMV 并发用例 1400 个边沿只剩 1238）。 */
+static uint8_t           s_btn_intent_last;
 static volatile uint32_t s_btn_stamped;   /* A：出队时被改写按键字节的报告数 */
 /* 2026-11-12 取证：把"引入了按键变化"的报告按发送路径拆开计数。
  * 直接发送 vs 队列发送 —— 用来定位持续高倍率下少掉的边沿到底丢在哪条路径。 */
@@ -320,7 +327,13 @@ static void rep_push_fifo(const uint8_t *data, uint16_t len)
 
 static void rep_drain_one(void);
 
-static void rep_push(const uint8_t *data, uint16_t len)
+/* Push one queued mouse report.
+ *
+ * `motion = true`：引擎（SUMV/AIM）的纯运动帧。按键字节只是"顺带对齐"，**不代表**任何新的
+ * 按键状态，所以一律进运动 FIFO，且不更新"提交意图"——否则引擎会把"按下还在队列里"那段
+ * 旧状态当成一次提交，让 URG 里出现 1 → 0 → 1 的多余边沿（实测 c3：300 次点击出现 306 个边沿）。
+ * `motion = false`：真实鼠标透传 / `0x32` 注入，携带的是真正的按键状态。 */
+static void rep_push(const uint8_t *data, uint16_t len, bool motion)
 {
     if (len == 0 && data == NULL) {
         return;
@@ -329,14 +342,20 @@ static void rep_push(const uint8_t *data, uint16_t len)
         len = REP_QLEN;
     }
     const uint8_t btn = (uint8_t)(data[0] & 0x1Fu);
-    /* 与**线上真实状态**比较（不是"上一次入队的字节"）：FIFO 出队时会按方案 A 改写按键位，
-     * 若拿 s_last_btn 比较，改写过的那条会让下一次比较失真，引擎报告会被误送进按键队列，
-     * 造成队列溢出 + 线上状态来回翻（实测 364 边沿 / overflow 10）。 */
-    if (btn != (uint8_t)(s_wire_btn_last & 0x1Fu)) {
+    /* 与**提交意图**比较（不是"线上状态"、也不是"上一次入队的字节"）：
+     *   - 拿 s_wire_btn_last 比较：按下报告还压在 URG 里时线上仍是旧值，紧接着的松开会被
+     *     降级进运动 FIFO，出队时又被方案 A 改写回旧状态 → 边沿静默消失（1400 → 1238）。
+     *   - 拿 s_last_btn 比较：它只在按键分支里更新，FIFO 改写过的那条会让下一次比较失真
+     *     （旧实现踩过：364 边沿 / overflow 10）。
+     * 意图只在"状态提交"路径更新，所以基准始终是"最后提交出去的按键状态"。 */
+    if (!motion && btn != (uint8_t)(s_btn_intent_last & 0x1Fu)) {
         s_last_btn = btn;
         urg_push(data, len);   /* 只进按键队列，绝不进运动 FIFO */
     } else {
         rep_push_fifo(data, len);
+    }
+    if (!motion) {
+        s_btn_intent_last = btn;
     }
 }
 
@@ -359,6 +378,10 @@ static void rep_drain_one(void)
             }
             wire_btn_track(s_urg_q[s_urg_tail], s_urg_lenq[s_urg_tail]);
             last_rep_track(s_urg_q[s_urg_tail], s_urg_lenq[s_urg_tail], rid);
+            /* 注意：这里**不**回写 `s_btn_intent_last`。URG 里是最新提交的状态，
+             * 但出队顺序可能落在"更新的提交"之后（按下出队时，松开已经提交了）；
+             * 回写会让意图退回旧值，下一次按下就被判成"没有变化"而丢边沿
+             * （实测 700 次点击 1396/1400）。意图只在提交那一刻更新。 */
             s_urg_tail = (uint8_t)((s_urg_tail + 1) % URG_MAX);
             s_urg_n--;
             s_urg_sent++;
@@ -530,11 +553,23 @@ void makcu_hiddev_report(const makcu_report_t *r)
         const uint8_t ep_in = (c->if_count > 0 && c->ifs[0].valid && c->ifs[0].ep_in)
                             ? c->ifs[0].ep_in : 0x81u;
         uint8_t rep[16] = { 0 };
+        /* 2026-11-15（D49）：引擎报告的按键位在**发送这一刻**对齐线上真源，
+         * 除非本帧就是显式按键请求（`0x32` / `button_priority` / `set_buttons`）。
+         * 以前只有 report_raw()（bench 死路径）做了这件事，于是 SUMV/AIM 跑起来时
+         * 引擎会带着 `s_buttons` 里那份滞后的字节穿插在透传报告之间 —— PC 端表现为
+         * "左键按下后立刻抬起"（多/少一次边沿）。
+         * 同时按同一个判据决定走"运动帧"还是"状态提交"（见 rep_push）。 */
+        const bool btn_req = makcu_mouse_btn_requested();
+        uint8_t btn = (uint8_t)(r->buttons & 0x1F);
+        if (!btn_req) {
+            btn = (uint8_t)((btn & (uint8_t)~0x1Fu) | (s_wire_btn_last & 0x1Fu));
+        }
+        const bool motion = !btn_req;
         if (want >= 7) {
             /* 16-bit axes: buttons, X16 LE, Y16 LE, wheel, pan (G3M PRO) */
             const uint16_t x = (uint16_t)(int16_t)r->dx;
             const uint16_t y = (uint16_t)(int16_t)r->dy;
-            rep[0] = (uint8_t)(r->buttons & 0x1F);
+            rep[0] = (uint8_t)(btn & 0x1F);
             rep[1] = (uint8_t)(x & 0xFF);
             rep[2] = (uint8_t)(x >> 8);
             rep[3] = (uint8_t)(y & 0xFF);
@@ -544,24 +579,24 @@ void makcu_hiddev_report(const makcu_report_t *r)
             /* Same sender as the pass-through path: that is the code path that
              * demonstrably drives the host cursor, and it queues when the endpoint
              * is busy instead of dropping the motion outright. */
-            makcu_hiddev_report_verbatim_ep(ep_in, rep, 7);
+            send_report_ep(ep_in, rep, 7, motion);
             return;
         }
         if (want == 5) {
             /* 12-bit packed axes: buttons, x[7:0], x[11:8]|y[3:0]<<4, y[11:4], wheel */
             const int32_t x12 = (int32_t)r->dx & 0x0FFF;
             const int32_t y12 = (int32_t)r->dy & 0x0FFF;
-            rep[0] = (uint8_t)(r->buttons & 0x07);
+            rep[0] = (uint8_t)(btn & 0x07);
             rep[1] = (uint8_t)(x12 & 0xFF);
             rep[2] = (uint8_t)(((x12 >> 8) & 0x0F) | ((y12 & 0x0F) << 4));
             rep[3] = (uint8_t)((y12 >> 4) & 0xFF);
             rep[4] = (uint8_t)r->wheel;
-            makcu_hiddev_report_verbatim_ep(ep_in, rep, 5);
+            send_report_ep(ep_in, rep, 5, motion);
             return;
         }
-        const uint8_t report[4] = { (uint8_t)(r->buttons & 7), (uint8_t)r->dx,
+        const uint8_t report[4] = { (uint8_t)(btn & 7), (uint8_t)r->dx,
                                     (uint8_t)r->dy, (uint8_t)r->wheel };
-        makcu_hiddev_report_verbatim_ep(ep_in, report, sizeof(report));
+        send_report_ep(ep_in, report, sizeof(report), motion);
         return;
     }
     /* Built-in descriptor: ID 2 is the mouse interface and it expects the 5-byte
@@ -724,7 +759,11 @@ static void ven_drain_one(void)
 
 /* Forward a report to the interface that owns this endpoint: a composite mouse
  * has two HID interfaces (mouse on 0x81, keyboard/vendor on 0x82), and each has
- * its own Report ID convention. */void makcu_hiddev_report_verbatim_ep(uint8_t ep, const uint8_t *data, uint16_t len)
+ * its own Report ID convention.
+ *
+ * `motion = true` 只给引擎（SUMV/AIM）用：按键字节是"顺带对齐"的，不代表状态变化，
+ * 必须走运动 FIFO、不进按键队列、不更新提交意图（D49 补充）。 */
+static void send_report_ep(uint8_t ep, const uint8_t *data, uint16_t len, bool motion)
 {
     if (data == NULL || len == 0) {
         return;
@@ -768,7 +807,7 @@ static void ven_drain_one(void)
         /* Keep the movement: queue it, the completion callback will drain once the
          * host resumes polling. */
         if (inst == 0) {
-            rep_push(data, len);
+            rep_push(data, len, motion);
         } else {
             ven_push(inst, rid, data, len);
         }
@@ -780,7 +819,7 @@ static void ven_drain_one(void)
          * previous report.  Queue instead of returning, otherwise the report (and
          * with it that slice of relative movement) is lost for good. */
         if (inst == 0) {
-            rep_push(data, len);
+            rep_push(data, len, motion);
         } else {
             ven_push(inst, rid, data, len);
         }
@@ -798,17 +837,26 @@ static void ven_drain_one(void)
             }
             wire_btn_track(data, len);
             last_rep_track(data, len, rid);
+            if (!motion) {
+                s_btn_intent_last = (uint8_t)(data[0] & 0x1Fu);   /* 只有状态提交才更新意图 */
+            }
         }
         if (s_ven_n > 0) {
             ven_drain_one();             /* 顺手清一下积压（同实例顺序保持） */
         }
     } else if (inst == 0) {
         /* Endpoint busy: queue it (mouse reports only; never merge). */
-        rep_push(data, len);
+        rep_push(data, len, motion);
     } else {
         /* 2026-11-12（R1.2）：厂商/键盘接口不再丢——入队，完成回调里续发。 */
         ven_push(inst, rid, data, len);
     }
+}
+
+/* 对外入口：真实鼠标透传 / 台架注入 → "状态提交"（motion = false）。 */
+void makcu_hiddev_report_verbatim_ep(uint8_t ep, const uint8_t *data, uint16_t len)
+{
+    send_report_ep(ep, data, len, false);
 }
 
 void makcu_hiddev_report_verbatim(const uint8_t *data, uint16_t len)

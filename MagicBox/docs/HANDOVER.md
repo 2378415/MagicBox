@@ -17,12 +17,12 @@
 | **厂商通道**（HECATE / G3M PRO） | 识别、读配置、改 DPI 都**不再卡** | `mx.ox`：`out==vin==vf`、`ofail=0`、`venq` 丢弃 0、`vp50 ≈ 31–39 ms`（D47） |
 | **按键事件**（0x39 订阅 → 0x3A/0x3B 环 或 0xE1 推送） | 订阅**不吞**物理点击；通知延迟 **≈0.12 ms** | D48：并发 1000 边沿/秒时 `wire_chg == head_seq == evsent`，`evdrop=0` |
 
-两颗芯片**都是自编固件**：真机回归 **128 passed / 0 failed**，离线模型 **46 passed**，合计 **174 例**。
+两颗芯片**都是自编固件**：真机回归 **128 passed / 0 failed**，离线模型 **86 passed**，合计 **214 例**。
 
 | 镜像 | 尺寸 |
 |---|---|
-| 左片（台架版，带 `mx.*`） | **355,040 B** |
-| 左片（发布版，无台架命令） | **338,528 B** |
+| 左片（台架版，带 `mx.*`） | **355,856 B**（D49 前 355,056 B） |
+| 左片（发布版，无台架命令） | **339,104 B**（D49 前 338,528 B） |
 | 右片（USB host 侧） | **292,624 B** |
 
 ---
@@ -138,6 +138,8 @@ powershell -File tools\build_app.ps1 -App app_right
 # 左片全自动（推荐）：构建 → mx.dl 进下载器 → 写 0x10000 → 整段回读比对
 powershell -File tools\flash_left_auto.ps1
 powershell -File tools\flash_left_auto.ps1 -NoBuild        # 只刷现有 build 产物
+# 左片（2026-11-15 新增）：优先 USB-OTG 下载器（能自己 hard-reset），否则退回 UART0 并提示拔插
+python tools\flash_left_usb_or_uart.py
 # 右片（右侧口换数据线：VID_303A&PID_1001 / COM10）
 powershell -File tools\flash_right.ps1 -Image app_right\build\makcu_right.bin -Offset 0x10000
 powershell -File tools\flash_right.ps1                      # 回滚出厂整片
@@ -152,6 +154,14 @@ powershell -File tools\reflash.ps1 -Port COM3
    此时拔插左侧数据线（3–5 s）即可。
 2. **发一次 `mx.ac` 重克隆**（应回 `km.1:320f:706e:93`）。刚刷完时克隆还是台架夹具，
    此时跑回归会出现 **9 skipped**。
+
+> **2026-11-15 实测的坑（D49 刷机时踩了两次）**：`mx.dl` 之后 ROM **不一定枚举 USB-OTG 下载器**
+> （`VID_303A&PID_0009`）。没枚举时只能走 **UART0（COM3）** 写：`esptool --port COM3 --baud 460800
+> --before no-reset --after no-reset write-flash 0x10000 app_left\build\makcu_left.bin`。
+> UART0 这条路 CH343 的 RTS 没接 EN，**写完芯片会停在 ROM 等电源，必须拔插一次左侧数据线**才会跑新固件
+> （表现为 COM3 无回包、USB 也不枚举，很容易误判成"刷坏了"）。`tools\flash_left_usb_or_uart.py`
+> 就是按这个顺序自动走的脚本。另外 **`mx.dl` 的 RTC 强制下载位跨软复位保留**：一旦进了 ROM，
+> 只有"枚举到 USB 下载器 → `--after hard-reset`"或"拔插电源"这两条路能把它带回 app。
 
 **故障恢复**：CH343（`VID_1A86&PID_55D3`）掉线/`PermissionError(13)` 时
 `pnputil /restart-device "USB\VID_1A86&PID_55D3\5C98113502"`；节点整体消失需拔插。
@@ -168,6 +178,7 @@ powershell -File tools\reflash.ps1 -Port COM3
 | 构建 | `build_app.ps1` | 唯一构建入口（`-App` / `-Clean` / `-Define`） |
 | | `setup_idf.ps1`、`setup_idf_local.ps1`、`fetch_idf_submodules.py`、`fix_idf_gitmodules.py` | 新机器装环境 |
 | 刷写 | **`flash_left_auto.ps1`** | 左片全自动（构建→`mx.dl`→刷→回读比对），**不需要拔线** |
+| | **`flash_left_usb_or_uart.py`**（2026-11-15） | 左片刷写的稳妥版：优先 USB-OTG 下载器（`--after hard-reset` 自启动），否则退回 UART0 并提示"拔插一次电源" |
 | | `flash_left.ps1`、`flash_capture.ps1`、`reflash.ps1`、`flash_verify.py`、`finish_cycle.ps1` | 左片分步 / 抓日志 / 回滚 |
 | | `flash_right.ps1`、`rd_right.ps1`、`recover_download.py` | 右片刷写 / 内存读 / 卡下载器恢复 |
 | 台架 | `boxbench_gui.py`（+`boxbench.cmd`、`boxbench/`） | Windows 图形台架（Tkinter），`--selftest`/`--suite smoke` |
@@ -182,7 +193,7 @@ powershell -File tools\reflash.ps1 -Port COM3
 
 ```powershell
 # 离线模型（无需硬件，秒级）
-python -m pytest verification/model -q          # 46 passed
+python -m pytest verification/model -q          # 86 passed
 # 真机回归（盒子 + 中线 COM3）
 $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed，约 4 min
 ```
@@ -191,7 +202,7 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 |---|---|---|
 | T1 编译 | 双 app `idf.py build` | ✅ |
 | T1' 语法 | `xtensa-esp32s3-elf-gcc -fsyntax-only` | ✅ 全部组件 |
-| T2 模型 | 6 个模型文件：`test_step_engine` / `test_bezier_path` / `test_clone_descriptor` / `test_right_reply_model` / `test_button_queue_model` / `test_button_event_channel` | **46 passed** |
+| T2 模型 | 7 个模型文件：`test_step_engine` / `test_bezier_path` / `test_clone_descriptor` / `test_right_reply_model` / `test_button_queue_model` / `test_button_event_channel` / **`test_button_frame_class`（D49）** | **86 passed** |
 | T3 真机 | 12 个用例文件（+`conftest.py`）：协议 / 运动报告 / 键盘 / 按键完整性 / 按键顺序 / 按键×SUMV 并发 / **按键事件×点击** / 克隆描述符 / 隐藏 opcode / 右片帧 / 链路桥 / SUMV opcode | **128 passed** |
 
 **光标约束**：`verification/regress/conftest.py` 里有 `CursorGuard`（20 ms 守护 + autouse 归位），
@@ -207,7 +218,7 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 
 ---
 
-## 9. 关键决策（D1–D48，详见 `docs/30-decisions.md`）
+## 9. 关键决策（D1–D49，详见 `docs/30-decisions.md`）
 
 | 编号 | 一句话 |
 |---|---|
@@ -222,6 +233,7 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 | **D46** | 按键"永不丢失"的三条硬约束 |
 | **D47** | 厂商通道独立化（`mouse/`）+ 五个根因修复；HECATE 不再卡（`vp50 31–39 ms`） |
 | **D48** | 按键事件订阅不得吞掉物理点击；事件通知延迟 **6–8 ms → 0.12 ms**；并发零丢失 |
+| **D49** | **按键状态机只许看鼠标帧**（键盘 8 B 帧的修饰键位图会被投影成左/右/中/侧键）；抗抖改**按位**回退 + 每键位独立窗口 + 可选松开侧最小脉宽 |
 
 ---
 
@@ -237,6 +249,8 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 | USJ `watchdog reset` 无法启动 app | 已知 | 用 `--after hard-reset`（打印 "RTS pin" 才有效）或拔插 |
 | 右片 HID 推送 gate | 关闭 | 早期"推模式"造成右片客户端任务冻结（死锁），功能已回退，`mx.hi` 的 `gate=0` 表示未启用 |
 | `build/` 不入库 | — | 重跑 `tools/status.py` 前先构建 |
+| ~~点右键触发左键 / 左键按下即抬起~~ | **已修（D49）** | 根因：键盘帧（`ep 0x82` / 8 B，byte0=修饰键位图）进了鼠标按键状态机，LCtrl=`0x01` 就是左键位；叠加抗抖整字节回退。修法：帧分类前置 + 按位抗抖。**旧固件现场仍会复现**，刷 D49 之后的镜像即可 |
+| 松开侧抗抖默认关闭 | 设计如此 | `mx.gd <press> <rel>` 打开（如 `mx.gd 20 6`）；默认关是因为台架注入间隔常 <6 ms，开了会吞掉成对边沿 |
 
 ---
 
@@ -245,7 +259,7 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 - [ ] 能构建两个 app（`tools/build_app.ps1`，台架 + 发布两套 `-Define`）
 - [ ] 能刷左片（`tools/flash_left_auto.ps1`）与右片（`flash_right.ps1 -Offset 0x10000`）
 - [ ] 刷完会做两件事：必要时 hard-reset/拔插 + **`mx.ac` 重克隆**
-- [ ] 能跑通回归（`MAKCU_PORT=COM3`，**128 passed**；离线模型 46 passed）
+- [ ] 能跑通回归（`MAKCU_PORT=COM3`，**128 passed**；离线模型 86 passed）
 - [ ] 会看四个探针：`mx.hi`（右片）、`mx.ls`（链路）、`mx.ox`（厂商+事件）、`0x3E/0x45`（按键）
 - [ ] 知道 `CONFIG_FREERTOS_HZ=100` ⇒ `vTaskDelay(1)` = 10 ms
 - [ ] 知道"按键字节单一真源 `s_wire_btn_last`"与"主持位窗口只保护注入位"
@@ -265,7 +279,8 @@ $env:MAKCU_PORT='COM3'; python -m pytest verification/regress -q    # 128 passed
 | 事件发送任务 | `app_left/main/app_main.c`（`evt_tx_task`） | prio 11，通知唤醒；**不要**把 UART 写挪回 `km_link` |
 | 按键真源/戳印/URG 队列 | `components/makcu_hiddev/src/makcu_hiddev.c` | `s_wire_btn_last`、`rep_push`、`rep_drain_one`、`passthrough` |
 | 主持位窗口 | 同上（`btn_hold_bits`）+ `control_bin.c` 的 `0x32` | 只保护注入按住的位 |
-| 短按抗抖 | `app_main.c`（`s_release_guard_ms`，`mx.gd`） | 默认 20 ms；`0` = 关 |
+| 帧分类（谁进按键状态机） | `app_main.c`（`link_frame_is_keyboard/_is_mouse`） | **D49**：只有鼠标端点（`0x81`，或台架注入的 `ep 0`）进按键逻辑；键盘 8 B / 厂商 64 B / 其它一律只转发 |
+| 短按抗抖 | `app_main.c`（`s_release_guard_ms` / `s_fwd_rel_us[]` / `s_fwd_press_us[]`，`mx.gd`） | 按位；按下侧默认 20 ms，松开侧默认 **0（关）**，`mx.gd <press> <rel>` 可开 |
 | 运动引擎/让路窗口 | `components/makcu_mouse/src/makcu_mouse.c` | `s_btn_guard_until_us`（2 ms） |
 | sumv / AIM 参数 | `components/makcu_sumv/**`、`mx.mv` | `speed` 决定一切 |
 | 右片下行（OUT）队列 | `app_right/main/app_main.c`、`makcu_hidhost.c` | 16 深 + 池空快路径 |
@@ -399,8 +414,8 @@ PC 侧应看到 `USB\VID_320F&PID_706E` 复合设备 + MI_00/MI_01 + 5 个集合
 | `mx.bo` | 见过的按键位 OR（侧键位 0x08 / 0x10） |
 | `mx.ei` | 最后一条直送的报告字节 |
 | `mx.hs` / `mx.hq` | 发送被接受 / 传输完成次数 |
-| `mx.gd <0..50>` | 短按抗抖（真实鼠标释放守卫）窗口，单位 ms；**0 = 关闭**（一个按键都不少，代价是微动抖动可能表现为两次点击）。回显生效值，写 NVS 之外不持久 |
-| `mx.gd`（无参数） | 只回显当前窗口值 |
+| `mx.gd [press [rel]]` | 短按抗抖窗口（真实鼠标透传路径）：`press` = 按下侧（默认 20 ms），`rel` = 松开侧最小脉宽（默认 **0 = 关**）。**`0` = 两侧全关**（一个按键都不少，代价是微动抖动可能表现为两次点击）。回显 `press,rel`，不写 NVS |
+| `mx.gd`（无参数） | 回显当前两个窗口值 `press,rel` |
 
 > **2026-11-12 排障记录：改了 HID 发送路径导致控制台任务卡死时怎么救**
 > 症状：HID 侧克隆设备仍正常枚举，但 `km.MAKCU` 不再应答、`mx.dl` 进不了下载模式。
@@ -1171,6 +1186,7 @@ python tools\aim_stress.py --mode concurrent --seconds 20 --rate 200 --btn-rate 
 | 2026-11-12 | 按键"永不丢失"三约束（D46）；**厂商通道独立化 + 五根因（D47）**；`mx.vd`/`mx.ox` 扩展；`flash_left_auto.ps1`；174→ 回归扩到 124 例 |
 | 2026-11-13 | 订阅×点击冲突修复（D48 P1）：主持位窗口按位、退订回灌、事件推送离开热路径；并发零丢失验收；事件队列 8→64 |
 | **2026-11-14** | **事件通知延迟 6–8 ms → 0.12 ms**（`km_evttx` + task notification）；全量 **128 + 46 = 174 例**全绿；本文重写 |
+| **2026-11-15** | **D49：按键状态机帧分类（键盘帧不再投影成鼠标按钮）+ 按位抗抖**；离线模型 46 → **86 例**；发布版 339,104 B / 台架版 355,856 B；真机 **128 passed 全绿（已上机验收）** |
 
 ---
 

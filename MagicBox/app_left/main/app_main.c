@@ -893,14 +893,23 @@ static void lat_sample(int64_t t0, int64_t t1)
  * 状态"用来判断是否需要把一条零位移报告发出去。 */
 static uint8_t s_mute_btn;
 /* 2026-11-13（P1-5）：短按抗抖的"上次转发按键 / 松开时刻"提到文件作用域，
- * 退订按键事件时可以回灌一次（原来留在函数内 static 里，退订后第一击会被误吞）。 */
-static uint8_t  s_fwd_btn_last;
-static uint32_t s_fwd_release_us;
-static bool     s_fwd_have_release;   /* 还没松开过 → 第一次按下永远放行 */
-/* 短按抗抖：松开后这段时间内的再次按下视为微动抖动（真实鼠标透传路径用）。
+ * 退订按键事件时可以回灌一次（原来留在函数内 static 里，退订后第一击会被误吞）。
+ * 2026-11-15（D49）：抗抖改成**按位**——窗口与时刻都按 5 个键位各存一份，
+ * 一次右键松开不再给左键开禁按窗口，回退也只回退被吞的那几位。 */
+static uint8_t  s_fwd_btn_last;          /* 线上意图（最近一次真正转发的按键位） */
+static uint32_t s_fwd_rel_us[5];         /* 每个键位最近一次松开时刻（0 = 还没松过） */
+static uint32_t s_fwd_press_us[5];       /* 每个键位最近一次按下时刻（0 = 还没按过） */
+/* 短按抗抖（按下侧）：同一键位松开后这段时间内的再次按下视为微动抖动。
  * 2026-11-12：改为运行期可调（台架 `mx.gd <ms>`，0..50）。默认仍是硬件实测过的
  * 20 ms；设 0 = 关闭守卫（"一个按键都不许少"模式，代价是微动抖动可能表现为两次点击）。 */
 static volatile uint32_t s_release_guard_ms = 20u;
+/* 短按抗抖（松开侧，D49）：按下后这段时间内的"松开"视为触点回弹，先保持按下。
+ * 旧实现只拦按下侧，press→(几 ms)release→press 这种假松开会原样上线，
+ * PC 端观感就是"按下后立刻抬起"。
+ * **默认关闭**（0）：台架注入的两次报告间隔常常 <6 ms，开了会把台架的成对边沿吞掉，
+ * 而真实人手点击的按下时长 ≥30 ms，本来也用不上这一侧。现场若仍见到"按下即抬起"，
+ * 用 `mx.gd 20 6` 打开（代价：松开侧多 ≤6 ms 延迟；设 `mx.gd 0` 两侧全关）。 */
+static volatile uint32_t s_release_min_us = 0u;
 static uint32_t s_btn_bounce_swallowed;
 /* 诊断计数：看清"报告有没有从左片进来" */
 static uint32_t s_link_frames;        /* 进入 link_report_to_mouse 的帧数 */
@@ -908,6 +917,9 @@ static uint32_t s_link_btn_nonzero;   /* 其中按键字节非 0 的帧数 */
 static uint32_t s_link_btn_changes;
 /* 2026-11-12 诊断（0x45 追加）：为什么"帧进来了但没产生按键变化" */
 static uint32_t s_link_btn_same;      /* 按键字节与上一帧相同的帧数（重复帧） */
+/* 2026-11-15（D49）：按键状态机只许看鼠标帧，这两项把"被挡在门外"的帧记清楚。 */
+static uint32_t s_link_kbd_frames;    /* 键盘帧（键盘 IN / 8 字节 boot 报告） */
+static uint32_t s_link_other_frames;  /* 其它非鼠标端点帧（短厂商通知等） */
 static uint32_t s_fwd_reports;        /* 真正转发给 HID 的鼠标报告数 */
 static uint32_t s_rx_ovf;             /* 控制口 UART 接收溢出次数（会吞掉半条命令） */
 static uint32_t s_lf_drop;            /* mx.lf 环回发送重试 5 次仍失败（帧丢失） */
@@ -972,10 +984,13 @@ static void btn_evt_ctl_adapter(bool enable, uint8_t mask, bool push, bool consu
     btn_evt_ctl(enable, mask, push, consume);
     if (!enable) {
         /* 2026-11-13（P1-5）退订回灌：订阅期间被过滤/消费过的位会留在抗抖基准里，
-         * 不回灌会让退订后的第一击被判成"没有变化"、或被抗抖当作抖动吞掉。 */
+         * 不回灌会让退订后的第一击被判成"没有变化"、或被抗抖当作抖动吞掉。
+         * 2026-11-15（D49）：窗口改成按位，回灌就是把每键位时刻清零。 */
         s_fwd_btn_last = (uint8_t)(s_mute_btn & 0x1F);
-        s_fwd_release_us = 0;
-        s_fwd_have_release = false;
+        for (uint8_t b = 0; b < 5; b++) {
+            s_fwd_rel_us[b] = 0;
+            s_fwd_press_us[b] = 0;
+        }
     }
 }
 
@@ -993,12 +1008,118 @@ static bool sumv_start_adapter(int16_t dx, int16_t dy, uint16_t speed,
     return makcu_sumv_start(&req);
 }
 
+/* ------------------- 帧分类（D49，2026-11-15）
+ *
+ * 0xA2 一条通道同时搬鼠标报告与键盘报告，靠 payload[0] 的 ep 区分。以前入口只判
+ * `len < 4`，于是键盘的 8 字节 boot 报告（byte0 = **修饰键位图**）被当成鼠标按键字节：
+ *
+ *   LCtrl 0x01 → 左键    LShift 0x02 → 右键    LAlt 0x04 → 中键
+ *   LGUI  0x08 → 侧后    RCtrl  0x10 → 侧前
+ *
+ * 后果是"按住 Ctrl 点右键 → PC 收到左键"、"键盘帧把抗抖基准清零 → 左键按下后立刻抬起"。
+ * 现在先分类再谈按键语义：判不出来的一律只转发、绝不进按键状态机（失败即安全）。
+ */
+static uint8_t clone_mouse_ep(void)
+{
+    const makcu_clone_t *c = makcu_clone_get();
+    if (c != NULL && c->if_count > 0 && c->ifs[0].valid && c->ifs[0].ep_in != 0u) {
+        return c->ifs[0].ep_in;
+    }
+    return 0x81u;
+}
+
+static uint8_t clone_kbd_ep(void)
+{
+    const makcu_clone_t *c = makcu_clone_get();
+    if (c != NULL && c->if_count > 1 && c->ifs[1].valid && c->ifs[1].ep_in != 0u) {
+        return c->ifs[1].ep_in;
+    }
+    return 0x82u;
+}
+
+/* 键盘帧 = 键盘端点上、8 字节 boot 报告。带 report ID 或换长度一律落到"其它"，
+ * 仍然只转发——宁可少认，绝不误认成鼠标。 */
+static bool link_frame_is_keyboard(uint8_t ep, const uint8_t *data, uint16_t len)
+{
+    (void)data;
+    return ep == clone_kbd_ep() && len == 8u;
+}
+
+/* 鼠标帧 = 键盘端点以外的一切（含台架 `mx.lf` 注入用的任意 ep，例如 0x02）。
+ * 真机上只有**键盘**报告会和鼠标报告共用 0xA2 且字节语义完全不同，
+ * 所以隔离键盘端点即可；键盘端点上的 8 B / 64 B 帧已在上面分流掉了。 */
+static bool link_frame_is_mouse(uint8_t ep)
+{
+    return ep != clone_kbd_ep();
+}
+
+/* 按键"线上意图"记账：基准 + 每个键位的按下/松开时刻。
+ * sumv 分支与普通分支共用同一份，避免基准在 sumv 期间停摆后把别的键位发出去（D49）。 */
+static void btn_intent_note(uint8_t btn_now)
+{
+    const uint32_t now_us = (uint32_t)esp_timer_get_time();
+    const uint32_t t = (now_us != 0u) ? now_us : 1u;   /* 0 保留给"从未发生" */
+    const uint8_t prev = (uint8_t)(s_fwd_btn_last & 0x1F);
+    const uint8_t pressed = (uint8_t)(btn_now & (uint8_t)~prev);
+    const uint8_t released = (uint8_t)(prev & (uint8_t)~btn_now);
+    for (uint8_t b = 0; b < 5; b++) {
+        const uint8_t m = (uint8_t)(1u << b);
+        if ((pressed & m) != 0) {
+            s_fwd_press_us[b] = t;
+        }
+        if ((released & m) != 0) {
+            s_fwd_rel_us[b] = t;
+        }
+    }
+    s_fwd_btn_last = (uint8_t)(btn_now & 0x1F);
+}
+
 static void link_report_to_mouse(uint8_t ep, const uint8_t *data, uint16_t len)
 {
     if (data == NULL || len < 4) {
         return;
     }
     mt_tap(ep, data, len);          /* mx.mt: record what the HID layer is about to get */
+    /* D49：键盘帧在**任何**按键语义之前分流。修饰键位图与鼠标按键位同构，
+     * 一旦往下走就会被投影成左/右/中/侧键（串键、假按下、假抬起）。 */
+    if (link_frame_is_keyboard(ep, data, len)) {
+        s_link_kbd_frames++;
+        s_fwd_reports++;
+        makcu_hiddev_passthrough(ep, data, len);
+        return;
+    }
+    /* 2026-11-12（R1.3 根因）：厂商帧（键盘端点 / 64 B / 首字节 0x04）走独立分支，
+     * **绝不进入**下面任何一条鼠标路径：
+     *   - 短按抗抖会把 byte0 低 5 位改写（0x04 & ~0x1F = 0x00）→ 报告 ID 被抹掉
+     *     → 主机错位一个字节解析 → HECATE 把 DPI 读成 200；
+     *   - s_mute_btn / s_last_buttons / s_btn_or 也会被 0x04 污染，进而影响按键状态机。
+     * 实测证据：in82=254 / vin=254 / vf=246，正好 8 条在这个函数里被改写。
+     * 2026-11-15（D49）：**提到 sumv 分支之前**——以前 sumv 活跃时厂商帧会落进
+     * sumv 分支被当成鼠标报告（0x04 → 中键位）。 */
+    if (ep == clone_kbd_ep() && mouse_vendor_is_vendor_port(data, len)) {
+        s_in82++;
+        for (uint8_t i = 0; i < 8u && i < len; i++) { s_in82_last[i] = data[i]; }
+        s_vport_n++;
+        if (len != 64u) {
+            /* 设备主动通知：长度不是 64 B。原样转发，不参与鼠标解码。 */
+            s_vport_nov++;
+            s_vport_last_len = (uint8_t)((len > 255u) ? 255u : len);
+            for (uint8_t i = 0; i < 8u; i++) {
+                s_vport_last[i] = (i < len) ? data[i] : 0;
+            }
+        }
+        vchan_on_dev_in(ep, data, len);      /* 驱动记账（64 B 帧才算往返） */
+        s_fwd_reports++;
+        makcu_hiddev_passthrough(ep, data, len);
+        return;
+    }
+    /* D49：其余非鼠标端点（判不出类别的短帧等）只转发，绝不碰按键状态。 */
+    if (!link_frame_is_mouse(ep)) {
+        s_link_other_frames++;
+        s_fwd_reports++;
+        makcu_hiddev_passthrough(ep, data, len);
+        return;
+    }
     if (makcu_sumv_active()) {
         /* sumv 独占运动权：真实鼠标的 X/Y 丢掉，按键与滚轮照常透传。
          * 只在 (按键变化 | 滚轮 | pan) 时才发——否则真实鼠标 540-900 条/秒的
@@ -1021,6 +1142,7 @@ static void link_report_to_mouse(uint8_t ep, const uint8_t *data, uint16_t len)
             return;
         }
         btn = btn_evt_filter(btn);          /* 订阅即消费：被订阅的位不转发 */
+        btn_intent_note(btn);               /* D49：sumv 分支也维护同一份基准 */
         const bool btn_changed = (btn != s_mute_btn);
         const bool aux = (wheel != 0) || (has_pan && pan != 0);
         if (btn_changed) {
@@ -1070,7 +1192,8 @@ static void link_report_to_mouse(uint8_t ep, const uint8_t *data, uint16_t len)
         }
     }
     /* 诊断：统计从左片入口进来的每一帧，以及其中带按键/按键变化的帧数。
-     * 用来判断"物理点击有没有到达左片"，而不是靠猜。 */
+     * 用来判断"物理点击有没有到达左片"，而不是靠猜。
+     * 2026-11-15（D49）：只有**鼠标帧**能走到这里（键盘/厂商/其它帧已在上面分流）。 */
     s_link_frames++;
     /* 记录最近一帧（任意端点）的 ep/len/前 6 字节，供 0x45 读回 */
     s_link_last_ep = ep;
@@ -1078,30 +1201,7 @@ static void link_report_to_mouse(uint8_t ep, const uint8_t *data, uint16_t len)
     for (uint8_t bi = 0; bi < 8; bi++) {
         s_link_last_data[bi] = (bi < len) ? data[bi] : 0;
     }
-    /* 2026-11-12（R1.3 根因）：厂商帧（EP0x82 / 64 B / 首字节 0x04）走独立分支，
-     * **绝不进入**下面任何一条鼠标路径：
-     *   - 短按抗抖会把 byte0 低 5 位改写（0x04 & ~0x1F = 0x00）→ 报告 ID 被抹掉
-     *     → 主机错位一个字节解析 → HECATE 把 DPI 读成 200；
-     *   - s_mute_btn / s_last_buttons / s_btn_or 也会被 0x04 污染，进而影响按键状态机。
-     * 实测证据：in82=254 / vin=254 / vf=246，正好 8 条在这个函数里被改写。 */
-    if (ep == 0x82 && mouse_vendor_is_vendor_port(data, len)) {
-        s_in82++;
-        for (uint8_t i = 0; i < 8u && i < len; i++) { s_in82_last[i] = data[i]; }
-        s_vport_n++;
-        if (len != 64u) {
-            /* 设备主动通知：长度不是 64 B。原样转发，不参与鼠标解码。 */
-            s_vport_nov++;
-            s_vport_last_len = (uint8_t)((len > 255u) ? 255u : len);
-            for (uint8_t i = 0; i < 8u; i++) {
-                s_vport_last[i] = (i < len) ? data[i] : 0;
-            }
-        }
-        vchan_on_dev_in(ep, data, len);      /* 驱动记账（64 B 帧才算往返） */
-        s_fwd_reports++;
-        makcu_hiddev_passthrough(ep, data, len);
-        return;
-    }
-    if (ep == 0x81 && len >= 1u) {
+    if (ep == clone_mouse_ep() && len >= 1u) {
         const makcu_clone_t *cc = makcu_clone_get();
         const uint16_t rep_len = (cc != NULL && cc->valid) ? cc->report_len : 0u;
         if ((data[0] & 0xE0u) != 0u) {          /* 保留位被用上：可能是设备→主机的信号 */
@@ -1136,19 +1236,49 @@ static void link_report_to_mouse(uint8_t ep, const uint8_t *data, uint16_t len)
      * 松开却落在瞄准窗口内 —— 屏蔽层判定“没变化”直接丢弃，而引擎注入的每条报告都带着
      * 缓存的 s_buttons=按下，PC 就卡在按住（左键一直射击）。 */
     s_mute_btn = (uint8_t)(fwd[0] & 0x1F);
-    /* 短按抗抖（真实鼠标透传）：
-     * 微动在"很快的一下"时会出现 松开→几毫秒内又按下，PC 端就像按了两次。
-     * 规则：松开后 RELEASE_GUARD_MS 内的**再次按下**直接吞掉（人不可能这么快连按），
-     * 其余变化一律原样转发，不引入任何延迟。 */
+    /* 短按抗抖（真实鼠标透传）——**按位**处理（D49，2026-11-15）：
+     *
+     * 旧实现是整字节回退（`btn_now = s_fwd_btn_last`）。只要基准比线上"多"一位，
+     * 回退就会把**别的键位**发出去 —— 点右键变成左键（Ctrl 位 0x01 = 左键位）。
+     * 基准一旦漂移（键盘帧被当鼠标帧、sumv 分支绕过记账）就必然串键。
+     *
+     * 现在两条规则都按位、按位存时刻：
+     *   ① 按下侧：同一键位"刚松开又按下"= 微动回弹 → 只清这一位（`mx.gd` 管，0 = 关）；
+     *   ② 松开侧：按下后极短时间内的"松开"= 触点回弹 → 先保持按下，等真正的松开。
+     *      旧实现只拦按下，press→(3 ms)release→press 的假松开会原样上线，
+     *      PC 端观感就是"按下后立刻抬起"。
+     */
     {
         const uint32_t now_us = (uint32_t)esp_timer_get_time();
+        const uint8_t prev = (uint8_t)(s_fwd_btn_last & 0x1F);
         uint8_t btn_now = (uint8_t)(fwd[0] & 0x1F);
-        bool swallowed = false;
-        const uint8_t pressed = (uint8_t)(btn_now & (uint8_t)~s_fwd_btn_last);
-        if (pressed != 0 && s_release_guard_ms != 0 && s_fwd_have_release
-                && (uint32_t)(now_us - s_fwd_release_us) < (s_release_guard_ms * 1000u)) {
-            /* 抖动：保留旧位，等于把这次"按下"吞掉（必要时先拷一份，别改原始缓冲） */
-            btn_now = s_fwd_btn_last;
+        uint8_t pressed = (uint8_t)(btn_now & (uint8_t)~prev);
+        const uint8_t released = (uint8_t)(prev & (uint8_t)~btn_now);
+        uint8_t suppressed = 0;
+
+        if (pressed != 0 && s_release_guard_ms != 0) {
+            const uint32_t window = s_release_guard_ms * 1000u;
+            for (uint8_t b = 0; b < 5; b++) {
+                const uint8_t m = (uint8_t)(1u << b);
+                const uint32_t rel = s_fwd_rel_us[b];
+                if ((pressed & m) != 0 && rel != 0u && (uint32_t)(now_us - rel) < window) {
+                    suppressed |= m;
+                }
+            }
+        }
+        if (released != 0 && s_release_guard_ms != 0 && s_release_min_us != 0u) {
+            for (uint8_t b = 0; b < 5; b++) {
+                const uint8_t m = (uint8_t)(1u << b);
+                const uint32_t press = s_fwd_press_us[b];
+                if ((released & m) != 0 && press != 0u &&
+                        (uint32_t)(now_us - press) < s_release_min_us) {
+                    suppressed |= m;
+                }
+            }
+        }
+        if (suppressed != 0) {
+            /* 只回退被吞的那几位：按下位保持"未按"、野松开位保持"按下"。 */
+            btn_now = (uint8_t)((btn_now & (uint8_t)~suppressed) | (prev & suppressed));
             if (fwd != fwd_buf) {
                 const uint16_t n = (len > (uint16_t)sizeof(fwd_buf))
                         ? (uint16_t)sizeof(fwd_buf) : len;
@@ -1158,19 +1288,14 @@ static void link_report_to_mouse(uint8_t ep, const uint8_t *data, uint16_t len)
             }
             fwd_buf[0] = (uint8_t)((fwd_buf[0] & (uint8_t)~0x1F) | (btn_now & 0x1F));
             s_btn_bounce_swallowed++;
-            swallowed = true;
         }
-        if ((s_fwd_btn_last & (uint8_t)~btn_now) != 0) {
-            s_fwd_release_us = now_us;      /* 记录松开时刻 */
-            s_fwd_have_release = true;
-        }
-        if (btn_now != s_fwd_btn_last || swallowed) {
+        if (btn_now != prev || suppressed != 0) {
             /* 每一次真实按键变化（含被抗抖吞掉的那次）都留痕，供 0x44 读回 */
             btn_trace_add((uint8_t)(data[0] & 0x1F), btn_now,
-                    swallowed ? BTN_TRACE_SRC_SWALLOW : BTN_TRACE_SRC_PASS);
+                    (suppressed != 0) ? BTN_TRACE_SRC_SWALLOW : BTN_TRACE_SRC_PASS);
         }
-        s_fwd_btn_last = btn_now;
         s_mute_btn = btn_now;
+        btn_intent_note(btn_now);       /* 基准 + 每键位时刻，单一入口 */
     }
     /* S1：真实报告的按键字节同步进 mouse 层状态（不发送、不计审计）。
      * 不做这件事时，引擎注入携带的 s_buttons 与真实报告字节不一致，
@@ -1196,14 +1321,6 @@ static void link_report_to_mouse(uint8_t ep, const uint8_t *data, uint16_t len)
     /* If the clone declares the same 5-byte 12-bit layout the right chip forwards,
      * pass the payload through untouched: no 12->8 conversion, no precision loss. */
     const int64_t lat_t0 = esp_timer_get_time();
-    if (ep == 0x82) {
-        s_in82++;
-        for (uint8_t i = 0; i < 8u && i < len; i++) { s_in82_last[i] = data[i]; }
-        /* 厂商 IN（64 B / 0x04）另记一份，判定仍由驱动给出；转发路径不变。 */
-        if (mouse_vendor_is_vendor_frame(data, len)) {
-            vchan_on_dev_in(ep, data, len);
-        }
-    }
     if (makcu_clone_wants_raw_report() && len >= 5) {
         /* Forward the report at its full length: the mouse we cloned may carry
          * more than buttons+XY (the G3M PRO sends 7 bytes: 5 buttons, X16, Y16,
@@ -1344,16 +1461,18 @@ static int handle_debug_line(const char *line, int len)
     }
     if (len >= 5 && line[3] == 'l' && line[4] == 's') {
         /* frames, ep0_requests, ep0_in, ep0_out, hid_chunks, a3, unknown,
-         * ep0_starts, ep0_ends, injected, dropped, rx_bytes */
+         * ep0_starts, ep0_ends, injected, dropped, rx_bytes,
+         * kbd_frames, other_frames          （后两项 2026-11-15 D49 追加） */
         const makcu_link_stats_t st = makcu_link_stats();
-        char out[128];
-        const int n = snprintf(out, sizeof(out), "%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u",
+        char out[160];
+        const int n = snprintf(out, sizeof(out), "%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u",
                                (unsigned)st.frames, (unsigned)st.ep0_requests,
                                (unsigned)st.ep0_in, (unsigned)st.ep0_out,
                                (unsigned)st.hid_chunks, (unsigned)st.a3_frames,
                                (unsigned)st.unknown, (unsigned)st.ep0_starts,
                                (unsigned)st.ep0_ends, (unsigned)st.reports_injected,
-                               (unsigned)st.reports_dropped, (unsigned)st.rx_bytes);
+                               (unsigned)st.reports_dropped, (unsigned)st.rx_bytes,
+                               (unsigned)s_link_kbd_frames, (unsigned)s_link_other_frames);
         makcu_reply(out, (size_t)n);
         return 1;
     }
@@ -1531,32 +1650,45 @@ static int handle_debug_line(const char *line, int len)
         return 1;
     }
     if (len >= 5 && line[3] == 'g' && line[4] == 'd') {
-        /* mx.gd            -> 读当前窗口（回显 ms）
-         * mx.gd <0..50>    -> 设置；0 = 关闭守卫，一个按键都不许少
+        /* mx.gd                      -> 读当前窗口（回显 "press_ms,rel_ms"）
+         * mx.gd <0..50>              -> 只设按下侧窗口；0 = 关闭两侧守卫
+         * mx.gd <0..50> <0..50>      -> 依次设按下侧 / 松开侧（D49 新增）
          * 只影响真实鼠标透传路径；改完立即生效，不写 NVS、不跨断电保留。 */
         /* 注意：`line` 不是 NUL 结尾（见 HANDOVER §14.26 的坑），必须按 len 有界扫描，
          * 否则会把上一条命令的残留字节当成参数（"mx.gd 0" 后面跟着上次的 "15" → 读到 5）。 */
-        unsigned v = 0;
-        bool any = false;
-        for (int i = 5; i < len; i++) {
+        unsigned v[2] = { 0, 0 };
+        bool any[2] = { false, false };
+        int slot = 0;
+        for (int i = 5; i < len && slot < 2; i++) {
             const char ch = line[i];
             if (ch == ' ' || ch == '\t') {
-                if (any) { break; }
+                if (any[slot]) { slot++; }
                 continue;
             }
             if (ch < '0' || ch > '9') { break; }
-            v = v * 10u + (unsigned)(ch - '0');
-            any = true;
+            v[slot] = v[slot] * 10u + (unsigned)(ch - '0');
+            any[slot] = true;
         }
-        if (any) {
-            if (v > 50u) {
+        for (int i = 0; i < 2; i++) {
+            if (!any[i]) { continue; }
+            if (v[i] > 50u) {
                 makcu_reply("e", 1);
                 return 1;
             }
-            s_release_guard_ms = (uint32_t)v;
         }
-        char out[8];
-        const int n = snprintf(out, sizeof(out), "%u", (unsigned)s_release_guard_ms);
+        if (any[0]) {
+            s_release_guard_ms = (uint32_t)v[0];
+        }
+        if (any[1]) {
+            s_release_min_us = (uint32_t)v[1] * 1000u;
+        }
+        if (any[0] && s_release_guard_ms == 0u) {
+            s_release_min_us = 0u;      /* 0 = 两侧全关，"一个键都不许少" */
+        }
+        char out[16];
+        const int n = snprintf(out, sizeof(out), "%u,%u",
+                               (unsigned)s_release_guard_ms,
+                               (unsigned)(s_release_min_us / 1000u));
         makcu_reply(out, (size_t)n);
         return 1;
     }

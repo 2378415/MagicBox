@@ -498,19 +498,26 @@ void makcu_mouse_init(void)
 }
 
 /* 按键最高优先级：立刻更新状态并补一条零位移报告，不参与 pending 合并、不被去抖丢弃。
- * 与引擎注入互斥，所以输出顺序严格是“旧状态 → 新状态”，不会有人把新状态盖回去。 */
+ * 与引擎注入互斥，所以输出顺序严格是“旧状态 → 新状态”，不会有人把新状态盖回去。
+ * 2026-11-15（D49）：这里必须置 `s_btn_pending` ——
+ *   ① hiddev 的引擎报告对齐（`makcu_hiddev_report()`）靠它区分"显式按键帧"与"运动帧"，
+ *      不置位会把这次真实点击当成"没人请求的按键变化"改写掉；
+ *   ② `emit()` 的审计靠它区分"请求过的变化"与"多发"，不置位会让 `0x3F.extra` 虚高。 */
 #define MAKCU_BTN_GUARD_US 2000u
 void makcu_mouse_button_priority(uint8_t buttons)
 {
     if (s_lock != NULL) {
         xSemaphoreTakeRecursive(s_lock, portMAX_DELAY);
     }
-    /* P1：瞄准期真实按键走的就是这条路径，以前不计数 → 审计把真实点击误算成"多发" */
     if ((uint8_t)(buttons & 0x1Fu) != s_buttons) {
         s_btn_in_chg++;
     }
     s_buttons = (uint8_t)(buttons & 0x1Fu);
+    s_btn_pending = true;
     emit(0, 0, 0);
+    /* 这一帧已经把"按下/松开"送到下层了；若字节与上一条相同（重复上报），
+     * emit() 不会清 pending，这里兜底清掉，避免后续引擎帧被误当成显式请求。 */
+    s_btn_pending = false;
     s_btn_guard_until_us = esp_timer_get_time() + MAKCU_BTN_GUARD_US;
     if (s_lock != NULL) {
         xSemaphoreGiveRecursive(s_lock);

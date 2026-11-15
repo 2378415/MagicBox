@@ -102,7 +102,7 @@ adb shell screencap -p /sdcard/a.png; adb pull /sdcard/a.png .
 | `widget/DetectionOverlayView` | 锁定框、预测点绘制 |
 | `widget/CalibView` + `ui/calib/AimCalibActivity` | 横屏放大校准准心 |
 | `ui/aim/AimFragment` | 瞄准页（参数、布防、热键、统计、日志、导入导出、页尾「保存配置」） |
-| `ui/preview/PreviewFragment` | 预览页，喂检测结果给 AimController |
+| `ui/preview/PreviewFragment` | 预览页，喂检测结果给 AimController；右上角三色状态徽标（2026-11-15） |
 | `ui/keys/KeyboardMouseFragment` | 键鼠页（手动 SUMV、三档 mode、0x38/0x42 诊断） |
 | `ui/yolo/YoloFragment` | 模型与阈值配置 |
 | `MainActivity` | Tab 容器 + 矩形编辑入口 + 音量键触发 |

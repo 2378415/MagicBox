@@ -16,6 +16,10 @@
     <string name="preview_device">设备</string>
     <string name="preview_device_unknown">未连接</string>
     <string name="preview_mode_placeholder">—</string>
+    <!-- 预览页右上角状态徽标（2026-11-15） -->
+    <string name="preview_badge_aiming">自瞄中</string>
+    <string name="preview_badge_armed">已布防</string>
+    <string name="preview_badge_disarmed">未布防</string>
 
     <!-- yolo -->
     <string name="yolo_title">推理参数</string>

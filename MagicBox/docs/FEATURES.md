@@ -1,8 +1,10 @@
 # MAKCU 双芯片盒子 · 现有功能文档
 
-> 版本：2026-11-12（左片台架固件 355,040 B / 发布版 337,664 B，右片 292,624 B；真机回归 **128 passed**，离线模型 **46 passed**，合计 174 例全绿）
+> 版本：2026-11-15（左片台架固件 355,856 B / 发布版 339,104 B，右片 292,624 B；真机回归 **128 passed**，离线模型 **86 passed**，合计 214 例全绿）
 > 范围：只描述**当前已实现且可验证**的功能。历史改造与失败尝试见 `docs/30-decisions.md` D46
 > 与 `verification/report/2026-11-12-button-event-channel-attempt.md`。
+> D49（2026-11-15）：**按键状态机只处理鼠标帧**（键盘 boot 报告的修饰键位图不再被投影成左/右/中/侧键），
+> 抗抖改为按位回退 + 每键位独立窗口；详见 `docs/30-decisions.md` D49。
 
 ---
 
@@ -145,7 +147,7 @@
 | 类别 | 内容 |
 |---|---|
 | 硬件回归 `verification/regress` | **124 例**：文本/隐藏 opcode 协议、真实报告解析、克隆描述符、链路桥、键盘与右片帧、SUMV 9 例、按键完整性 T1–T10、按键顺序 2 例、**按键 × SUMV 并发 3 例（70 次/秒零丢失）** |
-| 离线模型 `verification/model` | **46 例**：贝塞尔路径、按键队列模型、按钮事件通道调度模型、克隆描述符、右片回复、步进引擎 |
+| 离线模型 `verification/model` | **86 例**：贝塞尔路径、按键队列模型、按钮事件通道调度模型、**帧分类/按位抗抖/提交意图模型（D49，40 例）**、克隆描述符、右片回复、步进引擎 |
 | PC 侧真值校验 | `tools/verify_buttons_usb.py`：USBPcap 抓 PC 侧边沿 ↔ 固件 `wire_chg` 对账；`--inject bin`（0x32 二进制注入）、`--gap-us`（精确速率）、`--binary-sumv`（并发负载） |
 | 压力 / 轨迹 / 标定 | `tools/aim_stress.py`、`tools/trace_motion.py`、`tools/px_cal.py`（增益 1.25 px/count）、`tools/p0_baseline.py`、`tools/trace_opcodes.py` |
 | 报告 | `verification/report/`：像素增益标定、按键事件通道尝试与边界扫描（65/70/75/80 档） |

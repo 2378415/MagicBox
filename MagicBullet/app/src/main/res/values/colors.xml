@@ -11,4 +11,10 @@
     <color name="state_ok">#FF3FB950</color>
     <color name="state_warn">#FFD29922</color>
     <color name="state_error">#FFF85149</color>
+    <!-- 预览页右上角状态徽标（2026-11-15）：红=自瞄中 / 绿=已布防 / 黄=未布防 -->
+    <color name="badge_aiming">#FFE5484D</color>
+    <color name="badge_armed">#FF1F8A4C</color>
+    <color name="badge_disarmed">#FFF2C230</color>
+    <color name="badge_text_on_dark">#FFFFFFFF</color>
+    <color name="badge_text_on_light">#FF14181D</color>
 </resources>

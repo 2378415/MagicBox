@@ -1,6 +1,9 @@
 package com.magicbullet.capture.ui.preview;
 
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.magicbullet.capture.R;
@@ -103,6 +107,17 @@ public class PreviewFragment extends Fragment
     private AimRectView mAimRectView;
     private AimController mAim;
     private AimConfig mAimConfig;
+    /** 右上角状态徽标：红=自瞄中 / 绿=已布防 / 黄=未布防（2026-11-15）。 */
+    private TextView mAimBadge;
+    private int mBadgeMode = -1;
+    private static final long BADGE_TICK_MS = 200L;
+    private final Runnable mBadgeTick = new Runnable() {
+        @Override
+        public void run() {
+            updateAimBadge();
+            mHandler.postDelayed(this, BADGE_TICK_MS);
+        }
+    };
 
     public static PreviewFragment newInstance() {
         return new PreviewFragment();
@@ -130,11 +145,13 @@ public class PreviewFragment extends Fragment
         mDetail = view.findViewById(R.id.detail);
         mDevice = view.findViewById(R.id.device);
         mMode = view.findViewById(R.id.mode);
+        mAimBadge = view.findViewById(R.id.aim_badge);
 
         mSurface.getHolder().addCallback(this);
         view.findViewById(R.id.rescan).setOnClickListener(v -> mSession.rescan());
         bindRoiEditor(view);
         bindAimOverlay(view);
+        updateAimBadge();
 
         mInferExec = Executors.newSingleThreadExecutor();
         reloadDetectorIfNeeded();
@@ -153,6 +170,8 @@ public class PreviewFragment extends Fragment
         mSession.setListener(this);
         mSession.setFrameListener(this);
         mSession.setRawFrameListener(this);
+        updateAimBadge();
+        mHandler.post(mBadgeTick);
         // The YOLO tab may have committed new values while this fragment was stopped, so the
         // cached config instance is stale: reload before re-registering.
         mConfig.removeListener(this);
@@ -171,6 +190,7 @@ public class PreviewFragment extends Fragment
 
     @Override
     public void onStop() {
+        mHandler.removeCallbacks(mBadgeTick);
         mSession.setRawFrameListener(null);
         mSession.setFrameListener(null);
         mSession.setListener(null);
@@ -228,6 +248,49 @@ public class PreviewFragment extends Fragment
             mOverlay.post(() -> mOverlay.setAimTarget(aiming, hasTarget, left, top, right, bottom,
                     predictedX, predictedY, mAimConfig.showPredicted()));
         });
+    }
+
+    /**
+     * 右上角三色状态徽标（2026-11-15）：
+     * <ul>
+     *   <li><b>红 · 自瞄中</b>：已布防且瞄准闭环正在输出 AIM（锁定目标 + 热键生效）；</li>
+     *   <li><b>绿 · 已布防</b>：已布防，但当前没有在瞄（等热键 / 框内无目标）；</li>
+     *   <li><b>黄 · 未布防</b>：布防已关，热键点了也不会瞄。</li>
+     * </ul>
+     * 状态源是 {@link AimController}（与瞄准页同一个单例），所以瞄頁布防/热键切换这里立刻跟着变。
+     */
+    private void updateAimBadge() {
+        if (mAimBadge == null || mAim == null || !isAdded()) {
+            return;
+        }
+        final int mode = mAim.isAiming() ? 2 : (mAim.isArmed() ? 1 : 0);
+        if (mode == mBadgeMode) {
+            return;
+        }
+        mBadgeMode = mode;
+        final int bg;
+        final int fg;
+        final int text;
+        if (mode == 2) {
+            bg = R.color.badge_aiming;
+            fg = R.color.badge_text_on_dark;
+            text = R.string.preview_badge_aiming;
+        } else if (mode == 1) {
+            bg = R.color.badge_armed;
+            fg = R.color.badge_text_on_dark;
+            text = R.string.preview_badge_armed;
+        } else {
+            bg = R.color.badge_disarmed;
+            fg = R.color.badge_text_on_light;
+            text = R.string.preview_badge_disarmed;
+        }
+        Context context = requireContext();
+        mAimBadge.setText(text);
+        mAimBadge.setTextColor(ContextCompat.getColor(context, fg));
+        Drawable background = mAimBadge.getBackground();
+        if (background instanceof GradientDrawable) {
+            ((GradientDrawable) background.mutate()).setColor(ContextCompat.getColor(context, bg));
+        }
     }
 
     /** 配置变化（含从横屏校准页保存返回）→ 立刻刷新叠加框。 */

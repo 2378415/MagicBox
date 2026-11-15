@@ -217,7 +217,12 @@ uint8_t crc8(const uint8_t *p, size_t n) {
 - 按键**不合并、不抵消**：同值重复也照发（相邻同值在主机侧不构成新边沿），保证"每一次变化都上线"；
 - 队列满时**先等空位**（最多 10 ms，靠完成回调腾位），等不到才计 `btn_overflow` —— 宁可晚一条，不丢一条；
 - `makcu_mouse_button_priority()` 生效后 2 ms 内引擎不提交运动报告（让路窗口 `MAKCU_BTN_GUARD_US`）；
-- 真实鼠标透传路径有**短按抗抖窗口**（默认 20 ms，`mx.gd <0..50>` 可调，0 = 关闭）：松开后窗口内的"再次按下"视为微动回跳被吞，计数进 `0x45` 的第 4 字段；要"一个按键都不少"就把窗口设 0。
+- 真实鼠标透传路径有**短按抗抖**（2026-11-15 D49 起**按位**生效）：
+  - 按下侧窗口默认 20 ms（`mx.gd <press>`），只吞**同一键位**"松开后窗口内的再次按下"，计数进 `0x45` 的第 4 字段；
+  - 松开侧最小脉宽默认 **0（关）**（`mx.gd <press> <rel>` 打开，如 `mx.gd 20 6`）：开时按下后 <`rel` 的"松开"视为触点回弹，先保持按下；
+  - `mx.gd 0` = 两侧全关，"一个按键都不少"。
+  - 回退只作用于**被判定为抖动的那几位**（不再整字节回退），窗口与时刻也按 5 个键位各存一份 —— 右键抖动不会产生左键位。
+- **帧分类（D49）**：`0xA2` 里只有**鼠标端点**（克隆描述符的鼠标 IN，通常 `0x81`；台架注入可用 `ep 0`）会进上面的按键状态机；键盘 8 字节 boot 报告（`ep 0x82`，byte0 是**修饰键位图**）、厂商 64 字节帧（`ep 0x82` / `[0]==0x04`）与其它端点帧一律**只转发**。判不出类别 = 只转发（失败即安全）。
 
 实测（10 s 压力：AIM 约 1600 条 + 按键 128 条）：`btn_in=128 / btn_sent=128`（**0 丢失**）、
 `wait_max_us ≈ 221`、`motion_dropped ≈ 205`（每次按键顺带清掉 1–2 条陈旧运动，闭环会补）。
@@ -698,12 +703,12 @@ enabled,mask,pending,cur,last_fwd,seq,count,overflow,auto_released,push,consume
 | `mx.dv` | 设备描述符 + 配置描述符原始 hex + mount 状态 |
 | `mx.ox` | **厂商通道主探针**（2026-11-12 扩展，前缀 5 字段保持历史兼容）：`<out>,<ok>,<in82>,ack=<rc>,<dropped>,<最后一条 OUT 前 8B>,in82=<最后一条 0x82 前 8B>,drv=<驱动>,vf=,vout=,vin=,vdup=,vdpi=,vch=<tx>/<fail>/<rx>,osent=,ofail=,**evdrop=**,**evsent=**,venq=<入队>/<发出>/<丢弃>/<深度>,v82=<厂商端口帧>/<非 64B>/<长度>,vl=/va=/vmax=/vp50=/vp99=（µs）,v82h=<8B>,b81=<保留位>/<异常长度>/<长度>/<8B>`。判据：`vf==vin`（没被改写/丢弃）、`venq` 丢弃=0、`ofail=0`、`evdrop=0`（事件队列满丢弃数）、`evsent` 与 `mx.ev` 的 `head_seq` 相等（事件帧生成即发出）、`evlat=<last>/<avg>/<max>`（事件延迟，µs；2026-11-14 起典型 **~120 µs**） |
 | `mx.vd` | **厂商帧整帧取样器**（不需要 USBPcap）：最近 8 条互不相同的 OUT / IN 帧，格式 `[cmd]前 8B$校验和 x次数`；末尾 `ctl=<总数>: G/S<实例>:rid/ty/len x次数` 是控制端点请求计数。同一 cmd 出现两组不同校验和 = 设备状态变了；只有 `S1:ty2` = 对端只用控制端点 SET_REPORT（HECATE 实测如此） |
-| `mx.gd [0..50]` | 真实鼠标**短按抗抖窗口**（ms，默认 20；`0` = 关闭）。只影响 0x81 透传路径，不写 NVS |
+| `mx.gd [press [rel]]` | 真实鼠标**短按抗抖**（D49 起按位）：`press` = 按下侧窗口（ms，默认 20），`rel` = 松开侧最小脉宽（ms，默认 **0 = 关**）。回显 `press,rel`；`mx.gd 0` = 两侧全关。只影响鼠标透传路径，不写 NVS |
 | `mx.dl` | 重启进 **ROM 下载器**（台架救砖）。回 `km.dl` = 标志置位成功（`RTC_CNTL_FORCE_DOWNLOAD_BOOT` 回读通过），`km.e` = 写不进；回包会被固件刷完再复位，随后的裸字节是 ROM 启动信息 |
 | `mx.hs` / `mx.hv` | HID 发送计数（ok/busy/fail/mount、队列 enqueue/sent/drop） |
 | `mx.as` / `mx.ac` / `mx.rs` | 自动克隆状态 / 立即重克隆 / 重启 |
 | `mx.hk <0\|1>` | **0xA2 进不进 HID 路径**：`1` = 启用 sink（正常转发）；`0` = 隔离（0xA2 不进 HID，台架做计数断言时用，用完记得 `mx.hk 1` 恢复） |
-| `mx.ls` | 片间链路计数（frames/injected/dropped/rx_bytes …） |
+| `mx.ls` | 片间链路计数（逗号分隔）：`frames, ep0_requests, ep0_in, ep0_out, hid_chunks, a3, unknown, ep0_starts, ep0_ends, injected, dropped, rx_bytes, kbd_frames, other_frames`。前 12 个字段是老格式；**后 2 个 2026-11-15（D49）追加**：`kbd_frames` = 被分流掉的键盘帧数，`other_frames` = 其它非鼠标端点帧数。`frames` 只计鼠标帧 |
 
 ---
 
@@ -797,3 +802,5 @@ enabled,mask,pending,cur,last_fwd,seq,count,overflow,auto_released,push,consume
 | 2026-11-13 23:20 | **按键事件订阅 × 物理点击冲突修复（D48）**：`0x32 BUTTON` 的"主持位窗口"从**整字节 200 ms** 改成**按位 200 ms**（只覆盖被注入按住的位，其它键位的物理点击照常上线）；退订 `0x39`/`.km.evt(0)` 时回灌抗抖基准（退订后首击不再被吞）；`0xE1 EVT_PUSH` 改为"入队 + 控制任务发送"，**不再在报告热路径写串口**；`mx.ox` 追加 `evdrop=`（事件队列满丢弃数，正常恒 0）。实测：「订阅 + 注入并发」10 组点击的边沿数 22 → **60/60**（零丢失）；新增回归 `verification/regress/test_button_evt_passthrough.py`（3 例）|
 | 2026-11-13 23:55 | **订阅事件 × 物理点击并发验收（D48 补充）**：`mx.ox` 追加 `evsent=`（已发出事件帧数）；事件队列 `CB_EVT_QD` 8→**64**（8 深在 1000 边沿/秒时 `evdrop=268`，32 深通过 1000，64 深覆盖 2 kHz）；三项计数对账 `wire_chg == mx.ev.head_seq == evsent` 在 ≤1000 边沿/秒全部相等且零丢弃；新增并发用例后全量 **128 passed** |
 | 2026-11-14 15:35 | **事件通知延迟 6–8 ms → 0.12 ms**：新增独立发送任务 `km_evttx`（prio 11）+ `xTaskNotifyGive` 立即抢占唤醒（`cb_set_wake_task()`），UART 写不再发生在 `km_link`；`0xE1` 事件延迟实测 50/200/500 次点击每秒三档均为 **平均 ~120 µs / 最差 ~170 µs**，零丢失不变（1000 边沿/秒 `wire_chg==head_seq==evsent`）。刷机后先 `mx.ac` 重克隆再跑回归（否则 9 skipped） |
+| 2026-11-15 17:4x | **按键状态机只许看鼠标帧 + 按位抗抖（D49）**：①入口按端点/帧型分流——键盘 8 B boot 报告（`ep 0x82`，byte0=修饰键位图，LCtrl=`0x01` 就是左键位）、厂商 64 B 帧、其它端点帧一律**只转发**，判不出类别也按"只转发"处理；厂商帧分支提到 sumv 分支之前（此前 sumv 活跃时厂商帧会被当鼠标报告 → 中键位）。②抗抖从**整字节回退**改为**按位回退**，窗口与时刻按 5 个键位各存一份（右键抖动不再产生左键位，左键的松开不再给右键开禁按窗口）。③松开侧最小脉宽新增（默认 **0 = 关**，`mx.gd <press> <rel>` 打开）。④`makcu_hiddev_report()` 也按 `s_wire_btn_last` 对齐按键位（显式按键请求除外），`button_priority()` 补置 `s_btn_pending`（`0x3F.extra` 不再虚高）。⑤`mx.ls` 追加第 13/14 字段 `kbd_frames,other_frames`。契约不变：`0x31–0x45 / 0xE1` 的帧格式与长度全部保持 |
+| 2026-11-15 18:2x | **D49 上机回改（仍然是内部实现，不动契约）**：①"鼠标帧"的判据从 `ep == 0x81` 放宽为 `ep != 键盘 IN`（台架 `mx.lf a2 02…` 这类注入用的不是 0x81）；②URG/FIFO 的分类基准从 `s_wire_btn_last`（上线后）改为 `s_btn_intent_last`（提交时），修"按下还在队列、松开被降级进运动 FIFO → 出队改写回旧状态"的丢边沿（1400 → **1400**）；③`rep_push()` 增加 `motion` 判据（`makcu_mouse_btn_requested()`）：引擎帧永远走运动 FIFO、不改意图，否则 URG 里会出现 `1→0→1` 的多余边沿（300 → **300**）；④出队**不**回写意图。真机 **128 passed / 0 failed**，离线模型 **86 passed** |

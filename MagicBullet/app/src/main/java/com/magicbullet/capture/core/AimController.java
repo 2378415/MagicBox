@@ -255,6 +255,11 @@ public final class AimController implements HotkeyWatcher.Listener, ControlPort.
         return mAiming;
     }
 
+    /** Cheap "armed" flag for UI polling (预览页状态徽标用；不分配 Stats)。 */
+    public boolean isArmed() {
+        return mArmed;
+    }
+
     public Stats stats() {
         ControlPort.HidStat hid = mPort.lastHidStat();
         ControlPort.BtnAudit audit = mPort.lastBtnAudit();
