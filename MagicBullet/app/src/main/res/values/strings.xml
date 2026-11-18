@@ -213,4 +213,13 @@
     <string name="aim_switch_frames">换人确认帧（默认 3）</string>
     <string name="aim_size_ema">尺寸平滑 %（默认 30，越大越灵敏）</string>
     <string name="keys_btn_log">读按键日志</string>
+
+    <!-- 保活：前台服务 + 电池白名单 -->
+    <string name="keepalive_channel_name">保活服务</string>
+    <string name="keepalive_channel_desc">维持前台优先级与 CPU 唤醒，保证瞄准闭环不被冻结</string>
+    <string name="keepalive_notif_title">MagicBullet 保活中</string>
+    <string name="keepalive_notif_text">屏幕常亮 · CPU 唤醒 · 进程保活（点击返回）</string>
+    <string name="aim_keep_alive">保活：常亮 + CPU 唤醒 + 前台服务</string>
+    <string name="aim_battery_whitelist">加入电池优化白名单（防后台冻结）</string>
+    <string name="aim_keep_alive_help">保活开启时屏幕保持常亮、CPU 不被冻结、进程提升为前台优先级，避免瞄准闭环被系统杀掉；会增加耗电，建议边充边采时开启。\n屏幕常亮仅在 App 处于前台时有效；按电源键强制锁屏仍会熄灭。若切到后台仍被冻结，请再点「加入电池优化白名单」并在系统设置里允许后台运行/自启动。</string>
 </resources>

@@ -110,6 +110,8 @@ public final class AimConfig {
     private boolean mShowPredicted = true;
     private boolean mReleaseStop = true;
     private boolean mVolumeKeyEnabled = true;
+    /** 保活总开关：屏幕常亮 + CPU 唤醒 + 前台服务，默认开。 */
+    private boolean mKeepAlive = true;
 
     private AimConfig(SharedPreferences prefs) {
         mPrefs = prefs;
@@ -171,6 +173,7 @@ public final class AimConfig {
         mShowPredicted = mPrefs.getBoolean("show_pred", true);
         mReleaseStop = mPrefs.getBoolean("release_stop", true);
         mVolumeKeyEnabled = mPrefs.getBoolean("volume_key", true);
+        mKeepAlive = mPrefs.getBoolean("keep_alive", true);
         migrateToAim();
     }
 
@@ -329,6 +332,7 @@ public final class AimConfig {
                 .putBoolean("show_pred", mShowPredicted)
                 .putBoolean("release_stop", mReleaseStop)
                 .putBoolean("volume_key", mVolumeKeyEnabled)
+                .putBoolean("keep_alive", mKeepAlive)
                 .apply();
     }
 
@@ -736,6 +740,14 @@ public final class AimConfig {
 
     public void volumeKeyEnabled(boolean on) {
         mVolumeKeyEnabled = on;
+    }
+
+    public boolean keepAlive() {
+        return mKeepAlive;
+    }
+
+    public void keepAlive(boolean on) {
+        mKeepAlive = on;
     }
 
     /** True when every value is inside its documented range (the UI gates "应用" on this). */

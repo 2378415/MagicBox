@@ -62,6 +62,11 @@
 static const char *TAG = "makcu-left";
 
 static void mt_tap(uint8_t ep, const uint8_t *data, uint16_t len);   /* defined below */
+static void evt_tx_supervise(void);   /* 2026-11-18: km_evttx 卡死重建，defined below */
+/* 2026-11-18: 自愈诊断计数（mx.ev 探针与下方任务共用） */
+static volatile uint32_t s_evt_tx_rebuilds;
+static volatile uint8_t  s_evt_tx_broken;
+static volatile uint32_t s_ctrl_tx_timeout;
 
 /* sumv / makcu_mouse 注入路径的取样点：mx.mt 原本只在 link_report_to_mouse()
  * 里 tap，看不到注入。ep=0x00 标记"注入"，报告按 4 字节 int8 布局记录
@@ -106,6 +111,11 @@ static bool control_tx_idle(void)
 
 static void control_write(const void *data, size_t len)
 {
+    /* =50 ms（CONFIG_FREERTOS_HZ=100 ⇒ 1 tick=10 ms）。绝不用 pdMS_TO_TICKS(5)
+     * ——那在 100 Hz 下是 0 tick，会退化成忙等饿死 IDLE0（见 HANDOVER §14.7）。 */
+    if (uart_wait_tx_done(CONTROL_UART, pdMS_TO_TICKS(50)) != ESP_OK) {
+        s_ctrl_tx_timeout++;
+    }
     uart_write_bytes(CONTROL_UART, data, len);
 #if MB_CONTROL_USB_JTAG
     usb_serial_jtag_write_bytes(data, len, 0);
@@ -709,8 +719,15 @@ static bool clone_matches_device(void);   /* defined below, used by heal_task */
 static void heal_task(void *arg)
 {
     (void)arg;
+    uint32_t supervise_ticks = 0;
     for (;;) {
         vTaskDelay(pdMS_TO_TICKS(200));
+        /* 2026-11-18：每秒监督一次事件发送任务（卡死重建）。
+         * 200 ms × 5 = 1 s。放在重克隆检查之前，不受 s_reclone_check 门控。 */
+        if (++supervise_ticks >= 5) {
+            supervise_ticks = 0;
+            evt_tx_supervise();
+        }
         if (!s_reclone_check) {
             continue;
         }
@@ -2014,16 +2031,22 @@ static int handle_debug_line(const char *line, int len)
     }
     if (len >= 5 && line[3] == 'e' && line[4] == 'v') {
         /* mx.ev -> 按键事件通道状态
-         * enabled,mask,pending,cur,last_fwd,seq,count,overflow,auto_released,push,consume */
+         * enabled,mask,pending,cur,last_fwd,seq,count,overflow,auto_released,push,consume,
+         * auto_resume,rebuilds,tx_timeout,broken （2026-11-18 自愈追加，前 11 字段不变） */
         btn_evt_stat_t st;
         btn_evt_stat(&st);
-        char out[96];
-        const int n = snprintf(out, sizeof(out), "%u,%02x,%02x,%02x,%02x,%u,%u,%lu,%u,%u,%u",
+        char out[160];
+        const int n = snprintf(out, sizeof(out),
+                               "%u,%02x,%02x,%02x,%02x,%u,%u,%lu,%u,%u,%u,%lu,%lu,%lu,%u",
                                st.enabled ? 1u : 0u, st.mask, st.pending, st.cur, st.last_fwd,
                                (unsigned)st.head_seq, (unsigned)st.count,
                                (unsigned long)st.overflow,
                                st.auto_released ? 1u : 0u, st.push ? 1u : 0u,
-                               st.consume ? 1u : 0u);
+                               st.consume ? 1u : 0u,
+                               (unsigned long)st.auto_resume,
+                               (unsigned long)s_evt_tx_rebuilds,
+                               (unsigned long)s_ctrl_tx_timeout,
+                               (unsigned)s_evt_tx_broken);
         makcu_reply(out, (size_t)n);
         return 1;
     }
@@ -2657,14 +2680,73 @@ static void control_port_task(void *arg)
 /* 2026-11-14：按键事件发送任务。
  * 事件在 km_link 任务里入队后 xTaskNotifyGive 唤醒本任务；通知唤醒是**立即抢占**的
  * （不等 10 ms tick），所以"边沿 → 写进串口"从平均 6–8 ms、最差 10~30 ms 降到亚毫秒。
- * UART 写仍发生在这里（不是链路任务），避免上次直发快路径与 TX 锁交叉导致的死锁。 */
+ * UART 写仍发生在这里（不是链路任务），避免上次直发快路径与 TX 锁交叉导致的死锁。
+ * 2026-11-18：加进展戳 + 监督重建（见 evt_tx_supervise），任务卡死不再永久停发。 */
+static TaskHandle_t s_evt_tx_handle;
+static volatile int64_t s_evt_tx_progress_us;   /* 每次成功 pump 后刷新 */
+static volatile uint8_t  s_evt_tx_stall_ticks;  /* 连续停滞的监督周期数 */
+/* s_evt_tx_rebuilds / s_evt_tx_broken 定义在文件顶部（mx.ev 探针共用） */
+
 static void evt_tx_task(void *arg)
 {
     (void)arg;
     for (;;) {
         (void)ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         cb_evt_pump();
+        s_evt_tx_progress_us = esp_timer_get_time();
     }
+}
+
+/* 启动/重建发送任务。返回 true = 任务在跑并已注册唤醒。 */
+static bool evt_tx_start(void)
+{
+    TaskHandle_t h = NULL;
+    if (xTaskCreate(evt_tx_task, "km_evttx", 3072, NULL, 11, &h) != pdPASS) {
+        return false;
+    }
+    s_evt_tx_handle = h;
+    cb_set_wake_task(h);
+    s_evt_tx_progress_us = esp_timer_get_time();
+    s_evt_tx_stall_ticks = 0;
+    /* 补一次通知：重建前队列里积压的事件要立刻排空。 */
+    (void)xTaskNotifyGive(h);
+    return true;
+}
+
+/* 监督：由 km_heal（prio 4）每秒调用。只有"队列里确有待发事件"且"长时间无进展"
+ * 才判卡死——空闲时任务本就该睡在 portMAX_DELAY，不算故障。 */
+static void evt_tx_supervise(void)
+{
+    if (s_evt_tx_broken) {
+        return;
+    }
+    if (!cb_evt_pending()) {
+        s_evt_tx_stall_ticks = 0;
+        return;
+    }
+    const int64_t now = esp_timer_get_time();
+    if (now - s_evt_tx_progress_us < 3 * 1000 * 1000) {
+        s_evt_tx_stall_ticks = 0;
+        return;
+    }
+    if (++s_evt_tx_stall_ticks < 2) {   /* 连续 2 次（约 3 s）才动手，去抖 */
+        return;
+    }
+    s_evt_tx_stall_ticks = 0;
+    if (s_evt_tx_handle != NULL) {
+        vTaskDelete(s_evt_tx_handle);
+        s_evt_tx_handle = NULL;
+    }
+    cb_set_wake_task(NULL);             /* 重建窗口内不让入队任务通知已删除的句柄 */
+    s_evt_tx_rebuilds++;
+    if (!evt_tx_start()) {
+        ESP_LOGE(TAG, "km_evttx rebuild %lu failed", (unsigned long)s_evt_tx_rebuilds);
+        if (s_evt_tx_rebuilds >= 3) {
+            s_evt_tx_broken = 1;        /* 3 次失败停止重试，防风暴；mx.ev 可见 */
+        }
+        return;
+    }
+    ESP_LOGW(TAG, "km_evttx rebuilt (#%lu)", (unsigned long)s_evt_tx_rebuilds);
 }
 
 void app_main(void)
@@ -2709,12 +2791,11 @@ void app_main(void)
     makcu_reply_set_writer(control_write);
     cb_reset(control_write, NULL);   /* 事件只入队（直发快路径实测会与 UART TX 锁交叉导致死锁，已回滚） */
     {
-        /* 2026-11-14：事件发送任务（prio 11，高于 km_link 9 / km_uart0 10）——收到通知立即抢占发送。 */
-        TaskHandle_t evt_tx = NULL;
-        if (xTaskCreate(evt_tx_task, "km_evttx", 3072, NULL, 11, &evt_tx) == pdPASS) {
-            cb_set_wake_task(evt_tx);
-        } else {
-            ESP_LOGW(TAG, "evt_tx_task create failed; 事件退回控制任务泵送");
+        /* 2026-11-14：事件发送任务（prio 11，高于 km_link 9 / km_uart0 10）——收到通知立即抢占发送。
+         * 2026-11-18：创建失败不再谎称"退回控制任务泵送"（控制任务已明确不泵），
+         * 交给 km_heal 里的 evt_tx_supervise() 按退避策略重建。 */
+        if (!evt_tx_start()) {
+            ESP_LOGW(TAG, "evt_tx_task create failed; km_heal will retry");
         }
     }
     makcu_hid_report_hook = bench_report;

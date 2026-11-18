@@ -35,6 +35,8 @@ typedef struct {
     uint16_t head_seq;    /* 下一条事件序号 */
     uint8_t  count;       /* 环形缓冲里未读条数 */
     uint32_t overflow;    /* 因缓冲满被覆盖的条数 */
+    /* 2026-11-18 自愈：心跳回来了几次自动重订阅（含心跳路径触发） */
+    uint32_t auto_resume;
 } btn_evt_stat_t;
 
 /* 推送回调：设备主动发 0xE1，由 control_bin 注册 */

@@ -74,6 +74,7 @@ public class AimFragment extends Fragment implements AimController.StatsListener
     private MaterialSwitch mClamp;
     private MaterialSwitch mTurbo;
     private MaterialSwitch mPassthrough;
+    private MaterialSwitch mKeepAlive;
     private com.google.android.material.button.MaterialButtonToggleGroup mKeyGroup;
     private TextView mHotkeyMaskText;
     private MaterialButton mKeyRight;
@@ -143,6 +144,7 @@ public class AimFragment extends Fragment implements AimController.StatsListener
         mClamp = view.findViewById(R.id.aim_clamp);
         mTurbo = view.findViewById(R.id.aim_turbo);
         mPassthrough = view.findViewById(R.id.aim_passthrough);
+        mKeepAlive = view.findViewById(R.id.aim_keep_alive);
         mKeyRight = view.findViewById(R.id.aim_key_right);
         mKeyRear = view.findViewById(R.id.aim_key_rear);
         mKeyFront = view.findViewById(R.id.aim_key_front);
@@ -222,6 +224,24 @@ public class AimFragment extends Fragment implements AimController.StatsListener
             toast(getString(R.string.aim_saved_all));
         });
 
+        // 保活开关即时生效：持久化后立即启停前台服务，不必等「应用」。
+        mKeepAlive.setOnCheckedChangeListener((button, checked) -> {
+            if (mBinding) {
+                return;
+            }
+            mConfig.keepAlive(checked);
+            mConfig.persist();
+            if (checked) {
+                com.magicbullet.capture.core.KeepAliveService.start(requireContext());
+            } else {
+                com.magicbullet.capture.core.KeepAliveService.stop(requireContext());
+            }
+        });
+        view.findViewById(R.id.aim_battery_whitelist).setOnClickListener(v -> {
+            if (requireActivity() instanceof com.magicbullet.capture.MainActivity) {
+                ((com.magicbullet.capture.MainActivity) requireActivity()).requestBatteryWhitelist();
+            }
+        });
 
         bindFromConfig();
         mPrefsBound = true;
@@ -273,6 +293,7 @@ public class AimFragment extends Fragment implements AimController.StatsListener
         mClamp.setChecked(mConfig.sessionClamp());
         mTurbo.setChecked(mConfig.turbo());
         mPassthrough.setChecked(!mConfig.hotkeyConsume());
+        mKeepAlive.setChecked(mConfig.keepAlive());
         mBinding = false;
         renderAll();
     }
@@ -452,6 +473,7 @@ public class AimFragment extends Fragment implements AimController.StatsListener
         mConfig.sessionClamp(mClamp.isChecked());
         mConfig.turbo(mTurbo.isChecked());
         mConfig.hotkeyConsume(!mPassthrough.isChecked());
+        mConfig.keepAlive(mKeepAlive.isChecked());
         mConfig.save();
         renderAll();
     }
@@ -557,6 +579,7 @@ public class AimFragment extends Fragment implements AimController.StatsListener
             o.put("gain_adapt_hip", (double) mConfig.gainAdapt(false));
             o.put("gain_adapt_ads", (double) mConfig.gainAdapt(true));
             o.put("classes", new org.json.JSONArray(mConfig.classes()));
+            o.put("keep_alive", mConfig.keepAlive());
             org.json.JSONObject rect = new org.json.JSONObject();
             rect.put("x", mConfig.rect().x);
             rect.put("y", mConfig.rect().y);
@@ -673,6 +696,9 @@ public class AimFragment extends Fragment implements AimController.StatsListener
                 if (!classes.isEmpty()) {
                     mConfig.labels(String.join(",", classes));
                 }
+            }
+            if (o.has("keep_alive")) {
+                mConfig.keepAlive(o.getBoolean("keep_alive"));
             }
             if (o.has("rect")) {
                 org.json.JSONObject r = o.getJSONObject("rect");

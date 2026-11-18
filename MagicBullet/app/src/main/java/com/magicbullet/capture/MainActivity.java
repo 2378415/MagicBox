@@ -1,10 +1,21 @@
 package com.magicbullet.capture;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -16,6 +27,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.magicbullet.capture.core.AimConfig;
 import com.magicbullet.capture.core.AimController;
+import com.magicbullet.capture.core.KeepAliveService;
 import com.magicbullet.capture.core.UvcSession;
 import com.magicbullet.capture.core.UvcSessionHost;
 import com.magicbullet.capture.ui.aim.AimFragment;
@@ -33,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements UvcSessionHost,
         AimFragment.RectEditorHost {
 
     private static final String KEY_TAB = "current_tab";
+    private static final int REQ_POST_NOTIFICATIONS = 2001;
 
     private static final String[] TAGS = {"tab_preview", "tab_yolo", "tab_keys", "tab_aim"};
     private static final int[] MENU_IDS = {
@@ -47,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements UvcSessionHost,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        // 第 1 层：屏幕常亮。窗口可见期间由系统持有，Activity 销毁自动释放，无需权限。
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
 
         applyWindowInsets();
@@ -86,11 +101,19 @@ public class MainActivity extends AppCompatActivity implements UvcSessionHost,
     protected void onStart() {
         super.onStart();
         mSession.start();
+        // 保活窗口跟随前台：进入前台时拉起前台服务（WakeLock 在服务里持有）。
+        if (AimConfig.load(this).keepAlive()) {
+            KeepAliveService.start(this);
+        }
+        // Android 13+ 前台服务通知需要运行时权限；缺权限不影响服务本身，只影响通知栏可见性。
+        requestNotificationPermissionIfNeeded();
     }
 
     @Override
     protected void onStop() {
         mSession.stop();
+        // 退出前台即停服务、释放 WakeLock，避免退到后台后还永久唤醒 CPU。
+        KeepAliveService.stop(this);
         super.onStop();
     }
 
@@ -100,7 +123,48 @@ public class MainActivity extends AppCompatActivity implements UvcSessionHost,
         // Never leave the box eating the hotkey after the app is gone (it would also recover on
         // its own after 10 s without a heartbeat, but be explicit).
         AimController.get(this).setArmed(false);
+        KeepAliveService.stop(this);
         super.onDestroy();
+    }
+
+    // ------------------------------------------------------------------ keep-alive / battery
+
+    private void requestNotificationPermissionIfNeeded() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                    REQ_POST_NOTIFICATIONS);
+        }
+    }
+
+    /** 引导用户加电池优化白名单；定制 ROM（OriginOS 等）否则会冻结前台服务与推理线程。 */
+    public void requestBatteryWhitelist() {
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        if (pm != null && pm.isIgnoringBatteryOptimizations(getPackageName())) {
+            Toast.makeText(this, "已在电池优化白名单", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        try {
+            Intent intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+            intent.setData(Uri.parse("package:" + getPackageName()));
+            startActivity(intent);
+        } catch (Throwable e) {
+            // 部分 ROM 没有该设置页：退回到应用详情，让用户手动放开后台限制。
+            Intent detail = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            detail.setData(Uri.parse("package:" + getPackageName()));
+            startActivity(detail);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQ_POST_NOTIFICATIONS) {
+            return;
+        }
+        mSession.onRequestPermissionsResult(requestCode, grantResults);
     }
 
     @Override
@@ -112,13 +176,6 @@ public class MainActivity extends AppCompatActivity implements UvcSessionHost,
     @Override
     public UvcSession session() {
         return mSession;
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        mSession.onRequestPermissionsResult(requestCode, grantResults);
     }
 
     // ------------------------------------------------------------------ aim hotkey / rect editing

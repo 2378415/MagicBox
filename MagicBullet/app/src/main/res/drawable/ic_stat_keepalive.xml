@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 小图标用白色实心：通知栏会把它染成单色，透明度无意义。 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,2a7,7 0 0,0 -7,7v3a7,7 0 0,0 14,0V9a7,7 0 0,0 -7,-7zM10,22h4v-2h-4v2z" />
+</vector>

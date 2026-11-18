@@ -31,6 +31,8 @@ public final class HotkeyWatcher {
 
     private static final long HEARTBEAT_MS = 1000L;
     private static final long LEARN_TIMEOUT_MS = 8000L;
+    /** 2026-11-18：bit2 自动退订后重订阅的退避间隔（1s / 2s / 5s，共 3 次）。 */
+    private static final long[] RESUB_BACKOFF_MS = {1000L, 2000L, 5000L};
     /** Both side buttons plus the right button: the three keys that make sense as an aim toggle. */
     public static final int LEARN_MASK = 0x1A;
 
@@ -49,6 +51,34 @@ public final class HotkeyWatcher {
     private boolean mReportedDown;
     /** 上一次"是否有任何订阅键按住"，用于多选热键的上升/下降沿。 */
     private boolean mWatchedDown;
+    /** 2026-11-18：bit2 重订阅的退避状态。 */
+    private int mResubAttempt;
+    private boolean mResubPending;
+    private final Runnable mResubscribe = () -> {
+        if (!mSubscribed || mMask == 0 || !mPort.isOpen()) {
+            mResubPending = false;
+            return;
+        }
+        mPort.evtSubscribe(mMask, true, mConsume);
+        mPort.logNote(String.format(Locale.US, "自动重订阅（第 %d 次）mask=0x%02X",
+                mResubAttempt + 1, mMask));
+        // 下一次心跳会带回 flags；若 bit2 仍在，onEvtStat 会再调度本 runnable。
+        scheduleResubRetry();
+    };
+
+    /** 退避调度下一次重订阅；超过上限就放弃（UI 保留未订阅提示，等用户重连）。 */
+    private void scheduleResubRetry() {
+        if (mResubAttempt < RESUB_BACKOFF_MS.length - 1) {
+            mHandler.postDelayed(() -> {
+                if (mResubPending) {
+                    mResubAttempt++;
+                    mResubscribe.run();
+                }
+            }, RESUB_BACKOFF_MS[mResubAttempt]);
+        } else {
+            mPort.logNote("自动重订阅 3 次仍失败，请重连控制口");
+        }
+    }
 
     private final Runnable mHeartbeat = new Runnable() {
         @Override
@@ -88,9 +118,22 @@ public final class HotkeyWatcher {
             mHandler.post(() -> {
                 if ((flags & 0x04) != 0 && mMask != 0) {
                     // 盒子 10 s 没收到心跳就自动退订（flags bit2）。若我们这边还当自己是订阅状态，
-                    // 就会再也收不到边沿 —— 表现正是"按了没反应、瞄准取消不了"。这里自动补订阅。
-                    mPort.logNote("盒子已自动退订（10 s 无心跳），重新订阅");
-                    mPort.evtSubscribe(mMask, true, mConsume);
+                    // 就会再也收不到边沿 —— 表现正是"按了没反应、瞄准取消不了"。
+                    // 2026-11-18：固件侧现在也会在心跳到达时自动重订阅；这里仍补发一次 0x39
+                    // （幂等），并按 1s/2s/5s 退避重试，直到 flags bit2 被清 0。
+                    if (!mResubPending) {
+                        mResubPending = true;
+                        mResubAttempt = 0;
+                        mPort.logNote("盒子已自动退订（10 s 无心跳），启动自动重订阅");
+                        mHandler.removeCallbacks(mResubscribe);
+                        mHandler.post(mResubscribe);
+                    }
+                } else if (mResubPending) {
+                    // bit2 清 0 = 固件已恢复订阅（可能是它自己恢复的）：停止重试。
+                    mResubPending = false;
+                    mResubAttempt = 0;
+                    mHandler.removeCallbacks(mResubscribe);
+                    mPort.logNote("订阅已恢复（flags bit2=0）");
                 }
                 if (mReportedDown && !HotkeyEdge.anyHeld(cur, mMask)) {
                     // EVT_STAT.cur 是盒子看到的真实按键位图：这里等于 0 说明手早就松了，
@@ -179,6 +222,9 @@ public final class HotkeyWatcher {
         mPort.setEvtListener(mEvtListener);
         mPort.evtSubscribe(mMask, true, mConsume);
         mSubscribed = true;
+        mResubPending = false;
+        mResubAttempt = 0;
+        mHandler.removeCallbacks(mResubscribe);
         note(String.format(Locale.US, "热键已订阅 mask=0x%02X（%s）", mMask,
                 mConsume ? "吃掉，PC 收不到" : "穿透，PC 照常收到"));
         mHandler.removeCallbacks(mHeartbeat);
@@ -188,6 +234,9 @@ public final class HotkeyWatcher {
     public void unsubscribe() {
         mHandler.removeCallbacks(mHeartbeat);
         mHandler.removeCallbacks(mLearnTimeout);
+        mHandler.removeCallbacks(mResubscribe);
+        mResubPending = false;
+        mResubAttempt = 0;
         mLearning = false;
         if (mSubscribed) {
             mPort.evtSubscribe(0, false, false);

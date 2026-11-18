@@ -13,6 +13,15 @@
     -->
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- 保活/常亮：屏幕常亮由 window flag 实现；CPU 唤醒需 WAKE_LOCK。 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- Android 13+ 前台服务通知必须拿到该权限才会显示在通知栏（服务本身仍会运行）。 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- 引导用户把本 App 加入电池优化白名单（OriginOS 等否则会冻结后台）。 -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
     <application
         android:allowBackup="false"
         android:label="@string/app_name"
@@ -50,6 +59,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 前台服务：维持进程优先级 + 持有 PARTIAL_WAKE_LOCK，避免系统杀后台/冻结闭环。 -->
+        <service
+            android:name=".core.KeepAliveService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="keep_alive_aim_loop" />
+        </service>
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ static uint8_t   s_count;
 
 static uint16_t  s_seq;         /* 事件序号（只增不减） */
 static uint32_t  s_overflow;
+static uint32_t  s_auto_resume; /* 2026-11-18：自动重订阅次数 */
 
 static bool      s_enabled;
 static bool      s_push;
@@ -28,6 +29,15 @@ static uint8_t   s_pending;     /* 订阅瞬间按住、仍在透传的位 */
 static uint8_t   s_prev_watched;/* 上一拍的 watched 位（算边沿） */
 static uint8_t   s_cur;         /* 最近一次真实按键位图 */
 static uint8_t   s_last_fwd;    /* 最近一次转发给 PC 的按键字节 */
+
+/* 2026-11-18 自愈：记住"最后一次显式订阅"的意图。
+ * 10s 看门狗只清活跃订阅、保留这份意图；心跳回来时用它自动恢复。
+ * enable=0（显式退订）会清掉意图 —— 固件永不替主动退订的客户端重订阅。 */
+static bool      s_want_enabled;
+static uint8_t   s_want_mask;
+static bool      s_want_push;
+static bool      s_want_consume;
+static bool      s_in_ctl;      /* 重入保护：btn_evt_ctl 内部会调 heartbeat，避免递归 */
 
 static volatile int64_t s_last_hb_us;
 static btn_evt_push_fn  s_push_fn;
@@ -51,10 +61,20 @@ uint8_t btn_evt_mask(void)
 void btn_evt_heartbeat(void)
 {
     s_last_hb_us = esp_timer_get_time();
+    /* 2026-11-18 自愈：客户端确实回来了（任意心跳命令）且此前是失联退订，
+     * 用记住的意图自动恢复订阅。btn_evt_ctl 内部会再调本函数，用 s_in_ctl 挡住递归。
+     * 恢复后 s_prev_watched 以当前按键状态为基准（btn_evt_ctl 第 78 行），不会造假边沿。 */
+    if (s_auto_released && s_want_enabled && !s_in_ctl) {
+        s_auto_released = false;
+        s_auto_resume++;
+        ESP_LOGI(TAG, "auto-resume subscription after heartbeat (mask 0x%02x)", s_want_mask);
+        (void)btn_evt_ctl(true, s_want_mask, s_want_push, s_want_consume);
+    }
 }
 
 void btn_evt_ctl(bool enable, uint8_t mask, bool push, bool consume)
 {
+    s_in_ctl = true;
     if (!enable) {
         if (s_enabled) {
             ESP_LOGI(TAG, "unsubscribed (was mask 0x%02x consume=%d)", s_mask, (int)s_consume);
@@ -65,8 +85,19 @@ void btn_evt_ctl(bool enable, uint8_t mask, bool push, bool consume)
         s_mask = 0;
         s_pending = 0;
         s_prev_watched = 0;
+        /* 显式退订：清掉意图，之后的心跳不再自动恢复。 */
+        s_want_enabled = false;
+        s_want_mask = 0;
+        s_want_push = false;
+        s_want_consume = false;
+        s_in_ctl = false;
         return;
     }
+    /* 记住这次显式订阅的意图（自动重订阅要用）。 */
+    s_want_enabled = true;
+    s_want_mask = mask;
+    s_want_push = push;
+    s_want_consume = consume;
     /* 只有"吃掉"模式才需要 pending：订阅瞬间已经按住的键先继续透传到松开，
      * 避免 PC 卡在"按下"。穿透模式下按键本来就照常发，pending 恒为 0。 */
     s_pending = consume ? (uint8_t)(s_cur & mask) : 0;
@@ -77,6 +108,7 @@ void btn_evt_ctl(bool enable, uint8_t mask, bool push, bool consume)
     s_auto_released = false;
     s_prev_watched = (uint8_t)(s_cur & mask);
     btn_evt_heartbeat();
+    s_in_ctl = false;
     ESP_LOGI(TAG, "subscribed mask=0x%02x push=%d consume=%d pending=0x%02x",
              s_mask, (int)s_push, (int)s_consume, s_pending);
 }
@@ -182,6 +214,7 @@ void btn_evt_stat(btn_evt_stat_t *st)
     st->head_seq = s_seq;
     st->count = s_count;
     st->overflow = s_overflow;
+    st->auto_resume = s_auto_resume;
 }
 
 /* 失联保护：订阅期间 10 s 没有任何心跳 → 恢复全透传 */
@@ -194,7 +227,14 @@ static void evt_watchdog(void *arg)
     const int64_t now = esp_timer_get_time();
     if (now - s_last_hb_us > EVT_HB_TIMEOUT_US) {
         ESP_LOGW(TAG, "no client heartbeat for 10 s: dropping subscription (mask 0x%02x)", s_mask);
-        btn_evt_ctl(false, 0, false, false);
+        /* 2026-11-18：不能直接 btn_evt_ctl(false,...) —— 那会清掉 s_want_* 意图，
+         * 导致心跳回来后无法自动重订阅。这里手动清活跃订阅、保留意图。 */
+        s_enabled = false;
+        s_push = false;
+        s_consume = false;
+        s_mask = 0;
+        s_pending = 0;
+        s_prev_watched = 0;
         s_auto_released = true;
     }
 }
@@ -204,9 +244,15 @@ void btn_evt_init(void)
     s_head = s_tail = s_count = 0;
     s_seq = 0;
     s_overflow = 0;
+    s_auto_resume = 0;
     s_enabled = false;
     s_push = false;
     s_auto_released = false;
+    s_want_enabled = false;
+    s_want_mask = 0;
+    s_want_push = false;
+    s_want_consume = false;
+    s_in_ctl = false;
     s_mask = 0;
     s_pending = 0;
     s_prev_watched = 0;
